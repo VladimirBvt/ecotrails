@@ -1,0 +1,30 @@
+
+# BEGIN WordPress
+# Директивы (строки) между `BEGIN WordPress` и `END WordPress`
+# созданы автоматически и подлежат изменению только через фильтры WordPress.
+# Сделанные вручную изменения между этими маркерами будут перезаписаны.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+ErrorDocument 404 https://eco-trails.ru/404
+Redirect 301 /catalog/ecotropa-fialka/ /catalog/krasnodarsky-krai/ecotropa-fialka/
+Redirect 301 /catalog/ecotropa-krokus/ /catalog/krasnodarsky-krai/ecotropa-krokus/
+Redirect 301 /catalog/ecotropa-gorizont/ /catalog/krasnodarsky-krai/ecotropa-gorizont/
+Redirect 301 /catalog/troparevskaya-ecotropa/ /catalog/moskva/troparevskaya-ecotropa/
+Redirect 301 /catalog/ecotropa-u-ozera-bezdonnoe/ /catalog/moskva/ecotropa-u-ozera-bezdonnoe/
+
+Redirect 301 /rakovye-ozyora/ /catalog/lenoblast/rakovye-ozyora/
+Redirect 301 /dudergofskie-vysoty/ /catalog/lenoblast/dudergofskie-vysoty/
+Redirect 301 /k-ledniku-bezengi/ /catalog/kabardino-balkariya/k-ledniku-bezengi/
+Redirect 301 /sestroreckoe-boloto/ /catalog/lenoblast/sestroreckoe-boloto/
+Redirect 301 /vozdushnaya-tropa/ /catalog/moskva/vozdushnaya-ecotropa/
+
+Redirect 301 /tropa-golicyna/ /catalog/krym/tropa-golicyna/
+Redirect 301 /toksovskie-vysoty/ /catalog/lenoblast/elovye-holmy/
+# END WordPress

@@ -1,0 +1,382 @@
+@font-face {
+  font-family: "Avante Bold";
+  src: url(../Styles_trop/fonts/a_AvanteInt_Bold.ttf);
+}
+@font-face {
+  font-family: "Avante Bold Italic";
+  src: url(../Styles_trop/a_AvanteInt_BoldItalic.ttf);
+}
+@font-face {
+  font-family: "Avante Book";
+  src: url(../Styles_trop/fonts/a_AvanteInt_Book.ttf);
+}
+@font-face {
+  font-family: "Avante Book Italic";
+  src: url(../Styles_trop/fonts/a_AvanteInt_BoldItalic.ttf);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  /* padding: 0; */
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  background: #f3f7ed;
+  font-size: 100%;
+  line-height: 1.2;
+  font-family: "Avante Book", sans-serif;
+  color: #1f271b;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* *{
+ padding: 0;
+ margin: 0;
+font-family: 'Avante Bold', sans-serif;
+    } */
+
+body {
+  line-height: 29px;
+}
+.back {
+  margin-top: 139px;
+  margin-left: 201px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.back > * + * {
+  margin-left: 23px;
+}
+
+.back p {
+  font-size: 20px;
+}
+
+.title {
+  position: relative;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  margin-left: 200px;
+  margin-right: 200px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  font-family: "Avante Bold";
+}
+
+.title::before {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  /* left: -25px; */
+  content: url(../img/title-left-line.svg);
+  /* top: 18px; */
+}
+
+.title::after {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  /* right: 25px; */
+  content: url(../img/title-right-line.svg);
+  /* top: -18px; */
+}
+
+.sub_title {
+  text-align: left;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  margin-bottom: 40px;
+}
+
+.sub_title_2 {
+  margin-top: 48px;
+}
+
+a {
+  text-decoration: none;
+  color: #1f271b;
+}
+
+a.link {
+  color: #f28123;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+.paragraph {
+  margin-bottom: 24px;
+}
+
+.sub__1_1 {
+  margin-bottom: 16px;
+}
+
+.sub__1_2 {
+  margin-bottom: 48px;
+}
+
+h1,
+h2 {
+  line-height: 50px;
+  text-align: center;
+  list-style: none;
+}
+p {
+  text-align: start;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 145%;
+}
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+/* .title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+;
+font-weight: normal;
+font-size:18px;
+} */
+
+table {
+  border: 0.1px solid #000;
+  width: 1220px;
+  height: 580px;
+  margin: auto;
+  margin-top: 20px;
+}
+.list li {
+  position: relative;
+  text-align: start;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 145%;
+  padding-left: 7px;
+  left: 40px;
+  list-style-type: none;
+  margin-bottom: 24px;
+  text-indent: 0;
+}
+table {
+  border: 1px solid;
+  text-align: center;
+}
+
+.list {
+  list-style-image: url(../img/icon-romb-small.svg);
+  margin-left: -24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  line-height: 145%;
+}
+
+.policy {
+  margin-bottom: 16px;
+  font-family: "Avante Book";
+}
+
+.paragraph__last {
+  margin-bottom: 112px;
+}
+
+
+
+@media (max-width: 1350px) {
+  .container {
+    max-width: 976px;
+  }
+  .paragraph {
+    font-size: 16px;
+  }
+  .sub_title {
+    font-size: 28px;
+  }
+  .title {
+    font-size: 28px;
+    width: 534px;
+    height: 68px;
+  }
+  .title::before {
+    position: absolute;
+    left: -90px;
+    top: 18px;
+    content: url(../img/title-left-line.svg);
+  }
+
+  .title::after {
+    position: absolute;
+    right: -90px;
+    top: 18px;
+    content: url(../img/title-right-line.svg);
+  }
+  .list li{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 320px;
+  }
+  .title {
+    margin: 130px auto 32px auto;
+    font-size: 24px;
+    line-height: 130%;
+    width: 193px;
+    height: 155px;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+  .sub_title {
+    font-size: 24px;
+    line-height: 130%;
+  }
+  .title::before {
+    left: -60px;
+    top: 60px;
+    content: url(../img/small-title-left-line.svg);
+  }
+  .list li{
+    width: 320px;
+  }
+  .title::after {
+    right: -60px;
+    top: 60px;
+    content: url(../img/small-title-right-line.svg);
+  }
+}
