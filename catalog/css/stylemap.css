@@ -296,7 +296,7 @@ img {
   position: relative;
   width: 25px !important;
   height: 25px !important;
-  background-image: url(../../img/close_card.svg) !important;
+  background-image: url(/img/close_card.svg) !important;
   opacity: 1 !important;
   right: 12px;
   top: 12px;
@@ -359,7 +359,7 @@ img {
   text-decoration: none;
 }
 .trail-location-black > p {
-  background: url(../../img/location-black.svg) no-repeat;
+  background: url(/img/location-black.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-style: normal;
@@ -370,7 +370,7 @@ img {
   overflow: hidden;
 }
 .trail-location-white > p {
-  background: url(../../img/location-white.svg) no-repeat;
+  background: url(/img/location-white.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-style: normal;

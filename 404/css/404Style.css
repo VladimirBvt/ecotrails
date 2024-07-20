@@ -49,11 +49,11 @@ body {
 .number-404::after {
   position: absolute;
   right: -100px;
-  content: url(../img/title-right-line.png);
+  content: url(/img/title-right-line.png);
 }
 .number-404::before {
   position: absolute;
-  content: url(../img/title-left-line.png);
+  content: url(/img/title-left-line.png);
   left: -100px;
 }
 .href-404 {

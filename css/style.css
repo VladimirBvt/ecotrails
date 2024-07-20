@@ -203,20 +203,20 @@ p {
 .title::before {
   position: absolute;
   left: -84px;
-  content: url(../img/title-left-line.png);
+  content: url(/img/title-left-line.png);
   top: -3px;
 }
 
 .title::after {
   position: absolute;
   right: -84px;
-  content: url(../img/title-right-line.png);
+  content: url(/img/title-right-line.png);
   top: -3px;
 }
 
 /* intro  */
 .intro {
-  background: url(../img/utp-desktop-1.png) top right no-repeat transparent;
+  background: url(/img/utp-desktop-1.png) top right no-repeat transparent;
   background-size: 100% 100vh;
   background-position: center;
   text-align: center;
@@ -231,25 +231,25 @@ p {
 
 /* @keyframes slideBG {
   0% {
-    background-image: url(../img/utp-desktop-1.png);
+    background-image: url(/img/utp-desktop-1.png);
   }
   30% {
-    background-image: url(../img/utp-desktop-1.png);
+    background-image: url(/img/utp-desktop-1.png);
   }
   35% {
-    background-image: url(../img/utp-desktop-2.png);
+    background-image: url(/img/utp-desktop-2.png);
   }
   65% {
-    background-image: url(../img/utp-desktop-2.png);
+    background-image: url(/img/utp-desktop-2.png);
   }
   70%{
-    background-image: url(../img/utp-desktop-3.png);
+    background-image: url(/img/utp-desktop-3.png);
   }
   95%{
-    background-image: url(../img/utp-desktop-3.png);
+    background-image: url(/img/utp-desktop-3.png);
   }
   100% {
-    background-image: url(../img/utp-desktop-1.png);
+    background-image: url(/img/utp-desktop-1.png);
   }
 } */
 
@@ -369,10 +369,10 @@ p {
 }
 
 .swiper-left-btn {
-  background: url(../img/leftarrow.svg) no-repeat;
+  background: url(/img/leftarrow.svg) no-repeat;
 }
 .swiper-right-btn {
-  background: url(../img/rightarrow.svg) no-repeat;
+  background: url(/img/rightarrow.svg) no-repeat;
 }
 
 .swiper-left-btn,
@@ -438,7 +438,7 @@ p {
 }
 
 .trail-location-black > p {
-  background: url(../img/location-black.svg) no-repeat;
+  background: url(/img/location-black.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-size: 16px;
@@ -448,7 +448,7 @@ p {
   overflow: hidden;
 }
 .trail-location-white > p {
-  background: url(../img/location-white.svg) no-repeat;
+  background: url(/img/location-white.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-size: 16px;
@@ -518,10 +518,10 @@ p {
   align-items: center;
 }
 /* .swiper-left-part {
-  background: url(../img/leftarrow.svg) no-repeat;
+  background: url(/img/leftarrow.svg) no-repeat;
 }
 .swiper-right-part {
-  background: url(../img/rightarrow.svg) no-repeat;
+  background: url(/img/rightarrow.svg) no-repeat;
 }
 .swiper-left-part,
 .swiper-right-part {
@@ -619,7 +619,7 @@ summary {
 summary:before {
   left: 0;
   top: 100%;
-  background: url(../img/faq-arrow.png) no-repeat;
+  background: url(/img/faq-arrow.png) no-repeat;
   width: 100%;
   height: 30%;
   content: "";
@@ -628,7 +628,7 @@ summary:before {
 summary:after {
   right: 30px;
   top: 15px;
-  background: url(../img/faq-toggle.png) no-repeat;
+  background: url(/img/faq-toggle.png) no-repeat;
   width: 20px;
   height: 36px;
   content: "";
@@ -663,7 +663,7 @@ details[open] summary ~ * {
 
 .attent1::before {
   position: absolute;
-  content: url(../img/icon-romb-small.svg);
+  content: url(/img/icon-romb-small.svg);
   left: -50px;
 }
 
@@ -795,7 +795,7 @@ details[open] summary ~ * {
 
 @media (max-width: 1024px) {
   .intro {
-    background: url(../img/planshet-screen-1.png) top right no-repeat
+    background: url(/img/planshet-screen-1.png) top right no-repeat
       transparent;
     background-size: 1024px 100vh;
   }
@@ -1060,7 +1060,7 @@ details[open] summary ~ * {
 
 @media (max-width: 480px) {
   .intro {
-    background: url(../img/mobile-screen-1.png) top right no-repeat transparent;
+    background: url(/img/mobile-screen-1.png) top right no-repeat transparent;
     background-size: 480px 100vh;
   }
   .trail-location-black > p {
@@ -1136,14 +1136,14 @@ details[open] summary ~ * {
   .title::before {
     position: absolute;
     left: -57px;
-    content: url(../img/small-title-left-line.svg);
+    content: url(/img/small-title-left-line.svg);
     top: -3px;
   }
 
   .title::after {
     position: absolute;
     right: -60px;
-    content: url(../img/small-title-right-line.svg);
+    content: url(/img/small-title-right-line.svg);
     top: -3px;
   }
   .size-card-elem-h2 {
@@ -1344,7 +1344,7 @@ a.link:hover {
     position: absolute;
     
     left: -84px;
-    content: url(../img/title-left-line.png);
+    content: url(/img/title-left-line.png);
     margin-top: 32px;
   }
   
@@ -1352,7 +1352,7 @@ a.link:hover {
     position: absolute;
    
     right: -84px;
-    content: url(../img/title-right-line.png);
+    content: url(/img/title-right-line.png);
     margin-top: 32px;
   }
   
@@ -1367,7 +1367,7 @@ a.link:hover {
       position: absolute;
       
       left: -60px;
-      content: url(../img/title-left-line-mob.svg);
+      content: url(/img/title-left-line-mob.svg);
       margin-top: 30px;
     }
     
@@ -1375,7 +1375,7 @@ a.link:hover {
       position: absolute;
      
       right: -60px;
-      content: url(../img/title-right-line-mob.svg);
+      content: url(/img/title-right-line-mob.svg);
       margin-top: 30px;
     }
     

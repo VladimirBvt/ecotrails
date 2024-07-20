@@ -58,7 +58,7 @@ addEventListener("load", () => {
     CotColor[0].style.fill = "black";
     document.querySelector(
       ".container-location"
-    ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="../img/map-orange.svg"
+    ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
    alt="location"><div class="line-location"></div>`;
     $(".line-location").css("background-color", "#F28123");
   });
@@ -68,7 +68,7 @@ document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
 //   document.querySelector(
 //     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="../img/map-orange.svg"
+//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
 //   alt="location"><div class="line-location"></div>`;
 //   $(".line-location").css("background-color", "#F28123");
 });
@@ -173,18 +173,18 @@ for (let j = 0; j < catalogCard.length; j++) {
     cardImgLocation.classList.remove("trail-location-black");
     cardImgLocation.classList.add("trail-location-white");
     cardImgColor[0].innerHTML =
-      '<img src="../img/dist-white.svg" alt="Длина тропы">';
+      '<img src="/img/dist-white.svg" alt="Длина тропы">';
     cardImgColor[2].innerHTML =
-      '<img src="../img/duration-white.svg" alt="Длительность тропы">';
+      '<img src="/img/duration-white.svg" alt="Длительность тропы">';
     if (difficulty_easy !== null)
       difficulty_easy.innerHTML =
-        '<img src="../img/difficulty-white.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-white.svg" alt="Сложность тропы">';
     if (difficulty_medium !== null)
       difficulty_medium.innerHTML =
-        '<img src="../img/difficulty-medium-white.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-medium-white.svg" alt="Сложность тропы">';
     if (difficulty_hard !== null)
       difficulty_hard.innerHTML =
-        '<img src="../img/difficulty-hard-white.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-hard-white.svg" alt="Сложность тропы">';
   };
 }
 // }, 200);
@@ -207,18 +207,18 @@ for (let j = 0; j < catalogCard.length; j++) {
     cardImgLocation.classList.add("trail-location-black");
     cardImgLocation.classList.remove("trail-location-white");
     cardImgColor[0].innerHTML =
-      '<img src="../img/dist-orange.svg" alt="Длина тропы">';
+      '<img src="/img/dist-orange.svg" alt="Длина тропы">';
     cardImgColor[2].innerHTML =
-      '<img src="../img/duration-orange.svg" alt="Длительность тропы">';
+      '<img src="/img/duration-orange.svg" alt="Длительность тропы">';
     if (difficulty_easy !== null)
       difficulty_easy.innerHTML =
-        '<img src="../img/difficulty-easy.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-easy.svg" alt="Сложность тропы">';
     if (difficulty_medium !== null)
       difficulty_medium.innerHTML =
-        '<img src="../img/difficulty-medium.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-medium.svg" alt="Сложность тропы">';
     if (difficulty_hard !== null)
       difficulty_hard.innerHTML =
-        '<img src="../img/difficulty-hard.svg" alt="Сложность тропы">';
+        '<img src="/img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
 // }, 200);

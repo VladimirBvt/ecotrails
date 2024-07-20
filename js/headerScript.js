@@ -309,9 +309,9 @@ if (window.pageYOffset < HeighOne || window.pageYOffset === 0) {
   }
   if (window.pageYOffset < HeighOne || window.pageYOffset === 0) {
     document.querySelector(".href-logo").innerHTML =
-      '<img class="logo-picture" src="./img/Logo-utp.svg" alt="logo-white">';
+      '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
     icon_location.innerHTML =
-      '<img class="icon-header" src="./img/map-white.svg" alt="map-bl">';
+      '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
    // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
@@ -353,9 +353,9 @@ if (window.pageYOffset >= HeighTwo) {
 
   if (window.pageYOffset >= HeighTwo || window.pageYOffset === 0) {
     document.querySelector(".href-logo").innerHTML =
-      '<img class="logo-picture" src="./img/Logo-other.svg" alt="logo-black">';
+      '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
     icon_location.innerHTML =
-      '<img class="icon-header" src="./img/map-black.svg" alt="map-bl">';
+      '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
     // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
@@ -542,7 +542,7 @@ document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
 //     document.querySelector(
 //     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="./img/map-orange.svg"
+//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
 //   alt="location"><div class="line-location"></div>`;
 //   $(".line-location").css("background-color", "#F28123");
 });
@@ -649,9 +649,9 @@ window.addEventListener("scroll", function ScrollHead() {
     };
     if (y < HeighOne || y === 0) {
       document.querySelector(".href-logo").innerHTML =
-        '<img class="logo-picture" src="./img/Logo-utp.svg" alt="logo-white">';
+        '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
       icon_location.innerHTML =
-        '<img class="icon-header" src="./img/map-white.svg" alt="map-bl">';
+        '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
     //   document
     //     .querySelector(".icon-header-cotalog")
     //     .addEventListener("click", () => {
@@ -745,9 +745,9 @@ window.addEventListener("scroll", function ScrollHead() {
 
     if (y >= HeighTwo || y === 0) {
       document.querySelector(".href-logo").innerHTML =
-        '<img class="logo-picture" src="./img/Logo-other.svg" alt="logo-black">';
+        '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
       icon_location.innerHTML =
-        '<img class="icon-header" src="./img/map-black.svg" alt="map-bl">';
+        '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
     //   document
     //     .querySelector(".icon-header-cotalog")
     //     .addEventListener("click", () => {

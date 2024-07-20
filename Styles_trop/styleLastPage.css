@@ -297,14 +297,14 @@ a.link:hover {
 .eco-trail::before {
   position: absolute;
   left: -84px;
-  content: url(../img/title-left-line.svg);
+  content: url(/img/title-left-line.svg);
   top: -3px;
 }
 
 .eco-trail::after {
   position: absolute;
   right: -84px;
-  content: url(../img/title-right-line.svg);
+  content: url(/img/title-right-line.svg);
   top: -3px;
 }
 
@@ -538,10 +538,10 @@ a.link:hover {
   background-color: #f28123;
 }
 .swiper-left-btn {
-  background: url(../img/leftarrow.svg) no-repeat;
+  background: url(/img/leftarrow.svg) no-repeat;
 }
 .swiper-right-btn {
-  background: url(../img/rightarrow.svg) no-repeat;
+  background: url(/img/rightarrow.svg) no-repeat;
 }
 
 .swiper-left-btn,
@@ -568,7 +568,7 @@ a.link:hover {
 .h3::before {
   position: absolute;
   left: -50px;
-  content: url(../img/dot_green.svg);
+  content: url(/img/dot_green.svg);
   top: -1px;
 }
 
@@ -667,7 +667,7 @@ a.link:hover {
 
 .attent1::before {
   position: absolute;
-  content: url(../img/icon-romb-small.svg);
+  content: url(/img/icon-romb-small.svg);
   left: -50px;
 }
 
@@ -684,7 +684,7 @@ a.link:hover {
 }
 .attent2::before {
   position: absolute;
-  content: url(../img/icon-romb-small.svg);
+  content: url(/img/icon-romb-small.svg);
   left: -50px;
 }
 
@@ -1409,7 +1409,7 @@ a.link:hover {
   .eco-trail::before {
     position: absolute;
     left: -56px;
-    content: url(../img/small-title-left-line.svg);
+    content: url(/img/small-title-left-line.svg);
     top: 28px;
   }
 
@@ -1417,7 +1417,7 @@ a.link:hover {
     position: absolute;
     right: -56px;
 
-    content: url(../img/small-title-right-line.svg);
+    content: url(/img/small-title-right-line.svg);
     top: 28px;
   }
   .h2 {

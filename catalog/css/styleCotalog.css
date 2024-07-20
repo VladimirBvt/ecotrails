@@ -193,14 +193,14 @@ a {
 .title::before {
   position: absolute;
   left: -84px;
-  content: url(../../img/title-left-line.png);
+  content: url(/img/title-left-line.png);
   top: -3px;
 }
 
 .title::after {
   position: absolute;
   right: -84px;
-  content: url(../../img/title-right-line.png);
+  content: url(/img/title-right-line.png);
   top: -3px;
 }
 
@@ -430,7 +430,7 @@ a {
 }
 
 .trail-location-black > p {
-  background: url(../../img/location-black.svg) no-repeat;
+  background: url(/img/location-black.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-style: normal;
@@ -442,7 +442,7 @@ a {
   overflow: hidden;
 }
 .trail-location-white > p {
-  background: url(../../img/location-white.svg) no-repeat;
+  background: url(/img/location-white.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
   font-style: normal;
@@ -632,14 +632,14 @@ a {
     position: absolute;
     top: 10px;
     left: 135px;
-    content: url(../../img/small-title-right-line.svg);
+    content: url(/img/small-title-right-line.svg);
     z-index: 100;
   }
   .title::before {
     position: absolute;
     top: 10px;
     right: 135px;
-    content: url(../../img/small-title-left-line.svg);
+    content: url(/img/small-title-left-line.svg);
     z-index: 100;
   }
   .title {
