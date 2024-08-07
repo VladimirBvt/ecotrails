@@ -24,8 +24,7 @@ ymaps.ready(function () {
       top: "16px",
       left: "64px",
     },
-  });
-  // Западный котлин
+  });  
 
   var myPolyline = new ymaps.Polyline(
     [
