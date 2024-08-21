@@ -462,6 +462,19 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
+/* Изменение цвета (иконок) по наведению мыши */
+/* Карта */
+.container-location .icon-header:hover {
+  content: url('/img/map-orange.svg'); /* Замените на путь к вашей оранжевой иконке */
+}
+
+/* Поиск */
+#search:hover {
+  content: url('/img/search-orange.svg'); /* Замените на путь к вашей оранжевой иконке */
+}
+
+
 .otstup-icon-search {
   width: 40px;
 }
