@@ -581,13 +581,13 @@
   text-align: center;
   margin-top: 45px;
 }
-.line-location {
+/* .line-location {
   position: absolute;
   top: 66px;
   width: 22px;
   height: 1px;
   background-color: #1f271b;
-}
+} */
 .container-navigation-icon {
   width: 40px;
   height: 40px;
@@ -696,9 +696,9 @@
     -webkit-animation: none;
     animation: none;
   }
-  .line-location {
+  /* .line-location {
     display: none;
-  }
+  } */
   .container-navigation-icon:nth-child(2) {
     padding: 0;
   }

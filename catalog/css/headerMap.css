@@ -625,13 +625,13 @@
   text-align: center;
   margin-top: 45px;
 }
-.line-location {
+/* .line-location {
   position: absolute;
   top: 66px;
   width: 22px;
   height: 1px;
   background-color:#F28123;
-}
+} */
 .container-navigation-icon {
   width: 40px;
   height: 40px;
@@ -740,9 +740,9 @@
     -webkit-animation: none;
     animation: none;
   }
-  .line-location {
+  /* .line-location {
     display: none;
-  }
+  } */
   .container-navigation-icon:nth-child(2) {
     padding: 0;
   }

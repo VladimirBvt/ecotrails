@@ -350,12 +350,13 @@ if (window.pageYOffset >= HeighTwo) {
       text_center[i].style.color = "black";
     }
   }
-
+  
+// Светляй хедер на главной
   if (window.pageYOffset >= HeighTwo || window.pageYOffset === 0) {
     document.querySelector(".href-logo").innerHTML =
       '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
     icon_location.innerHTML =
-      '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
+      '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
     // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
@@ -396,7 +397,8 @@ search.addEventListener("click", () => {
       "border-bottom": "solid 1px white",
       color: "white",
     });
-    document.querySelector(".line-location").hidden = true;
+    // Линия на главной не убирается при вызове поиска
+    // document.querySelector(".line-location").hidden = true;
   }
   if (temph >= HeighOne) {
     if ($(window).width() <= 480) {
@@ -419,6 +421,7 @@ search.addEventListener("click", () => {
       "border-bottom": "solid 1px black",
       color: "black",
     });
+    // Линия на белом футере на главной
     document.querySelector(".line-location").hidden = true;
   }
   
@@ -543,7 +546,7 @@ document.querySelector(".container-location").addEventListener("click", () => {
 //     document.querySelector(
 //     ".container-location"
 //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
-//   alt="location"><div class="line-location"></div>`;
+//   alt="location"><!-- <div class="line-location"></div> -->`;
 //   $(".line-location").css("background-color", "#F28123");
 });
 
@@ -743,11 +746,13 @@ window.addEventListener("scroll", function ScrollHead() {
       }
     };
 
+    // Светляй хедер на главной
     if (y >= HeighTwo || y === 0) {
       document.querySelector(".href-logo").innerHTML =
         '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
+      // Замена иконки карты над линией чёрной
       icon_location.innerHTML =
-        '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
+        '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
     //   document
     //     .querySelector(".icon-header-cotalog")
     //     .addEventListener("click", () => {
