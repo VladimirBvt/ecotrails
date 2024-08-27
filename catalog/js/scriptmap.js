@@ -6258,33 +6258,33 @@ ymaps.ready(function () {
       hintContent: "Бугаиная тропа",
 
       // Тут контент карточки тропы
-      balloonContent: `<a href="lenoblast/bugaina-tropa/"><figure id="BugainaTropa" class="catalog-item">
-    <img src="lenoblast/bugaina-tropa/img/for-slider.jpg" alt="Экотропа Бугаиная тропа" class="trail-img">
+      balloonContent: `<a href="lenoblast/bugainaya-tropa/"><figure id="BugainaTropa" class="catalog-item">
+    <img src="lenoblast/bugainaya-tropa/img/for-slider.jpg" alt="Экотропа Бугаиная тропа" class="trail-img">
     <figcaption class="trail-info">
-        <a href="lenoblast/bugaina-tropa/" class="trail-title-link">
+        <a href="lenoblast/bugainaya-tropa/" class="trail-title-link">
             <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
                 title="Экотропа Бугаиная тропа">Бугаиная тропа
             </h2>
         </a>
-        <a href="lenoblast/bugaina-tropa/" id="trail-location" class="trail-location-black"
+        <a href="lenoblast/bugainaya-tropa/" id="trail-location" class="trail-location-black"
             title="Ленинградская область, пос. Лисий Нос">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
             Ленинградская область, пос.&nbsp;Лисий Нос</p>
         </a>
         <div class="trail-spec">
-            <a href="lenoblast/bugaina-tropa/" class="trail-distance">
+            <a href="lenoblast/bugainaya-tropa/" class="trail-distance">
                 <div class="img-card-color">
                     <img src="/img/dist-orange.svg" alt="Длина тропы">
                 </div>
                 <p id="color-letters-cot" class="black-color">0,7 км</p>
             </a>
-            <a href="lenoblast/bugaina-tropa/" class="trail-difficulty">
+            <a href="lenoblast/bugainaya-tropa/" class="trail-difficulty">
                 <div id="easy" class="img-card-color">
                     <img src="/img/difficulty-easy.svg" alt="Сложность тропы">
                 </div>
                 <p id="color-letters-cot" class="black-color">Простая</p>
             </a>
-            <a href="lenoblast/bugaina-tropa/" class="trail-duration">
+            <a href="lenoblast/bugainaya-tropa/" class="trail-duration">
                 <div class="img-card-color">
                     <img src="/img/duration-orange.svg" alt="Длительность тропы">
                 </div>

@@ -290,7 +290,7 @@ for (let j = 0; j < catalogCard.length; j++) {
 //   location.pathname = "catalog/lenoblast/u-lukomoriya/";
 // });
 // document.querySelector("#BugainaTropa").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/bugaina-tropa/";
+//   location.pathname = "catalog/lenoblast/bugainaya-tropa/";
 // });
 // document.querySelector("#TrynTropa").addEventListener("click", () => {
 //   location.pathname = "catalog/lenoblast/tryn-tropa/";

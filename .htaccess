@@ -14,7 +14,5 @@ RewriteRule . /index.php [L]
 </IfModule>
 ErrorDocument 404 https://eco-trails.ru/404
 
-Redirect 301 /rakovye-ozyora/ /catalog/lenoblast/rakovye-ozyora/
-Redirect 301 /dudergofskie-vysoty/ /catalog/lenoblast/dudergofskie-vysoty/
-Redirect 301 /sestroreckoe-boloto/ /catalog/lenoblast/sestroreckoe-boloto/
+Redirect 301 /catalog/lenoblast/bugaina-tropa/ /catalog/lenoblast/bugainaya-tropa/
 # END WordPress
