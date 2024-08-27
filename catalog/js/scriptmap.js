@@ -6173,7 +6173,7 @@ ymaps.ready(function () {
   // Добавляем линию на карту.
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // .............................................................Бугаина Тропа (лисий нос)
+  // .............................................................Бугаинаяя Тропа (лисий нос)
   var myPolyline = new ymaps.Polyline(
     [
       // Указываем координаты вершин.
@@ -6227,17 +6227,7 @@ ymaps.ready(function () {
       [59.9989728652386, 30.0239229850901],
       [59.9990615299123, 30.0239229850901],
       [59.9991475075408, 30.0238639764917],
-      [59.9993785713309, 30.0236172132623],
-      [59.9999320431176, 30.0233543567788],
-      [60.0001093670584, 30.0230915002953],
-      [60.0002248957853, 30.0229949407708],
-      [60.0003001235759, 30.0227320842873],
-      [60.0003726644881, 30.0221527271401],
-      [60.0005043124189, 30.0213480644357],
-      [60.0005687928373, 30.0210047416818],
-      [60.0006090930403, 30.0208867244851],
-      [60.0007111866676, 30.0208545379769],
-      [60.0010335855203, 30.0209725551736],
+      [59.99928453,30.02371914],     
 
     ],
     [],
@@ -6265,15 +6255,15 @@ ymaps.ready(function () {
   var startPoint = new ymaps.Placemark(
     [59.999131386805, 30.0327850036753],
     {
-      hintContent: "Бугаина тропа",
+      hintContent: "Бугаиная тропа",
 
       // Тут контент карточки тропы
       balloonContent: `<a href="lenoblast/bugaina-tropa/"><figure id="BugainaTropa" class="catalog-item">
-    <img src="lenoblast/bugaina-tropa/img/for-slider.jpg" alt="Экотропа Бугаина тропа" class="trail-img">
+    <img src="lenoblast/bugaina-tropa/img/for-slider.jpg" alt="Экотропа Бугаиная тропа" class="trail-img">
     <figcaption class="trail-info">
         <a href="lenoblast/bugaina-tropa/" class="trail-title-link">
             <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
-                title="Экотропа Бугаина тропа">Бугаина тропа
+                title="Экотропа Бугаиная тропа">Бугаиная тропа
             </h2>
         </a>
         <a href="lenoblast/bugaina-tropa/" id="trail-location" class="trail-location-black"
@@ -6286,7 +6276,7 @@ ymaps.ready(function () {
                 <div class="img-card-color">
                     <img src="/img/dist-orange.svg" alt="Длина тропы">
                 </div>
-                <p id="color-letters-cot" class="black-color">1 км</p>
+                <p id="color-letters-cot" class="black-color">0,7 км</p>
             </a>
             <a href="lenoblast/bugaina-tropa/" class="trail-difficulty">
                 <div id="easy" class="img-card-color">
@@ -6313,7 +6303,7 @@ ymaps.ready(function () {
   );
 
   var endPoint = new ymaps.Placemark(
-    [60.0010335855203, 30.0209725551736],
+    [59.99928453,30.02371914],
     {
       hintContent: "Конец экотропы",
       ////balloonContent: "Это Конец экотропы",
