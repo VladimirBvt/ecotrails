@@ -172,7 +172,7 @@ ymaps.ready(function () {
     [44.5750880713317,38.0963596218673],
     {
       hintContent: "Начало маршрута",
-    //   balloonContent: `Начало маршрута Каменный столб `,
+    
     },
     {
       iconLayout: "default#image",
