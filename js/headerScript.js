@@ -34,6 +34,15 @@ function HiddAnimFAQ() {
   document.querySelector("#animation3").hidden = true;
 }
 
+// Изменение цвета иконок
+// Поиск
+let firstStroke = window.getComputedStyle(search).getPropertyValue("stroke");
+
+search.addEventListener("mouseover", DispAnimSearchIcon);
+function DispAnimSearchIcon() {
+
+}
+
 // document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
 //   CotColor[1].style.fill = "#F28123";
 //   CotColor[0].style.fill = "#F28123";
@@ -312,7 +321,7 @@ if (window.pageYOffset < HeighOne || window.pageYOffset === 0) {
       '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
     icon_location.innerHTML =
       '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-   // document
+    // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
     //     CotColor[1].style.fill = "#F28123";
@@ -350,8 +359,8 @@ if (window.pageYOffset >= HeighTwo) {
       text_center[i].style.color = "black";
     }
   }
-  
-// Светляй хедер на главной
+
+  // Светляй хедер на главной
   if (window.pageYOffset >= HeighTwo || window.pageYOffset === 0) {
     document.querySelector(".href-logo").innerHTML =
       '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
@@ -370,11 +379,11 @@ if (window.pageYOffset >= HeighTwo) {
 
 // Search style start
 if (pageYOffset < HeighOne) $(".color-search").css({ stroke: "white" });
- else if (pageYOffset >= HeighOne) $(".color-search").css({ stroke: "black" });
+else if (pageYOffset >= HeighOne) $(".color-search").css({ stroke: "black" });
 
 search.addEventListener("click", () => {
   let temph = pageYOffset;
-  if (temph < HeighOne){ 
+  if (temph < HeighOne) {
     if ($(window).width() <= 480) {
       $(".logo-header").css("display", "none");
       $(".container-location").css("display", "none");
@@ -424,7 +433,7 @@ search.addEventListener("click", () => {
     // Линия на белом футере на главной
     document.querySelector(".line-location").hidden = true;
   }
-  
+
   if (temph < HeighOne || temph === 0) {
     let elasticItems = document.querySelectorAll(".elastic a");
     elasticItems.forEach(function (elem) {
@@ -543,11 +552,11 @@ console.log($(document).height());
 
 document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
-//     document.querySelector(
-//     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
-//   alt="location"><!-- <div class="line-location"></div> -->`;
-//   $(".line-location").css("background-color", "#F28123");
+  //     document.querySelector(
+  //     ".container-location"
+  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
+  //   alt="location"><!-- <div class="line-location"></div> -->`;
+  //   $(".line-location").css("background-color", "#F28123");
 });
 
 window.addEventListener("scroll", function ScrollHead() {
@@ -655,12 +664,12 @@ window.addEventListener("scroll", function ScrollHead() {
         '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
       icon_location.innerHTML =
         '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-    //   document
-    //     .querySelector(".icon-header-cotalog")
-    //     .addEventListener("click", () => {
-    //       CotColor[1].style.fill = "#F28123";
-    //       CotColor[0].style.fill = "#F28123";
-    //     });
+      //   document
+      //     .querySelector(".icon-header-cotalog")
+      //     .addEventListener("click", () => {
+      //       CotColor[1].style.fill = "#F28123";
+      //       CotColor[0].style.fill = "#F28123";
+      //     });
       CotColor[1].style.fill = "white";
       CotColor[0].style.fill = "white";
     }
@@ -753,12 +762,12 @@ window.addEventListener("scroll", function ScrollHead() {
       // Замена иконки карты над линией чёрной
       icon_location.innerHTML =
         '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
-    //   document
-    //     .querySelector(".icon-header-cotalog")
-    //     .addEventListener("click", () => {
-    //       CotColor[1].style.fill = "#F28123";
-    //       CotColor[0].style.fill = "#F28123";
-    //     });
+      //   document
+      //     .querySelector(".icon-header-cotalog")
+      //     .addEventListener("click", () => {
+      //       CotColor[1].style.fill = "#F28123";
+      //       CotColor[0].style.fill = "#F28123";
+      //     });
       CotColor[0].style.fill = "black";
       CotColor[1].style.fill = "black";
     }
