@@ -36,17 +36,47 @@ function HiddAnimFAQ() {
 
 // Изменение цвета иконок
 // Поиск
-let firstStroke = window.getComputedStyle(search).getPropertyValue("stroke");
+// const stroke = "white"
+// let stroke = document.getElementById('search').querySelector('circle').getAttribute('stroke') // эта строка не работает
+let firstStroke = "";
 
-search.addEventListener("mouseover", DispAnimSearchIcon);
-function DispAnimSearchIcon() {
+// Цвет поиска
+// let firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
+// let n = firstStroke;
 
+search.addEventListener("mouseover", mouseInAnimSearchIcon);
+function mouseInAnimSearchIcon() {
+  // Цвет поиска - текущий цвет (белый или черный)
+  firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
+  // Цвет поиска оранжевый
+  $(".color-search").css({ stroke: "orange" });
 }
 
-// document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
-//   CotColor[1].style.fill = "#F28123";
-//   CotColor[0].style.fill = "#F28123";
-// });
+search.addEventListener("mouseout", mouseOutAnimSearchIcon);
+function mouseOutAnimSearchIcon() {
+  console.log(firstStroke);
+  $(".color-search").css({ stroke: firstStroke });
+}
+
+// search.addEventListener("mouseover", mouseInAnimSearchIcon);
+// function mouseInAnimSearchIcon() {
+//   // Цвет поиска - текущий цвет (белый или черный)
+//   firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
+//   // Цвет поиска ораньжевый
+//   $(".color-search").css({ stroke: "orange" });
+// }
+
+// search.addEventListener("mouseout", mouseOutAnimSearchIcon(firstStroke));
+// function mouseOutAnimSearchIcon() {
+//   console.log(firstStroke);
+//   $(".color-search").css({ stroke: firstStroke });
+// }
+
+// 
+document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
+  CotColor[1].style.fill = "#F28123";
+  CotColor[0].style.fill = "#F28123";
+});
 
 header.onclick = function UpperFunnction(event) {
   console.log(event.target.tagName, event.target.className);
@@ -945,6 +975,7 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
+
 // }, 200);
 // Тест анимаций с помощью jQerry
 
