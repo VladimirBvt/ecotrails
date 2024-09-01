@@ -36,41 +36,23 @@ function HiddAnimFAQ() {
 
 // Изменение цвета иконок
 // Поиск
-// const stroke = "white"
-// let stroke = document.getElementById('search').querySelector('circle').getAttribute('stroke') // эта строка не работает
-let firstStroke = "";
-
 // Цвет поиска
-// let firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
-// let n = firstStroke;
+let firstStroke = "";
 
 search.addEventListener("mouseover", mouseInAnimSearchIcon);
 function mouseInAnimSearchIcon() {
+  console.log('Current Color:', firstStroke);
   // Цвет поиска - текущий цвет (белый или черный)
-  firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
+  firstStroke = getComputedStyle(search.querySelector('circle')).stroke; // Позволяет получить именно тот цвет, который видит пользователь
   // Цвет поиска оранжевый
-  $(".color-search").css({ stroke: "orange" });
+  $(".color-search").css({ stroke: "#f28123" });
 }
 
 search.addEventListener("mouseout", mouseOutAnimSearchIcon);
-function mouseOutAnimSearchIcon() {
-  console.log(firstStroke);
+function mouseOutAnimSearchIcon() {  
   $(".color-search").css({ stroke: firstStroke });
 }
 
-// search.addEventListener("mouseover", mouseInAnimSearchIcon);
-// function mouseInAnimSearchIcon() {
-//   // Цвет поиска - текущий цвет (белый или черный)
-//   firstStroke = document.getElementById('search').querySelector('circle').getAttribute('stroke');
-//   // Цвет поиска ораньжевый
-//   $(".color-search").css({ stroke: "orange" });
-// }
-
-// search.addEventListener("mouseout", mouseOutAnimSearchIcon(firstStroke));
-// function mouseOutAnimSearchIcon() {
-//   console.log(firstStroke);
-//   $(".color-search").css({ stroke: firstStroke });
-// }
 
 // 
 document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
@@ -496,6 +478,7 @@ search.addEventListener("click", () => {
     tempSearchColor[2].style.stroke = "black";
   }
 });
+
 
 header.addEventListener("click", () => {
   const TempSearch = document.querySelector("#search-close");
