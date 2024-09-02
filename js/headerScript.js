@@ -34,10 +34,51 @@ function HiddAnimFAQ() {
   document.querySelector("#animation3").hidden = true;
 }
 
-// document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
-//   CotColor[1].style.fill = "#F28123";
-//   CotColor[0].style.fill = "#F28123";
-// });
+// Изменение цвета иконок
+// Поиск
+// Цвет поиска
+let firstSearchStroke = "";
+
+search.addEventListener("mouseover", mouseInAnimSearchIcon);
+function mouseInAnimSearchIcon() {
+  console.log('Current Color:', firstSearchStroke);
+  // Цвет поиска - текущий цвет (белый или черный)
+  firstSearchStroke = getComputedStyle(search.querySelector('circle')).stroke; // Позволяет получить именно тот цвет, который видит пользователь
+  // Цвет поиска оранжевый
+  $(".color-search").css({ stroke: "#f28123" });
+}
+
+search.addEventListener("mouseout", mouseOutAnimSearchIcon);
+function mouseOutAnimSearchIcon() {
+  $(".color-search").css({ stroke: firstSearchStroke });
+}
+
+// Иконка карты (линия)
+const lineLocation = document.querySelector('.line-location');
+let originalLineColor = ""; // Переменная для сохранения исходного цвета линии
+
+icon_location.addEventListener("mouseover", mouseInAnimMapIcon);
+// Функция для изменения линии на оранжевую при наведении мыши
+function mouseInAnimMapIcon() {
+  // Сохраняем текущий цвет линии
+  originalLineColor = lineLocation.style.backgroundColor;
+
+  // Меняем линию на оранжевую
+  lineLocation.style.backgroundColor = '#F28123';
+}
+
+icon_location.addEventListener("mouseout", mouseOutAnimMapIcon);
+// Функция для изменения линии на оранжевую при наведении мыши
+function mouseOutAnimMapIcon() {
+  // Возвращаем исходный цвет линии
+  lineLocation.style.backgroundColor = originalLineColor;
+}
+
+// 
+document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
+  CotColor[1].style.fill = "#F28123";
+  CotColor[0].style.fill = "#F28123";
+});
 
 header.onclick = function UpperFunnction(event) {
   console.log(event.target.tagName, event.target.className);
@@ -312,7 +353,7 @@ if (window.pageYOffset < HeighOne || window.pageYOffset === 0) {
       '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
     icon_location.innerHTML =
       '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-   // document
+    // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
     //     CotColor[1].style.fill = "#F28123";
@@ -351,11 +392,12 @@ if (window.pageYOffset >= HeighTwo) {
     }
   }
 
+  // Светляй хедер на главной
   if (window.pageYOffset >= HeighTwo || window.pageYOffset === 0) {
     document.querySelector(".href-logo").innerHTML =
       '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
     icon_location.innerHTML =
-      '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
+      '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
     // document
     //   .querySelector(".icon-header-cotalog")
     //   .addEventListener("click", () => {
@@ -369,11 +411,11 @@ if (window.pageYOffset >= HeighTwo) {
 
 // Search style start
 if (pageYOffset < HeighOne) $(".color-search").css({ stroke: "white" });
- else if (pageYOffset >= HeighOne) $(".color-search").css({ stroke: "black" });
+else if (pageYOffset >= HeighOne) $(".color-search").css({ stroke: "black" });
 
 search.addEventListener("click", () => {
   let temph = pageYOffset;
-  if (temph < HeighOne){ 
+  if (temph < HeighOne) {
     if ($(window).width() <= 480) {
       $(".logo-header").css("display", "none");
       $(".container-location").css("display", "none");
@@ -396,7 +438,8 @@ search.addEventListener("click", () => {
       "border-bottom": "solid 1px white",
       color: "white",
     });
-    document.querySelector(".line-location").hidden = true;
+    // Линия на главной не убирается при вызове поиска
+    // document.querySelector(".line-location").hidden = true;
   }
   if (temph >= HeighOne) {
     if ($(window).width() <= 480) {
@@ -419,9 +462,10 @@ search.addEventListener("click", () => {
       "border-bottom": "solid 1px black",
       color: "black",
     });
+    // Линия на белом футере на главной
     document.querySelector(".line-location").hidden = true;
   }
-  
+
   if (temph < HeighOne || temph === 0) {
     let elasticItems = document.querySelectorAll(".elastic a");
     elasticItems.forEach(function (elem) {
@@ -454,6 +498,7 @@ search.addEventListener("click", () => {
     tempSearchColor[2].style.stroke = "black";
   }
 });
+
 
 header.addEventListener("click", () => {
   const TempSearch = document.querySelector("#search-close");
@@ -540,11 +585,11 @@ console.log($(document).height());
 
 document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
-//     document.querySelector(
-//     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
-//   alt="location"><div class="line-location"></div>`;
-//   $(".line-location").css("background-color", "#F28123");
+  //     document.querySelector(
+  //     ".container-location"
+  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
+  //   alt="location"><!-- <div class="line-location"></div> -->`;
+  //   $(".line-location").css("background-color", "#F28123");
 });
 
 window.addEventListener("scroll", function ScrollHead() {
@@ -652,12 +697,12 @@ window.addEventListener("scroll", function ScrollHead() {
         '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
       icon_location.innerHTML =
         '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-    //   document
-    //     .querySelector(".icon-header-cotalog")
-    //     .addEventListener("click", () => {
-    //       CotColor[1].style.fill = "#F28123";
-    //       CotColor[0].style.fill = "#F28123";
-    //     });
+      //   document
+      //     .querySelector(".icon-header-cotalog")
+      //     .addEventListener("click", () => {
+      //       CotColor[1].style.fill = "#F28123";
+      //       CotColor[0].style.fill = "#F28123";
+      //     });
       CotColor[1].style.fill = "white";
       CotColor[0].style.fill = "white";
     }
@@ -743,17 +788,19 @@ window.addEventListener("scroll", function ScrollHead() {
       }
     };
 
+    // Светляй хедер на главной
     if (y >= HeighTwo || y === 0) {
       document.querySelector(".href-logo").innerHTML =
         '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
+      // Замена иконки карты над линией чёрной
       icon_location.innerHTML =
-        '<img class="icon-header" src="img/map-black.svg" alt="map-bl">';
-    //   document
-    //     .querySelector(".icon-header-cotalog")
-    //     .addEventListener("click", () => {
-    //       CotColor[1].style.fill = "#F28123";
-    //       CotColor[0].style.fill = "#F28123";
-    //     });
+        '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
+      //   document
+      //     .querySelector(".icon-header-cotalog")
+      //     .addEventListener("click", () => {
+      //       CotColor[1].style.fill = "#F28123";
+      //       CotColor[0].style.fill = "#F28123";
+      //     });
       CotColor[0].style.fill = "black";
       CotColor[1].style.fill = "black";
     }
@@ -931,6 +978,7 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
+
 // }, 200);
 // Тест анимаций с помощью jQerry
 

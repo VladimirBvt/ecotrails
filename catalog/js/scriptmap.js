@@ -60,8 +60,8 @@ addEventListener("load", () => {
       ".container-navigation-icon"
     );
     imgHeadColor[1].innerHTML = `<img class="icon-header" src="/img/map-black.svg"
-  alt="location"><div class="line-location"></div>`;
-    $('.line-location').css("background-color", "black")
+  alt="location"><!-- <div class="line-location"></div> -->`;
+    // $('.line-location').css("background-color", "black")
   });
 
 });

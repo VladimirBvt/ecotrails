@@ -476,6 +476,18 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
+/* Изменение цвета (иконок) по наведению мыши */
+/* Карта */
+.container-location .icon-header:hover {
+  content: url('/img/map-orange.svg'); /* Замените на путь к вашей оранжевой иконке */
+}
+
+/* Поиск */
+#search:hover {
+  content: url('/img/search-orange.svg'); /* Замените на путь к вашей оранжевой иконке */
+}
+
 .otstup-icon-search {
   width: 40px;
 }
@@ -622,13 +634,13 @@
   text-align: center;
   margin-top: 45px;
 }
-.line-location {
+/* .line-location {
   position: absolute;
   top: 66px;
   width: 22px;
   height: 1px;
   background-color: #1f271b;
-}
+} */
 .container-navigation-icon {
   width: 40px;
   height: 40px;
@@ -737,9 +749,9 @@
     -webkit-animation: none;
     animation: none;
   }
-  .line-location {
+  /* .line-location {
     display: none;
-  }
+  } */
   .container-navigation-icon:nth-child(2) {
     padding: 0;
   }

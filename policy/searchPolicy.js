@@ -19,7 +19,7 @@ search.addEventListener("click", () => {
       </svg></li>`
   );
   document.querySelector(".otstup-icon-search").hidden = false;
-  document.querySelector(".line-location").hidden = true;
+  // document.querySelector(".line-location").hidden = true;
 
   const TempSearch = document.querySelector("#search-close");
   TempSearch.addEventListener("click", () => {
@@ -31,7 +31,7 @@ search.addEventListener("click", () => {
     document.querySelector("#cont-search").remove();
     document.querySelector("#search").hidden = false;
     document.querySelector(".otstup-icon-search").hidden = true;
-    document.querySelector(".line-location").hidden = false;
+    // document.querySelector(".line-location").hidden = false;
   });
 });
 

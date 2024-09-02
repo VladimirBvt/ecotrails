@@ -743,6 +743,26 @@
   padding-top: 6px;
 }
 
+/* Изменение цвета по наведению */
+/* Карта */
+.container-location .icon-header:hover {
+  content: url('/img/map-orange-main.svg');
+}
+
+/* .line-location {
+  position: absolute; 
+  margin-left: 18px;
+  width: 22px;
+  height: 1px; 
+  background-color: rgb(255, 254, 254);
+} */
+
+/* F28123 */
+/* .line-location:hover {
+  color: rgb(242, 129, 35);
+} */
+
+
 /* Адаптив под планшет и мобилу */
 
 @media (max-width: 1530px) {

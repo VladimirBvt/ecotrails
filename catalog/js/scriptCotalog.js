@@ -59,8 +59,8 @@ addEventListener("load", () => {
     document.querySelector(
       ".container-location"
     ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-   alt="location"><div class="line-location"></div>`;
-    $(".line-location").css("background-color", "#F28123");
+   alt="location"><!-- <div class="line-location"></div> -->`;
+    // $(".line-location").css("background-color", "#F28123");
   });
 });
 
@@ -69,7 +69,7 @@ document.querySelector(".container-location").addEventListener("click", () => {
 //   document.querySelector(
 //     ".container-location"
 //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-//   alt="location"><div class="line-location"></div>`;
+//   alt="location"><!-- <div class="line-location"></div> -->`;
 //   $(".line-location").css("background-color", "#F28123");
 });
 // const scripts = document.querySelectorAll('#innerScriptMap')
