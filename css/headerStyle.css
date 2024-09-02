@@ -744,8 +744,10 @@
 }
 
 /* Изменение цвета по наведению */
-/* Поиск на тёмном фоне */
-
+/* Карта */
+.container-location .icon-header:hover {
+  content: url('/img/map-orange-main.svg');
+}
 
 
 /* Адаптив под планшет и мобилу */
