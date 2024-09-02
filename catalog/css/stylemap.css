@@ -83,6 +83,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 3px;
+  cursor: default;
 }
 .switch-list-icon {
     border-radius: 4px 0 0 4px;
