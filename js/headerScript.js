@@ -37,22 +37,42 @@ function HiddAnimFAQ() {
 // Изменение цвета иконок
 // Поиск
 // Цвет поиска
-let firstStroke = "";
+let firstSearchStroke = "";
 
 search.addEventListener("mouseover", mouseInAnimSearchIcon);
 function mouseInAnimSearchIcon() {
-  console.log('Current Color:', firstStroke);
+  console.log('Current Color:', firstSearchStroke);
   // Цвет поиска - текущий цвет (белый или черный)
-  firstStroke = getComputedStyle(search.querySelector('circle')).stroke; // Позволяет получить именно тот цвет, который видит пользователь
+  firstSearchStroke = getComputedStyle(search.querySelector('circle')).stroke; // Позволяет получить именно тот цвет, который видит пользователь
   // Цвет поиска оранжевый
   $(".color-search").css({ stroke: "#f28123" });
 }
 
 search.addEventListener("mouseout", mouseOutAnimSearchIcon);
-function mouseOutAnimSearchIcon() {  
-  $(".color-search").css({ stroke: firstStroke });
+function mouseOutAnimSearchIcon() {
+  $(".color-search").css({ stroke: firstSearchStroke });
 }
 
+// Иконка карты (линия)
+const lineLocation = document.querySelector('.line-location');
+let originalLineColor = ""; // Переменная для сохранения исходного цвета линии
+
+icon_location.addEventListener("mouseover", mouseInAnimMapIcon);
+// Функция для изменения линии на оранжевую при наведении мыши
+function mouseInAnimMapIcon() {
+  // Сохраняем текущий цвет линии
+  originalLineColor = lineLocation.style.backgroundColor;
+
+  // Меняем линию на оранжевую
+  lineLocation.style.backgroundColor = '#F28123';
+}
+
+icon_location.addEventListener("mouseout", mouseOutAnimMapIcon);
+// Функция для изменения линии на оранжевую при наведении мыши
+function mouseOutAnimMapIcon() {
+  // Возвращаем исходный цвет линии
+  lineLocation.style.backgroundColor = originalLineColor;
+}
 
 // 
 document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
