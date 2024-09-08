@@ -249,6 +249,36 @@ const regionSelect = document.getElementById('region-select');
     regionSelect.addEventListener('change', function() {
         const selectedRegion = this.value;
 
+        // Если выбран не "all", ищем соответствующую карточку
+        let newRegion = selectedRegion;
+        if (selectedRegion !== 'all') {
+            cards.forEach(card => {
+                const locationElement = card.querySelector('#trail-location');
+                if (locationElement) {
+                    const region = locationElement.getAttribute('title').split(',')[0].trim();
+
+                    if (region === selectedRegion) {
+                        const hrefValue = card.getAttribute('href');
+                        // Извлекаем первую часть до "/"
+                        newRegion = hrefValue.split('/')[0];
+                    }
+                }
+            });
+        }
+
+        // Обновляем URL без перезагрузки страницы с новым значением region
+        const newUrl = newRegion === 'all' 
+            ? window.location.pathname 
+            : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
+        
+        history.pushState(null, '', newUrl);
+
+        // Фильтруем карточки по выбранному региону
+        filterCards(selectedRegion);
+    });
+
+    // Функция фильтрации карточек
+    function filterCards(selectedRegion) {
         cards.forEach(card => {
             const locationElement = card.querySelector('#trail-location');
             if (locationElement) {
@@ -261,6 +291,18 @@ const regionSelect = document.getElementById('region-select');
                 }
             }
         });
+    }
+
+    // Применяем фильтрацию при загрузке страницы
+    window.addEventListener('load', function() {
+        const params = new URLSearchParams(window.location.search);
+        const selectedRegion = params.get('region') || 'all';  // По умолчанию 'all'
+
+        // Устанавливаем выбранное значение в выпадающем списке
+        regionSelect.value = selectedRegion;
+
+        // Применяем фильтрацию
+        filterCards(selectedRegion);
     });
 
 // document.querySelector("#VDNH").addEventListener("click", () => {
