@@ -66,11 +66,11 @@ addEventListener("load", () => {
 
 document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
-//   document.querySelector(
-//     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-//   alt="location"><!-- <div class="line-location"></div> -->`;
-//   $(".line-location").css("background-color", "#F28123");
+  //   document.querySelector(
+  //     ".container-location"
+  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
+  //   alt="location"><!-- <div class="line-location"></div> -->`;
+  //   $(".line-location").css("background-color", "#F28123");
 });
 // const scripts = document.querySelectorAll('#innerScriptMap')
 // for(let i =0;i<scripts.length;i++){
@@ -225,85 +225,87 @@ for (let j = 0; j < catalogCard.length; j++) {
 
 // Фильтр
 const regionSelect = document.getElementById('region-select');
-    const cards = document.querySelectorAll('.trail-link');
-    const regions = new Set();
+const cards = document.querySelectorAll('.trail-link');
+const regions = new Set();
 
-    // Извлекаем уникальные регионы из title карточек
+// Извлекаем уникальные регионы из title карточек
+cards.forEach(card => {
+  const locationElement = card.querySelector('#trail-location');
+  if (locationElement) {
+    const region = locationElement.getAttribute('title').split(',')[0].trim();
+    regions.add(region); // Добавляем уникальные регионы в Set
+  }
+});
+
+// Заполняем выпадающий список уникальными регионами
+regions.forEach(region => {
+  const option = document.createElement('option');
+  option.value = region;
+  option.textContent = region;
+  regionSelect.appendChild(option);
+});
+
+// Обработчик изменения значения выпадающего списка
+regionSelect.addEventListener('change', function () {
+  const selectedRegion = this.value;
+
+  // Если выбран не "all", ищем соответствующую карточку
+  let newRegion = selectedRegion;
+  if (selectedRegion !== 'all') {
     cards.forEach(card => {
-        const locationElement = card.querySelector('#trail-location');
-        if (locationElement) {
-            const region = locationElement.getAttribute('title').split(',')[0].trim();
-            regions.add(region); // Добавляем уникальные регионы в Set
+      const locationElement = card.querySelector('#trail-location');
+      if (locationElement) {
+        const region = locationElement.getAttribute('title').split(',')[0].trim();
+
+        if (region === selectedRegion) {
+          const hrefValue = card.getAttribute('href');
+          // Извлекаем первую часть до "/"
+          newRegion = hrefValue.split('/')[0];
         }
+      }
     });
+  }
 
-    // Заполняем выпадающий список уникальными регионами
-    regions.forEach(region => {
-        const option = document.createElement('option');
-        option.value = region;
-        option.textContent = region;
-        regionSelect.appendChild(option);
-    });
+  // Обновляем URL без перезагрузки страницы с новым значением region
+  const newUrl = newRegion === 'all'
+    ? window.location.pathname
+    : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
-    // Обработчик изменения значения выпадающего списка
-    regionSelect.addEventListener('change', function() {
-        const selectedRegion = this.value;
+  history.pushState(null, '', newUrl);
 
-        // Если выбран не "all", ищем соответствующую карточку
-        let newRegion = selectedRegion;
-        if (selectedRegion !== 'all') {
-            cards.forEach(card => {
-                const locationElement = card.querySelector('#trail-location');
-                if (locationElement) {
-                    const region = locationElement.getAttribute('title').split(',')[0].trim();
+  // Фильтруем карточки по выбранному региону
+  filterCards(selectedRegion);
+});
 
-                    if (region === selectedRegion) {
-                        const hrefValue = card.getAttribute('href');
-                        // Извлекаем первую часть до "/"
-                        newRegion = hrefValue.split('/')[0];
-                    }
-                }
-            });
-        }
+// Функция фильтрации карточек
+function filterCards(selectedRegion) {
+  cards.forEach(card => {
+    const locationElement = card.querySelector('#trail-location');
+    if (locationElement) {
+      const region = locationElement.getAttribute('title').split(',')[0].trim();
 
-        // Обновляем URL без перезагрузки страницы с новым значением region
-        const newUrl = newRegion === 'all' 
-            ? window.location.pathname 
-            : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
-        
-        history.pushState(null, '', newUrl);
-
-        // Фильтруем карточки по выбранному региону
-        filterCards(selectedRegion);
-    });
-
-    // Функция фильтрации карточек
-    function filterCards(selectedRegion) {
-        cards.forEach(card => {
-            const locationElement = card.querySelector('#trail-location');
-            if (locationElement) {
-                const region = locationElement.getAttribute('title').split(',')[0].trim();
-
-                if (selectedRegion === 'all' || region === selectedRegion) {
-                    card.style.display = ''; // Показываем карточки выбранного региона
-                } else {
-                    card.style.display = 'none'; // Скрываем карточки другого региона
-                }
-            }
-        });
+      if (selectedRegion === 'all' || region === selectedRegion) {
+        card.style.display = ''; // Показываем карточки выбранного региона
+      } else {
+        card.style.display = 'none'; // Скрываем карточки другого региона
+      }
     }
+  });
+}
 
-    // Применяем фильтрацию при загрузке страницы
-    window.addEventListener('load', function() {
-        const params = new URLSearchParams(window.location.search);
-        const selectedRegion = params.get('region') || 'all';  // По умолчанию 'all'
+// Применяем фильтрацию при загрузке страницы
+window.addEventListener('load', function () {
+  const params = new URLSearchParams(window.location.search);
+  const selectedRegion = params.get('region') || 'all';  // По умолчанию 'all'
 
-        // Устанавливаем выбранное значение в выпадающем списке
-        regionSelect.value = selectedRegion;
+  // Устанавливаем выбранное значение в выпадающем списке
+  regionSelect.value = selectedRegion;
 
-        // Применяем фильтрацию
-        filterCards(selectedRegion);
-    });
+  // Применяем фильтрацию
+  filterCards(selectedRegion);
+});
+
+// что сделать: убрать all, т.к. его нет вообще. Написать, что при загрузке страницы не работает. Спросить, вернувшись к удачному фильтру, как сделать, чтобы была транслитерация региона в латиницу
 
 // document.querySelector("#VDNH").addEventListener("click", () => {
 //   location.pathname = "/vozdushnaya-tropa/";
