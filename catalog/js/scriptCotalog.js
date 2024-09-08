@@ -223,6 +223,46 @@ for (let j = 0; j < catalogCard.length; j++) {
 }
 // }, 200);
 
+// Фильтр
+const regionSelect = document.getElementById('region-select');
+    const cards = document.querySelectorAll('.trail-link');
+    const regions = new Set();
+
+    // Извлекаем уникальные регионы из title карточек
+    cards.forEach(card => {
+        const locationElement = card.querySelector('#trail-location');
+        if (locationElement) {
+            const region = locationElement.getAttribute('title').split(',')[0].trim();
+            regions.add(region); // Добавляем уникальные регионы в Set
+        }
+    });
+
+    // Заполняем выпадающий список уникальными регионами
+    regions.forEach(region => {
+        const option = document.createElement('option');
+        option.value = region;
+        option.textContent = region;
+        regionSelect.appendChild(option);
+    });
+
+    // Обработчик изменения значения выпадающего списка
+    regionSelect.addEventListener('change', function() {
+        const selectedRegion = this.value;
+
+        cards.forEach(card => {
+            const locationElement = card.querySelector('#trail-location');
+            if (locationElement) {
+                const region = locationElement.getAttribute('title').split(',')[0].trim();
+
+                if (selectedRegion === 'all' || region === selectedRegion) {
+                    card.style.display = ''; // Показываем карточки выбранного региона
+                } else {
+                    card.style.display = 'none'; // Скрываем карточки другого региона
+                }
+            }
+        });
+    });
+
 // document.querySelector("#VDNH").addEventListener("click", () => {
 //   location.pathname = "/vozdushnaya-tropa/";
 // });
