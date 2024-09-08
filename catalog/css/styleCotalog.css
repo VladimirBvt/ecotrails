@@ -287,7 +287,7 @@ a {
 
 .back-scroll {
   background-color: #f3f7ed;
-  height: 110px;
+  height: 80px;
 }
 .switch-btn {
   display: -webkit-box;
@@ -543,6 +543,29 @@ a {
   }
 }
 @media (max-width: 480px) {
+  
+  /* Мини-кнопки переключения "Список - карта" */
+  .switch-btn-text {
+    display: none;
+  }
+
+  .switch-btn-text2 {
+    display: none;
+  }
+
+  .switch-list-icon {
+    width: auto;
+  }
+
+  .switch-map-icon {
+    width: auto;
+  }
+
+  .switch-btn {
+    width: auto;
+  }
+
+  /*  */
   .size-card-elem-h2 {
     width: 272px;
     height: 58px;
@@ -578,7 +601,7 @@ a {
     top: 60px;
   }
   .back-scroll {
-    height: 50px;
+    height: 40px;
   }
   .catalog-items {
     display: -ms-grid;
