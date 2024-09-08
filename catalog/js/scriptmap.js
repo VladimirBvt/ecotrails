@@ -9367,7 +9367,7 @@ ymaps.ready(function () {
   //   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
 
-  // // Абрау-Дюрсо (Ботаническая тропа)
+  // Абрау-Дюрсо (Ботаническая тропа)
 
   // var myPolyline = new ymaps.Polyline(
   //   [
