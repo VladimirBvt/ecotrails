@@ -224,6 +224,7 @@ for (let j = 0; j < catalogCard.length; j++) {
 // }, 200);
 
 // Фильтр
+// Фильтр
 const regionSelect = document.getElementById('region-select');
 const cards = document.querySelectorAll('.trail-link');
 const regions = new Set();
@@ -249,18 +250,19 @@ regions.forEach(region => {
 regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
 
-  // Если выбран не "all", ищем соответствующую карточку
   let newRegion = selectedRegion;
+
+  // Если выбран не "all", ищем соответствующую карточку
   if (selectedRegion !== 'all') {
     cards.forEach(card => {
       const locationElement = card.querySelector('#trail-location');
       if (locationElement) {
         const region = locationElement.getAttribute('title').split(',')[0].trim();
 
+        // Если регион совпадает, берём соответствующее значение из href
         if (region === selectedRegion) {
           const hrefValue = card.getAttribute('href');
-          // Извлекаем первую часть до "/"
-          newRegion = hrefValue.split('/')[0];
+          newRegion = hrefValue.split('/')[0]; // Извлекаем первую часть до "/"
         }
       }
     });
@@ -268,7 +270,7 @@ regionSelect.addEventListener('change', function () {
 
   // Обновляем URL без перезагрузки страницы с новым значением region
   const newUrl = newRegion === 'all'
-    ? window.location.pathname
+    ? window.location.pathname  // Без параметра "region=all"
     : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
   history.pushState(null, '', newUrl);
@@ -279,24 +281,51 @@ regionSelect.addEventListener('change', function () {
 
 // Функция фильтрации карточек
 function filterCards(selectedRegion) {
+  let cardsFound = false;
+
   cards.forEach(card => {
     const locationElement = card.querySelector('#trail-location');
     if (locationElement) {
       const region = locationElement.getAttribute('title').split(',')[0].trim();
 
+      // Сравниваем region с selectedRegion
       if (selectedRegion === 'all' || region === selectedRegion) {
         card.style.display = ''; // Показываем карточки выбранного региона
+        cardsFound = true;
       } else {
         card.style.display = 'none'; // Скрываем карточки другого региона
       }
     }
   });
+
+  // Если не нашлось карточек, отображаем сообщение
+  if (!cardsFound) {
+    console.error("No cards found for the selected region.");
+  }
 }
 
 // Применяем фильтрацию при загрузке страницы
 window.addEventListener('load', function () {
   const params = new URLSearchParams(window.location.search);
-  const selectedRegion = params.get('region') || 'all';  // По умолчанию 'all'
+  const selectedRegionHref = params.get('region') || 'all';  // По умолчанию 'all'
+
+  let selectedRegion = 'all';
+
+  // Находим совпадение между параметром из href и region в title
+  if (selectedRegionHref !== 'all') {
+    cards.forEach(card => {
+      const locationElement = card.querySelector('#trail-location');
+      if (locationElement) {
+        const region = locationElement.getAttribute('title').split(',')[0].trim();
+        const hrefValue = card.getAttribute('href').split('/')[0];
+
+        // Сравниваем значение из href с параметром в URL
+        if (hrefValue === selectedRegionHref) {
+          selectedRegion = region;
+        }
+      }
+    });
+  }
 
   // Устанавливаем выбранное значение в выпадающем списке
   regionSelect.value = selectedRegion;
@@ -305,7 +334,7 @@ window.addEventListener('load', function () {
   filterCards(selectedRegion);
 });
 
-// что сделать: убрать all, т.к. его нет вообще. Написать, что при загрузке страницы не работает. Спросить, вернувшись к удачному фильтру, как сделать, чтобы была транслитерация региона в латиницу
+
 
 // document.querySelector("#VDNH").addEventListener("click", () => {
 //   location.pathname = "/vozdushnaya-tropa/";
