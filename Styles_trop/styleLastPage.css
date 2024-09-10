@@ -375,7 +375,7 @@ a.link:hover {
 }
 
 /* Отспуп до футера */
-.info__trail:last-child {
+.info__trail {
   padding-bottom: 112px;
 }
 
@@ -403,8 +403,8 @@ a.link:hover {
   }
 
     /* Отспуп до футера */
-  .info__trail:last-child {
-    padding-bottom: 0;
+  .info__trail {
+    padding-bottom: 72px;
   }
 }
 
