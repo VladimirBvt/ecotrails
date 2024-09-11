@@ -76,7 +76,6 @@ addEventListener("load", () => {
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
     zoom: 4,
-    // center: [43.11647713180365, 43.14838930518987],
     center: [55.601755, 38.602655],
     controls: [],
   });
@@ -100,6 +99,45 @@ ymaps.ready(function () {
       top: "200px",
       left: "15px",
     },
+  });
+
+  // Координаты для каждого региона
+  const regionCoordinates = {
+    "lenoblast": [59.93863, 30.31413],
+    "krasnodarsky-krai": [45.04059, 38.97693],
+    "nizhegorodskaya-oblast": [56.32867, 44.00205],
+    "yaroslavskaya-oblast": [57.62608, 39.88447],
+    "moskva": [55.751244, 37.618423],
+    "krym": [44.95212, 34.10242],
+    "stavropolsky-krai": [45.04331, 41.9691],
+    "kabardino-balkariya": [43.4846, 43.6072]
+  };
+
+  // Функция для центрирования карты на выбранный регион
+  function centerMapOnRegion(region) {
+    const coordinates = regionCoordinates[region];
+
+    if (coordinates) {
+      myMap.setCenter(coordinates, 8);
+    } else {
+      myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
+    }
+  }
+
+  // Логика фильтрации регионов и центрирования карты
+  const regionSelect = document.getElementById('region-select');
+
+  regionSelect.addEventListener('change', function () {
+    const selectedRegion = this.value;
+    centerMapOnRegion(selectedRegion);
+  });
+
+  window.addEventListener('load', function () {
+    const params = new URLSearchParams(window.location.search);
+    const selectedRegion = params.get('region') || 'all';
+
+    // Центрируем карту на выбранный регион при загрузке страницы
+    centerMapOnRegion(selectedRegion);
   });
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------ 

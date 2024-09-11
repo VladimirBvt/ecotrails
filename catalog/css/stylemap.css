@@ -43,8 +43,8 @@
   z-index: 999;
   top: 114px;
   right: 191px;
-  width: 30px;
-  height: 30px;
+  width: auto;
+  height: auto;
   border-radius: 4px;
   background: #f7fbfb;
   margin: 0;
