@@ -482,3 +482,27 @@ img {
     height: 85%;
   }
 }
+
+@media (max-width: 480px) {
+  
+  /* Мини-кнопки переключения "Список - карта" */
+  .switch-btn-text {
+    display: none;
+  }
+
+  .switch-btn-text2 {
+    display: none;
+  }
+
+  .switch-list-icon {
+    width: auto;
+  }
+
+  .switch-map-icon {
+    width: auto;
+  }
+
+  .switch-btn {
+    width: auto;
+  }
+}
