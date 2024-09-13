@@ -410,9 +410,14 @@ a.link:hover {
   padding-bottom: 112px;
 }
 
-/* Отступ от рекламы */
-.ads {
+/* Отступ нижней рекламы */
+.ads-bottom {
   padding-bottom: 112px;
+}
+
+/* Отступ рекламы */
+.ads-art {
+  padding-top: 112px;
 }
 
 /* Мобила */
@@ -445,9 +450,14 @@ a.link:hover {
     padding-bottom: 72px;
   }
 
-  /* Отступ от рекламы */
-  .ads {
+  /* Отступ нижней рекламы */
+  .ads-bottom {
     padding-bottom: 72px;
+  }
+
+  /* Отступ рекламы */
+  .ads-art {
+    padding-top: 72px;
   }
 }
 
