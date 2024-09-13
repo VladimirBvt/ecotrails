@@ -410,14 +410,19 @@ a.link:hover {
   padding-bottom: 112px;
 }
 
+/* Отступ нижней рекламы сестр*/
+.ads {
+  margin-bottom: 112px;
+}
+
 /* Отступ нижней рекламы */
 .ads-bottom {
-  padding-bottom: 112px;
+  margin-bottom: 112px;
 }
 
 /* Отступ рекламы */
 .ads-art {
-  padding-top: 112px;
+  margin-top: 112px;
 }
 
 /* Мобила */
@@ -452,18 +457,18 @@ a.link:hover {
 
    /* Отступ нижней рекламы сестр*/
    .ads {
-    padding-bottom: 72px;    
+    margin-bottom: 72px;    
   }
 
   /* Отступ нижней рекламы */
   .ads-bottom {
-    padding-bottom: 72px;
+    margin-bottom: 72px;
     height: 200px;
   }
 
   /* Отступ рекламы */
   .ads-art {
-    padding-top: 72px;
+    margin-top: 72px;
     height: 200px;
   }
 }
@@ -1720,18 +1725,18 @@ a.link:hover {
 
   /* Отступ нижней рекламы сестр*/
   .ads {
-    padding-bottom: 72px;
+    margin-bottom: 72px;
   }
 
   /* Отступ нижней рекламы */
   .ads-bottom {
-    padding-bottom: 72px;
+    margin-bottom: 72px;
     height: 200px;
   }
 
   /* Отступ рекламы */
   .ads-art {
-    padding-top: 72px;
+    margin-top: 72px;
     height: 200px;
   }
 }
