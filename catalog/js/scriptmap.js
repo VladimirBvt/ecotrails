@@ -129,8 +129,18 @@ ymaps.ready(function () {
 
   regionSelect.addEventListener('change', function () {
     const selectedRegion = this.value;
+    console.log(selectedRegion);
     centerMapOnRegion(selectedRegion);
+
+     // Обновляем URL без перезагрузки страницы с новым значением region
+  const newUrl = selectedRegion === 'all'
+  ? window.location.pathname  // Без параметра "region=all"
+  : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
+
+  history.pushState(null, '', newUrl);
   });
+
+
 
   window.addEventListener('load', function () {
     const params = new URLSearchParams(window.location.search);
