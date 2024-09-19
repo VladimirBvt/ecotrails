@@ -26,6 +26,8 @@
 //   }
 // });
 
+let filtredRegion = `all`;
+
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
   const switchList = document.querySelector(".switch-list-icon");
@@ -50,9 +52,8 @@ addEventListener("load", () => {
     mapPath.setAttribute("fill", "black");
     listPath.setAttribute("stroke", "white");
     colorSwitchText1.style.color = "white";
-    colorSwitchText2.style.color = "black";
-    // location = "index.html";
-    location.pathname = "/catalog";
+    colorSwitchText2.style.color = "black";    
+    location.pathname = `/catalog/`
     const CotColor = document.querySelectorAll(".cotalog-color");
     CotColor[1].style.fill = "#F28123";
     CotColor[0].style.fill = "#F28123";
@@ -126,25 +127,32 @@ ymaps.ready(function () {
 
   // Логика фильтрации регионов и центрирования карты
   const regionSelect = document.getElementById('region-select');
+  
 
   regionSelect.addEventListener('change', function () {
     const selectedRegion = this.value;
+    filtredRegion = selectedRegion;
     console.log(selectedRegion);
+    console.log(filtredRegion);
     centerMapOnRegion(selectedRegion);
 
-     // Обновляем URL без перезагрузки страницы с новым значением region
-  const newUrl = selectedRegion === 'all'
-  ? window.location.pathname  // Без параметра "region=all"
-  : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
+    // Обновляем URL без перезагрузки страницы с новым значением region
+    const newUrl = selectedRegion === 'all'
+      ? window.location.pathname  // Без параметра "region=all"
+      : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
 
-  history.pushState(null, '', newUrl);
+    // Отвечает за изменение адреса
+    history.pushState(null, '', newUrl);
+
   });
-
 
 
   window.addEventListener('load', function () {
     const params = new URLSearchParams(window.location.search);
     const selectedRegion = params.get('region') || 'all';
+
+    // Устанавливаем выбранное значение в выпадающем списке
+  regionSelect.value = selectedRegion;
 
     // Центрируем карту на выбранный регион при загрузке страницы
     centerMapOnRegion(selectedRegion);
