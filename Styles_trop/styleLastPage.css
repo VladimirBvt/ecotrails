@@ -463,13 +463,13 @@ a.link:hover {
   /* Отступ нижней рекламы */
   .ads-bottom {
     margin-bottom: 72px;
-    height: 200px;
+    max-height: 200px;
   }
 
   /* Отступ рекламы */
   .ads-art {
     margin-top: 72px;
-    height: 200px;
+    max-height: 200px;
   }
 }
 
@@ -1432,6 +1432,23 @@ a.link:hover {
   .swiper-right-btn {
     display: none;
   }
+
+  /* Отступ нижней рекламы сестр*/
+  /* .ads {
+    margin-bottom: 72px;
+  } */
+
+  /* Отступ нижней рекламы */
+  .ads-bottom {
+    /* margin-bottom: 72px; */
+    max-height: 200px;
+  }
+
+  /* Отступ рекламы */
+  .ads-art {
+    /* margin-top: 72px; */
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1731,12 +1748,12 @@ a.link:hover {
   /* Отступ нижней рекламы */
   .ads-bottom {
     margin-bottom: 72px;
-    height: 200px;
+    max-height: 200px;
   }
 
   /* Отступ рекламы */
   .ads-art {
     margin-top: 72px;
-    height: 200px;
+    max-height: 200px;
   }
 }
