@@ -1,3 +1,21 @@
+// Динамисечкое изменение заголовка в Open Graph
+// Ждем, пока DOM полностью загрузится
+// window.addEventListener('DOMContentLoaded', (event) => {
+
+//   // Получаем значение из <title>
+//   const pageTitle = document.querySelector('title').textContent;
+
+//   // Находим тег <meta property="og:title">
+//   const metaOgTitle = document.querySelector('meta[property="og:title"]');
+
+//   // Если такой тег найден, обновляем его атрибут content значением из <title>
+//   if (metaOgTitle) {
+//     metaOgTitle.setAttribute('content', pageTitle);
+//   } else {
+//     console.error('Тег <meta property="og:title"> не найден');
+//   }
+// });
+
 const swiper = new Swiper(".image-slider", {
   // Optional parameters
   slidesPerView: 1,
