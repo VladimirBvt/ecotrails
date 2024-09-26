@@ -594,6 +594,7 @@
 .elastic a.hide {
   display: none;
 }
+
 .searchmark {
   color: #f28123;
   font-weight: 600;
@@ -762,6 +763,10 @@
   color: rgb(242, 129, 35);
 } */
 
+/* Сброс стиля на ссылке иконки карты в хедере */
+/* a.header-icon.keychainify-checked {  
+  line-height: 0;
+} */
 
 /* Адаптив под планшет и мобилу */
 

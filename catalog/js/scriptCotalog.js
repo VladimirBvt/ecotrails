@@ -44,6 +44,7 @@ addEventListener("load", () => {
     colorSwitchText1.style.color = "white";
   });
 
+  // При клике на переключатль карты
   switchMap.addEventListener("click", (e) => {
     swicthBtn.classList.remove("switch-list");
     swicthBtn.classList.add("switch-map");
@@ -51,27 +52,29 @@ addEventListener("load", () => {
     listPath.setAttribute("stroke", "black");
     colorSwitchText1.style.color = "black";
     colorSwitchText2.style.color = "white";
-    // location = "mappage.html";
+    
+    // Переход на карту:
     location.pathname = "/catalog/mappage.html";
     const CotColor = document.querySelectorAll(".cotalog-color");
     CotColor[1].style.fill = "black";
     CotColor[0].style.fill = "black";
-    document.querySelector(
-      ".container-location"
-    ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-   alt="location"><!-- <div class="line-location"></div> -->`;
+  //   document.querySelector(
+  //     ".container-location"
+  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
+  //  alt="location"><!-- <div class="line-location"></div> -->`;
     // $(".line-location").css("background-color", "#F28123");
   });
 });
 
-document.querySelector(".container-location").addEventListener("click", () => {
-  location.pathname = "/catalog/mappage.html";
-  //   document.querySelector(
-  //     ".container-location"
-  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-  //   alt="location"><!-- <div class="line-location"></div> -->`;
-  //   $(".line-location").css("background-color", "#F28123");
-});
+//Закоментирован переод на карту с помощью js
+// document.querySelector(".container-location").addEventListener("click", () => {
+//   location.pathname = "/catalog/mappage.html";
+//   //   document.querySelector(
+//   //     ".container-location"
+//   //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
+//   //   alt="location"><!-- <div class="line-location"></div> -->`;
+//   //   $(".line-location").css("background-color", "#F28123");
+// });
 // const scripts = document.querySelectorAll('#innerScriptMap')
 // for(let i =0;i<scripts.length;i++){
 //   scripts[i].removeAttribute('src')
