@@ -24,12 +24,16 @@
   /* box-sizing: border-box; */
 }
 .controllers {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  gap: 10px;
 }
 
 .switch-btn {
@@ -38,7 +42,12 @@
   left: 191px;
   z-index: 999;
 }
+
 .filters {
+  font-family: "Avante Book";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
   position: relative;
   z-index: 999;
   top: 114px;
@@ -46,16 +55,51 @@
   width: auto;
   height: auto;
   border-radius: 4px;
-  background: #f7fbfb;
+  background: #ffffff;
   margin: 0;
   border: none;
   cursor: pointer;
-  padding: 7px;
-  -webkit-filter: drop-shadow(-4px 6px 6px rgba(0, 0, 0, 0.1))
-    drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
-  filter: drop-shadow(-4px 6px 6px rgba(0, 0, 0, 0.1))
-    drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+  padding: 10px;
+  /* убираем стандартную стрелку браузера */
+  appearance: none;
+  /* для Safari */
+  -webkit-appearance: none;
+  /* для Firefox */
+  -moz-appearance: none;
+  /* изображение стрелки*/
+  background-image: url("/img/faq-toggle.png");  
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 10px;
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(31, 39, 27, 0.15)) drop-shadow(0px 0px 5px rgba(31, 39, 27, 0.35));
+  filter: drop-shadow(2px 2px 4px rgba(31, 39, 27, 0.15)) drop-shadow(0px 0px 5px rgba(31, 39, 27, 0.35));
+  /* Уменьшение ширины при надобности */
+  flex-shrink: 1;
+  min-width: 200px;
+  max-width: 270px;
+  /* Запрещаем перенос текста на новую строку */
+  white-space: nowrap; 
+  /* Обрезаем все, что выходит за границы */
+  overflow: hidden; 
+  /* Добавляем многоточие, если текст не помещается */ 
+  text-overflow: ellipsis; 
 }
+
+/* Стили для select в раскрытом состоянии */
+.filters:focus {
+  /* убираем стандартное выделение */
+  outline: none;
+}
+
+.filters option {
+  font-size: 16px;  
+  background-color: #ffffff;  
+  color: #000000;  
+  font-family: "Avante Book"; 
+  font-style: normal; 
+  font-size: 18px;
+}
+
 .switch-btn {
   display: -webkit-box;
   display: -ms-flexbox;

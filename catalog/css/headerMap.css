@@ -714,11 +714,12 @@
 }
 @media (max-width: 480px) {
   .controllers {
-    padding: 0;
-    max-width: 470px;
+    padding: 0;    
+    max-width: 470px;    
     margin-left: auto;
     margin-right: auto;
   }
+
   .VoidSearch {
     margin: 0;
     max-width: 392px;

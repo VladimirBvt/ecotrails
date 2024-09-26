@@ -395,25 +395,23 @@ a {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  /* line-height: 145%; */
   width: 270px;
   height: auto;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #ffffff;
   z-index: 0;
   margin: 0;
   border: none;
-  /* outline: none; */
   cursor: pointer;
   padding: 10px;
-  appearance: none;
   /* убираем стандартную стрелку браузера */
-  -webkit-appearance: none;
+  appearance: none;
   /* для Safari */
-  -moz-appearance: none;
+  -webkit-appearance: none;
   /* для Firefox */
-  background-image: url("/img/faq-toggle.png");
+  -moz-appearance: none;
   /* изображение стрелки*/
+  background-image: url("/img/faq-toggle.png");  
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 10px;
@@ -428,8 +426,7 @@ a {
   /* Обрезаем все, что выходит за границы */
   overflow: hidden; 
   /* Добавляем многоточие, если текст не помещается */ 
-  text-overflow: ellipsis;  
-  
+  text-overflow: ellipsis;    
 }
 
 /* Стили для select в раскрытом состоянии */
@@ -442,7 +439,10 @@ a {
 .filters option {
   font-size: 16px;  
   background-color: #ffffff;  
-  color: #000000;    
+  color: #000000; 
+  font-family: "Avante Book"; 
+  font-style: normal; 
+  font-size: 18px;   
 }
 
 .catalog-items {
