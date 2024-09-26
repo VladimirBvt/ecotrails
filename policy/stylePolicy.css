@@ -353,7 +353,7 @@ table {
     max-width: 320px;
   }
   .title {
-    margin: 130px auto 32px auto;
+    margin: 52px auto 32px auto;
     font-size: 24px;
     line-height: 130%;
     width: 193px;
@@ -378,5 +378,9 @@ table {
     right: -60px;
     top: 60px;
     content: url(/img/small-title-right-line.svg);
+  }
+
+  .back {
+    margin-left: 30px;
   }
 }
