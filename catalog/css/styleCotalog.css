@@ -208,14 +208,14 @@ a {
 }
 
 .title::before {  
-  content: url(/img/title-left-line.png);    
+  content: url(/img/title-left-line.svg);    
   margin: 0;
   padding: 0;
   line-height: 0;
 }
 
 .title::after {  
-  content: url(/img/title-right-line.png);  
+  content: url(/img/title-right-line.svg);  
   margin: 0;
   padding: 0;
   line-height: 0;
