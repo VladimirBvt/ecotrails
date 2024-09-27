@@ -79,6 +79,20 @@ addEventListener("load", () => {
 // for(let i =0;i<scripts.length;i++){
 //   scripts[i].removeAttribute('src')
 // }
+
+// Если не будет работать скрытие заголовка
+ // Добавляем событие на прокрутку
+//  window.addEventListener('scroll', () => {
+//   // Проверяем, если началась прокрутка
+//   if (window.scrollY > 0) {
+//       // Скрываем заголовок
+//       document.querySelector(".title").style.display = 'none';
+//   } else {
+//     // Если вернулись наверх, показываем заголовок
+//     document.querySelector(".title").style.display = 'flex';
+//   }
+// });
+
 if (window.pageYOffset > 85) {
   document.querySelector(".title").hidden = true;
   document.querySelector("#back-scroll").hidden = false;
