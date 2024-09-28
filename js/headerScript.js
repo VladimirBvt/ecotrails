@@ -353,12 +353,6 @@ if (window.pageYOffset < HeighOne || window.pageYOffset === 0) {
       '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
     icon_location.innerHTML =
       '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-    // document
-    //   .querySelector(".icon-header-cotalog")
-    //   .addEventListener("click", () => {
-    //     CotColor[1].style.fill = "#F28123";
-    //     CotColor[0].style.fill = "#F28123";
-    //   });
     CotColor[1].style.fill = "white";
     CotColor[0].style.fill = "white";
   }
@@ -398,12 +392,7 @@ if (window.pageYOffset >= HeighTwo) {
       '<img class="logo-picture" src="img/Logo-other.svg" alt="logo-black">';
     icon_location.innerHTML =
       '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
-    // document
-    //   .querySelector(".icon-header-cotalog")
-    //   .addEventListener("click", () => {
-    //     CotColor[1].style.fill = "#F28123";
-    //     CotColor[0].style.fill = "#F28123";
-    //   });
+
     CotColor[0].style.fill = "black";
     CotColor[1].style.fill = "black";
   }
@@ -438,8 +427,6 @@ search.addEventListener("click", () => {
       "border-bottom": "solid 1px white",
       color: "white",
     });
-    // Линия на главной не убирается при вызове поиска
-    // document.querySelector(".line-location").hidden = true;
   }
   if (temph >= HeighOne) {
     if ($(window).width() <= 480) {
@@ -537,9 +524,6 @@ window.addEventListener("resize", () => {
   }
 });
 
-
-
-
 window.addEventListener("scroll", function SearchTemp() {
   let y = pageYOffset;
   if (y < HeighOne || y === 0) {
@@ -585,11 +569,6 @@ console.log($(document).height());
 
 document.querySelector(".container-location").addEventListener("click", () => {
   location.pathname = "/catalog/mappage.html";
-  //     document.querySelector(
-  //     ".container-location"
-  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="img/map-orange.svg"
-  //   alt="location"><!-- <div class="line-location"></div> -->`;
-  //   $(".line-location").css("background-color", "#F28123");
 });
 
 window.addEventListener("scroll", function ScrollHead() {
@@ -697,12 +676,6 @@ window.addEventListener("scroll", function ScrollHead() {
         '<img class="logo-picture" src="img/Logo-utp.svg" alt="logo-white">';
       icon_location.innerHTML =
         '<img class="icon-header" src="img/map-white.svg" alt="map-bl">';
-      //   document
-      //     .querySelector(".icon-header-cotalog")
-      //     .addEventListener("click", () => {
-      //       CotColor[1].style.fill = "#F28123";
-      //       CotColor[0].style.fill = "#F28123";
-      //     });
       CotColor[1].style.fill = "white";
       CotColor[0].style.fill = "white";
     }
@@ -795,12 +768,6 @@ window.addEventListener("scroll", function ScrollHead() {
       // Замена иконки карты над линией чёрной
       icon_location.innerHTML =
         '<img class="icon-header" src="img/map-black-main.svg" alt="map-bl">';
-      //   document
-      //     .querySelector(".icon-header-cotalog")
-      //     .addEventListener("click", () => {
-      //       CotColor[1].style.fill = "#F28123";
-      //       CotColor[0].style.fill = "#F28123";
-      //     });
       CotColor[0].style.fill = "black";
       CotColor[1].style.fill = "black";
     }
@@ -944,9 +911,7 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="img/difficulty-hard-white.svg" alt="Сложность тропы">';
   };
 }
-// }, 200);
 
-// setTimeout(() => {
 for (let j = 0; j < catalogCard.length; j++) {
   let cardColor = catalogCard[j].querySelectorAll("#color-letters");
   let cardImgColor = catalogCard[j].querySelectorAll(".img-card-color");
@@ -978,72 +943,3 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
-
-// }, 200);
-// Тест анимаций с помощью jQerry
-
-// console.log(document.querySelector('.faq-item-title'));
-//  if ($().ready()){
-//  console.log('jqerry Подключена')
-//  $('.faq-item-title').click(()=>{
-//    $('.faq-item-title').css('width','0')
-//    $('.faq-item-title').animate({
-//    width:'+=80px'},570)}
-//     )
-//    }
-//  $('.header-text-center').click(()=>{
-//    $('.line2').css('width','0')
-//    $('.line2').animate({
-//       width:'120px'},570)}
-//     )
-//     $('.header-text-last').click(()=>{
-//      $('.line3').css('width','0')
-//      $('.line3').animate({
-//        width:'40px'},570)} )
-//  $('.header-text-first').on('click',()=>{
-//  document.querySelector('.line1').removeAttribute('style')
-//  $('.line1').animate({
-//  width:'80px'
-//  }),99999999});
-//  $('.header-text-center').on('click',()=>{
-//    document.querySelector('.line3').removeAttribute('style')
-//    $('.line2').animate({
-//    width:'120px'
-//  }),99999999});
-//   $('.header-text-last').on('click',()=>{
-//     document.querySelector('.line2').removeAttribute('style')
-//    $('.line3').animate({
-//      width:'40px'
-//   }),99999999});
-//  }
-
-//Для обновления страницы посоле нажати на кнопаку назад
-
-// let pageState = 0;
-
-// // Переход по страницам при помощи кнопок назад и вперед
-// window.addEventListener("popstate", function (event) {
-//   if (event.state && event.state.pageId <= pageState) {
-//     console.log("Going back...");
-//     location.reload();
-
-//     pageState = event.state.pageId;
-//   } else if (event.state && event.state.pageId >= pageState) {
-//     console.log("Going forward...");
-//     location.reload();
-//     pageState = event.state.pageId;
-//   }
-// });
-
-// document.addEventListener("click", function (event) {
-//   if (event.target.tagName === "A") {
-//     if (event.target.href !== window.location.href) {
-//       console.log("Navigating to a new page...");
-//       pageState++;
-//       history.pushState({ pageId: pageState }, "", event.target.href);
-//     } else {
-//       console.log("Navigating within the same page...");
-//     }
-//   }
-// });
-//Перемещение по топ экотроп

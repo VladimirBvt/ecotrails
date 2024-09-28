@@ -195,10 +195,7 @@ function updateTitleH1Description(regionHref) {
       break;
     case "kabardino-balkariya":
       regionNameRodPod = "Кабардино-Балкарии";
-      break;
-    // default:
-    //   regionNameRodPod = "России";  // Значение по умолчанию
-    //   break;
+      break;    
   }
 
   // Обновляем title, h1 и description
