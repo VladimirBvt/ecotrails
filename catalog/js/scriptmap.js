@@ -33,8 +33,6 @@ addEventListener("load", () => {
     listPath.setAttribute("stroke", "white");
     colorSwitchText1.style.color = "white";
     colorSwitchText2.style.color = "black";
-
-    // Если необходимо, можете добавить логику для обновления карты
   });
 });
 
@@ -79,19 +77,40 @@ ymaps.ready(function () {
     "kabardino-balkariya": [43.4846, 43.6072]
   };
 
-  // Функция для центрирования карты на выбранный регион
-  function centerMapOnRegion(region) {
-    const coordinates = regionCoordinates[region];
+  // Маппинг (отображение) латинских регионов на кириллические
+  const regionNamesInCyrillic = {
+    "lenoblast": "Ленинградская область",
+    "krasnodarsky-krai": "Краснодарский край",
+    "nizhegorodskaya-oblast": "Нижегородская область",
+    "yaroslavskaya-oblast": "Ярославская область",
+    "moskva": "Москва и Московская область",
+    "krym": "Республика Крым",
+    "stavropolsky-krai": "Ставропольский край",
+    "kabardino-balkariya": "Кабардино-Балкария"
+  };
 
-    if (coordinates) {
-      myMap.setCenter(coordinates, 8);
-    } else {
-      myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
-    }
-  }
+  // Сортировка регионов по алфавиту
+  const regionsSorted = Object.keys(regionCoordinates).sort();
 
   // Логика фильтрации регионов и центрирования карты
   const regionSelect = document.getElementById('region-select');
+
+  // Очистка текущих опций фильтра
+  regionSelect.innerHTML = '';
+
+  // Добавляем пункт "Все регионы"
+  const optionAll = document.createElement('option');
+  optionAll.value = 'all';
+  optionAll.textContent = 'Все регионы';
+  regionSelect.appendChild(optionAll);
+
+  // Добавляем отсортированные регионы в выпадающий список с русскими названиями
+  regionsSorted.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region;
+    option.textContent = regionNamesInCyrillic[region];  // Русское название региона
+    regionSelect.appendChild(option);
+  });
 
   // Обработчик изменения фильтра
   regionSelect.addEventListener('change', function () {
@@ -120,7 +139,16 @@ ymaps.ready(function () {
     centerMapOnRegion(selectedRegion);
   });
 
+  // Функция для центрирования карты на выбранный регион
+  function centerMapOnRegion(region) {
+    const coordinates = regionCoordinates[region];
 
+    if (coordinates) {
+      myMap.setCenter(coordinates, 8);
+    } else {
+      myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
+    }
+  }
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------ 
 
