@@ -34,17 +34,9 @@ addEventListener("load", () => {
     );
     imgHeadColor[1].innerHTML = `<img class="icon-header" src="/img/map-black.svg"
   alt="location"><!-- <div class="line-location"></div> -->`;
-    // $('.line-location').css("background-color", "black")
   });
 
 });
-// const CotColor = document.querySelectorAll(".cotalog-color");
-// document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
-//   CotColor[1].style.fill = "#F28123";
-//   CotColor[0].style.fill = "#F28123";
-// });
-
-
 
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {

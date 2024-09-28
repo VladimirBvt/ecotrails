@@ -133,9 +133,11 @@ const cards = document.querySelectorAll('.trail-link');
 const regions = new Set();
 
 // Сохраняем оригинальные значения title, h1 и description при загрузке страницы
-const originalTitle = document.querySelector('title').textContent;
-const originalH1 = document.querySelector('h1').textContent;
-const originalDescription = document.querySelector('meta[name="description"]').getAttribute('content');
+const originalTitle = document.title;
+const h1Element = document.querySelector('h1');
+const originalH1 = h1Element.textContent;
+const descriptionElement = document.querySelector('meta[name="description"]');
+const originalDescription = descriptionElement.getAttribute('content');
 
 // Извлекаем уникальные регионы из title карточек
 cards.forEach(card => {
@@ -146,57 +148,42 @@ cards.forEach(card => {
   }
 });
 
-// Заполняем выпадающий список уникальными регионами
-regions.forEach(region => {
+// Преобразуем Set в массив и сортируем его по алфавиту
+const sortedRegions = Array.from(regions).sort();
+
+// Заполняем выпадающий список уникальными регионами в алфавитном порядке
+sortedRegions.forEach(region => {
   const option = document.createElement('option');
   option.value = region;
   option.textContent = region;
   regionSelect.appendChild(option);
 });
 
-
 // Меняем title, H1 и дескрипшен
 function updateTitleH1Description(regionHref) {
   const titleElement = document.querySelector('title');
-  const descriptionElement = document.querySelector('meta[name="description"]');
-  const h1Element = document.querySelector('h1');
 
   // Если выбран "all", возвращаем значения по умолчанию
   if (regionHref === 'all') {
     titleElement.textContent = originalTitle;
     h1Element.textContent = originalH1;
     descriptionElement.setAttribute('content', originalDescription);
-    return; // Выходим из функции, так как больше ничего менять не нужно
+    return;
   }
 
   // Определяем название региона в родительном падеже
-  let regionNameRodPod;
-  switch (regionHref) {
-    case "lenoblast":
-      regionNameRodPod = "Ленинградской области";
-      break;
-    case "krasnodarsky-krai":
-      regionNameRodPod = "Краснодарского края";
-      break;
-    case "nizhegorodskaya-oblast":
-      regionNameRodPod = "Нижегородской области";
-      break;
-    case "yaroslavskaya-oblast":
-      regionNameRodPod = "Ярославской области";
-      break;
-    case "moskva":
-      regionNameRodPod = "Москвы и Московской области";
-      break;
-    case "krym":
-      regionNameRodPod = "Республики Крым";
-      break;
-    case "stavropolsky-krai":
-      regionNameRodPod = "Ставропольского края";
-      break;
-    case "kabardino-balkariya":
-      regionNameRodPod = "Кабардино-Балкарии";
-      break;    
-  }
+  const regionNameRodPodMap = {
+    "lenoblast": "Ленинградской области",
+    "krasnodarsky-krai": "Краснодарского края",
+    "nizhegorodskaya-oblast": "Нижегородской области",
+    "yaroslavskaya-oblast": "Ярославской области",
+    "moskva": "Москвы и Московской области",
+    "krym": "Республики Крым",
+    "stavropolsky-krai": "Ставропольского края",
+    "kabardino-balkariya": "Кабардино-Балкарии"
+  };
+
+  const regionNameRodPod = regionNameRodPodMap[regionHref];
 
   // Обновляем title, h1 и description
   const titleText = `Экотропы ${regionNameRodPod}`;
@@ -207,7 +194,6 @@ function updateTitleH1Description(regionHref) {
   h1Element.textContent = h1Text;
   descriptionElement.setAttribute('content', descriptionText);
 }
-
 
 // Обработчик изменения значения выпадающего списка
 regionSelect.addEventListener('change', function () {
@@ -264,9 +250,9 @@ function filterCards(selectedRegion) {
     }
   });
 
-  // Если не нашлось карточек, отображаем сообщение
+  // Если не нашлось карточек, можно показывать сообщение
   if (!cardsFound) {
-    console.error("No cards found for the selected region.");
+    console.error("В данном регионе экотроп не найдено.");
   }
 }
 
@@ -301,5 +287,5 @@ window.addEventListener('load', function () {
 
   // Обновляем title, h1 и description на основе GET-параметра
   updateTitleH1Description(selectedRegionHref);
-
 });
+
