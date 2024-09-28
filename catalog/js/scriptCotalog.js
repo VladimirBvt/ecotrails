@@ -1,30 +1,6 @@
-// let pageState = 0;
-
-// Переход по страницам при помощи кнопок назад и вперед
-// window.addEventListener("popstate", function (event) {
-//   if (event.state && event.state.pageId <= pageState) {
-//     console.log("Going back...");
-//     location.reload();
-
-//     pageState = event.state.pageId;
-//   } else if (event.state && event.state.pageId >= pageState) {
-//     console.log("Going forward...");
-//     location.reload();
-//     pageState = event.state.pageId;
-//   }
-// });
-
-// document.addEventListener("click", function (event) {
-//   if (event.target.tagName === "A") {
-//     if (event.target.href !== window.location.href) {
-//       console.log("Navigating to a new page...");
-//       pageState++;
-//       history.pushState({ pageId: pageState }, "", event.target.href);
-//     } else {
-//       console.log("Navigating within the same page...");
-//     }
-//   }
-// });
+  const title = document.querySelector(".title");
+  const backScroll = document.querySelector("#back-scroll");
+  const upperCotalog = document.querySelector(".upper_cotalog");
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -33,7 +9,7 @@ addEventListener("load", () => {
   const mapPath = document.querySelector(".map-path");
   const listPath = document.querySelector(".list-path");
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
-  const colorSwitchText2 = document.querySelector(".switch-btn-text2");
+  const colorSwitchText2 = document.querySelector(".switch-btn-text2");  
 
   switchList.addEventListener("click", (e) => {
     swicthBtn.classList.remove("switch-map");
@@ -57,121 +33,34 @@ addEventListener("load", () => {
     location.pathname = "/catalog/mappage.html";
     const CotColor = document.querySelectorAll(".cotalog-color");
     CotColor[1].style.fill = "black";
-    CotColor[0].style.fill = "black";
-  //   document.querySelector(
-  //     ".container-location"
-  //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-  //  alt="location"><!-- <div class="line-location"></div> -->`;
-    // $(".line-location").css("background-color", "#F28123");
+    CotColor[0].style.fill = "black";  
   });
 });
 
-//Закоментирован переод на карту с помощью js
-// document.querySelector(".container-location").addEventListener("click", () => {
-//   location.pathname = "/catalog/mappage.html";
-//   //   document.querySelector(
-//   //     ".container-location"
-//   //   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-//   //   alt="location"><!-- <div class="line-location"></div> -->`;
-//   //   $(".line-location").css("background-color", "#F28123");
-// });
-// const scripts = document.querySelectorAll('#innerScriptMap')
-// for(let i =0;i<scripts.length;i++){
-//   scripts[i].removeAttribute('src')
-// }
+// Настройка фиксированной части (Заголовок и Фильтр)
+function handleScroll() {
+  const y = window.scrollY;
 
-// Если не будет работать скрытие заголовка
- // Добавляем событие на прокрутку
-//  window.addEventListener('scroll', () => {
-//   // Проверяем, если началась прокрутка
-//   if (window.scrollY > 0) {
-//       // Скрываем заголовок
-//       document.querySelector(".title").style.display = 'none';
-//   } else {
-//     // Если вернулись наверх, показываем заголовок
-//     document.querySelector(".title").style.display = 'flex';
-//   }
-// });
-
-if (window.pageYOffset > 85) {
-  document.querySelector(".title").hidden = true;
-  document.querySelector("#back-scroll").hidden = false;
-  document
-    .querySelector(".upper_cotalog")
-    .classList.add("upper_cotalog_scroll");
-}
-if (window.pageYOffset < 85) {
-  document.querySelector(".title").hidden = false;
-  document.querySelector("#back-scroll").hidden = true;
-  document
-    .querySelector(".upper_cotalog")
-    .classList.remove("upper_cotalog_scroll");
-}
-window.onscroll = function ScrollOther() {
-  y = window.pageYOffset;
   if (y > 85) {
-    document.querySelector(".title").hidden = true;
-    document.querySelector("#back-scroll").hidden = false;
-    document
-      .querySelector(".upper_cotalog")
-      .classList.add("upper_cotalog_scroll");
+    title.style.display = 'none';
+    backScroll.hidden = false;
+    upperCotalog.classList.add("upper_cotalog_scroll");
+  } else {
+    title.style.display = 'flex';
+    backScroll.hidden = true;
+    upperCotalog.classList.remove("upper_cotalog_scroll");
   }
-  if (y < 85 || y === 0) {
-    document.querySelector(".title").hidden = false;
-    document.querySelector("#back-scroll").hidden = true;
-    document
-      .querySelector(".upper_cotalog")
-      .classList.remove("upper_cotalog_scroll");
-  }
-};
+}
 
-// async function loadItems(start = 0, count = 8) {
-//   const response = await fetch(
-//     `https://jsonplaceholder.typicode.com/users?start=${start}&count=${count}`
-//   );
-//   if (response.ok) {
-//     const items = await response.json();
-//     const itemList = document.querySelector(".catalog-items");
-//     items.forEach((item) => {
-//       const itemCard = document.createElement("figure");
-//       itemCard.classList.add("catalog-item");
-//       itemCard.innerHTML = `<img src="img/trail-image.png" alt="Экотропа" class="trail-img"><figcaption class="trail-info">
-//         <a href="#" class="trail-title-link">
-//             <h2 id ="color-letters-cot" class="black-color size-card-elem-h2" title="Комаровский берег">${item.name}</h2>
-//         </a>
-//         <a href="#" id="trail-location" class="trail-location-black" title="Ленинградская область, г. Сестрорецк">
-//             <p id ="color-letters-cot" class="black-color size-card-elem-p">${item.name}</p>
-//         </a>
-//         <div class="trail-spec">
-//             <a href="#" class="trail-distance">
-//             <div class="img-card-color">
-//                 <img src="img/dist-orange.svg" alt="Длина тропы">
-//                 </div>
-//                 <p id ="color-letters-cot" class="black-color">${item.id}</p>
-//             </a>
-//             <a href="#" class="trail-difficulty">
-//             <div class="img-card-color">
-//                 <img src="img/difficulty-black.svg" alt="Сложность тропы">
-//                 </div>
-//                 <p id ="color-letters-cot" class="black-color">Простая</p>
-//             </a>
-//             <a href="#" class="trail-duration">
-//             <div class="img-card-color">
-//                 <img src="img/duration-orange.svg" alt="Длительность тропы">
-//                </div>
-//                 <p id ="color-letters-cot" class="black-color">${item.name}</p>
-//             </a>
-//         </div>
-//     </figcaption>`;
-//       itemList.appendChild(itemCard);
-//     });
-//   } else {
-//     console.log(`Ошибка http ${response.status}`);
-//   }
-// }
-// loadItems();
+// Проверяем положение прокрутки при загрузке страницы
+handleScroll();
 
-// setTimeout(() => {
+// Добавляем обработчик события на прокрутку
+window.addEventListener('scroll', handleScroll);
+
+
+
+// Стилизация карточек при наведении мыши
 const catalogCard = document.querySelectorAll(".catalog-item");
 for (let j = 0; j < catalogCard.length; j++) {
   let cardColor = catalogCard[j].querySelectorAll("#color-letters-cot");
@@ -204,9 +93,7 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="/img/difficulty-hard-white.svg" alt="Сложность тропы">';
   };
 }
-// }, 200);
 
-// setTimeout(() => {
 for (let j = 0; j < catalogCard.length; j++) {
   let cardColor = catalogCard[j].querySelectorAll("#color-letters-cot");
   let cardImgColor = catalogCard[j].querySelectorAll(".img-card-color");
@@ -238,7 +125,7 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="/img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
-// }, 200);
+
 
 // Фильтр
 const regionSelect = document.getElementById('region-select');
@@ -419,133 +306,3 @@ window.addEventListener('load', function () {
   updateTitleH1Description(selectedRegionHref);
 
 });
-
-
-
-// document.querySelector("#VDNH").addEventListener("click", () => {
-//   location.pathname = "/vozdushnaya-tropa/";
-// });
-// document.querySelector("#Golisyn").addEventListener("click", () => {
-//   location.pathname = "/tropa-golicyna/";
-// });
-// document.querySelector("#Bezengi").addEventListener("click", () => {
-//   location.pathname = "/k-ledniku-bezengi/";
-// });
-// document.querySelector("#Dudergov").addEventListener("click", () => {
-//   location.pathname = "/dudergofskie-vysoty/";
-// });
-// document.querySelector("#Sestroleckoe").addEventListener("click", () => {
-//   location.pathname = "/sestroreckoe-boloto/";
-// });
-// document.querySelector("#Rakov").addEventListener("click", () => {
-//   location.pathname = "/rakovye-ozyora/";
-// });
-// document.querySelector("#Solnechnaya").addEventListener("click", () => {
-//   location.pathname = "catalog/krym/solnechnaya-tropa";
-// });
-// document.querySelector("#Big_Sevas").addEventListener("click", () => {
-//   location.pathname = "/bolshaya-sevastopolskaya-tropa";
-// });
-// document.querySelector("#Toksovskye").addEventListener("click", () => {
-//   location.pathname = "/toksovskie-vysoty";
-// });
-// document.querySelector("#Troparevo").addEventListener("click", () => {
-//   location.pathname = "catalog/troparevskaya-ecotropa/";
-// });
-// document.querySelector("#Fialka").addEventListener("click", () => {
-//   location.pathname = "catalog/krasnodarsky-krai/ecotropa-fialka/";
-// });
-// document.querySelector("#Gorizont").addEventListener("click", () => {
-//   location.pathname = "catalog/krasnodarsky-krai/ecotropa-gorizont/";
-// });
-// document.querySelector("#Krokus").addEventListener("click", () => {
-//   location.pathname = "catalog/krasnodarsky-krai/ecotropa-krokus/";
-// });
-// document.querySelector("#Bezdonnoe").addEventListener("click", () => {
-//   location.pathname = "catalog/ecotropa-u-ozera-bezdonnoe/";
-// });
-// document.querySelector("#ZapKotlin").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/zapadniy-kotlin/";
-// });
-// document.querySelector("#Sokolniki").addEventListener("click", () => {
-//   location.pathname = "catalog/moskva/tropa-zdorovia-sokolniki/";
-// });
-// document.querySelector("#Yukki").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/yukkovskie-kamy/";
-// });
-// document.querySelector("#LesnayaTropa").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/lesnaya-tropa/";
-// });
-// document.querySelector("#Komarovsky").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/komarovsky-bereg/";
-// });
-// document.querySelector("#Zheleznaya").addEventListener("click", () => {
-//   location.pathname = "catalog/stavropolsky-krai/na-goru-zheleznaya/";
-// });
-// document.querySelector("#Monrepo").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/monrepo/";
-// });
-// document.querySelector("#Lukomorie").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/u-lukomoriya/";
-// });
-// document.querySelector("#BugainaTropa").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/bugainaya-tropa/";
-// });
-// document.querySelector("#TrynTropa").addEventListener("click", () => {
-//   location.pathname = "catalog/lenoblast/tryn-tropa/";
-// });
-// document.querySelector("#ZdoroviaRH").addEventListener("click", () => {
-//   location.pathname = "catalog/krasnodarsky-krai/tropa-zdoroviya-rh/";
-// });
-// document.querySelector("#Burnakovskaya").addEventListener("click", () => {
-//   location.pathname = "catalog/nizhegorodskaya-oblast/burnakovskaya/";
-// });
-// document.querySelector("#Shmelevka").addEventListener("click", () => {
-//   location.pathname = "catalog/moskva/shmelevka/";
-// });
-
-
-
-//  window.addEventListener('scroll', async ()=>{
-//   console.log('hi')
-//    const {scrollTop,scrollHeight, clientHeight} = document.documentElement;
-//    if(scrollTop + clientHeight >= scrollHeight - 5 && document.querySelectorAll('.catalog-item').length < MAX_ITEMS);{
-//     const start = document.querySelectorAll('.catalog-item').length;
-//     await loadItems(start,8);
-//    }
-//    loadItems()
-// });
-
-// var loadItems = function(){
-//   $.ajax({
-//     url:'https://jsonplaceholder.typicode.com/posts',
-//     type:'GET',
-//     success: function(response){
-//       var items = response.items;
-//       var $itemList = $('.catalog-items');
-//     items.forEach(function(item){
-//       var $itemCard = $('<div class="item-card"></div>');
-//       $itemCard.append('<h2>'+item.title+'</h2>');
-//       $itemCard.append('<p>'+item.body+'</p>');
-//       $itemList.append($itemCard);
-//     })
-
-//     }});
-//     }
-// var loadItems = async () =>{
-//   try{
-//     const response =await fetch('https://jsonplaceholder.typicode.com/posts');
-//     const items = await response.json();
-//     const itemList = document.querySelector('.catalog-items');
-
-//     items.forEach(item => {
-//       const itemCard = document.createElement('div');
-//       itemCard.classList.add('item-card');
-//       itemCard.innerHTML = `<h2>${item.name}
-//                             <p>${item.description}`;
-//       itemList.appendChild(itemCard);
-//     });
-//   } catch (error){
-//     console.error('Ошибка загрузки элементов',error);
-//   }
-// }
