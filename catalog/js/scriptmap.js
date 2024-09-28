@@ -1,4 +1,4 @@
-let filtredRegion = `all`;
+let filtredRegion = `all`; // Глобальная переменная для хранения текущего выбранного региона
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -9,35 +9,36 @@ addEventListener("load", () => {
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
   const colorSwitchText2 = document.querySelector(".switch-btn-text2");
 
-  switchMap.addEventListener("click", (e) => {
+  // Логика переключения на список
+  switchList.addEventListener("click", () => {
     swicthBtn.classList.remove("switch-map");
     swicthBtn.classList.add("switch-list");
     mapPath.setAttribute("fill", "white");
     listPath.setAttribute("stroke", "black");
     colorSwitchText2.style.color = "white";
     colorSwitchText1.style.color = "black";
+
+    // Переход на страницу каталога с текущим фильтром региона
+    const newUrl = filtredRegion === 'all'
+      ? `/catalog/`  // Без параметра "region=all"
+      : `/catalog/?region=${encodeURIComponent(filtredRegion)}`;
+    location.href = newUrl;
   });
 
-  switchList.addEventListener("click", (e) => {
+  // Логика переключения на карту
+  switchMap.addEventListener("click", () => {
     swicthBtn.classList.remove("switch-list");
     swicthBtn.classList.add("switch-map");
     mapPath.setAttribute("fill", "black");
     listPath.setAttribute("stroke", "white");
     colorSwitchText1.style.color = "white";
-    colorSwitchText2.style.color = "black";    
-    location.pathname = `/catalog/`
-    const CotColor = document.querySelectorAll(".cotalog-color");
-    CotColor[1].style.fill = "#F28123";
-    CotColor[0].style.fill = "#F28123";
-    const imgHeadColor = document.querySelectorAll(
-      ".container-navigation-icon"
-    );
-    imgHeadColor[1].innerHTML = `<img class="icon-header" src="/img/map-black.svg"
-  alt="location"><!-- <div class="line-location"></div> -->`;
-  });
+    colorSwitchText2.style.color = "black";
 
+    // Если необходимо, можете добавить логику для обновления карты
+  });
 });
 
+// Инициализация карты
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
     zoom: 4,
@@ -91,36 +92,35 @@ ymaps.ready(function () {
 
   // Логика фильтрации регионов и центрирования карты
   const regionSelect = document.getElementById('region-select');
-  
 
+  // Обработчик изменения фильтра
   regionSelect.addEventListener('change', function () {
     const selectedRegion = this.value;
-    filtredRegion = selectedRegion;
-    console.log(selectedRegion);
-    console.log(filtredRegion);
+    filtredRegion = selectedRegion; // Сохраняем текущий выбранный регион
     centerMapOnRegion(selectedRegion);
 
     // Обновляем URL без перезагрузки страницы с новым значением region
     const newUrl = selectedRegion === 'all'
       ? window.location.pathname  // Без параметра "region=all"
       : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
-
-    // Отвечает за изменение адреса
-    history.pushState(null, '', newUrl);
-
+    
+    history.pushState(null, '', newUrl); // Отвечает за изменение адреса
   });
 
-
+  // Проверка URL при загрузке страницы и центрирование карты на выбранный регион
   window.addEventListener('load', function () {
     const params = new URLSearchParams(window.location.search);
     const selectedRegion = params.get('region') || 'all';
-
+    
     // Устанавливаем выбранное значение в выпадающем списке
-  regionSelect.value = selectedRegion;
+    regionSelect.value = selectedRegion;
+    filtredRegion = selectedRegion; // Сохраняем значение в глобальной переменной
 
     // Центрируем карту на выбранный регион при загрузке страницы
     centerMapOnRegion(selectedRegion);
   });
+
+
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------ 
 
