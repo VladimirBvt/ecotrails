@@ -1,6 +1,6 @@
 let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
 
-addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const swicthBtn = document.querySelector(".switch-btn");
   const switchList = document.querySelector(".switch-list-icon");
   const switchMap = document.querySelector(".switch-map-icon");
@@ -100,22 +100,20 @@ ymaps.ready(function () {
     const newUrl = selectedRegion === 'all'
       ? window.location.pathname  // Без параметра "region=all"
       : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
-    
+
     history.pushState(null, '', newUrl); // Отвечает за изменение адреса
   });
 
   // Проверка URL при загрузке страницы и центрирование карты на выбранный регион
-  window.addEventListener('load', function () {
-    const params = new URLSearchParams(window.location.search);
-    const selectedRegion = params.get('region') || 'all';
-    
-    // Устанавливаем выбранное значение в выпадающем списке
-    regionSelect.value = selectedRegion;
-    filtredRegion = selectedRegion; // Сохраняем значение в глобальной переменной
+  const params = new URLSearchParams(window.location.search);
+  const selectedRegion = params.get('region') || 'all';
 
-    // Центрируем карту на выбранный регион при загрузке страницы
-    centerMapOnRegion(selectedRegion);
-  });
+  // Устанавливаем выбранное значение в выпадающем списке
+  regionSelect.value = selectedRegion;
+  filtredRegion = selectedRegion; // Сохраняем значение в глобальной переменной
+
+  // Центрируем карту на выбранный регион при загрузке страницы
+  centerMapOnRegion(selectedRegion);
 
   // Функция для центрирования карты на выбранный регион
   function centerMapOnRegion(region) {
@@ -5058,7 +5056,7 @@ ymaps.ready(function () {
   //   );
   //   // Добавляем линию на карту.
   //   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
-  
+
   // // Реликтовый лес
   // var myPolyline = new ymaps.Polyline(
   //   [
@@ -9222,7 +9220,7 @@ ymaps.ready(function () {
 
   //   // Добавляем линию на карту.
   //   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
-  
+
 });
 
 //Геолокация пользователя//
