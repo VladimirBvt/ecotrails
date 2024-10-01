@@ -1,4 +1,4 @@
-let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
+// let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
 
 document.addEventListener("DOMContentLoaded", () => {
   const swicthBtn = document.querySelector(".switch-btn");

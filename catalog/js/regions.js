@@ -1,3 +1,5 @@
+let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
+
 const regionsData = [
   { value: 'lenoblast', name: 'Ленинградская область', coordinates: [59.93863, 30.31413] },
   { value: 'krasnodarsky-krai', name: 'Краснодарский край', coordinates: [45.04059, 38.97693] },

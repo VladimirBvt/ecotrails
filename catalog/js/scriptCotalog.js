@@ -1,4 +1,4 @@
-let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
+// let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
 
 const title = document.querySelector(".title");
   const backScroll = document.querySelector("#back-scroll");
