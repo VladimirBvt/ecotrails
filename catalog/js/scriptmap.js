@@ -1,4 +1,4 @@
-let filtredRegion = `all`; // Глобальная переменная для хранения текущего выбранного региона
+let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -23,16 +23,6 @@ addEventListener("load", () => {
       ? `/catalog/`  // Без параметра "region=all"
       : `/catalog/?region=${encodeURIComponent(filtredRegion)}`;
     location.href = newUrl;
-  });
-
-  // Логика переключения на карту
-  switchMap.addEventListener("click", () => {
-    swicthBtn.classList.remove("switch-list");
-    swicthBtn.classList.add("switch-map");
-    mapPath.setAttribute("fill", "black");
-    listPath.setAttribute("stroke", "white");
-    colorSwitchText1.style.color = "white";
-    colorSwitchText2.style.color = "black";
   });
 });
 
@@ -65,32 +55,20 @@ ymaps.ready(function () {
     },
   });
 
-  // Координаты для каждого региона
-  const regionCoordinates = {
-    "lenoblast": [59.93863, 30.31413],
-    "krasnodarsky-krai": [45.04059, 38.97693],
-    "nizhegorodskaya-oblast": [56.32867, 44.00205],
-    "yaroslavskaya-oblast": [57.62608, 39.88447],
-    "moskva": [55.751244, 37.618423],
-    "krym": [44.95212, 34.10242],
-    "stavropolsky-krai": [45.04331, 41.9691],
-    "kabardino-balkariya": [43.4846, 43.6072]
-  };
+  // Используем regionsData, который загружается из внешнего файла
+  const regionCoordinates = regionsData.reduce((acc, region) => {
+    acc[region.value] = region.coordinates; // Связываем регион с его координатами
+    return acc;
+  }, {});
 
   // Маппинг (отображение) латинских регионов на кириллические
-  const regionNamesInCyrillic = {
-    "lenoblast": "Ленинградская область",
-    "krasnodarsky-krai": "Краснодарский край",
-    "nizhegorodskaya-oblast": "Нижегородская область",
-    "yaroslavskaya-oblast": "Ярославская область",
-    "moskva": "Москва и Московская область",
-    "krym": "Республика Крым",
-    "stavropolsky-krai": "Ставропольский край",
-    "kabardino-balkariya": "Кабардино-Балкария"
-  };
+  const regionNamesInCyrillic = regionsData.reduce((acc, region) => {
+    acc[region.value] = region.name; // Связываем region.value с кириллическим названием
+    return acc;
+  }, {});
 
   // Сортировка регионов по алфавиту
-  const regionsSorted = Object.keys(regionCoordinates).sort();
+  const regionsSorted = regionsData.map(region => region.value).sort();
 
   // Логика фильтрации регионов и центрирования карты
   const regionSelect = document.getElementById('region-select');
@@ -149,6 +127,7 @@ ymaps.ready(function () {
       myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
     }
   }
+
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------ 
 

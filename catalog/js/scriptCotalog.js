@@ -1,4 +1,6 @@
-  const title = document.querySelector(".title");
+let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
+
+const title = document.querySelector(".title");
   const backScroll = document.querySelector("#back-scroll");
   const upperCotalog = document.querySelector(".upper_cotalog");
 
@@ -28,12 +30,16 @@ addEventListener("load", () => {
     listPath.setAttribute("stroke", "black");
     colorSwitchText1.style.color = "black";
     colorSwitchText2.style.color = "white";
-    
-    // Переход на карту:
-    location.pathname = "/catalog/mappage.html";
+ 
+
+    // Переход на страницу карты с текущим фильтром региона
+    const newUrl = filtredRegion === 'all'
+      ? `/catalog/mappage.html`  // Без параметра "region=all"
+      : `/catalog/mappage.html?region=${encodeURIComponent(filtredRegion)}`;
+    location.href = newUrl;
     const CotColor = document.querySelectorAll(".cotalog-color");
     CotColor[1].style.fill = "black";
-    CotColor[0].style.fill = "black";  
+    CotColor[0].style.fill = "black";
   });
 });
 
@@ -128,9 +134,9 @@ for (let j = 0; j < catalogCard.length; j++) {
 
 
 // Фильтр
+// Подключение regionsData (массив регионов)
 const regionSelect = document.getElementById('region-select');
 const cards = document.querySelectorAll('.trail-link');
-const regions = new Set();
 
 // Сохраняем оригинальные значения title, h1 и description при загрузке страницы
 const originalTitle = document.title;
@@ -139,27 +145,17 @@ const originalH1 = h1Element.textContent;
 const descriptionElement = document.querySelector('meta[name="description"]');
 const originalDescription = descriptionElement.getAttribute('content');
 
-// Извлекаем уникальные регионы из title карточек
-cards.forEach(card => {
-  const locationElement = card.querySelector('#trail-location');
-  if (locationElement) {
-    const region = locationElement.getAttribute('title').split(',')[0].trim();
-    regions.add(region); // Добавляем уникальные регионы в Set
-  }
-});
+// Заполняем выпадающий список уникальными регионами из regionsData в алфавитном порядке
+regionsData
+  .sort((a, b) => a.name.localeCompare(b.name))  // Сортируем по алфавиту
+  .forEach(region => {
+    const option = document.createElement('option');
+    option.value = region.value;
+    option.textContent = region.name;
+    regionSelect.appendChild(option);
+  });
 
-// Преобразуем Set в массив и сортируем его по алфавиту
-const sortedRegions = Array.from(regions).sort();
-
-// Заполняем выпадающий список уникальными регионами в алфавитном порядке
-sortedRegions.forEach(region => {
-  const option = document.createElement('option');
-  option.value = region;
-  option.textContent = region;
-  regionSelect.appendChild(option);
-});
-
-// Меняем title, H1 и дескрипшен
+// Функция обновления title, h1 и description
 function updateTitleH1Description(regionHref) {
   const titleElement = document.querySelector('title');
 
@@ -183,7 +179,7 @@ function updateTitleH1Description(regionHref) {
     "kabardino-balkariya": "Кабардино-Балкарии"
   };
 
-  const regionNameRodPod = regionNameRodPodMap[regionHref];
+  const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;
 
   // Обновляем title, h1 и description
   const titleText = `Экотропы ${regionNameRodPod}`;
@@ -198,24 +194,10 @@ function updateTitleH1Description(regionHref) {
 // Обработчик изменения значения выпадающего списка
 regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
+  filtredRegion = selectedRegion; // Сохраняем фильтр в глобальную переменную
 
   let newRegion = selectedRegion;
-
-  // Если выбран не "all", ищем соответствующую карточку
-  if (selectedRegion !== 'all') {
-    cards.forEach(card => {
-      const locationElement = card.querySelector('#trail-location');
-      if (locationElement) {
-        const region = locationElement.getAttribute('title').split(',')[0].trim();
-
-        // Если регион совпадает, берём соответствующее значение из href
-        if (region === selectedRegion) {
-          const hrefValue = card.getAttribute('href');
-          newRegion = hrefValue.split('/')[0]; // Извлекаем первую часть до "/"
-        }
-      }
-    });
-  }
+  
 
   // Обновляем URL без перезагрузки страницы с новым значением region
   const newUrl = newRegion === 'all'
@@ -225,7 +207,7 @@ regionSelect.addEventListener('change', function () {
   history.pushState(null, '', newUrl);
 
   // Фильтруем карточки по выбранному региону
-  filterCards(selectedRegion);
+  filterCards(newRegion);
 
   // Обновляем title, h1 и description на основе GET-параметра
   updateTitleH1Description(newRegion);
@@ -236,17 +218,14 @@ function filterCards(selectedRegion) {
   let cardsFound = false;
 
   cards.forEach(card => {
-    const locationElement = card.querySelector('#trail-location');
-    if (locationElement) {
-      const region = locationElement.getAttribute('title').split(',')[0].trim();
+    const hrefValue = card.getAttribute('href').split('/')[0]; // Получаем первую часть href до "/"
 
-      // Сравниваем region с selectedRegion
-      if (selectedRegion === 'all' || region === selectedRegion) {
-        card.style.display = ''; // Показываем карточки выбранного региона
-        cardsFound = true;
-      } else {
-        card.style.display = 'none'; // Скрываем карточки другого региона
-      }
+    // Сравниваем hrefValue с selectedRegion
+    if (selectedRegion === 'all' || hrefValue === selectedRegion) {
+      card.style.display = ''; // Показываем карточки выбранного региона
+      cardsFound = true;
+    } else {
+      card.style.display = 'none'; // Скрываем карточки другого региона
     }
   });
 
@@ -261,31 +240,16 @@ window.addEventListener('load', function () {
   const params = new URLSearchParams(window.location.search);
   const selectedRegionHref = params.get('region') || 'all';  // По умолчанию 'all'
 
-  let selectedRegion = 'all';
-
-  // Находим совпадение между параметром из href и region в title
-  if (selectedRegionHref !== 'all') {
-    cards.forEach(card => {
-      const locationElement = card.querySelector('#trail-location');
-      if (locationElement) {
-        const region = locationElement.getAttribute('title').split(',')[0].trim();
-        const hrefValue = card.getAttribute('href').split('/')[0];
-
-        // Сравниваем значение из href с параметром в URL
-        if (hrefValue === selectedRegionHref) {
-          selectedRegion = region;
-        }
-      }
-    });
-  }
-
   // Устанавливаем выбранное значение в выпадающем списке
-  regionSelect.value = selectedRegion;
+  regionSelect.value = selectedRegionHref;
+  filtredRegion = selectedRegionHref; // сохранение значения в глобальную переменную
 
   // Применяем фильтрацию
-  filterCards(selectedRegion);
+  filterCards(selectedRegionHref);
 
   // Обновляем title, h1 и description на основе GET-параметра
   updateTitleH1Description(selectedRegionHref);
 });
+
+
 
