@@ -15,4 +15,43 @@ RewriteRule . /index.php [L]
 ErrorDocument 404 https://eco-trails.ru/404
 
 Redirect 301 /catalog/lenoblast/bugaina-tropa/ /catalog/lenoblast/bugainaya-tropa/
+
 # END WordPress
+
+# Запрет индексации страниц с GET-параметрами region на странице /catalog/mappage.html
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=lenoblast(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=krasnodarsky-krai(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=nizhegorodskaya-oblast(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=yaroslavskaya-oblast(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=moskva(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=krym(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=stavropolsky-krai(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+
+    RewriteCond %{REQUEST_URI} ^/catalog/mappage.html$ [NC]
+    RewriteCond %{QUERY_STRING} (^|&)region=kabardino-balkariya(&|$) [NC]
+    RewriteRule ^ - [E=MAP_NOINDEX:1]
+</IfModule>
+
+# Если переменная MAP_NOINDEX установлена, запретить индексацию
+Header set X-Robots-Tag "noindex, nofollow" env=MAP_NOINDEX
