@@ -1,32 +1,6 @@
-// let pageState = 0;
+// let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
 
-// Переход по страницам при помощи кнопок назад и вперед
-// window.addEventListener("popstate", function (event) {
-//   if (event.state && event.state.pageId <= pageState) {
-//     console.log("Going back...");
-//     location.reload();
-
-//     pageState = event.state.pageId;
-//   } else if (event.state && event.state.pageId >= pageState) {
-//     console.log("Going forward...");
-//     location.reload();
-//     pageState = event.state.pageId;
-//   }
-// });
-
-// document.addEventListener("click", function (event) {
-//   if (event.target.tagName === "A") {
-//     if (event.target.href !== window.location.href) {
-//       console.log("Navigating to a new page...");
-//       pageState++;
-//       history.pushState({ pageId: pageState }, "", event.target.href);
-//     } else {
-//       console.log("Navigating within the same page...");
-//     }
-//   }
-// });
-
-addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const swicthBtn = document.querySelector(".switch-btn");
   const switchList = document.querySelector(".switch-list-icon");
   const switchMap = document.querySelector(".switch-map-icon");
@@ -35,48 +9,27 @@ addEventListener("load", () => {
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
   const colorSwitchText2 = document.querySelector(".switch-btn-text2");
 
-  switchMap.addEventListener("click", (e) => {
+  // Логика переключения на список
+  switchList.addEventListener("click", () => {
     swicthBtn.classList.remove("switch-map");
     swicthBtn.classList.add("switch-list");
     mapPath.setAttribute("fill", "white");
     listPath.setAttribute("stroke", "black");
     colorSwitchText2.style.color = "white";
     colorSwitchText1.style.color = "black";
-  });
 
-  switchList.addEventListener("click", (e) => {
-    swicthBtn.classList.remove("switch-list");
-    swicthBtn.classList.add("switch-map");
-    mapPath.setAttribute("fill", "black");
-    listPath.setAttribute("stroke", "white");
-    colorSwitchText1.style.color = "white";
-    colorSwitchText2.style.color = "black";
-    // location = "index.html";
-    location.pathname = "/catalog";
-    const CotColor = document.querySelectorAll(".cotalog-color");
-    CotColor[1].style.fill = "#F28123";
-    CotColor[0].style.fill = "#F28123";
-    const imgHeadColor = document.querySelectorAll(
-      ".container-navigation-icon"
-    );
-    imgHeadColor[1].innerHTML = `<img class="icon-header" src="/img/map-black.svg"
-  alt="location"><!-- <div class="line-location"></div> -->`;
-    // $('.line-location').css("background-color", "black")
+    // Переход на страницу каталога с текущим фильтром региона
+    const newUrl = filtredRegion === 'all'
+      ? `/catalog/`  // Без параметра "region=all"
+      : `/catalog/?region=${encodeURIComponent(filtredRegion)}`;
+    location.href = newUrl;
   });
-
 });
-// const CotColor = document.querySelectorAll(".cotalog-color");
-// document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
-//   CotColor[1].style.fill = "#F28123";
-//   CotColor[0].style.fill = "#F28123";
-// });
 
-
-
+// Инициализация карты
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
     zoom: 4,
-    // center: [43.11647713180365, 43.14838930518987],
     center: [55.601755, 38.602655],
     controls: [],
   });
@@ -101,6 +54,78 @@ ymaps.ready(function () {
       left: "15px",
     },
   });
+
+  // Используем regionsData, который загружается из внешнего файла
+  const regionCoordinates = regionsData.reduce((acc, region) => {
+    acc[region.value] = region.coordinates; // Связываем регион с его координатами
+    return acc;
+  }, {});
+
+  // Маппинг (отображение) латинских регионов на кириллические
+  const regionNamesInCyrillic = regionsData.reduce((acc, region) => {
+    acc[region.value] = region.name; // Связываем region.value с кириллическим названием
+    return acc;
+  }, {});
+
+  // Сортировка регионов по алфавиту
+  const regionsSorted = regionsData.map(region => region.value).sort();
+
+  // Логика фильтрации регионов и центрирования карты
+  const regionSelect = document.getElementById('region-select');
+
+  // Очистка текущих опций фильтра
+  regionSelect.innerHTML = '';
+
+  // Добавляем пункт "Все регионы"
+  const optionAll = document.createElement('option');
+  optionAll.value = 'all';
+  optionAll.textContent = 'Все регионы';
+  regionSelect.appendChild(optionAll);
+
+  // Добавляем отсортированные регионы в выпадающий список с русскими названиями
+  regionsSorted.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region;
+    option.textContent = regionNamesInCyrillic[region];  // Русское название региона
+    regionSelect.appendChild(option);
+  });
+
+  // Обработчик изменения фильтра
+  regionSelect.addEventListener('change', function () {
+    const selectedRegion = this.value;
+    filtredRegion = selectedRegion; // Сохраняем текущий выбранный регион
+    centerMapOnRegion(selectedRegion);
+
+    // Обновляем URL без перезагрузки страницы с новым значением region
+    const newUrl = selectedRegion === 'all'
+      ? window.location.pathname  // Без параметра "region=all"
+      : `${window.location.pathname}?region=${encodeURIComponent(selectedRegion)}`;
+
+    history.pushState(null, '', newUrl); // Отвечает за изменение адреса
+  });
+
+  // Проверка URL при загрузке страницы и центрирование карты на выбранный регион
+  const params = new URLSearchParams(window.location.search);
+  const selectedRegion = params.get('region') || 'all';
+
+  // Устанавливаем выбранное значение в выпадающем списке
+  regionSelect.value = selectedRegion;
+  filtredRegion = selectedRegion; // Сохраняем значение в глобальной переменной
+
+  // Центрируем карту на выбранный регион при загрузке страницы
+  centerMapOnRegion(selectedRegion);
+
+  // Функция для центрирования карты на выбранный регион
+  function centerMapOnRegion(region) {
+    const coordinates = regionCoordinates[region];
+
+    if (coordinates) {
+      myMap.setCenter(coordinates, 8);
+    } else {
+      myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
+    }
+  }
+
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------ 
 
@@ -5235,177 +5260,7 @@ ymaps.ready(function () {
   //   );
   //   // Добавляем линию на карту.
   //   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
-  //Большой каньон Крыма
-  // var myPolyline = new ymaps.Polyline(
-  //   [
-  //     // Указываем координаты вершин.
 
-  //     [44.517312480501246, 33.98432226492472],
-  //     [44.51741227215556, 33.984574392572114],
-  //     [44.517427624702485, 33.98490162207193],
-  //     [44.5176080168238, 33.985362962022506],
-  //     [44.51783446571207, 33.98569019152232],
-  //     [44.517961123178445, 33.9857974798829],
-  //     [44.518191408770754, 33.98589940382548],
-  //     [44.51830271314523, 33.98586185289927],
-  //     [44.51847542640594, 33.98562581850595],
-  //     [44.518829294760636, 33.9852724091848],
-  //     [44.51891756968839, 33.98559427426659],
-  //     [44.51886767518056, 33.98596978352867],
-  //     [44.51887535126148, 33.98613071606956],
-  //     [44.518998168417866, 33.98660278485619],
-  //     [44.519117147289556, 33.98690319226584],
-  //     [44.51944337842479, 33.98746109174095],
-  //     [44.519543166404745, 33.9876703040441],
-  //     [44.519608412298595, 33.98808336423239],
-  //     [44.51976576973994, 33.98844278024039],
-  //     [44.519846367288096, 33.988839747174595],
-  //     [44.51993464066442, 33.9890382306417],
-  //     [44.52036065376148, 33.98953712151846],
-  //     [44.52052952294998, 33.99020230935417],
-  //     [44.52052952294998, 33.99063146279656],
-  //     [44.52047962983194, 33.990819217427585],
-  //     [44.52048730569906, 33.99104452298484],
-  //     [44.52061011943441, 33.99149513409934],
-  //     [44.52068687788663, 33.99163997338616],
-  //     [44.52080969119845, 33.99207449124655],
-  //     [44.52076747415191, 33.99222469495139],
-  //     [44.520640822827524, 33.99226761029563],
-  //     [44.52047195396382, 33.99238026307425],
-  //     [44.52034146404979, 33.99248755143486],
-  //     [44.52018027022032, 33.9927289502462],
-  //     [44.52009583517808, 33.99305081532799],
-  //     [44.520099673137224, 33.99405932591759],
-  //     [44.520019075941875, 33.9943865554174],
-  //     [44.51991545081146, 33.994649411900845],
-  //     [44.51991928878255, 33.99505174325308],
-  //     [44.519850205263786, 33.995287777646396],
-  //     [44.519846367288096, 33.99578130410513],
-  //     [44.51986939513837, 33.996296288235996],
-  //     [44.5199116128401, 33.9964947717031],
-  //     [44.51996534441592, 33.99664497540794],
-  //     [44.520099673137224, 33.996768357022624],
-  //     [44.5202915707696, 33.99704194234215],
-  //     [44.520590929805444, 33.997159959538806],
-  //     [44.520844232395426, 33.9974335448583],
-  //     [44.52071374332089, 33.99773931668601],
-  //     [44.52065233659574, 33.99789488480888],
-  //     [44.52073293290911, 33.99827575848898],
-  //     [44.520932504249586, 33.998640538915005],
-  //     [44.521020775969106, 33.99903214143119],
-  //     [44.521124399120204, 33.999311091168735],
-  //     [44.52125488726872, 34.000035287602756],
-  //     [44.52110520966177, 34.000169398053494],
-  //     [44.52098239697717, 34.00045371220907],
-  //     [44.52080585328639, 34.000662924512255],
-  //     [44.52066385036166, 34.00081312821707],
-  //     [44.520775149980835, 34.00082922147117],
-  //     [44.520817367021785, 34.00095260308586],
-  //     [44.52076747415191, 34.00107062028252],
-  //     [44.520771312066515, 34.001290561421726],
-  //     [44.52084807030493, 34.001290561421726],
-  //     [44.520844232395426, 34.00141394303641],
-  //     [44.521124399120204, 34.00148904488883],
-  //     [44.52119731900417, 34.0015534179052],
-  //     [44.521343158496464, 34.0015534179052],
-  //     [44.52139688874309, 34.001666070683804],
-  //     [44.5214736461517, 34.00158023999533],
-  //     [44.52166937708281, 34.00161242650351],
-  //     [44.52177299907244, 34.001762630208354],
-  //     [44.52179986400242, 34.00186991856896],
-  //     [44.52176148552719, 34.00206303761801],
-  //     [44.52166170137249, 34.00232589410148],
-  //     [44.52166553922778, 34.00259411500296],
-  //     [44.521619484947564, 34.00283014939627],
-  //     [44.52149283548794, 34.002974988683086],
-  //     [44.52148132188695, 34.00302326844535],
-  //     [44.52153505200526, 34.00310373471579],
-  //     [44.521749971979666, 34.00314665006003],
-  //     [44.5219917559967, 34.003683091863024],
-  //     [44.52212991783857, 34.003924490674365],
-  //     [44.52212991783857, 34.00404787228905],
-  //     [44.52211072871359, 34.00413370297752],
-  //     [44.52216829606943, 34.00418198273979],
-  //     [44.52244845638358, 34.00409078763329],
-  //     [44.52260580610214, 34.00387084649405],
-  //     [44.522694075269115, 34.00370454953513],
-  //     [44.52275547982757, 34.00361871884666],
-  //     [44.52277850652021, 34.003543616994236],
-  //     [44.52284374876625, 34.00357580350242],
-  //     [44.522889802072065, 34.00383865998587],
-  //     [44.52293969311205, 34.0039674060186],
-  //     [44.522989584109, 34.004160525067654],
-  //     [44.52304331282684, 34.00428390668234],
-  //     [44.523139256841745, 34.004364372952786],
-  //     [44.52316612113739, 34.00444483922323],
-  //     [44.523419412454764, 34.00478279755912],
-  //     [44.523795509638084, 34.005126120313015],
-  //     [44.52401042121666, 34.005700113042224],
-  //     [44.52415241592888, 34.005898596509326],
-  //     [44.52449780701739, 34.00624191926322],
-  //     [44.52476644310521, 34.006713988049846],
-  //     [44.524885410117065, 34.0070841328939],
-  //     [44.524954487624605, 34.00740063355766],
-  //     [44.525065778991035, 34.00756693051658],
-  //     [44.525184745387406, 34.00765276120505],
-  //     [44.52532289960525, 34.00771176980339],
-  //     [44.52553396791216, 34.00793707536063],
-  //     [44.52561071983287, 34.008205296262126],
-  //     [44.525695146828035, 34.00837159322105],
-  //   ],
-  //   [],
-
-  //   {
-  //     // Задаем опции геообъекта.
-  //     // Цвет с прозрачностью.
-  //     strokeColor: "#010101",
-  //     // Ширину линии.
-  //     strokeWidth: 1,
-  //     // Максимально допустимое количество вершин в ломаной.
-  //     editorMaxPoints: 6,
-  //     // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
-  //     editorMenuManager: function (items) {
-  //       items.push({
-  //         title: "Удалить линию",
-  //         onClick: function () {
-  //           myMap.geoObjects.remove(myPolyline);
-  //         },
-  //       });
-  //       return items;
-  //     },
-  //   }
-  // );
-  // var startPoint = new ymaps.Placemark(
-  //   [44.517312480501246, 33.98432226492472],
-  //   {
-  //     hintContent: "Начало маршрута",
-
-  //   Тут контент карточки тропы
-  //     balloonContent: `Начало маршрута`,
-  //   },
-  //   {
-  //     iconLayout: "default#image",
-  //     iconImageHref: "https://i.ibb.co/Z2wRNPF/map-marker.png",
-  //     iconImageSize: [32, 51],
-  //     iconImageOffset: [-10, -45],
-  //   }
-  // );
-
-  // var endPoint = new ymaps.Placemark(
-  //   [44.525695146828035, 34.00837159322105],
-  //   {
-  //     hintContent: "Конец экотропы",
-  //     //////balloonContent: "Это Конец экотропы",
-  //   },
-  //   {
-  //     iconLayout: "default#image",
-  //     iconImageHref: "2",
-  //     iconImageSize: [15, 15],
-  //     iconImageOffset: [0, 0],
-  //   }
-  // );
-  // // Добавляем линию на карту.
-  // myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
   // // Реликтовый лес
   // var myPolyline = new ymaps.Polyline(
   //   [
@@ -5754,7 +5609,7 @@ ymaps.ready(function () {
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
 
-  // // Линдуловская роща
+  // Линдуловская роща
   // var myPolyline = new ymaps.Polyline(
   //   [
   //     // Указываем координаты вершин.
@@ -7333,7 +7188,7 @@ ymaps.ready(function () {
   // Добавляем линию на карту.
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // //Тропа здоровья
+  // Тропа здоровья
   // var myPolyline = new ymaps.Polyline(
   //   [
   //     // Указываем координаты вершин.
@@ -7587,7 +7442,7 @@ ymaps.ready(function () {
   // // Добавляем линию на карту.
   // myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // // Гряда Вярямянселькя
+  // Гряда Вярямянселькя
   // var myPolyline = new ymaps.Polyline(
   //   [
   //     // Указываем координаты вершин.
@@ -8350,7 +8205,7 @@ ymaps.ready(function () {
   // Добавляем линию на карту.
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // //Поляна нарзанов чегет
+  // Поляна нарзанов чегет
 
   // var myPolyline = new ymaps.Polyline(
   //   [
@@ -9253,7 +9108,7 @@ ymaps.ready(function () {
   // Добавляем линию на карту.
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // // Абрау Дюрсо (Путь к дому Виноградаря)
+  // Абрау Дюрсо (Путь к дому Виноградаря)
 
   // var myPolyline = new ymaps.Polyline(
   //   [
@@ -9381,7 +9236,7 @@ ymaps.ready(function () {
   // // Добавляем линию на карту.
   // myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-  // Абрау Дюрсо(ВИНОГРАДНЫЙ ТЕРРУАР)
+  // Абрау Дюрсо (ВИНОГРАДНЫЙ ТЕРРУАР)
   //   var myPolyline = new ymaps.Polyline(
   //      [
   //       // Указываем координаты вершин.
@@ -9570,174 +9425,7 @@ ymaps.ready(function () {
   //   // Добавляем линию на карту.
   //   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 
-
-  // Абрау-Дюрсо (Ботаническая тропа)
-
-  // var myPolyline = new ymaps.Polyline(
-  //   [
-  //     // Указываем координаты вершин.
-  //     [44.706007554037924, 37.58597882673448],
-  //     [44.705881308792364, 37.58602710649677],
-  //     [44.705345719819604, 37.58610220834917],
-  //     [44.704220966737594, 37.58625777647203],
-  //     [44.70299289488, 37.586418709012925],
-  //     [44.702171938415646, 37.58657370855701],
-  //     [44.70104712325165, 37.58679901411425],
-  //     [44.70027810430324, 37.58685802271259],
-  //     [44.6986404602834, 37.58717027480009],
-  //     [44.69814441095673, 37.58730078170659],
-  //     [44.698029626868696, 37.58726859519841],
-  //     [44.69794927787074, 37.58716667125583],
-  //     [44.69791484255157, 37.58683407733799],
-  //     [44.697922494846495, 37.586522941092255],
-  //     [44.698075540531406, 37.58597040603518],
-  //     [44.698087018941365, 37.58583629558444],
-  //     [44.69794927787074, 37.585739736059914],
-  //     [44.697723534847256, 37.5856860918796],
-  //     [44.69744805063512, 37.58564854095339],
-  //     [44.69713812931916, 37.58592749069094],
-  //     [44.69670576716247, 37.586367372969384],
-  //     [44.69661776384751, 37.58646393249394],
-  //     [44.69641114683973, 37.58679116199375],
-  //     [44.69608974113009, 37.587858681181665],
-  //     [44.695944342719024, 37.58808398673893],
-  //     [44.69567650257858, 37.58812153766514],
-  //     [44.69420670852858, 37.58780821509065],
-  //     [44.694325326632836, 37.587899410197146],
-  //     [44.69491458713771, 37.58824809736909],
-  //     [44.695335483802396, 37.58862897104922],
-  //     [44.69565306742881, 37.58906348890961],
-  //     [44.69577550884051, 37.589149319598086],
-  //     [44.69630736069751, 37.58910640425385],
-  //     [44.69644893194577, 37.58900984472932],
-  //     [44.696544587997316, 37.58883281893435],
-  //     [44.696766509424236, 37.5878350371808],
-  //     [44.6968124240953, 37.587759935328386],
-  //     [44.69684303385565, 37.5878350371808],
-  //     [44.6968812960332, 37.58805497832001],
-  //     [44.697007561038454, 37.58831783480348],
-  //     [44.6971720877506, 37.58856459803285],
-  //     [44.69731748305797, 37.58870407290161],
-  //     [44.697443747105645, 37.588763081499955],
-  //     [44.69773453597931, 37.58878990359011],
-  //     [44.69860689377892, 37.58872016615572],
-  //     [44.698786720276836, 37.58876844591798],
-  //     [44.69915019765151, 37.58872553057375],
-  //     [44.69993070972461, 37.58855923361482],
-  //     [44.700512260852996, 37.58841439432801],
-  //     [44.70064616981932, 37.58845730967224],
-  //     [44.700852291962136, 37.58838261705394],
-  //     [44.70260072558204, 37.588119760570464],
-  //     [44.70334006331217, 37.58800705994655],
-  //     [44.70442657649326, 37.587787118807334],
-  //     [44.70499277945044, 37.58767983044673],
-  //     [44.70540977671179, 37.58751353348781],
-  //     [44.70588415524023, 37.58728286351252],
-  //     [44.706469471740334, 37.58696099843073],
-  //     [44.70703182903957, 37.58670350636532],
-  //     [44.70763243586301, 37.586440649881844],
-  //     [44.708554766759235, 37.58596883527255],
-  //     [44.70822960345532, 37.58590446225618],
-  //     [44.70724262592898, 37.58600102178074],
-  //     [44.70622120111387, 37.586215598501916],
-  //     [44.70598018811826, 37.58600638619876],
-  //   ],
-  //   [],
-
-  //   {
-  //     // Задаем опции геообъекта.
-  //     // Цвет с прозрачностью.
-  //     strokeColor: "#010101",
-  //     // Ширину линии.
-  //     strokeWidth: 1,
-  //     // Максимально допустимое количество вершин в ломаной.
-  //     editorMaxPoints: 6,
-  //     // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
-  //     editorMenuManager: function (items) {
-  //       items.push({
-  //         title: "Удалить линию",
-  //         onClick: function () {
-  //           myMap.geoObjects.remove(myPolyline);
-  //         },
-  //       });
-  //       return items;
-  //     },
-  //   }
-  // );
-  // var startPoint = new ymaps.Placemark(
-  //   [44.706007554037924, 37.58597882673448],
-  //   {
-  //     hintContent: "Начало маршрута",
-
-  //  // Тут контент карточки тропы
-  //     balloonContent: `Начало маршрута Абрау-Дюрсо (Ботаническая тропа)`,
-  //   },
-  //   {
-  //     iconLayout: "default#image",
-  //     iconImageHref: "https://i.ibb.co/Z2wRNPF/map-marker.png",
-  //     iconImageSize: [32, 51],
-  //     iconImageOffset: [-10, -45],
-  //   }
-  // );
-
-  // var endPoint = new ymaps.Placemark(
-  //   [44.706007554037924, 37.58597882673448],
-  //   {
-  //     hintContent: "Конец экотропы",
-  //     //////balloonContent: "Это Конец экотропы",
-  //   },
-  //   {
-  //     iconLayout: "default#image",
-  //     iconImageHref: "2",
-  //     iconImageSize: [15, 15],
-  //     iconImageOffset: [0, 0],
-  //   }
-  // );
-  // // Добавляем линию на карту.
-  // myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
 });
-
-// тест
-
-// document.querySelector("#VDNH").addEventListener("click", () => {
-//   location.pathname = "/catalog/moskva/vozdushnaya-ecotropa";
-// });
-// document.querySelector("#Golisyn").addEventListener("click", () => {
-//   location.pathname = "/catalog/krym/tropa-golicyna";
-// });
-// document.querySelector("#Bezengi").addEventListener("click", () => {
-//   location.pathname = "/catalog/kabardino-balkariya/k-ledniku-bezengi";
-// });
-// document.querySelector("#Stone_stolb").addEventListener("click", () => {
-//   location.pathname = "/kamennyj-stolb";
-// });
-// document.querySelector("#Dudergov").addEventListener("click", () => {
-//   location.pathname = "/catalog/lenoblast/dudergofskie-vysoty";
-// });
-// document.querySelector("#Sestroleckoe").addEventListener("click", () => {
-//   location.pathname = "/catalog/lenoblast/sestroreckoe-boloto";
-// });
-// document.querySelector("#Rakov").addEventListener("click", () => {
-//   location.pathname = "/catalog/lenoblast/rakovye-ozyora";
-// });
-// document.querySelector("#Sun_trop").addEventListener("click", () => {
-//   location.pathname = "/solnechnaya-tropa";
-// });
-// document.querySelector("#Big_Sevas").addEventListener("click", () => {
-//   location.pathname = "/bolshaya-sevastopolskaya-tropa";
-// });
-// document.querySelector("#ElovyeHolmy").addEventListener("click", () => {
-//   location.pathname = "/catalog/lenoblast/elovye-holmy";
-// });
-// document.querySelector("#Fiolent").addEventListener("click", () => {
-//   location.pathname = "/fiolentovskaya-tropa";
-// });
-// document.querySelector("#vodopad").addEventListener("click", () => {
-//   location.pathname = "/33-vodopada";
-// });
-
-
-// тест
 
 //Геолокация пользователя//
 function init() {

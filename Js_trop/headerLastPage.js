@@ -4,20 +4,6 @@ const faq = document.querySelector("#FAQ-cont");
 const header = document.querySelector("header");
 const CotColor = document.querySelectorAll(".icon-cotalog-color");
 
-document.querySelector(".container-location").addEventListener("click", () => {
-  location.pathname = "/catalog/mappage.html";
-//   document.querySelector(
-//     ".container-location"
-//   ).innerHTML = `<img class="icon-header" style="width:31px;height:31px"  src="/img/map-orange.svg"
-//   alt="location"><!-- <div class="line-location"></div> -->`;
-//   $(".line-location").css("background-color", "#F28123");
-});
-
-// document.querySelector(".icon-header-cotalog").addEventListener("click", () => {
-//   CotColor[1].style.fill = "#F28123";
-//   CotColor[0].style.fill = "#F28123";
-// });
-
 cotalog.addEventListener("mouseover", DispAnimCotal);
 function DispAnimCotal() {
   document.querySelector("#animation1").hidden = false;

@@ -620,6 +620,12 @@
 .container-navigation-icon:last-child {
   display: none;
 }
+
+/* Сброс стиля на ссылке иконки карты в хедере */
+a.header-icon.keychainify-checked {  
+  line-height: 0;
+}
+
 @media (max-width: 1530px) {
   .VoidSearch {
     margin-left: auto;

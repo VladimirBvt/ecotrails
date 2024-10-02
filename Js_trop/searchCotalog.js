@@ -64,8 +64,6 @@ Search.addEventListener("click", function Searchinput() {
   let k = 0;
   document.querySelector(".searcharea").oninput = function () {
     let val = this.value.trim();
-    // if (val[0].toUpperCase() === val[0]) {console.log(val[0]); val = val.toLowerCase();}  //Попытка сделать поиск нзависимым от регистра
-    // console.log(val);
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {

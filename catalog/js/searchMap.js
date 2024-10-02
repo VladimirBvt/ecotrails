@@ -17,8 +17,7 @@ search.addEventListener("click", () => {
       <path class="color-search-temp" d="M32.5 7L7 33.2126M7 7L32.5 33.2126" stroke="#1F271B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg></li>`
   );
-  document.querySelector(".otstup-icon-search").hidden = false;
-  // document.querySelector(".line-location").hidden = true;
+  document.querySelector(".otstup-icon-search").hidden = false;  
 
   const TempSearch = document.querySelector("#search-close");
   TempSearch.addEventListener("click", () => {
@@ -29,8 +28,7 @@ search.addEventListener("click", () => {
     }
     document.querySelector("#cont-search").remove();
     document.querySelector("#search").hidden = false;
-    document.querySelector(".otstup-icon-search").hidden = true;
-    // document.querySelector(".line-location").hidden = false;
+    document.querySelector(".otstup-icon-search").hidden = true;    
   });
 });
 
@@ -60,8 +58,7 @@ Search.addEventListener("click", function Searchinput() {
   let k = 0;
   document.querySelector(".searcharea").oninput = function () {
     let val = this.value.trim();
-    // if (val[0].toUpperCase() === val[0]) {console.log(val[0]); val = val.toLowerCase();}  //Попытка сделать поиск нзависимым от регистра
-    // console.log(val);
+    
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {

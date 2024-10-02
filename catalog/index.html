@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Yandex.Metrika counter -->
 
     <script type="text/javascript">
@@ -91,7 +92,7 @@
     <meta property="og:image" content="/img/calalog-pic.jpg">
     <title>Каталог экотроп | Все экологические тропы России на одном сайте</title>
     <meta name="description"
-        content="Экологические тропы в России: что посмотреть, фото, где находятся на карте и как добраться — узнайте на сайте Экотропы России." />
+        content="Экотропы России: что посмотреть, фото, где находятся на карте и как добраться — узнайте на сайте Экотропы России." />
 
 </head>
 
@@ -145,9 +146,9 @@
                             <div class="otstup-icon-search" hidden></div>
                         </li>
                         <li class="container-navigation-icon">
-                            <div class="container-location"><img class="icon-header" src="/img/map-black.svg"
-                                    alt="location">
-                                <!-- <div class="line-location"></div> -->
+                            <div class="container-location">                                
+                                <a class="header-icon" href="/catalog/mappage.html"><img class="icon-header" src="/img/map-black.svg"
+                                alt="location"></a>
                             </div>
                         </li>
                         <li class="container-navigation-icon"><a class="icon-href-cotalog" href="/catalog/"><svg
@@ -266,9 +267,10 @@
 
                         </div>
                         <!-- Фильтр -->
-                        <!-- <div class="filters">
-                           <img src="/img/filter.svg" alt="Фильтры">
-                       </div> -->
+                        <select class="filters" id="region-select">
+                            <option value="all">Все регионы</option>
+                        </select>
+
                     </div>
                 </section>
                 <div class="wrap">
@@ -364,7 +366,7 @@
                                                 title="Экотропа в парке Швейцария">В парке Швейцария</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title='г. Нижний Новгород, парк "Швейцария"'>
+                                            title='Нижегородская область, г. Нижний Новгород, парк "Швейцария"'>
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Нижний Новгород, парк &laquo;Швейцария&raquo;
                                             </p>
@@ -404,7 +406,7 @@
                                                 title="Экотропа Природа Чувств">Природа Чувств</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="Ярославская обл., г. Переславль-Залесский">
+                                            title="Ярославская область, г. Переславль-Залесский">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 Ярославская&nbsp;обл., г.&nbsp;Переславль-Залесский</p>
                                         </div>
@@ -443,7 +445,7 @@
                                                 title="Экотропа Тропа Сказок">Тропа Сказок</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="Ярославская обл., г. Переславль-Залесский">
+                                            title="Ярославская область, г. Переславль-Залесский">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 Ярославская&nbsp;обл., г.&nbsp;Переславль-Залесский</p>
                                         </div>
@@ -483,7 +485,7 @@
                                             </h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, Воробьёвы горы">
+                                            title="Москва и Московская область, г. Москва, Воробьёвы горы">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Москва,
                                                 Воробьёвы горы</p>
@@ -523,7 +525,7 @@
                                                 title="Экотропа к Андреевским прудам">К Андреевским прудам</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, Воробьёвы горы">
+                                            title="Москва и Московская область, г. Москва, Воробьёвы горы">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Москва,
                                                 Воробьёвы горы</p>
@@ -563,7 +565,7 @@
                                                 title="Экотропа в пойме реки Шмелёвки">В пойме реки Шмелёвки</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, парк Шмелёвский ручей">
+                                            title="Москва и Московская область, г. Москва, парк Шмелёвский ручей">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">г. Москва,
                                                 парк &laquo;Шмелёвский ручей&raquo;</p>
                                         </div>
@@ -602,7 +604,7 @@
                                                 title="Бурнаковская экотропа">Бурнаковская экотропа</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Нижний Новгород, Бурнаковская низина">
+                                            title="Нижегородская область, г. Нижний Новгород, Бурнаковская низина">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Нижний Новгород, Бурнаковская низина
                                             </p>
@@ -1041,7 +1043,7 @@
                                                 Тропа здоровья Сокольники</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, парк «Сокольники»">
+                                            title="Москва и Московская область, г. Москва, парк «Сокольники»">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Москва,
                                                 парк «Сокольники»</p>
@@ -1322,7 +1324,7 @@
                                                 title="Экотропа Дудергофские Высоты">
                                                 Дудергофские Высоты</h2>
                                         </div>
-                                        <div id="trail-location" class="trail-location-black" title="СПб, Красное Село, проспект 25-го
+                                        <div id="trail-location" class="trail-location-black" title="Ленинградская область, г. Красное Село, проспект 25-го
             Октября">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">Ленинградская
                                                 область, г.&nbsp;Красное Село</p>
@@ -1362,8 +1364,8 @@
                                                 title="Сестрорецкое болото">
                                                 Сестрорецкое болото</h2>
                                         </div>
-                                        <div id="trail-location" class="trail-location-black" title="Ленинградская
-                область, г.&nbsp;Белоостров">
+                                        <div id="trail-location" class="trail-location-black"
+                                            title="Ленинградская область, г. Белоостров">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">Ленинградская
                                                 область, г.&nbsp;Белоостров</p>
                                         </div>
@@ -1443,7 +1445,7 @@
                                                 Западный Котлин</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="Ленинградская область, г.&nbsp;Кронштадт">
+                                            title="Ленинградская область, г. Кронштадт">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">Ленинградская
                                                 область, г.&nbsp;Кронштадт</p>
                                         </div>
@@ -1522,7 +1524,7 @@
                                                 Воздушная экотропа</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, парк ВДНХ">
+                                            title="Москва и Московская область, г. Москва, парк ВДНХ">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Москва,
                                                 парк&nbsp;ВДНХ</p>
@@ -1563,7 +1565,7 @@
                                                 Тропарёвская экотропа</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, Тропарёвский лесопарк">
+                                            title="Москва и Московская область, г. Москва, Тропарёвский лесопарк">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">
                                                 г.&nbsp;Москва,
                                                 Тропарёвский лесопарк</p>
@@ -1604,7 +1606,7 @@
                                                 озера Бездонное</h2>
                                         </div>
                                         <div id="trail-location" class="trail-location-black"
-                                            title="г. Москва, парк Серебряный Бор">
+                                            title="Москва и Московская область, г. Москва, парк Серебряный Бор">
                                             <p id="color-letters-cot" class="black-color size-card-elem-p">г. Москва,
                                                 парк
                                                 &laquo;Серебряный Бор&laquo;</p>
@@ -1668,6 +1670,7 @@
     </div>
 
 </body>
+<script src="js/regions.js"></script>
 <script src="js/scriptCotalog.js"></script>
 <script src="js/searchCotalogPage.js"></script>
 <script src="js/headerCotalog.js"></script>
