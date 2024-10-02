@@ -1,5 +1,3 @@
-// let filtredRegion = 'all'; // Глобальная переменная для хранения текущего выбранного региона
-
 const title = document.querySelector(".title");
   const backScroll = document.querySelector("#back-scroll");
   const upperCotalog = document.querySelector(".upper_cotalog");
@@ -211,6 +209,9 @@ regionSelect.addEventListener('change', function () {
 
   // Обновляем title, h1 и description на основе GET-параметра
   updateTitleH1Description(newRegion);
+
+  // Прокручиваем страницу в начало
+  window.scrollTo(0, 0);
 });
 
 // Функция фильтрации карточек
