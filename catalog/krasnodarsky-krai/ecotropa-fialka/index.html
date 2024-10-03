@@ -15,7 +15,7 @@
             for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
             k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?v=2.0", "ym");
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(92417974, "init", {
             clickmap: true,
@@ -695,6 +695,19 @@
             </div>
         </div>
 
+            <!-- Реклама -->
+        <!-- Yandex.RTB R-A-11822438-1 -->
+        <div class="ads" id="yandex_rtb_R-A-11822438-1"></div>
+        <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-11822438-1",
+                    "renderTo": "yandex_rtb_R-A-11822438-1",
+                    "type": "feed"
+                })
+            })
+        </script>
+        <!-- Реклама -->
     </main>
     <footer class="footer">
         <div class="container-footer">

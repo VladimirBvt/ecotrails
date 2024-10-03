@@ -416,16 +416,6 @@ a.link:hover {
   margin-bottom: 112px;
 }
 
-/* Отступ нижней рекламы */
-.ads-bottom {
-  margin-bottom: 112px;
-}
-
-/* Отступ рекламы */
-.ads-art {
-  margin-top: 112px;
-}
-
 /* Мобила */
 @media only screen and (max-width: 480px) {
   .row {
@@ -461,17 +451,6 @@ a.link:hover {
     margin-bottom: 72px;    
   }
 
-  /* Отступ нижней рекламы */
-  .ads-bottom {
-    margin-bottom: 72px;
-    max-height: 200px;
-  }
-
-  /* Отступ рекламы */
-  .ads-art {
-    margin-top: 72px;
-    max-height: 200px;
-  }
 }
 
 .tabcontent {
@@ -1433,23 +1412,6 @@ a.link:hover {
   .swiper-right-btn {
     display: none;
   }
-
-  /* Отступ нижней рекламы сестр*/
-  /* .ads {
-    margin-bottom: 72px;
-  } */
-
-  /* Отступ нижней рекламы */
-  .ads-bottom {
-    /* margin-bottom: 72px; */
-    max-height: 200px;
-  }
-
-  /* Отступ рекламы */
-  .ads-art {
-    /* margin-top: 72px; */
-    max-height: 200px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1733,15 +1695,4 @@ a.link:hover {
     margin-bottom: 72px;
   }
 
-  /* Отступ нижней рекламы */
-  .ads-bottom {
-    margin-bottom: 72px;
-    max-height: 200px;
-  }
-
-  /* Отступ рекламы */
-  .ads-art {
-    margin-top: 72px;
-    max-height: 200px;
-  }
 }
