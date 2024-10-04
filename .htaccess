@@ -1,3 +1,6 @@
+; RewriteEngine On
+; RewriteCond %{HTTP_HOST} ^(www\.)?eco-trails\.ru$ [NC]
+; RewriteRule ^(.*)$ https://xn--80aagfgg4cjdgbjdfb1a1a.xn--p1ai/$1 [R=301,L]
 
 # BEGIN WordPress
 # Директивы (строки) между `BEGIN WordPress` и `END WordPress`
