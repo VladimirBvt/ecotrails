@@ -532,10 +532,15 @@ a {
   margin-bottom: 3px;
 }
 
+/* Отступ до рекламы */
+.content {
+  margin-bottom: 112px;
+}
+
 /* Реклама */
 .ads {
   margin-bottom: 112px;
-  margin-top: 112px;
+  /* margin-top: 112px; */
   height: 300px;
 }
 
@@ -617,6 +622,7 @@ a {
   .content {
     padding-left: 24px;
     padding-right: 24px;
+    margin-bottom: 72px;
   }
 
   .catalog-items {
@@ -640,7 +646,7 @@ a {
   /* Реклама */
   .ads {
     margin-bottom: 72px;
-    margin-top: 72px;       
+    /* margin-top: 72px;        */
   }
 }
 
@@ -753,6 +759,7 @@ a {
   .content {
     padding-left: 20px;
     padding-right: 20px;
+    /* margin-bottom: 72px; */
   }
 
   .trail-img {
@@ -783,7 +790,7 @@ a {
   /* Реклама */
   .ads {
     margin-bottom: 72px;
-    margin-top: 72px;    
+    /* margin-top: 72px;     */
   }
   
 }
