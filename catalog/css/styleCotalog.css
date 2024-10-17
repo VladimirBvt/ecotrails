@@ -457,6 +457,8 @@ a {
   -moz-column-gap: 30px;
   column-gap: 30px;
   row-gap: 30px;
+  /* Отступ до рекламы */
+  margin-bottom: 112px;
 }
 
 .catalog-item {
@@ -530,11 +532,6 @@ a {
 
 .trail-spec img {
   margin-bottom: 3px;
-}
-
-/* Отступ до рекламы */
-.content {
-  margin-bottom: 112px;
 }
 
 /* Реклама */
@@ -611,6 +608,8 @@ a {
     -moz-column-gap: 20px;
     column-gap: 20px;
     row-gap: 20px;
+      /* Отступ до рекламы */
+      margin-bottom: 72px;
   }
 
   .controllers {
@@ -621,8 +620,7 @@ a {
 
   .content {
     padding-left: 24px;
-    padding-right: 24px;
-    margin-bottom: 72px;
+    padding-right: 24px;    
   }
 
   .catalog-items {
@@ -759,7 +757,6 @@ a {
   .content {
     padding-left: 20px;
     padding-right: 20px;
-    /* margin-bottom: 72px; */
   }
 
   .trail-img {
