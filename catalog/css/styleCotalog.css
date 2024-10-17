@@ -532,6 +532,13 @@ a {
   margin-bottom: 3px;
 }
 
+/* Реклама */
+.ads {
+  margin-bottom: 112px;
+  margin-top: 112px;
+  height: 300px;
+}
+
 /* .trail-spec > a {
   text-align: center;
 } */
@@ -628,6 +635,12 @@ a {
 
   .trail-info {
     padding-top: 10px;
+  }
+
+  /* Реклама */
+  .ads {
+    margin-bottom: 72px;
+    margin-top: 72px;       
   }
 }
 
@@ -767,5 +780,10 @@ a {
     content: url(/img/small-title-left-line.svg);    
   }
 
+  /* Реклама */
+  .ads {
+    margin-bottom: 72px;
+    margin-top: 72px;    
+  }
   
 }

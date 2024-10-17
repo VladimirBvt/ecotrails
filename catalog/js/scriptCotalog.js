@@ -181,7 +181,7 @@ function updateTitleH1Description(regionHref) {
 
   // Обновляем title, h1 и description
   const titleText = `Экотропы ${regionNameRodPod}`;
-  const descriptionText = `Экотропы ${regionNameRodPod}: что посмотреть, фото, где находятся на карте и как добраться — узнайте на сайте Экотропы России.`;
+  const descriptionText = `Экологические тропы ${regionNameRodPod} — что посмотреть, фото, где находятся на карте и как добраться — узнайте на сайте Экотропы России.`;
   const h1Text = `Экотропы ${regionNameRodPod}`;
 
   titleElement.textContent = titleText;
