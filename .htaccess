@@ -1,16 +1,22 @@
+# 301 редирект со старого домена на новый
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^(www\.)?eco-trails\.ru$ [NC]
+# RewriteRule ^(.*)$ https://xn--80aagfgg4cjdgbjdfb1a1a.xn--p1ai/$1 [R=301,L]
+
 # BEGIN WordPress
 # Директивы (строки) между `BEGIN WordPress` и `END WordPress`
 # созданы автоматически и подлежат изменению только через фильтры WordPress.
 # Сделанные вручную изменения между этими маркерами будут перезаписаны.
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
 ErrorDocument 404 https://eco-trails.ru/404
 
 Redirect 301 /catalog/lenoblast/bugaina-tropa/ /catalog/lenoblast/bugainaya-tropa/
