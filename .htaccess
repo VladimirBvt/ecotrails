@@ -15,9 +15,13 @@ Redirect 301 /catalog/lenoblast/bugaina-tropa/ /catalog/lenoblast/bugainaya-trop
     RewriteCond %{QUERY_STRING} (^|&)region=(lenoblast|krasnodarsky-krai|nizhegorodskaya-oblast|yaroslavskaya-oblast|moskva|krym|stavropolsky-krai|kabardino-balkariya)(&|$) [NC]
     RewriteRule ^ - [E=MAP_NOINDEX:1]
 
-    # Перенаправление всех региональных страниц каталога на ?region=
-    RewriteCond %{REQUEST_URI} ^/catalog/(lenoblast|krasnodarsky-krai|nizhegorodskaya-oblast|yaroslavskaya-oblast|moskva|krym|stavropolsky-krai|kabardino-balkariya)/?$ [NC]
-    RewriteRule ^catalog/(.*)/?$ /catalog/?region=$1 [L,R=301,QSA]
+     # Перенаправление со ссылок без косой черты в конце
+    RewriteCond %{REQUEST_URI} ^/catalog/(lenoblast|krasnodarsky-krai|nizhegorodskaya-oblast|yaroslavskaya-oblast|moskva|krym|stavropolsky-krai|kabardino-balkariya)$ [NC]
+    RewriteRule ^catalog/(.*)$ /catalog/?region=$1 [L,R=301]
+
+    # Перенаправление со ссылок с косой чертой в конце
+    RewriteCond %{REQUEST_URI} ^/catalog/(lenoblast|krasnodarsky-krai|nizhegorodskaya-oblast|yaroslavskaya-oblast|moskva|krym|stavropolsky-krai|kabardino-balkariya)/$ [NC]
+    RewriteRule ^catalog/(.*)/$ /catalog/?region=$1 [L,R=301]
 </IfModule>
 
 # Если переменная MAP_NOINDEX установлена, запретить индексацию
