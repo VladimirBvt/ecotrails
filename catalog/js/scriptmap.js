@@ -55,6 +55,11 @@ ymaps.ready(function () {
     },
   });
 
+  // Закрытие балуна при клике вне его
+  myMap.events.add('click', function (e) {
+    myMap.balloon.close(); // Закрываем открытый балун
+  });
+
   // Используем regionsData, который загружается из внешнего файла
   const regionCoordinates = regionsData.reduce((acc, region) => {
     acc[region.value] = region.coordinates; // Связываем регион с его координатами
