@@ -31,7 +31,10 @@ ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
     zoom: 4,
     center: [55.601755, 38.602655],
-    controls: [],
+    controls: [],    
+  }, {
+    // Выключение точек интересов по-умолчанию (аэропорты и ко)
+    yandexMapDisablePoiInteractivity: true
   });
   myMap.controls.add("geolocationControl", {
     float: "none",
@@ -54,6 +57,7 @@ ymaps.ready(function () {
       left: "15px",
     },
   });
+  
 
   // Закрытие балуна при клике вне его
   myMap.events.add('click', function (e) {
