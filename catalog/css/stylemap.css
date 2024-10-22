@@ -386,11 +386,11 @@ img {
 
 /* СОкращение кнопки слоёв до мини-кнопки без текста */
 .ymaps-2-1-79-listbox__button-text {
-  display: none;
+  display: none !important; 
 }
 
 .ymaps-2-1-79-listbox__button-arrow {
-  display: none;
+  display: none !important;
 }
 
 /* Стили карточки */
