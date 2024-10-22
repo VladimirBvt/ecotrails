@@ -337,6 +337,11 @@ img {
   height: 252px;
 } */
 
+/* Отступсверху при открытии балунов (ниже хедера и фильтра) */
+.ymaps-2-1-79-balloon-pane {
+  top: 130px !important;
+}
+
 .ymaps-2-1-79-balloon__layout {
   background: none !important;
 }
@@ -364,6 +369,7 @@ img {
   display: none !important;
 }
 
+/* Крестик закрытия карточки на карте */
 .ymaps-2-1-79-balloon__close-button {
   position: relative;
   width: 25px !important;
@@ -378,6 +384,16 @@ img {
   margin-right: 0 !important;
 }
 
+/* СОкращение кнопки слоёв до мини-кнопки без текста */
+.ymaps-2-1-79-listbox__button-text {
+  display: none;
+}
+
+.ymaps-2-1-79-listbox__button-arrow {
+  display: none;
+}
+
+/* Стили карточки */
 .catalog-item {
   max-width: 282px;
   height: 468px;

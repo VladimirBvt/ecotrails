@@ -34,8 +34,10 @@ ymaps.ready(function () {
     controls: [],    
   }, {
     // Выключение точек интересов по-умолчанию (аэропорты и ко)
-    yandexMapDisablePoiInteractivity: true
+    yandexMapDisablePoiInteractivity: true, 
+    
   });
+  
   myMap.controls.add("geolocationControl", {
     float: "none",
     position: {
@@ -58,7 +60,6 @@ ymaps.ready(function () {
     },
   });
   
-
   // Закрытие балуна при клике вне его
   myMap.events.add('click', function (e) {
     myMap.balloon.close(); // Закрываем открытый балун
