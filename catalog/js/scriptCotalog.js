@@ -156,12 +156,14 @@ regionsData
 // Функция обновления title, h1 и description
 function updateTitleH1Description(regionHref) {
   const titleElement = document.querySelector('title');
+  const canonicalElement = document.querySelector('link[rel="canonical"]'); // Находим тег canonical
 
   // Если выбран "all", возвращаем значения по умолчанию
   if (regionHref === 'all') {
     titleElement.textContent = originalTitle;
     h1Element.textContent = originalH1;
     descriptionElement.setAttribute('content', originalDescription);
+    canonicalElement.setAttribute('href', "https://eco-trails.ru/catalog/"); // Ссылка по умолчанию
     return;
   }
 
@@ -187,6 +189,10 @@ function updateTitleH1Description(regionHref) {
   titleElement.textContent = titleText;
   h1Element.textContent = h1Text;
   descriptionElement.setAttribute('content', descriptionText);
+
+  // Обновляем canonical ссылку с учетом выбранного региона
+  const newCanonicalUrl = `https://eco-trails.ru/catalog/?region=${encodeURIComponent(regionHref)}`;
+  canonicalElement.setAttribute('href', newCanonicalUrl);
 }
 
 // Обработчик изменения значения выпадающего списка
@@ -194,20 +200,21 @@ regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
   filtredRegion = selectedRegion; // Сохраняем фильтр в глобальную переменную
 
-  let newRegion = selectedRegion;
-  
+  let newRegion = selectedRegion; 
+
+  // console.log(`${newRegion}`);  
 
   // Обновляем URL без перезагрузки страницы с новым значением region
   const newUrl = newRegion === 'all'
     ? window.location.pathname  // Без параметра "region=all"
     : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
-  history.pushState(null, '', newUrl);
+  history.pushState(null, '', newUrl);  
 
   // Фильтруем карточки по выбранному региону
   filterCards(newRegion);
 
-  // Обновляем title, h1 и description на основе GET-параметра
+  // Обновляем title, h1, description и canonical на основе GET-параметра
   updateTitleH1Description(newRegion);
 
   // Прокручиваем страницу в начало
