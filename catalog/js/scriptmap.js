@@ -323,7 +323,7 @@ ymaps.ready(function () {
         <a href="moskva/v-garmonii-s-prirodoy/" id="trail-location" class="trail-location-black"
             title="Москва, парк Серебряный Бор">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-              г.&nbsp;Москва, парк &laquo;Серебряный Бор&laquo;</p>
+              г.&nbsp;Москва, парк &laquo;Серебряный Бор&raquo;</p>
         </a>
         <div class="trail-spec">
             <a href="moskva/v-garmonii-s-prirodoy/" class="trail-distance">
@@ -6802,9 +6802,9 @@ ymaps.ready(function () {
             </h2>
         </a>
         <a href="moskva/tropa-zdorovia-sokolniki/" id="trail-location" class="trail-location-black"
-            title="г. Москва, парк «Сокольники»">
+            title="г. Москва, парк Сокольники">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-                г.&nbsp;Москва, парк &laquo;Сокольники&laquo;</p>
+                г.&nbsp;Москва, парк &laquo;Сокольники&raquo;</p>
         </a>
         <div class="trail-spec">
             <a href="moskva/tropa-zdorovia-sokolniki/" class="trail-distance">
@@ -9339,7 +9339,7 @@ ymaps.ready(function () {
           <a href="moskva/ecotropa-u-ozera-bezdonnoe/" id="trail-location" class="trail-location-black"
               title="Москва, парк Серебряный Бор">
               <p id="color-letters-cot" class="black-color size-card-elem-p">
-                г. Москва, парк &laquo;Серебряный Бор&laquo;</p>
+                г. Москва, парк &laquo;Серебряный Бор&raquo;</p>
           </a>
           <div class="trail-spec">
               <a href="moskva/ecotropa-u-ozera-bezdonnoe/" class="trail-distance">
