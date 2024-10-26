@@ -3724,9 +3724,9 @@ ymaps.ready(function () {
             </h2>
         </a>
         <a href="lenoblast/komarovsky-bereg/" id="trail-location" class="trail-location-black"
-            title="Ленинградская область, пос. Комарово">
+            title="г. Санкт-Петербург, пос. Комарово">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-            Ленинградская область, пос.&nbsp;Комарово</p>
+            г.&nbsp;Санкт-Петербург, пос.&nbsp;Комарово</p>
         </a>
         <div class="trail-spec">
             <a href="lenoblast/komarovsky-bereg/" class="trail-distance">
@@ -6635,9 +6635,9 @@ ymaps.ready(function () {
             </h2>
         </a>
         <a href="lenoblast/zapadniy-kotlin/" id="trail-location" class="trail-location-black"
-            title="Ленинградская область, г. Кронштадт">
+            title="г. Санкт-Петербург, г. Кронштадт">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-                Ленинградская область, г.&nbsp;Кронштадт</p>
+                г.&nbsp;Санкт-Петербург, г.&nbsp;Кронштадт</p>
         </a>
         <div class="trail-spec">
             <a href="lenoblast/zapadniy-kotlin/" class="trail-distance">
@@ -6948,9 +6948,9 @@ ymaps.ready(function () {
             </h2>
         </a>
         <a href="lenoblast/bugainaya-tropa/" id="trail-location" class="trail-location-black"
-            title="Ленинградская область, пос. Лисий Нос">
+            title="г. Санкт-Петербург, пос. Лисий Нос">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-            Ленинградская область, пос.&nbsp;Лисий Нос</p>
+            г.&nbsp;Санкт-Петербург, пос.&nbsp;Лисий Нос</p>
         </a>
         <div class="trail-spec">
             <a href="lenoblast/bugainaya-tropa/" class="trail-distance">
@@ -7367,9 +7367,9 @@ ymaps.ready(function () {
             </h2>
         </a>
         <a href="lenoblast/u-lukomoriya/" id="trail-location" class="trail-location-black"
-            title="Ленинградская область, пос. Лисий Нос">
+            title="г. Санкт-Петербург, пос. Лисий Нос">
             <p id="color-letters-cot" class="black-color size-card-elem-p">
-            Ленинградская область, пос.&nbsp;Лисий Нос</p>
+            г.&nbsp;Санкт-Петербург, пос.&nbsp;Лисий Нос</p>
         </a>
         <div class="trail-spec">
             <a href="lenoblast/u-lukomoriya/" class="trail-distance">
@@ -7548,10 +7548,8 @@ ymaps.ready(function () {
               <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
                   title="Экотропа Дудергофские Высоты">Дудергофские Высоты</h2>
           </a>
-          <a href="/catalog/lenoblast/dudergofskie-vysoty/" id="trail-location" class="trail-location-black" title="Ленинградская
-                  область, г. Красное Село">
-              <p id="color-letters-cot" class="black-color size-card-elem-p">Ленинградская
-                  область, г. Красное Село</p>
+          <a href="/catalog/lenoblast/dudergofskie-vysoty/" id="trail-location" class="trail-location-black" title="г. Санкт-Петербург, г. Красное Село">
+              <p id="color-letters-cot" class="black-color size-card-elem-p">г.&nbsp;Санкт-Петербург, г. Красное Село</p>
           </a>
           <div class="trail-spec">
               <a href="/catalog/lenoblast/dudergofskie-vysoty/" class="trail-distance">
@@ -8566,9 +8564,8 @@ ymaps.ready(function () {
                   title="Сестрорецкое болото">Сестрорецкое болото</h2>
           </a>
           <a href="/catalog/lenoblast/sestroreckoe-boloto/" id="trail-location" class="trail-location-black"
-              title="Ленобласть, г. Белоостров">
-              <p id="color-letters-cot" class="black-color size-card-elem-p">Ленинградская
-                  область, г. Белоостров</p>
+              title="г. Санкт-Петербург, г. Белоостров">
+              <p id="color-letters-cot" class="black-color size-card-elem-p">г.&nbsp;Санкт-Петербург, г. Белоостров</p>
           </a>
           <div class="trail-spec">
               <a href="/catalog/lenoblast/sestroreckoe-boloto/" class="trail-distance">
