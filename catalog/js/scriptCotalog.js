@@ -169,7 +169,7 @@ function updateTitleH1Description(regionHref) {
 
   // Определяем название региона в родительном падеже
   const regionNameRodPodMap = {
-    "lenoblast": "Ленинградской области",
+    "lenoblast": "Санкт-Петербурга и Ленинградской области",
     "krasnodarsky-krai": "Краснодарского края",
     "nizhegorodskaya-oblast": "Нижегородской области",
     "yaroslavskaya-oblast": "Ярославской области",
