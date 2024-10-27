@@ -59,13 +59,12 @@ Search.addEventListener("click", function Searchinput() {
   console.log(document.querySelector(".searcharea"));
   let k = 0;
   document.querySelector(".searcharea").oninput = function () {
-    let val = this.value.trim();
-    // if (val[0].toUpperCase() === val[0]) {console.log(val[0]); val = val.toLowerCase();}  //Попытка сделать поиск нзависимым от регистра
-    // console.log(val);
+    let val = this.value.trim().toLowerCase(); // Приводим val к нижнему регистру
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {
-        if (elem.innerText.search(val) == -1) {
+         // Приводим текст элемента к нижнему регистру перед поиском
+        if (elem.innerText.toLowerCase().search(val) == -1) {
           elem.classList.add("hide");
           elem.removeAttribute("hidden");
           elem.innerHTML = elem.innerText;
@@ -76,7 +75,7 @@ Search.addEventListener("click", function Searchinput() {
           let str = elem.innerText;
           elem.innerHTML = insertMark(
             str,
-            elem.innerText.search(val),
+            elem.innerText.toLowerCase().search(val), // Также приводим к нижнему регистру здесь
             val.length
           );
         }
