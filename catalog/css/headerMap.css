@@ -484,6 +484,10 @@
 }
 
 /* Поиск */
+#search {
+  cursor: pointer;
+}
+
 #search:hover {
   content: url('/img/search-orange.svg'); /* Замените на путь к вашей оранжевой иконке */
 }
