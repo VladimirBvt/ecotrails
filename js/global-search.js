@@ -36,7 +36,7 @@ const trailsData = [
     { name: "У озера Бездонное", url: "/catalog/moskva/ecotropa-u-ozera-bezdonnoe/" },
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const elasticContainer = document.getElementById("elasticId");
     trailsData.forEach(trail => {
         const searchItem = document.createElement("a");
@@ -48,5 +48,84 @@ document.addEventListener("DOMContentLoaded", function() {
         elasticContainer.appendChild(searchItem);
     });
 
-    // Логика для поиска остается такой же, как и выше
+    // Логика для поиска - так проще, но не хочется мучиться с кодом отдельных поисков
+    // const Search = document.querySelector("#search");
+    // const headerTwo = document.querySelector("header");
+    // const voidSearch = document.querySelector("#VoidSearch");
+    // const elasticBox = document.querySelector("#elasticId");
+    // Search.addEventListener("click", function Searchinput() {
+    //     console.log(document.querySelector(".searcharea"));
+    //     let k = 0;
+    //     document.querySelector(".searcharea").oninput = function () {
+    //         let val = this.value.trim().toLowerCase(); // Приводим val к нижнему регистру
+    //         let elasticItems = document.querySelectorAll(".elastic a");
+    //         if (val != "") {
+    //             elasticItems.forEach(function (elem) {
+    //                 // Приводим текст элемента к нижнему регистру перед поиском
+    //                 if (elem.innerText.toLowerCase().search(val) == -1) {
+    //                     elem.classList.add("hide");
+    //                     elem.removeAttribute("hidden");
+    //                     elem.innerHTML = elem.innerText;
+    //                 } else {
+    //                     k++;
+    //                     elem.classList.remove("hide");
+    //                     elem.removeAttribute("hidden");
+    //                     let str = elem.innerText;
+    //                     elem.innerHTML = insertMark(
+    //                         str,
+    //                         elem.innerText.toLowerCase().search(val), // Также приводим к нижнему регистру здесь
+    //                         val.length
+    //                     );
+    //                 }
+    //             });
+    //             // Изменение парметров взависимости от количества вкладок поиска!
+    //             console.log(k);
+    //             if (k === 0) {
+    //                 voidSearch.hidden = false;
+    //                 elasticBox.classList.add("elasticBig");
+    //             } else if (k > 0) {
+    //                 document.querySelector("#VoidSearch").hidden = true;
+    //                 elasticBox.classList.remove("elasticBig");
+    //                 elasticBox.style.background = "";
+    //                 console.log(window.pageYOffset);
+    //                 elasticItems.forEach(function (elem) {
+    //                     elasticBox.classList.add("elasticBig");
+    //                     elem.classList.add("elemsearch");
+    //                     elem.style.background = "transparent";
+    //                 });
+    //             }
+
+    //             k = 0;
+    //         } else {
+    //             document.querySelector("#VoidSearch").hidden = true;
+    //             elasticBox.style.background = "";
+    //             elasticItems.forEach(function (elem) {
+    //                 elem.classList.add("hide");
+    //                 elasticBox.classList.remove("elasticBig");
+    //                 elem.innerHTML = elem.innerText;
+    //             });
+    //         }
+    //     };
+    // });
+    // function insertMark(stringmark, pos, len) {
+    //     return (
+    //         stringmark.slice(0, pos) +
+    //         "<span class ='searchmark'>" +
+    //         stringmark.slice(pos, pos + len) +
+    //         "</span>" +
+    //         stringmark.slice(pos + len)
+    //     );
+    // }
+
+    // headerTwo.addEventListener("click", (event) => {
+    //     const TempSearchTwo = document.querySelector("#search-close");
+    //     TempSearchTwo.addEventListener("click", () => {
+    //         voidSearch.hidden = true;
+    //         elasticBox.classList.remove("elasticBig");
+    //         let elasticItems = document.querySelectorAll(".elastic a");
+    //         elasticItems.forEach(function (elem) {
+    //             elem.classList.add("hide");
+    //         });
+    //     });
+    // });
 });

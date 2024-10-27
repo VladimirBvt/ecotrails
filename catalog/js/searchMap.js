@@ -17,7 +17,7 @@ search.addEventListener("click", () => {
       <path class="color-search-temp" d="M32.5 7L7 33.2126M7 7L32.5 33.2126" stroke="#1F271B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg></li>`
   );
-  document.querySelector(".otstup-icon-search").hidden = false;  
+  document.querySelector(".otstup-icon-search").hidden = false;
 
   const TempSearch = document.querySelector("#search-close");
   TempSearch.addEventListener("click", () => {
@@ -28,7 +28,7 @@ search.addEventListener("click", () => {
     }
     document.querySelector("#cont-search").remove();
     document.querySelector("#search").hidden = false;
-    document.querySelector(".otstup-icon-search").hidden = true;    
+    document.querySelector(".otstup-icon-search").hidden = true;
   });
 });
 
@@ -57,12 +57,12 @@ Search.addEventListener("click", function Searchinput() {
   console.log(document.querySelector(".searcharea"));
   let k = 0;
   document.querySelector(".searcharea").oninput = function () {
-    let val = this.value.trim();
-    
+    let val = this.value.trim().toLowerCase();
+
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {
-        if (elem.innerText.search(val) == -1) {
+        if (elem.innerText.toLowerCase().search(val) == -1) {
           elem.classList.add("hide");
           elem.removeAttribute("hidden");
           elem.innerHTML = elem.innerText;
@@ -73,7 +73,7 @@ Search.addEventListener("click", function Searchinput() {
           let str = elem.innerText;
           elem.innerHTML = insertMark(
             str,
-            elem.innerText.search(val),
+            elem.innerText.toLowerCase().search(val),
             val.length
           );
         }
@@ -127,35 +127,35 @@ headerTwo.addEventListener("click", (event) => {
     });
   });
 
-  if (window.pageYOffset === 0) {
-    if (event.target.className === "searcharea") {
-      document
-        .querySelector("#opasity-header")
-        .classList.add("searcharea-onactive");
-    }
-
-    document.querySelector(".searcharea").addEventListener("input", () => {
-      if (window.pageYOffset === 0) {
-        if (document.querySelector(".searcharea").value !== "") {
-          document
-            .querySelector("#opasity-header")
-            .classList.add("searcharea-onactive");
-        }
-      }
-    });
-    document.querySelector(".searcharea").addEventListener("blur", () => {
-      if (window.pageYOffset === 0) {
-        if (document.querySelector(".searcharea").value === "")
-          document
-            .querySelector("#opasity-header")
-            .classList.remove("searcharea-onactive");
-        else
-          document
-            .querySelector("#opasity-header")
-            .classList.add("searcharea-onactive");
-      }
-    });
+if (window.pageYOffset === 0) {
+  if (event.target.className === "searcharea") {
+    document
+      .querySelector("#opasity-header")
+      .classList.add("searcharea-onactive");
   }
+
+  document.querySelector(".searcharea").addEventListener("input", () => {
+    if (window.pageYOffset === 0) {
+      if (document.querySelector(".searcharea").value !== "") {
+        document
+          .querySelector("#opasity-header")
+          .classList.add("searcharea-onactive");
+      }
+    }
+  });
+  document.querySelector(".searcharea").addEventListener("blur", () => {
+    if (window.pageYOffset === 0) {
+      if (document.querySelector(".searcharea").value === "")
+        document
+          .querySelector("#opasity-header")
+          .classList.remove("searcharea-onactive");
+      else
+        document
+          .querySelector("#opasity-header")
+          .classList.add("searcharea-onactive");
+    }
+  });
+}
 });
 window.addEventListener("scroll", () => {
   if (window.pageYOffset === 0) {

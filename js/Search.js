@@ -86,11 +86,11 @@ Search.addEventListener("click", function Searchinput() {
   console.log(document.querySelector(".searcharea"));
   let k = 0;
   document.querySelector(".searcharea").oninput = function () {
-    let val = this.value.trim();
+    let val = this.value.trim().toLowerCase();
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {
-        if (elem.innerText.search(val) == -1) {
+        if (elem.innerText.toLowerCase().search(val) == -1) {
           elem.classList.add("hide");
           elem.removeAttribute("hidden");
           elem.innerHTML = elem.innerText;
@@ -101,7 +101,7 @@ Search.addEventListener("click", function Searchinput() {
           let str = elem.innerText;
           elem.innerHTML = insertMark(
             str,
-            elem.innerText.search(val),
+            elem.innerText.toLowerCase().search(val),
             val.length
           );
         }
