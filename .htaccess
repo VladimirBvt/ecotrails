@@ -3,9 +3,11 @@
 # RewriteCond %{HTTP_HOST} ^(www\.)?eco-trails\.ru$ [NC]
 # RewriteRule ^(.*)$ https://xn--80aagfgg4cjdgbjdfb1a1a.xn--p1ai/$1 [R=301,L]
 
-ErrorDocument 404 https://eco-trails.ru/404
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?xn--h1aaeqaaggclaf4jva\.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://eco-trails.ru/$1 [R=301,L]
 
-Redirect 301 /catalog/lenoblast/bugaina-tropa/ /catalog/lenoblast/bugainaya-tropa/
+ErrorDocument 404 https://eco-trails.ru/404
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
