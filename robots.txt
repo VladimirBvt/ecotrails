@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Host: eco-trails.ru
+Sitemap: http://eco-trails.ru/sitemap.xml
