@@ -1,4 +1,17 @@
 User-agent: *
-Disallow: 
+Disallow: /catalog/krym/bolshaya-sevastopolskaya-tropa/
+Disallow: /toksovskie-vysoty/
+Disallow: /dudergofskie-vysoty/
+Disallow: /dudergofskie-vysoty
+Disallow: /catalog/ecotropa-u-ozera-bezdonnoe/
+Disallow: /rakovye-ozyora/
+Disallow: /sestroreckoe-boloto/
+Disallow: /sestroreckoe-boloto/index.html
+Disallow: /catalog/region/v-parke-shveitsaria/
+Disallow: /404/
+Disallow: /404
+Disallow: /catalog/lenoblast/bugaina-tropa/
+Disallow: /policy/
+
 Host: eco-trails.ru
 Sitemap: http://eco-trails.ru/sitemap.xml
