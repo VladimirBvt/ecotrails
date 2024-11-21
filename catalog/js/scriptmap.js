@@ -5592,10 +5592,10 @@ ymaps.ready(function () {
                   <p id="color-letters-cot" class="black-color">8,3 км</p>
               </a>
               <a href="/catalog/lenoblast/rakovye-ozyora/" class="trail-difficulty">
-                  <div id="medium" class="img-card-color">
-                      <img src="/img/difficulty-medium.svg" alt="Сложность тропы">
+                  <div id="easy" class="img-card-color">
+                      <img src="/img/difficulty-easy.svg" alt="Сложность тропы">
                   </div>
-                  <p id="color-letters-cot" class="black-color">Средняя</p>
+                  <p id="color-letters-cot" class="black-color">Простая</p>
               </a>
               <a href="/catalog/lenoblast/rakovye-ozyora/" class="trail-duration">
                   <div class="img-card-color">
