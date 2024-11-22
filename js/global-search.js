@@ -1,4 +1,5 @@
 const trailsData = [
+    { name: "Лиственничная роща", url: "/catalog/lenoblast/listvennichnaya-roscha/" },
     { name: "В гармонии с природой", url: "/catalog/moskva/v-garmonii-s-prirodoy/" },
     { name: "Вдоль реки Чермянки", url: "/catalog/moskva/chermyanka/" },
     { name: "Экотропа Абрау-Дюрсо", url: "/catalog/krasnodarsky-krai/abrau-durso/" },
