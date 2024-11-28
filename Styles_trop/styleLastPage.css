@@ -419,6 +419,7 @@ a.link:hover {
 /* Отступ рекламы (баннер в статье) */
 .ads-ban {
   margin-top: 112px;
+  display: none;
 }
 
 /* Мобила */
