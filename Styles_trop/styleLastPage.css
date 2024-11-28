@@ -412,7 +412,7 @@ a.link:hover {
 }
 
 /* Отступ рекламы (лента) */
-.ads {
+.ads, .ads_ab {
   margin-bottom: 112px;
 }
 
@@ -453,7 +453,7 @@ a.link:hover {
   }
 
   /* Отступ рекламы (лента) */
-  .ads {
+  .ads, .ads_ab {
     margin-bottom: 72px;
   }
 
@@ -1702,7 +1702,7 @@ a.link:hover {
   }
 
   /* Отступ рекламы (лента) */
-  .ads {
+  .ads, .ads_ab {
     margin-bottom: 72px;
   }
 
