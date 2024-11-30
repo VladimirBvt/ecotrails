@@ -194,23 +194,49 @@ a.link:hover {
   display: none;
 }
 
-.back {
+/* Хлебные крошки */
+.breadcrumbs {
   margin-top: 139px;
-  margin-left: 201px;
   display: flex;
+  gap: 12px;
+  font-size: 18px;
   align-items: center;
-  cursor: pointer;
 }
 
+/* Разделители */
+.breadcrumb-separator {
+  font-size: 15px;
+  color: #F28123;
+  line-height: 0;
+}
+
+/* Ссылки */
+.breadcrumb-item {
+  line-height: 0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb-item:hover {
+  color: #F28123;
+}
+
+/* Иконка домика */
+.breadcrumb-icon {
+  vertical-align: middle;
+  transition: content 0.3s;
+}
+
+.breadcrumb-icon:hover {
+  content: url("/img/breadcrumbs/home-icon-active.svg");
+}
+
+/* Карта */
 #map {
   height: 685px;
   width: 1218px;
   top: 0;
   left: 0;
-}
-
-.back>*+* {
-  margin-left: 23px;
 }
 
 .body {
@@ -412,7 +438,8 @@ a.link:hover {
 }
 
 /* Отступ рекламы (лента) */
-.ads, .ads_ab {
+.ads,
+.ads_ab {
   margin-bottom: 112px;
 }
 
@@ -420,48 +447,6 @@ a.link:hover {
 .ads-ban {
   margin-top: 112px;
   display: none;
-}
-
-/* Мобила */
-@media only screen and (max-width: 480px) {
-  .row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .col-md-4 {
-    margin-bottom: 30px;
-    flex-basis: 33%;
-  }
-
-  .icon-wrapper {
-    flex-direction: row;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon-wrapper p {
-    margin-top: 0;
-    margin-left: 10px;
-    text-align: left;
-  }
-
-  /* Отспуп снизу от статьи */
-  .info__trail {
-    padding-bottom: 72px;
-  }
-
-  /* Отступ рекламы (лента) */
-  .ads, .ads_ab {
-    margin-bottom: 72px;
-  }
-
-  /* Отступ рекламы (баннер в статье) */
-  .ads-ban {
-    margin-top: 72px;
-  }
-
 }
 
 .tabcontent {
@@ -886,16 +871,6 @@ a.link:hover {
   margin: auto;
   max-width: 1200px;
   width: 100%;
-}
-
-/* Кнопка назад */
-.back {
-  text-align: left;
-  margin-left: 0;
-}
-
-.back p {
-  font-size: 20px;
 }
 
 .main-head-right {
@@ -1425,12 +1400,53 @@ a.link:hover {
   }
 }
 
+/* Мобила */
 @media (max-width: 480px) {
 
   /* .header{
     padding-left: 30px;
     padding-right: 30px;
   } */
+
+  .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-4 {
+    margin-bottom: 30px;
+    flex-basis: 33%;
+  }
+
+  .icon-wrapper {
+    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-wrapper p {
+    margin-top: 0;
+    margin-left: 10px;
+    text-align: left;
+  }
+
+  /* Отспуп снизу от статьи */
+  .info__trail {
+    padding-bottom: 72px;
+  }
+
+  /* Отступ рекламы (лента) */
+  .ads,
+  .ads_ab {
+    margin-bottom: 72px;
+  }
+
+  /* Отступ рекламы (баннер в статье) */
+  .ads-ban {
+    margin-top: 72px;
+  }
+
   .modalQR .modal_contentQR {
     width: 360px;
     height: 449px;
@@ -1693,7 +1709,7 @@ a.link:hover {
     line-height: 24px;
   }
 
-  .back {
+  .breadcrumbs {
     margin-top: 110px;
   }
 
@@ -1702,7 +1718,8 @@ a.link:hover {
   }
 
   /* Отступ рекламы (лента) */
-  .ads, .ads_ab {
+  .ads,
+  .ads_ab {
     margin-bottom: 72px;
   }
 
