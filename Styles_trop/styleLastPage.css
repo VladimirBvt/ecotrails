@@ -1709,10 +1709,20 @@ a.link:hover {
     line-height: 24px;
   }
 
+  /* Хлебные крошки */
   .breadcrumbs {
     margin-top: 110px;
   }
 
+  .breadcrumb-icon {
+    content: url("/img/breadcrumbs/back-btn.svg");
+  }
+
+  .breadcrumb-separator, .breadcrumb-item.catalog {
+    display: none;
+  }
+
+  /*  */
   .swiper-controlls {
     margin-top: 20px;
   }

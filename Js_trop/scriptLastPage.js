@@ -16,6 +16,17 @@
 //   }
 // });
 
+// Замена текста хлебных крошек в Питере
+
+window.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 480) { // Проверяем мобильное устройство
+    const breadcrumbItem = document.querySelector('.breadcrumb-item[href="/catalog/?region=lenoblast"]');
+    if (breadcrumbItem) {
+      breadcrumbItem.textContent = "Спб и Ленобласть"; // Меняем текст
+    }
+  }
+});
+
 const swiper = new Swiper(".image-slider", {
   // Optional parameters
   slidesPerView: 1,
