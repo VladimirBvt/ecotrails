@@ -25,46 +25,46 @@
 		<priority>0.75</priority>
 		<lastmod>2024-12-15</lastmod>
 	</url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=lenoblast</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod> 
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=krasnodarsky-krai</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod> 
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=nizhegorodskaya-oblast</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod>
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=moskva</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod>
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=krym</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod> 
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=stavropolsky-krai</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod>  
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=kabardino-balkariya</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod>  
-  </url>
-  <url>
-    <loc>https://eco-trails.ru/catalog/?region=yaroslavskaya-oblast</loc>
-    <priority>0.75</priority>
-    <lastmod>2024-12-15</lastmod>
-  </url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=lenoblast</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=krasnodarsky-krai</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=nizhegorodskaya-oblast</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=moskva</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=krym</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=stavropolsky-krai</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=kabardino-balkariya</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/?region=yaroslavskaya-oblast</loc>
+		<priority>0.75</priority>
+		<lastmod>2024-12-15</lastmod>
+	</url>
 	<url>
 		<loc>https://www.eco-trails.ru/404</loc>
 		<priority>0.75</priority>
@@ -173,7 +173,7 @@
 	<url>
 		<loc>https://www.eco-trails.ru/catalog/lenoblast/sestroreckoe-boloto</loc>
 		<priority>0.25</priority>
-		<lastmod>2024-12-12</lastmod>
+		<lastmod>2024-12-18</lastmod>
 	</url>
 	<url>
 		<loc>https://www.eco-trails.ru/catalog/lenoblast/rakovye-ozyora</loc>
