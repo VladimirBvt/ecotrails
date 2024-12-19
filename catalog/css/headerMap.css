@@ -26,7 +26,7 @@
   right: 0;
   top: 0;
   text-align: center;
-  max-width: 100%;
+  max-width: 1218px;
   width: 100%;
   height: 90px;
   z-index: 2050;
@@ -43,7 +43,7 @@
   align-items: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 25px 191px 25px 191px;
+  padding: 25px 0;
 }
 .logo-header {
   display: -webkit-inline-box;

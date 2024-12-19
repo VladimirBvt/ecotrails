@@ -196,7 +196,6 @@ a.link:hover {
 
 /* Хлебные крошки */
 .breadcrumbs {
-  margin-top: 139px;
   display: flex;
   gap: 12px;
   font-size: 18px;
@@ -214,7 +213,7 @@ a.link:hover {
 .breadcrumb-item {
   line-height: 0;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color;
 }
 
 .breadcrumb-item:hover {
@@ -224,7 +223,7 @@ a.link:hover {
 /* Иконка домика */
 .breadcrumb-icon {
   vertical-align: middle;
-  transition: content 0.3s;
+  transition: content;
 }
 
 .breadcrumb-icon:hover {
@@ -238,7 +237,7 @@ a.link:hover {
   height: 40px !important;
   width: 40px !important;
   padding: 0 !important;
-  margin: 0 !important;  
+  margin: 0 !important;
 }
 
 .ya-share2__icon_more:hover {
@@ -321,7 +320,7 @@ a.link:hover {
 }
 
 .main-other-page {
-  max-width: 1200px;
+  max-width: 1218px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -792,11 +791,12 @@ a.link:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  align-items: baseline;
   margin-left: auto;
   margin: auto;
-  max-width: 1200px;
+  margin-top: 122px;
+  /* max-width: 1200px; */
   width: 100%;
+  height: auto;
 }
 
 .main-head-right {
@@ -1093,10 +1093,6 @@ a.link:hover {
     max-width: 976px;
   }
 
-  .main-head {
-    max-width: 976px;
-  }
-
   .swiper-top {
     max-width: 976px !important;
     width: 100% !important;
@@ -1277,6 +1273,11 @@ a.link:hover {
   .swiper-right-btn {
     display: none;
   }
+
+  /* Хлебные крошки */
+  .main-head {
+    margin-top: 102px;
+  }
 }
 
 /* Мобила */
@@ -1373,10 +1374,6 @@ a.link:hover {
   }
 
   .main-other-page {
-    max-width: 320px;
-  }
-
-  .main-head {
     max-width: 320px;
   }
 
@@ -1547,15 +1544,16 @@ a.link:hover {
   }
 
   /* Хлебные крошки */
-  .breadcrumbs {
-    margin-top: 110px;
+  .main-head {
+    margin-top: 96px;
   }
 
   .breadcrumb-icon {
     content: url("/img/breadcrumbs/back-btn.svg");
   }
 
-  .breadcrumb-separator, .breadcrumb-item.catalog {
+  .breadcrumb-separator,
+  .breadcrumb-item.catalog {
     display: none;
   }
 
