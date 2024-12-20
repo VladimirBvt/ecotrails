@@ -1288,13 +1288,16 @@ a.link:hover {
     padding-right: 30px;
   } */
 
+  .main-other-page {
+    max-width: 320px;
+  }
+
   .row {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .col-md-4 {
-    margin-bottom: 30px;
+  .col-md-4 {    
     flex-basis: 33%;
   }
 
@@ -1331,16 +1334,19 @@ a.link:hover {
     margin-left: 0px;
   }
 
-  .mobile-text-last {
-    margin: 0;
-  }
-
   .mobile-text {
     margin: 0 !important;
   }
 
   .svg {
     margin: 0;
+  }
+
+  /* Кнопка расшарки */
+  .ya-share2__icon_more {
+    background-size: 32px 32px !important;
+    height: 32px !important;
+    width: 32px !important;
   }
 
   /* Крестик модального окна */
@@ -1364,17 +1370,15 @@ a.link:hover {
 
   .mobile-text {
     display: inline;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    padding-bottom: 6px;    
+  }
+
+  .mobile-text.mobile-text-last {
+    padding: 6px 0 0 0;
   }
 
   .location {
-    margin-bottom: 37px;
-    margin-top: 30px;
-  }
-
-  .main-other-page {
-    max-width: 320px;
+    margin: 32px 0;
   }
 
   .swiper-top {
@@ -1408,7 +1412,7 @@ a.link:hover {
   }
 
   .eco-trail {
-    margin: 36px 20px 50px;
+    margin: 32px 20px;
     font-size: 24px;
     gap: 12px;
   }
