@@ -1,6 +1,7 @@
 const title = document.querySelector(".title");
-  const backScroll = document.querySelector("#back-scroll");
-  const upperCotalog = document.querySelector(".upper_cotalog");
+const mainHead = document.querySelector(".main-head");
+const backScroll = document.querySelector("#back-scroll");
+const upperCotalog = document.querySelector(".upper_cotalog");
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -9,7 +10,7 @@ addEventListener("load", () => {
   const mapPath = document.querySelector(".map-path");
   const listPath = document.querySelector(".list-path");
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
-  const colorSwitchText2 = document.querySelector(".switch-btn-text2");  
+  const colorSwitchText2 = document.querySelector(".switch-btn-text2");
 
   switchList.addEventListener("click", (e) => {
     swicthBtn.classList.remove("switch-map");
@@ -28,7 +29,7 @@ addEventListener("load", () => {
     listPath.setAttribute("stroke", "black");
     colorSwitchText1.style.color = "black";
     colorSwitchText2.style.color = "white";
- 
+
 
     // Переход на страницу карты с текущим фильтром региона
     const newUrl = filtredRegion === 'all'
@@ -47,10 +48,12 @@ function handleScroll() {
 
   if (y > 85) {
     title.style.display = 'none';
+    mainHead.style.display = 'none';
     backScroll.hidden = false;
     upperCotalog.classList.add("upper_cotalog_scroll");
   } else {
     title.style.display = 'flex';
+    mainHead.style.display = 'flex';
     backScroll.hidden = true;
     upperCotalog.classList.remove("upper_cotalog_scroll");
   }
@@ -200,7 +203,7 @@ regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
   filtredRegion = selectedRegion; // Сохраняем фильтр в глобальную переменную
 
-  let newRegion = selectedRegion; 
+  let newRegion = selectedRegion;
 
   // console.log(`${newRegion}`);  
 
@@ -209,7 +212,7 @@ regionSelect.addEventListener('change', function () {
     ? window.location.pathname  // Без параметра "region=all"
     : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
-  history.pushState(null, '', newUrl);  
+  history.pushState(null, '', newUrl);
 
   // Фильтруем карточки по выбранному региону
   filterCards(newRegion);
