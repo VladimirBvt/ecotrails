@@ -296,6 +296,10 @@ a.link:hover {
   line-height: 0;
 }
 
+.eco-trail.rules {
+  margin-bottom: 64px;
+}
+
 .location {
   display: flex;
   align-items: center;
@@ -1277,6 +1281,12 @@ a.link:hover {
   /* Хлебные крошки */
   .main-head {
     margin-top: 102px;
+  }
+
+  /* H1 в правилах */
+  .eco-trail.rules {
+    margin-bottom: 48px;
+    margin-top: 48px;
   }
 }
 
