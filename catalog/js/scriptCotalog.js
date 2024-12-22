@@ -11,6 +11,18 @@ addEventListener("load", () => {
   const listPath = document.querySelector(".list-path");
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
   const colorSwitchText2 = document.querySelector(".switch-btn-text2");
+  const breadcrumbs = document.querySelector('.breadcrumbs');
+
+  // Скрытие хлебных крошек на главной каталога
+  // Проверяем наличие GET-параметра "region" в URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const hasRegion = urlParams.has('region');
+
+  // Если параметр "region" отсутствует, скрываем хлебные крошки
+  if (!hasRegion && breadcrumbs) {
+    breadcrumbs.style.display = 'none';
+    document.querySelector('.main-head-right').style.marginLeft = 'auto';
+  }
 
   switchList.addEventListener("click", (e) => {
     swicthBtn.classList.remove("switch-map");
