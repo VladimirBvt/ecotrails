@@ -1293,11 +1293,6 @@ a.link:hover {
 /* Мобила */
 @media (max-width: 480px) {
 
-  /* .header{
-    padding-left: 30px;
-    padding-right: 30px;
-  } */
-
   .main-other-page {
     max-width: 320px;
   }

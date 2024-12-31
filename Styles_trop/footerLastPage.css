@@ -2,9 +2,8 @@
   margin: 0;
   padding: 0;
 }
-.footer {
-  max-width: 100%;
-  width: 100%;
+.footer {  
+  width: 100%;  
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -27,13 +26,13 @@
 }
 .container-footer {
   width: 100%;
+  max-width: 1218px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 20px 0 20px 0;
+  justify-content: space-between;  
 }
 
 /* Стилизация logo */
@@ -41,8 +40,7 @@
 .footer-child1 {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  padding-left: 191px;
+  display: flex;  
 }
 .container-logo-footer {
   display: -webkit-box;
@@ -96,8 +94,7 @@
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  margin-left: 50px;
+  align-items: center;  
 }
 .author_rules {
   color: #f7fbfb;
@@ -110,9 +107,7 @@
   padding-right: 3px;
   padding-bottom: 10px;
 }
-.footer-child3 {
-  padding-right: 191px;
-}
+
 /* Стилизация конпки обратной связи */
 
 .button-footer {
@@ -286,7 +281,7 @@
 } */
 /* Адаптив под экраны от 1530px */
 
-@media (max-width: 1530px) {
+@media (max-width: 1250px) {
   .footer {
     /* margin-top: 96px; */
     width: 100%;
@@ -294,7 +289,7 @@
 
   .footer-child1 {
     padding: 0;
-    margin-left: 21px;
+    margin-left: 20px;
   }
   .footer-child3 {
     padding: 0;

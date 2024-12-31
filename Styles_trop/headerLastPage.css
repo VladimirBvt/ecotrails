@@ -624,9 +624,13 @@ a.header-icon.keychainify-checked {
   line-height: 0;
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 1250px) {
   .main-header {
-    max-width: 976px;
+    /* max-width: 976px; */
+  }
+
+  .container-header {
+    padding: inherit 24px;
   }
 
   .VoidSearch {
