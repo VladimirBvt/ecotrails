@@ -3,15 +3,14 @@
   padding: 0;
 }
 .main-header {
-  position: absolute;
+  display: flex;
   position: fixed;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   top: 0;
-  text-align: center;
-  max-width: 1218px;
+  text-align: center;  
   width: 100%;
   height: 90px;
   z-index: 2050;
@@ -29,7 +28,9 @@
   align-items: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 23px 0;
+  width: 100%;
+  max-width: 1218px;
+  margin: 0 auto;
 }
 .logo-header {
   display: -webkit-inline-box;
@@ -630,7 +631,8 @@ a.header-icon.keychainify-checked {
   }
 
   .container-header {
-    padding: inherit 24px;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 
   .VoidSearch {
