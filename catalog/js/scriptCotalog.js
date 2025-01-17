@@ -176,7 +176,8 @@ function updateTitleH1Description(regionHref) {
     "moskva": "Москвы и Московской области",
     "krym": "Республики Крым",
     "stavropolsky-krai": "Ставропольского края",
-    "kabardino-balkariya": "Кабардино-Балкарии"
+    "kabardino-balkariya": "Кабардино-Балкарии",
+    "tambovskaya-oblast": "Тамбовской области",
   };
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;
