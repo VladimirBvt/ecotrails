@@ -220,7 +220,7 @@ ymaps.ready(function () {
  <figcaption class="trail-info">
      <a href="../catalog/tambovskaya-oblast/ples-active/" class="trail-title-link">
          <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
-             title="Экотропа PlesActive">PlesActive
+             title="Экотропа PlesActive">Экотропа PlesActive
          </h2>
      </a>
      <a href="../catalog/tambovskaya-oblast/ples-active/" id="trail-location" class="trail-location-black"
