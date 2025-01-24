@@ -1,4 +1,5 @@
 const trailsData = [
+    { name: "Долина Нарзанов", url: "/catalog/kabardino-balkariya/dolina-narzanov/" },
     { name: "Экотропа PlesActive", url: "/catalog/tambovskaya-oblast/ples-active/" },
     { name: "В гостях у серой цапли", url: "/catalog/yaroslavskaya-oblast/v-gostyah-u-seroy-tsapli/" },
     { name: "Лиственничная роща", url: "/catalog/lenoblast/listvennichnaya-roscha/" },

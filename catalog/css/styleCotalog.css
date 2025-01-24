@@ -241,7 +241,7 @@ a {
 }
 
 .size-card-elem-p {
-  width: 215px;
+  /* width: 215px; */
   /* height: 43px; */
   min-height: 24px;
 }
@@ -561,7 +561,7 @@ a {
   }
 
   .size-card-elem-p {
-    width: 179px;
+    /* width: 179px; */
     height: 43px;
     font-style: normal;
   }
@@ -679,7 +679,7 @@ a {
   }
 
   .size-card-elem-p {
-    width: 242px;
+    /* width: 242px; */
     height: 48px;
   }
 
