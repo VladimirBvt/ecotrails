@@ -261,6 +261,46 @@ p {
   text-transform: uppercase;
 }
 
+/* Стили тултипа */
+.tooltip-icon {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 16px;
+  vertical-align: super;
+  height: auto;
+  /* font-size: 0.6em; */
+}
+
+.tooltip-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #F7FBFB;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(31, 39, 27, 0.35);
+  z-index: 1000;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+/* Стрелочка тултипа */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: -20px; /* отступ сверху - чем больше, тем лучше видна стрелочка */
+  left: var(--arrow-offset, 50%); /* Используем CSS-переменную для позиции */
+  transform: translateX(-50%);
+  border-width: 12px; /* размер стрелочки */
+  border-style: solid;
+  border-color: transparent transparent #F7FBFB transparent;
+}
+/* Стили тултипа */
+
 .intro-img {
   display: block;
   margin: 0 auto 44px;
