@@ -292,12 +292,12 @@ p {
 .tooltip::before {
   content: '';
   position: absolute;
-  top: -20px; /* отступ сверху - чем больше, тем лучше видна стрелочка */
+  top: -20px; /* Отступ сверху для стрелочки */
   left: var(--arrow-offset, 50%); /* Используем CSS-переменную для позиции */
-  transform: translateX(-50%);
-  border-width: 12px; /* размер стрелочки */
+  transform: translateX(-50%); /* Центрируем стрелочку */
+  border-width: 12px; /* Размер стрелочки */
   border-style: solid;
-  border-color: transparent transparent #F7FBFB transparent;
+  border-color: transparent transparent #F7FBFB transparent; /* Стрелочка указывает вверх */
 }
 /* Стили тултипа */
 
