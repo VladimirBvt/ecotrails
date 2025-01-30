@@ -44,17 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const iconRect = tooltipIcon.getBoundingClientRect();
         const tooltipWidth = tooltip.offsetWidth;
         const tooltipHeight = tooltip.offsetHeight;
+        const iconImgRect = document.querySelector('.tooltip-icon img');
 
         // Позиция тултипа
         let top = iconRect.bottom + window.scrollY;
-        let left = iconRect.left + window.scrollX + (iconRect.width / 2) - (tooltipWidth / 2);
+        let left = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2) - (tooltipWidth / 2);
 
         // Проверка, чтобы тултип не выходил за границы экрана
         if (left < 0) left = 10; // Отступ от левого края
         if (left + tooltipWidth > window.innerWidth) left = window.innerWidth - tooltipWidth - 10; // Отступ от правого края
 
         // Позиция стрелочки
-        const iconCenterX = iconRect.left + window.scrollX + (iconRect.width / 2); // Центр иконки
+        const iconCenterX = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2); // Центр иконки
         const tooltipLeft = left; // Левый край тултипа
         const arrowOffset = iconCenterX - tooltipLeft; // Смещение стрелочки относительно центра иконки
 

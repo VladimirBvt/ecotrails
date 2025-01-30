@@ -259,21 +259,30 @@ p {
   line-height: 1.35;
   color: #f7fbfb;
   text-transform: uppercase;
+  /* position: relative;  */
+  /* display: inline-block;   */
 }
 
 /* Стили тултипа */
 .tooltip-icon {
-  cursor: pointer;
-  display: inline-block;
+  cursor: pointer;  
+  /* display: inline-block; */
+  /* top: -0.1em; Сдвигаем иконку вверх */
+  /* right: -42px; Размещаем иконку в конце заголовка */
   margin-left: 12px; /* Отступ иконки от текста */
-  vertical-align: super;
-  height: auto;  
+  /* vertical-align: super; */
+  /* height: auto;   */
+  
 }
 
 /* Иконка тултипа */
 .tooltip-icon img {
+  position: absolute;
   width: 30px;
   height: 30px;
+  /* vertical-align: middle; */
+  /* top: 0; */
+  /* right: 0; */
 }
 
 /* Окно тултипа */
@@ -286,16 +295,17 @@ p {
   box-shadow: 0px 0px 5px rgba(31, 39, 27, 0.35);
   z-index: 1000;
   max-width: 250px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   text-align: left;
 }
 
 /* Текст в тултипе */
 p.tt-p {  
   font-family: Avante Book;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.45;
+  letter-spacing: 1px;
 }
 
 /* Стрелочка тултипа */
