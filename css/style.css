@@ -265,7 +265,7 @@ p {
 .tooltip-icon {
   cursor: pointer;
   display: inline-block;
-  margin-left: 16px;
+  margin-left: 12px;
   vertical-align: super;
   height: auto;
   /* font-size: 0.6em; */
@@ -350,9 +350,9 @@ p {
 .trail-spec img {
   margin-bottom: 3px;
 }
-.popular {
-  /* margin-bottom: 180px; */
-}
+/* .popular {
+  margin-bottom: 180px;
+} */
 
 .popular-title {
   margin-bottom: 0;

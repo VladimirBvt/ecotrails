@@ -2,6 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const tooltipIcon = document.getElementById('tooltipIcon');
     const tooltip = document.getElementById('tooltip');
 
+    // Показать тултип при наведении на иконку
+    tooltipIcon.addEventListener('mouseenter', function () {
+        tooltip.style.display = 'block';
+        positionTooltip();
+    });
+
+    // Скрыть тултип при уходе курсора с иконки
+    tooltipIcon.addEventListener('mouseleave', function () {
+        tooltip.style.display = 'none';
+    });
+
     // Показать/скрыть тултип при клике на иконку
     tooltipIcon.addEventListener('click', function (event) {
         event.stopPropagation(); // Предотвращаем всплытие события
@@ -25,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
         tooltip.style.display = 'none';
     });
+
+
 
     // Функция для позиционирования тултипа и стрелочки
     function positionTooltip() {
