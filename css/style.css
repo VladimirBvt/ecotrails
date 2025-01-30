@@ -259,20 +259,12 @@ p {
   line-height: 1.35;
   color: #f7fbfb;
   text-transform: uppercase;
-  /* position: relative;  */
-  /* display: inline-block;   */
 }
 
 /* Стили тултипа */
 .tooltip-icon {
   cursor: pointer;  
-  /* display: inline-block; */
-  /* top: -0.1em; Сдвигаем иконку вверх */
-  /* right: -42px; Размещаем иконку в конце заголовка */
-  margin-left: 12px; /* Отступ иконки от текста */
-  /* vertical-align: super; */
-  /* height: auto;   */
-  
+  margin-left: 12px; /* Отступ иконки от текста */  
 }
 
 /* Иконка тултипа */
@@ -280,9 +272,6 @@ p {
   position: absolute;
   width: 30px;
   height: 30px;
-  /* vertical-align: middle; */
-  /* top: 0; */
-  /* right: 0; */
 }
 
 /* Окно тултипа */
@@ -295,7 +284,7 @@ p {
   box-shadow: 0px 0px 5px rgba(31, 39, 27, 0.35);
   z-index: 1000;
   max-width: 250px;
-  /* margin-top: 10px; */
+  min-width: 200px;
   text-align: left;
 }
 
@@ -960,7 +949,7 @@ details[open] summary ~ * {
     font-style: normal;
     font-weight: 700;
     font-size: 44px;
-    line-height: 54px;
+    line-height: 64px;
     text-align: center;
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -971,6 +960,14 @@ details[open] summary ~ * {
     -ms-flex-positive: 0;
     flex-grow: 0;
   }
+
+    /* Иконка тултипа */
+    .tooltip-icon img {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+    }
+
   .intro-img {
     margin-top: 51px;
     margin-bottom: 51px;
@@ -1249,9 +1246,17 @@ details[open] summary ~ * {
     text-align: center;
     font-size: 32px;
     font-size: 32px;
-    line-height: 39px;
+    line-height: 52px;
     font-weight: 700;
   }
+
+  /* Иконка тултипа */
+  .tooltip-icon img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+  }
+
   .intro-img {
     margin-bottom: 80px;
     margin-top: 80px;
