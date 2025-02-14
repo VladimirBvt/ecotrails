@@ -7,7 +7,7 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(www\.)?xn--h1aaeqaaggclaf4jva\.xn--p1ai$ [NC]
 RewriteRule ^(.*)$ https://eco-trails.ru/$1 [R=301,L]
 
-ErrorDocument 404 https://eco-trails.ru/404
+ErrorDocument 404 /404/index.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
