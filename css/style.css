@@ -177,7 +177,7 @@ p {
 .wrap {
   max-width: 1220px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 112px;
 }
 .bold-paragraph {
   font-family: "Avante Bold";
@@ -513,11 +513,9 @@ p.tt-p {
 }
 
 /* partners  */
-.partners {
-  margin-bottom: 22px;
-}
+
 .partner {
-  margin: 94px 20px 30px;
+  margin: 0 20px;
   max-width: 1000px;
   width: 100%;
 }
@@ -567,6 +565,8 @@ p.tt-p {
   -ms-flex-align: center;
   align-items: center;
 }
+
+/* Слайдер партнёров */
 /* .swiper-left-part {
   background: url(/img/leftarrow.svg) no-repeat;
 }
@@ -1032,9 +1032,7 @@ details[open] summary ~ * {
     -ms-flex-positive: 0;
     flex-grow: 0;
   }
-  .partners {
-    margin-bottom: 6px;
-  }
+
   .popular {
     margin-bottom: 96px;
   }
@@ -1306,6 +1304,7 @@ details[open] summary ~ * {
   .popular > .wrap {
     max-width: 360px;
     padding: 0 !important;
+    margin-bottom: 72px;
   }
 
   .popular-wrap {
@@ -1350,9 +1349,6 @@ details[open] summary ~ * {
     font-size: 24px;
     line-height: 130%;
     text-align: center;
-  }
-  .partners {
-    margin-bottom: 0px;
   }
 
   .faq-title {
