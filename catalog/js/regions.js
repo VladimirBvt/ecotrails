@@ -10,6 +10,7 @@ const regionsData = [
   { value: 'stavropolsky-krai', name: 'Ставропольский край', coordinates: [45.04331, 41.9691] },
   { value: 'kabardino-balkariya', name: 'Кабардино-Балкария', coordinates: [43.4846, 43.6072] },
   { value: 'tambovskaya-oblast', name: 'Тамбовская область', coordinates: [52.7314, 41.4366] },
+  { value: 'kaliningradskaya-oblast', name: 'Калининградская область', coordinates: [54.710000, 20.500000] },
 ];
 
   

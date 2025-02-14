@@ -178,6 +178,7 @@ function updateTitleH1Description(regionHref) {
     "stavropolsky-krai": "Ставропольского края",
     "kabardino-balkariya": "Кабардино-Балкарии",
     "tambovskaya-oblast": "Тамбовской области",
+    "kaliningradskaya-oblast": "Калининградской области",
   };
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;
