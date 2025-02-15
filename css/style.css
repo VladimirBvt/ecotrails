@@ -845,10 +845,6 @@ details[open] summary ~ * {
     background-size: 1024px 100vh;
   }
 
-  .partner-img {
-    height: 120px; /* Высота для планшета */
-}
-
   .size-card-elem-h2 {
     width: 201px;
     height: 58px;
