@@ -514,6 +514,10 @@ p.tt-p {
 
 /* partners  */
 
+.partners {
+  margin-bottom: 112px;
+}
+
 .partner {
   margin: 0 20px;
   max-width: 1000px;
@@ -533,27 +537,6 @@ p.tt-p {
   max-width: 140px;
 }
 
-.OneT {
-  width: 230px;
-  height: 230px;
-}
-.eco-habbits {
-  width: 145px;
-  height: 175px;
-}
-.Unknown_Russia {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 215px;
-  height: 130px;
-}
 .wrap-part {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -580,6 +563,8 @@ p.tt-p {
   width: 30px;
   cursor: pointer;
 } */
+
+/*  */
 
 .partners > .wrap-part {
   max-width: 1288px;
@@ -612,6 +597,16 @@ p.tt-p {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
+.partner-img {
+  height: 150px; /* Высота для десктопов */
+  transition: filter 0.3s ease; /* Плавное изменение */
+}
+
+.partner-img:hover {
+  filter: brightness(1.1); /* Увеличиваем яркость на 20% */
+}
+
 .partners-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -850,18 +845,10 @@ details[open] summary ~ * {
     background-size: 1024px 100vh;
   }
 
-  .OneT {
-    width: 190px;
-    height: 190px;
-  }
-  .eco-habbits {
-    width: 130px;
-    height: 155px;
-  }
-  .Unknown_Russia {
-    width: 195px;
-    height: 120px;
-  }
+  .partner-img {
+    height: 120px; /* Высота для планшета */
+}
+
   .size-card-elem-h2 {
     width: 201px;
     height: 58px;
@@ -1033,26 +1020,19 @@ details[open] summary ~ * {
     flex-grow: 0;
   }
 
-  .popular {
-    margin-bottom: 96px;
-  }
   .intro {
     margin-bottom: 96px;
   }
   .faq-title {
     width: 54px;
     height: 34px;
-
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
     text-align: center;
-
     -webkit-box-flex: 0;
-
     -ms-flex: none;
-
     flex: none;
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -1060,6 +1040,7 @@ details[open] summary ~ * {
     -ms-flex-positive: 0;
     flex-grow: 0;
   }
+  
   .faq {
     margin-bottom: 108px;
   }
@@ -1128,10 +1109,7 @@ details[open] summary ~ * {
   .swiper-controlls-part {
     display: none;
   }
-  .partner {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
   .popular-list {
     max-height: 600px;
     height: 100%;
@@ -1148,37 +1126,17 @@ details[open] summary ~ * {
   }
   .partner-item {
     margin-right: 0px !important;
-    width: 136px !important;
-    height: 136px !important;
+    /* width: 136px !important;
+    height: 136px !important; */
   }
-  .OneT {
-    width: 120px;
-    height: 120px;
-  }
+
   .partner-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     max-width: 300px;
   }
-  .Unknown_Russia {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 160px;
-    height: 83px;
-  }
-  .eco-habbits {
-    margin-right: 10px;
-    width: 80px;
-    height: 96px;
-  }
+ 
   .swiper-left-part {
     display: none;
   }
@@ -1343,6 +1301,11 @@ details[open] summary ~ * {
     right: -42px;
     margin-top: 0px;
   }
+
+  .partners {
+    margin-bottom: 72px;
+  }
+
   .partner-title {
     font-style: normal;
     font-weight: 700;

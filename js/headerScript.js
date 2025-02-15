@@ -814,69 +814,6 @@ window.addEventListener("scroll", function ScrollHead() {
 
 // Navigation end
 
-// MAIN !!!
-
-// Partners adaptiv
-
-if (document.documentElement.clientWidth >= 600) {
-  document.querySelector(".partners-content").innerHTML = `    
-                          <div class="partner-item swiper-slide">
-                              <img class="OneT partner-img" src="img/1TSprint.svg" alt="Партнеры">
-                          </div>
-                          <div class="partner-item swiper-slide">
-                              <img class="eco-habbits partner-img" src="img/eco-habbits.svg" alt="Партнеры"
-                                  >
-                          </div>
-                      <div class="partner-item swiper-slide">
-                          <img class="Unknown_Russia partner-img" src="img/Unknown_Russia.svg" alt="Партнеры">
-                      </div>`;
-}
-if (document.documentElement.clientWidth < 600) {
-  document.querySelector(".partners-content").innerHTML = `
- <div class="partner-container">
-                          <div class="partner-item swiper-slide">
-                              <img class=" partner-img" src="img/1TSpr-mobile.svg" alt="Партнеры">
-                          </div>
-                          <div class="partner-item swiper-slide">
-                              <img class=" partner-img" src="img/Ecohabits_mobile.svg" alt="Партнеры"
-                                  >
-                          </div>
-                      </div>
-                      <div class="partner-item swiper-slide">
-                          <img class="partner-img" src="img/unkn_russia_mobile.svg" alt="Партнеры">
-                      </div>`;
-}
-
-window.addEventListener("resize", () => {
-  if (document.documentElement.clientWidth >= 600) {
-    document.querySelector(".partners-content").innerHTML = `    
-                          <div class="partner-item swiper-slide">
-                              <img class="OneT partner-img" src="img/1TSprint.svg" alt="Партнеры">
-                          </div>
-                          <div class="partner-item swiper-slide">
-                              <img class="eco-habbits partner-img" src="img/eco-habbits.svg" alt="Партнеры"
-                                  >
-                          </div>
-                      <div class="partner-item swiper-slide">
-                          <img class="Unknown_Russia partner-img" src="img/Unknown_Russia.svg" alt="Партнеры">
-                      </div>`;
-  } else if (document.documentElement.clientWidth < 600) {
-    document.querySelector(".partners-content").innerHTML = `
- <div class="partner-container">
-                          <div class="partner-item swiper-slide">
-                              <img class=" partner-img" src="img/1TSpr-mobile.svg" alt="Партнеры">
-                          </div>
-                          <div class="partner-item swiper-slide">
-                              <img class=" partner-img" src="img/Ecohabits_mobile.svg" alt="Партнеры"
-                                  >
-                          </div>
-                      </div>
-                      <div class="partner-item swiper-slide">
-                          <img class="partner-img" src="img/unkn_russia_mobile.svg" alt="Партнеры">
-                      </div>`;
-  }
-});
-
 // Cards animation
 
 const catalogCard = document.querySelectorAll(".popular-item");
