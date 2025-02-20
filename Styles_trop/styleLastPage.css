@@ -190,6 +190,17 @@ a.link:hover {
   text-decoration: underline;
 }
 
+/* Внешняя ссылка */
+.partner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; 
+}
+
+a.partner-link:hover {
+  text-decoration: none;
+}
+
 .mobile-text {
   display: none;
 }
@@ -1486,6 +1497,11 @@ p.tt-p {
 
   .swiper-controlls {
     margin-top: 48px;
+  }
+  
+  /* Иконка внешней ссылки */
+  .link-icon {
+    height: 20px;
   }
 }
 
