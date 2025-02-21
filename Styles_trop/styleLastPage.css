@@ -490,13 +490,14 @@ p.tt-p {
 }
 
 /* Отспуп снизу статьи */
-.info__trail {
+/* .info__trail {
   padding-bottom: 112px;
-}
+} */
 
 /* Отступ рекламы (лента) */
 .ads, .ads_ab {
   margin-bottom: 112px;
+  margin-top: 112px;
 }
 
 /* Отступ рекламы (баннер в статье) */
@@ -533,13 +534,14 @@ p.tt-p {
 
 
   /* Отспуп снизу от статьи */
-  .info__trail {
+  /* .info__trail {
     padding-bottom: 72px;
-  }
+  } */
 
   /* Отступ рекламы (лента) */
   .ads, .ads_ab {
     margin-bottom: 72px;
+    margin-top: 72px;
   }
 
   /* Отступ рекламы (баннер в статье) */
@@ -1763,6 +1765,7 @@ ul.p2.limitations  {
   /* Отступ рекламы (лента) */
   .ads, .ads_ab {
     margin-bottom: 72px;
+    margin-top: 72px;
   }
 
   /* Отступ рекламы (баннер в статье) */
