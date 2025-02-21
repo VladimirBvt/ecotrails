@@ -787,9 +787,8 @@ p.tt-p {
   line-height: 35px;
   /* padding-bottom: 0;  */
   line-height: 145%;
-  vertical-align: top;
+  vertical-align: top;  
 }
-
 
 /* Текст под h3 в списке с черными точками */
 .p3 {
@@ -806,30 +805,15 @@ p.tt-p {
   margin-top: 16px;
 }
 
-
-
-/* Пункты списка с ораньжевыми точками */
-.attent1 {
-  left: 50px;
+/* Список с оранжвыми точками */
+ul.p2.limitations  {
+  padding-left: 50px;
   position: relative;
-  text-indent: 0;
-  padding-bottom: 24px;
 }
 
-.attent1::before {
-  position: absolute;
-  content: url(/img/icon-romb-small.svg);
-  left: -50px;
-}
-
-.attent1:last-child {
-  padding-bottom: 0;
-}
-
-/* Пункты списка с ораньжевыми точками */
+/* Пункты */
 .attent2 {
   position: relative;
-  left: 50px;
   text-indent: 0;
   padding-bottom: 24px;
 }
@@ -1460,14 +1444,6 @@ p.tt-p {
     left: -42px;
   }
 
-  .attent1 {
-    padding-bottom: 16px;
-  }
-
-  .attent1::before {
-    left: -42px;
-  }
-
   .warning {
     max-width: 976px;
     height: 104px;
@@ -1714,6 +1690,11 @@ p.tt-p {
     padding-bottom: 0;
   }
 
+  /* Список с ораньжевыми точками */
+  ul.p2.limitations  {
+    padding-left: 0;
+  }
+
   .attent2 {
     width: 292px;
     left: 0px;
@@ -1722,17 +1703,6 @@ p.tt-p {
   }
 
   .attent2::before {
-    left: -32px;
-  }
-
-  .attent1 {
-    width: 292px;
-    left: 0px;
-    padding-left: 0;
-
-  }
-
-  .attent1::before {
     left: -32px;
   }
 
