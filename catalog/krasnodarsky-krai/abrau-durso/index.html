@@ -200,14 +200,16 @@
                 </div>
             </a>
             <div class="main-head-right">
-                <a class="QR-code" data-modal-btnQR="my_modall" href="#">
+                <a class="QR-code" data-modal-btnQR="my_modall" href="#"
+                    onclick="ym(92417974,'reachGoal','QR_code'); return true;">
                     <img src="/img/QR.svg" alt="иконка перехода">
                 </a>
                 <div class="ya-share2" data-curtain data-color-scheme="whiteblack" data-limit="0" data-size="l"
-                    data-more-button-type="short" data-services="vkontakte,whatsapp"> </div>
+                    data-more-button-type="short" data-services="vkontakte,whatsapp"
+                    onclick="ym(92417974,'reachGoal','share'); return true;"> </div>
             </div>
         </div>
-        </div>
+
         <div data-modal-windowQR="my_modall" class="modalQR">
             <div class="modal_contentQR">
                 <!--<div class = "modal_innerQR"></div>-->
@@ -228,8 +230,6 @@
                 </form>
             </div>
         </div>
-        </div>
-
 
         <!-- Информация о тропе -->
         <div class="trail">
@@ -529,16 +529,16 @@
                     роднику и&nbsp;пляжу на&nbsp;озере.</p>
             </div>
             <!-- Yandex.RTB R-A-11822438-2 -->
-<div class="ads-ban" id="yandex_rtb_R-A-11822438-2"></div>
-<script>
-window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-        "blockId": "R-A-11822438-2",
-        "renderTo": "yandex_rtb_R-A-11822438-2"
-    })
-})
-</script>
-<!-- Интересное -->
+            <div class="ads-ban" id="yandex_rtb_R-A-11822438-2"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-11822438-2",
+                        "renderTo": "yandex_rtb_R-A-11822438-2"
+                    })
+                })
+            </script>
+            <!-- Интересное -->
             <div class="interesting">
                 <h2 class="h2">Что интересного на&nbsp;экомаршруте?</h2>
                 <div class="">
@@ -618,8 +618,7 @@ window.yaContextCb.push(() => {
                     Октябрьская и&nbsp;ехать по&nbsp;ней до&nbsp;первого крутого поворота направо. На&nbsp;повороте
                     вас будет ждать небольшая парковка и&nbsp;вход на&nbsp;экотропу.</p>
             </div>
-        </div>
-        </div>
+        </div>        
 
         <!-- Реклама -->
         <!-- Yandex.RTB R-A-11822438-8 -->
@@ -647,7 +646,7 @@ window.yaContextCb.push(() => {
                 })
             })
         </script>
-        <!-- Реклама -->        
+        <!-- Реклама -->
 
     </main>
     <footer class="footer">
