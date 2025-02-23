@@ -1136,9 +1136,9 @@ ymaps.ready(function () {
            </h2>
        </a>
        <a href="yaroslavskaya-oblast/v-gostyah-u-seroy-tsapli/" id="trail-location" class="trail-location-black"
-           title="Ярославская обл., г. Переславль-Залесский">
+           title="Ярославская область, г. Переславль-Залесский">
            <p id="color-letters-cot" class="black-color size-card-elem-p">
-           Ярославская&nbsp;обл., г.&nbsp;Переславль-Залесский</p>
+           Ярославская область, г.&nbsp;Переславль-Залесский</p>
        </a>
        <div class="trail-spec">
            <a href="yaroslavskaya-oblast/v-gostyah-u-seroy-tsapli/" class="trail-distance">
@@ -2883,9 +2883,9 @@ ymaps.ready(function () {
        </h2>
    </a>
    <a href="yaroslavskaya-oblast/priroda-chuvstv/" id="trail-location" class="trail-location-black"
-       title="Ярославская обл., г. Переславль-Залесский">
+       title="Ярославская область, г. Переславль-Залесский">
        <p id="color-letters-cot" class="black-color size-card-elem-p">
-       Ярославская&nbsp;обл., г.&nbsp;Переславль-Залесский</p>
+       Ярославская область, г.&nbsp;Переславль-Залесский</p>
    </a>
    <div class="trail-spec">
        <a href="yaroslavskaya-oblast/priroda-chuvstv/" class="trail-distance">
@@ -3013,9 +3013,9 @@ ymaps.ready(function () {
        </h2>
    </a>
    <a href="yaroslavskaya-oblast/tropa-skazok/" id="trail-location" class="trail-location-black"
-       title="Ярославская обл., г. Переславль-Залесский">
+       title="Ярославская область, г. Переславль-Залесский">
        <p id="color-letters-cot" class="black-color size-card-elem-p">
-       Ярославская&nbsp;обл., г.&nbsp;Переславль-Залесский</p>
+       Ярославская область, г.&nbsp;Переславль-Залесский</p>
    </a>
    <div class="trail-spec">
        <a href="yaroslavskaya-oblast/tropa-skazok/" class="trail-distance">
