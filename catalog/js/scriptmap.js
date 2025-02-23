@@ -142,6 +142,218 @@ ymaps.ready(function () {
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------
 
+  // .............................................................Танцующий Лес (Калининград)
+  var myPolyline1 = new ymaps.Polyline(
+    [
+      // Указываем координаты вершин.
+      // 1 часть
+      [55.18261414, 20.85936698],
+      [55.18240464, 20.85989672],
+      [55.18225127, 20.86028351],
+      [55.18215304, 20.86058928],
+      [55.18205404, 20.86099027],
+      [55.18200109, 20.86112975],
+      [55.1820809, 20.86181639],
+      [55.18208474, 20.86186333],
+      [55.18206479, 20.86204304],
+      [55.18205327, 20.86208864],
+      [55.18180233, 20.86257143],
+      [55.18145162, 20.86325137],
+      [55.18141171, 20.86333318],
+      [55.18125861, 20.86361012],
+      [55.18120451, 20.86366846],
+      [55.18114311, 20.86370802],
+      [55.18112009, 20.86371607],
+      [55.18103605, 20.86370802],
+      [55.18084419, 20.86361817],
+      [55.18114349, 20.86295164],
+      [55.18083268, 20.86251578],
+      [55.18045817, 20.86342371],
+      [55.18001305, 20.86333385],
+      [55.1805399, 20.86207053],
+      [55.18024329, 20.86162797],
+      [55.17984268, 20.86253992],
+      [55.17956409, 20.86317158],
+      [55.17961935, 20.86324132],
+      [55.1796439, 20.86325607],
+      [55.17971298, 20.86325473],
+      [55.18001804, 20.86333452],
+
+    ],
+    [],
+
+    {
+      // Задаем опции геообъекта.
+      // Цвет с прозрачностью.
+      strokeColor: "#F28123",
+      // Ширину линии.
+      strokeWidth: 2,
+      // Максимально допустимое количество вершин в ломаной.
+      editorMaxPoints: 6,
+      // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
+      editorMenuManager: function (items) {
+        items.push({
+          title: "Удалить линию",
+          onClick: function () {
+            myMap.geoObjects.remove(myPolyline1);
+          },
+        });
+        return items;
+      },
+    }
+  );
+
+  var startPoint = new ymaps.Placemark(
+    [55.18261414, 20.85936698],
+    {
+      hintContent: "Экотропа Танцующий Лес",
+
+      // Тут контент карточки тропы
+      balloonContent: `<a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/">
+    <figure id="TancuyushchijLes" class="catalog-item">
+        <img src="/catalog/kaliningradskaya-oblast/tancuyushchij-les/img/for-slider.jpg" alt="Экотропа Танцующий Лес"
+            class="trail-img">
+        <figcaption class="trail-info">
+            <a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/" class="trail-title-link">
+                <h2 id="color-letters-cot" class="black-color size-card-elem-h2" title="Танцующий Лес">Танцующий Лес
+                </h2>
+            </a>
+            <a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/" id="trail-location"
+                class="trail-location-black" title="Калининградская область, Куршская коса">
+                <p id="color-letters-cot" class="black-color size-card-elem-p">
+                    Калининградская область, Куршская коса</p>
+            </a>
+            <div class="trail-spec">
+                <a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/" class="trail-distance">
+                    <div class="img-card-color">
+                        <img src="/img/dist-orange.svg" alt="Длина тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">1,2 км</p>
+                </a>
+                <a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/" class="trail-difficulty">
+                    <div id="easy" class="img-card-color">
+                        <img src="/img/difficulty-easy.svg" alt="Сложность тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">Простая</p>
+                </a>
+                <a href="/catalog/kaliningradskaya-oblast/tancuyushchij-les/" class="trail-duration">
+                    <div class="img-card-color">
+                        <img src="/img/duration-orange.svg" alt="Длительность тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">~0,5 ч</p>
+                </a>
+            </div>
+        </figcaption>
+    </figure>
+</a>`,
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "https://i.ibb.co/Z2wRNPF/map-marker.png",
+      iconImageSize: [32, 51],
+      iconImageOffset: [-10, -45],
+    }
+  );
+
+  // 2 часть
+  var myPolyline2 = new ymaps.Polyline(
+    [
+      // Указываем координаты вершин.
+      [55.18053607, 20.86206315],
+      [55.18083307, 20.86251578],
+    ],
+    [],
+
+    {
+      // Задаем опции геообъекта.
+      // Цвет с прозрачностью.
+      strokeColor: "#F28123",
+      // Ширину линии.
+      strokeWidth: 2,
+      // Максимально допустимое количество вершин в ломаной.
+      editorMaxPoints: 6,
+      // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
+      editorMenuManager: function (items) {
+        items.push({
+          title: "Удалить линию",
+          onClick: function () {
+            myMap.geoObjects.remove(myPolyline2);
+          },
+        });
+        return items;
+      },
+    }
+  );
+
+  // 3 часть
+  var myPolyline3 = new ymaps.Polyline(
+    [
+      // Указываем координаты вершин.
+      [55.18045702, 20.86342303],
+      [55.18084611, 20.86361884],
+    ],
+    [],
+
+    {
+      // Задаем опции геообъекта.
+      // Цвет с прозрачностью.
+      strokeColor: "#F28123",
+      // Ширину линии.
+      strokeWidth: 2,
+      // Максимально допустимое количество вершин в ломаной.
+      editorMaxPoints: 6,
+      // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
+      editorMenuManager: function (items) {
+        items.push({
+          title: "Удалить линию",
+          onClick: function () {
+            myMap.geoObjects.remove(myPolyline3);
+          },
+        });
+        return items;
+      },
+    }
+  );
+
+  // 4 часть
+  var myPolyline4 = new ymaps.Polyline(
+    [
+      // Указываем координаты вершин.
+      [55.18141171, 20.86333251],
+      [55.18114283, 20.86295289],
+      [55.18141911, 20.8623675],
+      [55.18155686, 20.8620738],
+      [55.18165432, 20.8618666],
+      [55.1818243, 20.8615045],
+      [55.18193757, 20.86126361],
+      [55.18200165, 20.86112682],
+    ],
+    [],
+
+    {
+      // Задаем опции геообъекта.
+      // Цвет с прозрачностью.
+      strokeColor: "#F28123",
+      // Ширину линии.
+      strokeWidth: 2,
+      // Максимально допустимое количество вершин в ломаной.
+      editorMaxPoints: 6,
+      // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
+      editorMenuManager: function (items) {
+        items.push({
+          title: "Удалить линию",
+          onClick: function () {
+            myMap.geoObjects.remove(myPolyline4);
+          },
+        });
+        return items;
+      },
+    }
+  );
+
+  // Добавляем линию на карту.
+  myMap.geoObjects.add(myPolyline1).add(myPolyline2).add(myPolyline3).add(myPolyline4).add(startPoint);
+
   // ---------------------------------------Высота Эфа (Калининград)------------------------
   var myPolyline = new ymaps.Polyline(
     [
@@ -496,7 +708,7 @@ ymaps.ready(function () {
   );
   // Добавляем линию на карту.
   myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
- 
+
   // ............................................................. PlesActive (Тамбов)
 
   var myPolyline1 = new ymaps.Polyline(
