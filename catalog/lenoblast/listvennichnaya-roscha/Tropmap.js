@@ -233,7 +233,7 @@ ymaps.ready(function () {
   var startPoint = new ymaps.Placemark(
     [59.70248632223368, 30.119334067809042],
     {
-      hintContent: "Начало маршрута",
+      hintContent: "Начало экотропы",
       //   balloonContent: `Начало маршрута Дудергофские Высоты`,
     },
     {
@@ -247,7 +247,7 @@ ymaps.ready(function () {
   var endPoint = new ymaps.Placemark(
     [60.2379831219165, 29.5400874652821],
     {
-      hintContent: "Конец маршрута",
+      hintContent: "Конец экотропы",
       //   balloonContent: "Это конец маршрута",
     },
     {

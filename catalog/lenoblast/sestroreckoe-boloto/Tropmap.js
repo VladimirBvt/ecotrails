@@ -223,7 +223,7 @@ ymaps.ready(function () {
   var startPoint = new ymaps.Placemark(
     [60.1313695241645,29.9971059254531],
     {
-      hintContent: "Начало маршрута",
+      hintContent: "Начало экотропы",
     //   balloonContent: `Начало маршрута Сестрорецкое болото`,
     },
     {
@@ -237,7 +237,7 @@ ymaps.ready(function () {
   var endPoint = new ymaps.Placemark(
     [60.1282475205996,29.9942945894913],
     {
-      hintContent: "Конец маршрута",
+      hintContent: "Конец экотропы",
     //   balloonContent: "Это конец маршрута",
     },
     {

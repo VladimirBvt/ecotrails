@@ -276,7 +276,7 @@ ymaps.ready(function () {
     var startPoint = new ymaps.Placemark(
         [60.8114229744453, 28.9343354743037],
         {
-            hintContent: "Начало маршрута",
+            hintContent: "Начало экотропы",
             //   balloonContent: `Начало маршрута`,
         },
         {

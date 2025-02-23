@@ -6520,7 +6520,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [43.6586705395959, 40.250742455585296],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //   Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Реликтовый лес`,
@@ -6930,7 +6930,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [60.23797777585307, 29.54010087421513],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Линдуловская роща`,
@@ -8591,7 +8591,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [43.5455814134358, 39.78831236305254],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Тропа здоровья`,
@@ -8860,7 +8860,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [60.63089483011932, 30.121119504258658],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Гряда Вярямянселькя`,
@@ -9474,7 +9474,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [43.247298523267474, 42.560450183484974],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Поляна нарзанов чегет`,
@@ -10384,7 +10384,7 @@ ymaps.ready(function () {
   // var startPoint = new ymaps.Placemark(
   //   [44.706555430968244, 37.5953947629349],
   //   {
-  //     hintContent: "Начало маршрута",
+  //     hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //     balloonContent: `Начало маршрута Абрау Дюрсо (Путь к дому Виноградаря)`,
@@ -10570,7 +10570,7 @@ ymaps.ready(function () {
   //   var startPoint = new ymaps.Placemark(
   //      [44.70654439987693, 37.59539666235058],
   //      {
-  //       hintContent: "Начало маршрута",
+  //       hintContent: "Начало экотропы",
 
   //  // Тут контент карточки тропы
   //       balloonContent: `Начало маршрута Абрау Дюрсо(ВИНОГРАДНЫЙ ТЕРРУАР)`,

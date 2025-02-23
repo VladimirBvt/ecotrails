@@ -65,7 +65,7 @@ ymaps.ready(function () {
   var startPoint = new ymaps.Placemark(
     [60.004475450154104, 30.03664961944124],
     {
-      hintContent: "Начало маршрута",
+      hintContent: "Начало экотропы",
     //   balloonContent: `Начало маршрута Каменный столб `,
     },
     {
@@ -79,7 +79,7 @@ ymaps.ready(function () {
   var endPoint = new ymaps.Placemark(
     [60.00096418609638, 30.034074698786963],
     {
-      hintContent: "Конец маршрута",
+      hintContent: "Конец экотропы",
     //   balloonContent: "Это конец маршрута",
     },
     {
