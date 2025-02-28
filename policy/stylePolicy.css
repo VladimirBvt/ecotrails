@@ -161,16 +161,6 @@ font-family: 'Avante Bold', sans-serif;
 body {
   line-height: 29px;
 }
-.back {
-  margin-top: 139px;
-  margin-left: 201px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
 
 .back > * + * {
   margin-left: 23px;
@@ -181,7 +171,7 @@ body {
 }
 
 .title {
-  margin: 64px auto 112px;   
+  margin: 154px auto 64px;   
   text-transform: uppercase;
   text-align: center;
   display: flex;  
@@ -321,17 +311,14 @@ table {
   .sub_title {
     font-size: 28px;
   }
-  .title {
+  .title {    
     font-size: 28px;
+    margin-top: 128px;
     margin-bottom: 48px;
   }
   
   .list li{
     font-size: 16px;
-  }
-
-  .back {
-    margin-left: 20px;
   }
 }
 
@@ -340,7 +327,7 @@ table {
     max-width: 320px;
   }
   .title {    
-    margin: 32px auto;
+    margin: 112px auto 32px;
     font-size: 24px;        
     gap: 12px;    
   }
@@ -359,7 +346,4 @@ table {
     content: url(/img/small-title-right-line.svg);
   }
 
-  .back {
-    margin-left: 30px;
-  }
 }

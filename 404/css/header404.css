@@ -30,13 +30,13 @@
   align-items: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 25px 191px 25px 191px;
+  padding: 23px 0;
 }
 .logo-header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 130.21px;
+  width: fit-content;
   height: 38px;
 }
 .href-logo {
@@ -72,7 +72,7 @@
   padding-left: 10px;
   padding-top: 1px;
   color: #1f271b;
-  width: 93px;
+  wwidth: min-content;
   font-family: "a_AvanteInt";
   font-style: normal;
   font-weight: 300;
@@ -80,9 +80,7 @@
   line-height: 19px;
   text-align: start;
 }
-.center-navigation {
-  padding-right: 65px;
-}
+
 .container-navigation-text {
   padding-left: 68px;
   height: 20px;
@@ -661,16 +659,12 @@ a.header-icon.keychainify-checked {
   .search-close {
     right: 70px;
   }
-  .container-header {
-    padding: 25px 0px 25px 0px;
-  }
+
   .logo-header {
     margin: 0;
-    margin-left: 25px;
   }
   .icon-navigation {
     margin: 0;
-    margin-right: 20.78px;
   }
 }
 @media (max-width: 480px) {

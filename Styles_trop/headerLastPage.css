@@ -3,15 +3,14 @@
   padding: 0;
 }
 .main-header {
-  position: absolute;
+  display: flex;
   position: fixed;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   top: 0;
-  text-align: center;
-  max-width: 100%;
+  text-align: center;  
   width: 100%;
   height: 90px;
   z-index: 2050;
@@ -29,13 +28,15 @@
   align-items: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 25px 191px 25px 191px;
+  width: 100%;
+  max-width: 1218px;
+  margin: 0 auto;
 }
 .logo-header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 130.21px;
+  width: fit-content;
   height: 38px;
 }
 .href-logo {
@@ -71,7 +72,7 @@
   padding-left: 10px;
   padding-top: 1px;
   color: #1f271b;
-  width: 93px;
+  width: min-content;
   font-family: "a_AvanteInt";
   font-style: normal;
   font-weight: 300;
@@ -79,9 +80,7 @@
   line-height: 19px;
   text-align: start;
 }
-.center-navigation {
-  padding-right: 65px;
-}
+
 .container-navigation-text {
   padding-left: 68px;
   height: 20px;
@@ -626,7 +625,16 @@ a.header-icon.keychainify-checked {
   line-height: 0;
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 1250px) {
+  .main-header {
+    /* max-width: 976px; */
+  }
+
+  .container-header {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
   .VoidSearch {
     margin-left: auto;
     margin-right: auto;
@@ -664,19 +672,16 @@ a.header-icon.keychainify-checked {
   .search-close {
     right: 70px;
   }
-  .container-header {
-    padding: 25px 0px 25px 0px;
-  }
+ 
   .logo-header {
-    margin: 0;
-    margin-left: 25px;
+    margin: 0;    
   }
   .icon-navigation {
-    margin: 0;
-    margin-right: 20.78px;
+    margin: 0;    
   }
 }
 @media (max-width: 480px) {
+
   .controllers {
     padding: 0;
     max-width: 320px;

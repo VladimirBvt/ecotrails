@@ -185,46 +185,25 @@
     <!-- Главная -->
     <main class="main-other-page">
 
-        <div class="main-head">
-            <a href="javascript:history.back()">
-                <div class="back">
-                    <svg width="19" height="32" viewBox="0 0 19 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 30L3 16L17 2" stroke="#1F271B" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                    <p>Назад</p>
-                </div>
-            </a>
-            <div class="main-head-right">
-                <a class="QR-code" data-modal-btnQR="my_modall" href="#" onclick="ym(92417974,'reachGoal','QR_code'); return true;">
-                    <img src="/img/QR.svg" alt="иконка перехода">
+<div class="main-head">
+            <div class="breadcrumbs">
+                <a href="/" alt="Главная" class="breadcrumb-item">
+                    <img src="/img/breadcrumbs/home-icon.svg" alt="Главная" class="breadcrumb-icon">
                 </a>
-                <div class="ya-share2" data-curtain data-color-scheme="whiteblack" data-limit="0" data-size="l"
-                    data-more-button-type="short" data-services="vkontakte,whatsapp" onclick="ym(92417974,'reachGoal','share'); return true;"> </div>
+                <span class="breadcrumb-separator">◆</span>
+                <a href="/catalog" class="breadcrumb-item catalog">Каталог экотроп</a>
+                <span class="breadcrumb-separator">◆</span>
+                <a href="" class="breadcrumb-item breadcrumb-region"></a>
+            </div>
+
+            <div class="main-head-right">
+                <script src="https://yastatic.net/share2/share.js"></script>
+                <div class="ya-share2" data-curtain data-limit="0" data-more-button-type="short"
+                    data-services="vkontakte,odnoklassniki,telegram,whatsapp"></div>
             </div>
         </div>
 
-        <!-- QR -->
-        <div data-modal-windowQR="my_modall" class="modalQR">
-            <div class="modal_contentQR">
-                <!--<div class = "modal_innerQR"></div>-->
-                <form name="formModalQR" action="#" id="">
-                    <div class="close_modal_window">
-                        <img class="imgQR" src="/img/GroupQR.svg" alt="#">
-                    </div>
-                    <div class="modalQR_inner"></div>
-                    <div class="text_oknoQR">
-                        <p>Отсканируй QR-код, чтобы открыть экотропу на&nbsp;телефоне.</p>
-                    </div>
-                    <div class="blockQRcod">
-                        <img id="QR-picture" src="img/QR.svg" alt="QR" data-is360="0" class="QR-picture">
-                    </div>
-                    <div class="ModalQRfooter">
-                        <p class="text_oknoQR-bottom">Или поделись ей&nbsp;с&nbsp;друзьями!</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-
+        
         <!-- информация о тропе -->
         <div class="trail">
             
@@ -261,7 +240,7 @@
                             </svg>
                             <!-- Длина -->
                             <p class="Desctop-text">Длина <strong>6,7 км</strong></p>
-                            <strong class="mobile-text">6,7 км</strong>
+                            <strong class="mobile-text mobile-text-last">6,7 км</strong>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -278,7 +257,7 @@
 
                             <!-- Сложность -->
                             <p class="Desctop-text" style="width:150px;">Сложность <strong>простая</strong></p>
-                            <strong class="mobile-text">Простая</strong>
+                            <strong class="mobile-text mobile-text-last">Простая</strong>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -696,8 +675,9 @@ window.yaContextCb.push(() => {
     </footer>
 
     <script src="Tropmap.js?v=2.0"></script>
-    <script src="/Js_trop/scriptLastPage.js?v=3.0"></script>
-    <script src="/js/global-search.js?v=7.0"></script>
+        <script src="/catalog/js/regions.js"></script>
+    <script src="/Js_trop/scriptLastPage.js?v=2.0"></script>
+    <script src="/js/global-search.js?v=2.0"></script>
     <script src="/Js_trop/searchCotalog.js?v=3.0"></script>
     <script src="/Js_trop/scriptQR.js?v=2.0"></script>
     <script src="/Js_trop/headerLastPage.js?v=2.0"></script>
