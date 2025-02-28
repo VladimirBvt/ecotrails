@@ -209,7 +209,7 @@ a.partner-link:hover {
   position: relative;
 } */
 
-/* Стили тултипа */
+/* Стили тултипа - начало */
 .tooltip-icon {
   cursor: pointer;  
   margin-left: 4px; /* Отступ иконки от текста */ 
@@ -274,13 +274,7 @@ p.tt-p {
   filter: blur(2px); /* Размытие для тени */
   z-index: 0; /* Тень под стрелочкой */
 }
-/* Стили тултипа */
-
-
-.back {
-  margin-top: 139px;
-  margin-left: 201px;
-}
+/* Стили тултипа - конец */
 
 /* Хлебные крошки */
 .breadcrumbs {

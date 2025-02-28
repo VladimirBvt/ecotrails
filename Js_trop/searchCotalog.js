@@ -1,7 +1,3 @@
-document.querySelector(".back").addEventListener("click", () => {
-  location.pathname = "/catalog";
-});
-
 //Стилизация
 
 const search = document.querySelector("#search");

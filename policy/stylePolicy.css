@@ -162,14 +162,6 @@ body {
   line-height: 29px;
 }
 
-.back > * + * {
-  margin-left: 23px;
-}
-
-.back p {
-  font-size: 20px;
-}
-
 .title {
   margin: 154px auto 64px;   
   text-transform: uppercase;
