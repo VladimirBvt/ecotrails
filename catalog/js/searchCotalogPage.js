@@ -63,7 +63,7 @@ Search.addEventListener("click", function Searchinput() {
     let elasticItems = document.querySelectorAll(".elastic a");
     if (val != "") {
       elasticItems.forEach(function (elem) {
-         // Приводим текст элемента к нижнему регистру перед поиском
+        // Приводим текст элемента к нижнему регистру перед поиском
         if (elem.innerText.toLowerCase().search(val) == -1) {
           elem.classList.add("hide");
           elem.removeAttribute("hidden");
