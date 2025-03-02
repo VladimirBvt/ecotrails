@@ -568,6 +568,8 @@
   z-index: 201;
   cursor: pointer;
 }
+
+/* Выпадающий список поиска */
 .elastic {
   position: fixed;
   top: 90px;
@@ -580,7 +582,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   z-index: 1000;
+  text-align: left;
+  padding-top: 12px;
 }
+
 .elastic a.hide {
   display: none;
 }
@@ -600,6 +605,7 @@
   transform: scale(1.07);
 }
 
+/* Пункт выпадающего списка поиска */
 .Searchlist {
   width: 392px;
   color: rgb(0, 0, 0);
@@ -612,7 +618,7 @@
   box-sizing: border-box;
   background: #f3f6ed;
   padding-bottom: 5px;
-  padding-left: 64px;
+  padding-left: 48px;
 }
 .elasticBig {
   position: fixed;
