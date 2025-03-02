@@ -143,18 +143,43 @@
                     </ul>
                 </nav>
                 <nav class="icon-navigation">
-                    <ul id="icon-navigation" class="menu-navigation">
-                        <li class="container-navigation-icon"><img class="icon-header" id="search"
-                                src="/img/search-black.svg" alt="search">
+                    <div id="icon-navigation" class="menu-navigation">
+                        <div id="search-cont" class="container-navigation-icon">
+
+                            <!-- Окно поиска -->
+                            <div id="cont-search" class="container-icon-search">
+                                <div class="icon-searcharea-cont" >
+                                    <svg class="icon-header search-temp" id="search-temp" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle class="color-search-temp" cx="20" cy="19.999" r="13" stroke="black"
+                                            stroke-width="2" />
+                                        <path class="color-search-temp" d="M36 36L29 29" stroke="black"
+                                            stroke-width="2" />
+                                    </svg>
+
+                                    <input class="searcharea" type="text"
+                                        placeholder="Найти экотропу">
+                                </div>
+
+                                <svg class="search-close" id="search-close" width="40" height="40" viewBox="0 0 40 40"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="color-search-temp" d="M32.5 7L7 33.2126M7 7L32.5 33.2126"
+                                        stroke="#1F271B" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                            <img class="icon-header" id="search" src="/img/search-black.svg" alt="search">
                             <div class="otstup-icon-search" hidden></div>
-                        </li>
-                        <li class="container-navigation-icon">
+                        </div>
+                        <div class="container-navigation-icon">
                             <div class="container-location">
                                 <a class="header-icon" href="/catalog/mappage.html"><img class="icon-header"
                                         src="/img/map-black.svg" alt="location"></a>
                             </div>
-                        </li>
-                        <li class="container-navigation-icon"><a class="icon-href-cotalog" href="/catalog/"><svg
+                        </div>
+                        <div class="container-navigation-icon"><a class="icon-href-cotalog" href="/catalog/"><svg
                                     class="icon-header" width="40" height="40" viewBox="0 0 40 40" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_3186_11584)">
@@ -172,8 +197,8 @@
                                     </defs>
                                 </svg>
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </nav>
             </section>
         </header>
@@ -198,9 +223,9 @@
                                 <img src="/img/breadcrumbs/home-icon.svg" alt="Главная" class="breadcrumb-icon">
                             </a>
                             <span class="breadcrumb-separator">◆</span>
-                            <a href="/catalog" class="breadcrumb-item">Каталог экотроп</a>                            
+                            <a href="/catalog" class="breadcrumb-item">Каталог экотроп</a>
                         </div>
-            
+
                         <div class="main-head-right">
                             <script src="https://yastatic.net/share2/share.js"></script>
                             <div class="ya-share2" data-curtain data-limit="0" data-more-button-type="short"
@@ -234,7 +259,8 @@
 
                         </div>
                         <!-- Фильтр -->
-                        <select class="filters" id="region-select" onclick="ym(92417974,'reachGoal','filter_catalog'); return true;">
+                        <select class="filters" id="region-select"
+                            onclick="ym(92417974,'reachGoal','filter_catalog'); return true;">
                             <option value="all">Все регионы</option>
                         </select>
 

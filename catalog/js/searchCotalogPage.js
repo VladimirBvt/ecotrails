@@ -1,6 +1,7 @@
 //Стилизация
 
 const search = document.querySelector("#search");
+const contSearchElement = document.querySelector('#cont-search');
 search.addEventListener("click", () => {
   if ($(window).width() <= 480) {
     $(".logo-header").css("display", "none");
@@ -8,15 +9,22 @@ search.addEventListener("click", () => {
     $(".icon-href-cotalog").css("display", "none");
   }
   document.querySelector("#search").hidden = true;
-  document.querySelector("#icon-navigation").insertAdjacentHTML(
-    "beforebegin",
-    `<li id="cont-search" class="container-icon-search"><svg class="icon-header search-temp" id="search-temp" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle class="color-search-temp" cx="20" cy="19.999" r="13" stroke="black" stroke-width="2"/>
-      <path class="color-search-temp" d="M36 36L29 29" stroke="black" stroke-width="2"/>
-      </svg><input class="searcharea" style="border-bottom: 1px solid black" type="text" placeholder="Найти тропу" ><svg class="search-close" id="search-close" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path class="color-search-temp" d="M32.5 7L7 33.2126M7 7L32.5 33.2126" stroke="#1F271B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg></li>`
-  );
+  contSearchElement.style.display = 'flex';
+  // document.querySelector("#icon-navigation").insertAdjacentHTML(
+  //   "beforebegin",
+  //   `<li id="cont-search" class="container-icon-search">
+  //   <svg class="icon-header search-temp" id="search-temp" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //     <circle class="color-search-temp" cx="20" cy="19.999" r="13" stroke="black" stroke-width="2"/>
+  //     <path class="color-search-temp" d="M36 36L29 29" stroke="black" stroke-width="2"/>
+  //     </svg>
+
+  //     <input class="searcharea" style="border-bottom: 1px solid black" type="text" placeholder="Найти тропу" >
+      
+  //     <svg class="search-close" id="search-close" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //     <path class="color-search-temp" d="M32.5 7L7 33.2126M7 7L32.5 33.2126" stroke="#1F271B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  //     </svg>
+  //     </li>`
+  // );
   document.querySelector(".otstup-icon-search").hidden = false;
   // document.querySelector(".line-location").hidden = true;
 
@@ -27,7 +35,9 @@ search.addEventListener("click", () => {
       $(".container-location").css("display", "");
       $(".icon-href-cotalog").css("display", "");
     }
-    document.querySelector("#cont-search").remove();
+    // document.querySelector("#cont-search").remove();
+    contSearchElement.style.display = 'none';
+    document.querySelector(".searcharea").value = '';
     document.querySelector("#search").hidden = false;
     document.querySelector(".otstup-icon-search").hidden = true;
     // document.querySelector(".line-location").hidden = false;
