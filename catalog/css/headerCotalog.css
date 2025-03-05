@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  /* Задаем ширину через переменную */
+  --tabletContent-width: 976px;   
+  --pcContent-width: 1218px;  
+
+  /* Так записывается */
+  /* max-width: var(--pcContent-width); */
+}
+
 .opasity-header {
   position: absolute;
   left: 0;
@@ -44,7 +54,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1218px;
+  max-width: var(--pcContent-width);
   margin: 0 auto;
 }
 .logo-header {
@@ -69,19 +79,6 @@
   width: 40px;
   height: 44px;
 }
-/* .logo-picture:hover {
-  stroke-dasharray: 46;
-  stroke-dashoffset: 0;
-  animation: anim 4s ease forwards;
-}
-@keyframes anim {
-  0% {
-    stroke-dashoffset: 46;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-} */
 
 .logo-text {
   padding-left: 10px;
@@ -700,7 +697,11 @@ a.header-icon.keychainify-checked {
   line-height: 0;
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 1250px) {
+  .container-header {
+    max-width: var(--tabletContent-width);
+  }
+
   .VoidSearch {
     margin-left: auto;
     margin-right: auto;
