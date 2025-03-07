@@ -5,11 +5,13 @@
 
 :root {
   /* Задаем ширину через переменную */
-  --tabletContent-width: 976px;   
+  --tabletContent-width: 976px;  
+  --tabletMiniContent: calc(100% - 48px);   
   --pcContent-width: 1218px;  
 
   /* Так записывается */
   /* max-width: var(--pcContent-width); */
+  /* max-width: var(--tabletMiniContent); */
 }
 
 .opasity-header {
@@ -748,6 +750,17 @@ a.header-icon.keychainify-checked {
     margin: 0;
   }
 }
+
+/* Мини-планшет */
+@media (max-width: 1000px) {
+  .container-header {
+    max-width: var(--tabletMiniContent);
+    /* padding-left: 24px;
+    padding-right: 24px; */
+  }
+  
+}
+
 @media (max-width: 480px) {
   .controllers {
     padding: 0;
