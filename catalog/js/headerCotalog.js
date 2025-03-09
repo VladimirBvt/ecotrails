@@ -1,77 +1,76 @@
+// Константы для DOM-элементов
 const popular = document.querySelector("#popular-cont");
 const cotalog = document.querySelector("#cotalog-cont");
 const faq = document.querySelector("#FAQ-cont");
 const header = document.querySelector("header");
+const animation1 = document.querySelector("#animation1");
+const animation2 = document.querySelector("#animation2");
+const animation3 = document.querySelector("#animation3");
+const CotColor = document.querySelectorAll(".cotalog-color");
 
-document.querySelector("#animation1").hidden = false;
-cotalog.style.color = "#F28123";
-const Cot_color = document.querySelectorAll(".cotalog-color");
-Cot_color[0].style.fill = "#F28123";
-Cot_color[1].style.fill = "#F28123";
-document.querySelector("#animation1").hidden = false;
-cotalog.style.color = "#F28123";
-
-popular.addEventListener("mouseover", DispAnimPop);
-function DispAnimPop() {
-  document.querySelector("#animation2").hidden = false;
-}
-popular.addEventListener("mouseout", HiddAnimPop);
-function HiddAnimPop() {
-  document.querySelector("#animation2").hidden = true;
+// Инициализация стилей и анимаций
+function initializeStyles() {
+  animation1.hidden = false;
+  cotalog.style.color = "#F28123";
+  CotColor.forEach(el => el.style.fill = "#F28123");
 }
 
-faq.addEventListener("mouseover", DispAnimFAQ);
-function DispAnimFAQ() {
-  document.querySelector("#animation3").hidden = false;
-}
-faq.addEventListener("mouseout", HiddAnimFAQ);
-function HiddAnimFAQ() {
-  document.querySelector("#animation3").hidden = true;
+// Функции для управления анимациями
+function showAnimation(animation) {
+  animation.hidden = false;
 }
 
-header.onclick = function Test(event) {
-  console.log(event.target.className);
-  if (event.type === "click")
-    switch (event.target.className) {
-      case "header-text-first": {
-        document.querySelector("#animation1").hidden = true;
-        cotalog.style.color = "#F28123";
-        popular.style.color = "#1F271B";
-        faq.style.color = "#1F271B";
-        HiddAnimFAQ();
-        faq.addEventListener("mouseout", HiddAnimFAQ);
-        HiddAnimPop();
-        break;
-      }
-      case "header-text-center": {
-        document.querySelector("#animation1").hidden = true;
-        popular.style.color = "#F28123";
-        faq.style.color = "#1F271B";
-        cotalog.style.color = "#1F271B";
-        popular.removeEventListener("mouseout", HiddAnimPop);
-        HiddAnimFAQ();
-        faq.addEventListener("mouseout", HiddAnimFAQ);
-        break;
-      }
-      case "header-text-last": {
-        document.querySelector("#animation1").hidden = true;
-        popular.style.color = "#1F271B";
-        faq.style.color = "#F28123";
-        cotalog.style.color = "#1F271B";
-        faq.removeEventListener("mouseout", HiddAnimFAQ);
-        HiddAnimPop();
-        popular.addEventListener("mouseout", HiddAnimPop);
-        break;
-      }
-    }
-  if (event.target.tagName === "logo-picture") {
-    document.querySelector("#animation1").hidden = true;
+function hideAnimation(animation) {
+  animation.hidden = true;
+}
+
+// Обработчики событий для популярного раздела
+popular.addEventListener("mouseover", () => showAnimation(animation2));
+popular.addEventListener("mouseout", () => hideAnimation(animation2));
+
+// Обработчики событий для FAQ
+faq.addEventListener("mouseover", () => showAnimation(animation3));
+faq.addEventListener("mouseout", () => hideAnimation(animation3));
+
+// Обработчик кликов в header
+header.addEventListener("click", (event) => {
+  const targetClass = event.target.className;
+  const targetTag = event.target.tagName;
+
+  // Сброс стилей и анимаций
+  function resetStyles() {
     popular.style.color = "#1F271B";
     faq.style.color = "#1F271B";
     cotalog.style.color = "#1F271B";
-    HiddAnimPop();
-    popular.addEventListener("mouseout", HiddAnimPop);
-    HiddAnimFAQ();
-    faq.addEventListener("mouseout", HiddAnimFAQ);
+    hideAnimation(animation1);
+    hideAnimation(animation2);
+    hideAnimation(animation3);
   }
-};
+
+  // Обработка кликов
+  switch (targetClass) {
+    case "header-text-first":
+      resetStyles();
+      cotalog.style.color = "#F28123";
+      CotColor.forEach(el => el.style.fill = "#F28123");
+      break;
+
+    case "header-text-center":
+      resetStyles();
+      popular.style.color = "#F28123";
+      break;
+
+    case "header-text-last":
+      resetStyles();
+      faq.style.color = "#F28123";
+      break;
+  }
+
+  // Обработка клика на логотип
+  if (targetTag === "logo-picture") {
+    resetStyles();
+  }
+});
+
+// Инициализация
+initializeStyles();
