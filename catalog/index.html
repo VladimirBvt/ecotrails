@@ -215,7 +215,8 @@
 
                         </div>
                         <!-- Фильтр -->
-                        <select class="filters" id="region-select" onclick="ym(92417974,'reachGoal','filter_catalog'); return true;">
+                        <select class="filters" id="region-select"
+                            onclick="ym(92417974,'reachGoal','filter_catalog'); return true;">
                             <option value="all">Все регионы</option>
                         </select>
 
@@ -1866,13 +1867,25 @@
                         </div>
 
                         <!-- Реклама -->
-                        <!-- Yandex.RTB R-A-11822438-9 -->
-                        <div class="ads" id="yandex_rtb_R-A-11822438-9"></div>
+                        <!-- Yandex.RTB R-A-11822438-9 (баннер) -->
+                        <!-- <div class="ads" id="yandex_rtb_R-A-11822438-9"></div>
                         <script>
                             window.yaContextCb.push(() => {
                                 Ya.Context.AdvManager.render({
                                     "blockId": "R-A-11822438-9",
                                     "renderTo": "yandex_rtb_R-A-11822438-9"
+                                })
+                            })
+                        </script> -->
+
+                        <!-- Yandex.RTB R-A-11822438-15 (лента) -->
+                        <div class="ads" id="yandex_rtb_R-A-11822438-15"></div>
+                        <script>
+                            window.yaContextCb.push(() => {
+                                Ya.Context.AdvManager.render({
+                                    "blockId": "R-A-11822438-15",
+                                    "renderTo": "yandex_rtb_R-A-11822438-15",
+                                    "type": "feed"
                                 })
                             })
                         </script>
