@@ -1,4 +1,5 @@
 const trailsData = [
+    { name: "Экотропа Петяярви", url: "/catalog/lenoblast/petyayarvi/" },
     { name: "Танцующий лес", url: "/catalog/kaliningradskaya-oblast/tancuyushchij-les/" },
     { name: "Высота Эфа", url: "/catalog/kaliningradskaya-oblast/vysota-efa/" },
     { name: "Долина Нарзанов", url: "/catalog/kabardino-balkariya/dolina-narzanov/" },
