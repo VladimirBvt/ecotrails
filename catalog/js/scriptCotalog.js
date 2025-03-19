@@ -1,6 +1,6 @@
 const title = document.querySelector(".title");
-  const backScroll = document.querySelector("#back-scroll");
-  const upperCotalog = document.querySelector(".upper_cotalog");
+const backScroll = document.querySelector("#back-scroll");
+const upperCotalog = document.querySelector(".upper_cotalog");
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -9,7 +9,7 @@ addEventListener("load", () => {
   const mapPath = document.querySelector(".map-path");
   const listPath = document.querySelector(".list-path");
   const colorSwitchText1 = document.querySelector(".switch-btn-text");
-  const colorSwitchText2 = document.querySelector(".switch-btn-text2");  
+  const colorSwitchText2 = document.querySelector(".switch-btn-text2");
 
   switchList.addEventListener("click", (e) => {
     swicthBtn.classList.remove("switch-map");
@@ -28,7 +28,7 @@ addEventListener("load", () => {
     listPath.setAttribute("stroke", "black");
     colorSwitchText1.style.color = "black";
     colorSwitchText2.style.color = "white";
- 
+
 
     // Переход на страницу карты с текущим фильтром региона
     const newUrl = filtredRegion === 'all'
@@ -130,6 +130,27 @@ for (let j = 0; j < catalogCard.length; j++) {
   };
 }
 
+// Скрипт для обновления рекламы в каталоге (лента)
+function updateYandexAd() {
+  // Очищаем контейнер с рекламой
+  const adContainer = document.getElementById('yandex_rtb_R-A-11822438-15');
+  if (adContainer) {
+    adContainer.innerHTML = ''; // Очищаем контейнер
+  }
+
+  // Проверяем, загружен ли Yandex RTB API
+  if (typeof Ya !== 'undefined' && Ya.Context && Ya.Context.AdvManager) {
+    // Рендерим рекламу заново
+    Ya.Context.AdvManager.render({
+      blockId: "R-A-11822438-15", // Ваш ID рекламного блока
+      renderTo: "yandex_rtb_R-A-11822438-15", // ID контейнера
+      type: "feed" // Тип рекламы (лента)
+    });
+  } else {
+    console.error('Yandex RTB API не загружен.');
+  }
+}
+
 
 // Фильтр
 // Подключение regionsData (массив регионов)
@@ -202,7 +223,7 @@ regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
   filtredRegion = selectedRegion; // Сохраняем фильтр в глобальную переменную
 
-  let newRegion = selectedRegion; 
+  let newRegion = selectedRegion;
 
   // console.log(`${newRegion}`);  
 
@@ -211,7 +232,7 @@ regionSelect.addEventListener('change', function () {
     ? window.location.pathname  // Без параметра "region=all"
     : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
-  history.pushState(null, '', newUrl);  
+  history.pushState(null, '', newUrl);
 
   // Фильтруем карточки по выбранному региону
   filterCards(newRegion);
@@ -219,8 +240,12 @@ regionSelect.addEventListener('change', function () {
   // Обновляем title, h1, description и canonical на основе GET-параметра
   updateTitleH1Description(newRegion);
 
+  // Обновляем рекламу
+  updateYandexAd();
+
   // Прокручиваем страницу в начало
   window.scrollTo(0, 0);
+
 });
 
 // Функция фильтрации карточек
