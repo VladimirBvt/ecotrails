@@ -26,16 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function getDeviceType() {
+  const userAgent = navigator.userAgent;
+  const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  const isTablet = /iPad|Android/i.test(userAgent) && !/Mobile/i.test(userAgent);
+
+  if (isMobile) return 'mobile';
+  if (isTablet) return 'tablet';
+  return 'desktop';
+}
+
 // Инициализация карты
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
-    zoom: 4,
-    center: [57.208761, 63.853141], // Центр ощей карты
-    controls: [],
+    zoom: getDeviceType() === 'mobile' ? 2 : getDeviceType() === 'tablet' ? 3 : 4, // Zoom зависит от устройства
+    center: [57.208761, 63.853141], // Центр общей карты
+    controls: [], // Убираем стандартные элементы управления
   }, {
-    // Выключение точек интересов по-умолчанию (аэропорты и ко)
-    yandexMapDisablePoiInteractivity: true,
-
+    yandexMapDisablePoiInteractivity: true, // Выключаем точки интересов
   });
 
   myMap.controls.add("geolocationControl", {
@@ -128,11 +136,19 @@ ymaps.ready(function () {
   // Функция для центрирования карты на выбранный регион
   function centerMapOnRegion(region) {
     const coordinates = regionCoordinates[region];
+    const deviceType = getDeviceType();
 
     if (coordinates) {
       myMap.setCenter(coordinates, 8);
     } else {
-      myMap.setCenter([57.208761, 63.853141], 4); // Центр общей карты
+      //Устанавливаем zoom для общей карты в зависимости от устройства
+      if (deviceType === 'mobile') {
+        myMap.setCenter([57.208761, 63.853141], 2); // Для мобильных
+      } else if (deviceType === 'tablet') {
+        myMap.setCenter([57.208761, 63.853141], 3); // Для планшетов
+      } else {
+        myMap.setCenter([57.208761, 63.853141], 4); // Для десктопов
+      }
     }
   }
 
