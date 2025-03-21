@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ymaps.ready(function () {
   var myMap = new ymaps.Map("map", {
     zoom: 4,
-    center: [55.601755, 38.602655],
+    center: [57.208761, 63.853141], // Центр ощей карты
     controls: [],
   }, {
     // Выключение точек интересов по-умолчанию (аэропорты и ко)
@@ -132,7 +132,7 @@ ymaps.ready(function () {
     if (coordinates) {
       myMap.setCenter(coordinates, 8);
     } else {
-      myMap.setCenter([55.601755, 38.602655], 4); // По умолчанию - Москва
+      myMap.setCenter([57.208761, 63.853141], 4); // Центр общей карты
     }
   }
 
@@ -141,6 +141,120 @@ ymaps.ready(function () {
 
 
   // -------------------------------------------------------------------------------Тест------------------------------------------------------
+  // .............................................................Книга природы (Красноярск)
+  var myPolyline = new ymaps.Polyline(
+    [
+      // Указываем координаты вершин.
+
+      [55.95044987, 92.74523363],
+      [55.95005707, 92.74502174],
+      [55.94973033, 92.74486986],
+      [55.94939923, 92.74467137],
+      [55.94918443, 92.74454446],
+      [55.94883304, 92.74444752],
+      [55.94836046, 92.7443],
+      [55.9476606, 92.74407201],
+      [55.94666122, 92.74372869],
+      [55.9459247, 92.74345012],
+      [55.94532866, 92.74325701],
+      [55.94426901, 92.74332138],
+      [55.94390776, 92.74322482],
+      [55.94273969, 92.74231287],
+      [55.94197425, 92.74189713],
+    ],
+    [],
+
+    {
+      // Задаем опции геообъекта.
+      // Цвет с прозрачностью.
+      strokeColor: "#F28123",
+      // Ширину линии.
+      strokeWidth: 2,
+      // Максимально допустимое количество вершин в ломаной.
+      editorMaxPoints: 6,
+      // Добавляем в контекстное меню новый пункт, позволяющий удалить ломаную.
+      editorMenuManager: function (items) {
+        items.push({
+          title: "Удалить линию",
+          onClick: function () {
+            myMap.geoObjects.remove(myPolyline);
+          },
+        });
+        return items;
+      },
+    }
+  );
+
+  var startPoint = new ymaps.Placemark(
+    [55.95044987, 92.74523363],
+    {
+      hintContent: "Экотропа Книга Природы",
+
+      // Тут контент карточки тропы
+      balloonContent: `<a href="krasnoyarsky-krai/kniga-prirody/">
+    <figure id="Tsaplya" class="catalog-item">
+        <img src="krasnoyarsky-krai/kniga-prirody/img/for-slider.jpg"
+            alt="Экотропа Книга Природы" class="trail-img">
+        <figcaption class="trail-info">
+            <a href="krasnoyarsky-krai/kniga-prirody/" class="trail-title-link">
+                <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
+                    title="Экотропа Книга Природы">Книга Природы
+                </h2>
+            </a>
+            <a href="krasnoyarsky-krai/kniga-prirody/" id="trail-location" class="trail-location-black"
+                title="Красноярский край, нацпарк Красноярские столбы">
+                <p id="color-letters-cot" class="black-color size-card-elem-p">
+                    Красноярский край, Красноярские столбы</p>
+            </a>
+            <div class="trail-spec">
+                <a href="krasnoyarsky-krai/kniga-prirody/" class="trail-distance">
+                    <div class="img-card-color">
+                        <img src="/img/dist-orange.svg" alt="Длина тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">1 км</p>
+                </a>
+                <a href="krasnoyarsky-krai/kniga-prirody/" class="trail-difficulty">
+                    <div id="easy" class="img-card-color">
+                        <img src="/img/difficulty-easy.svg" alt="Сложность тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">Простая</p>
+                </a>
+                <a href="krasnoyarsky-krai/kniga-prirody/" class="trail-duration">
+                    <div class="img-card-color">
+                        <img src="/img/duration-orange.svg" alt="Длительность тропы">
+                    </div>
+                    <p id="color-letters-cot" class="black-color">~0,5 ч</p>
+                </a>
+            </div>
+        </figcaption>
+    </figure>
+</a>`,
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "https://i.ibb.co/Z2wRNPF/map-marker.png",
+      iconImageSize: [32, 51],
+      iconImageOffset: [-10, -45],
+    }
+  );
+
+  var endPoint = new ymaps.Placemark(
+    [55.94197425, 92.74189713],
+    {
+      hintContent: "Конец экотропы",
+      ////balloonContent: "Это Конец экотропы",
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "2",
+      iconImageSize: [15, 15],
+      iconImageOffset: [0, 0],
+    }
+  );
+
+  // Добавляем линию на карту.
+  myMap.geoObjects.add(myPolyline).add(startPoint).add(endPoint);
+
   // .............................................................Петяярви (гряда Вярямянселькя)
   var myPolyline1 = new ymaps.Polyline(
     [

@@ -200,6 +200,7 @@ function updateTitleH1Description(regionHref) {
     "kabardino-balkariya": "Кабардино-Балкарии",
     "tambovskaya-oblast": "Тамбовской области",
     "kaliningradskaya-oblast": "Калининградской области",
+    "krasnoyarsky-krai": "Красноярского края",
   };
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;

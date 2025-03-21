@@ -11,6 +11,7 @@ const regionsData = [
   { value: 'kabardino-balkariya', name: 'Кабардино-Балкария', coordinates: [43.4846, 43.6072] },
   { value: 'tambovskaya-oblast', name: 'Тамбовская область', coordinates: [52.7314, 41.4366] },
   { value: 'kaliningradskaya-oblast', name: 'Калининградская область', coordinates: [54.710000, 20.500000] },
+  { value: 'krasnoyarsky-krai', name: 'Красноярский край', coordinates: [56.018400, 92.867200] },
 ];
 
   

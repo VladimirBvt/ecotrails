@@ -1,4 +1,5 @@
 const trailsData = [
+    { name: "Книга Природы (Красноярские Столбы)", url: "/catalog/krasnoyarsky-krai/kniga-prirody/" },
     { name: "Экотропа Петяярви", url: "/catalog/lenoblast/petyayarvi/" },
     { name: "Танцующий лес", url: "/catalog/kaliningradskaya-oblast/tancuyushchij-les/" },
     { name: "Высота Эфа", url: "/catalog/kaliningradskaya-oblast/vysota-efa/" },
