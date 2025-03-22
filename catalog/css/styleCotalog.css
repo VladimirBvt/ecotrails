@@ -187,27 +187,27 @@ a {
 
 /* Относится к тайтлу */
 
-.title::before {  
-  content: url(/img/title-left-line.svg);    
+.title::before {
+  content: url(/img/title-left-line.svg);
   margin: 0;
   padding: 0;
   line-height: 0;
 }
 
-.title::after {  
-  content: url(/img/title-right-line.svg);  
+.title::after {
+  content: url(/img/title-right-line.svg);
   margin: 0;
   padding: 0;
   line-height: 0;
 }
 
- /* То, что одной ширины */
+/* То, что одной ширины */
 .catalog {
   /* margin-top: 335px; */
   width: 100%;
   max-width: var(--pcContent-width);
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
 }
 
 /* Кнопки фильтра */
@@ -224,6 +224,8 @@ a {
   margin-bottom: 24px;
   gap: 10px;
   max-width: var(--pcContent-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Хлебные крошки */
@@ -245,14 +247,14 @@ a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 64px auto;  
+  margin: 64px auto;
   text-transform: uppercase;
   text-align: center;
   font-size: 32px;
   line-height: 1.3;
   justify-content: center;
-  align-items: center; 
-  gap: 20px; 
+  align-items: center;
+  gap: 20px;
   /* margin-top: 0; */
   max-width: var(--pcContent-width);
 }
@@ -429,7 +431,7 @@ a {
   /* для Firefox */
   -moz-appearance: none;
   /* изображение стрелки*/
-  background-image: url("/img/faq-toggle.png");  
+  background-image: url("/img/faq-toggle.png");
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 10px;
@@ -440,11 +442,11 @@ a {
   min-width: 200px;
   max-width: 270px;
   /* Запрещаем перенос текста на новую строку */
-  white-space: nowrap; 
+  white-space: nowrap;
   /* Обрезаем все, что выходит за границы */
-  overflow: hidden; 
-  /* Добавляем многоточие, если текст не помещается */ 
-  text-overflow: ellipsis;    
+  overflow: hidden;
+  /* Добавляем многоточие, если текст не помещается */
+  text-overflow: ellipsis;
 }
 
 /* Стили для select в раскрытом состоянии */
@@ -455,12 +457,12 @@ a {
 
 /* Стили для вариантов в фильтре */
 .filters option {
-  font-size: 16px;  
-  background-color: #ffffff;  
-  color: #000000; 
-  font-family: "Avante Book"; 
-  font-style: normal; 
-  font-size: 18px;   
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Avante Book";
+  font-style: normal;
+  font-size: 18px;
 }
 
 /* Относится к хлебным крошкам */
@@ -483,14 +485,14 @@ a {
   display: flex;
   gap: 12px;
   font-size: 18px;
-  align-items: center;  
+  align-items: center;
 }
 
 /* Разделители */
 .breadcrumb-separator {
   font-size: 15px;
   color: #F28123;
-  line-height: 0;  
+  line-height: 0;
 }
 
 /* Ссылки */
@@ -654,8 +656,8 @@ a {
     max-width: var(--tabletContent-width);
   }
 
-  .controllers {    
-    margin-bottom: 16px;  
+  .controllers {
+    margin-bottom: 16px;
     max-width: var(--tabletContent-width);
   }
 
@@ -689,7 +691,7 @@ a {
     /* padding-right: 12px; */
     margin-top: 16px;
     height: 56px;
-  }  
+  }
 
   .catalog-items {
     display: grid;
@@ -736,7 +738,7 @@ a {
     max-width: var(--tabletMiniContent);
   }
 
-  .controllers {     
+  .controllers {
     max-width: var(--tabletMiniContent);
   }
 
@@ -754,10 +756,50 @@ a {
 
 @media (max-width: 775px) {
 
+  /* То, что одной ширины */
+
+  .catalog {
+    max-width: var(--tabletMicroContent);
+  }
+
+  .title {
+    max-width: var(--tabletMicroContent);
+  }
+
+  .controllers {
+    max-width: var(--tabletMicroContent);
+  }
+
+  .main-head {
+    max-width: var(--tabletMicroContent);
+  }
+
   .catalog-items {
     /* Адаптивные колонки */
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 525px) {
+
+/* То, что одной ширины */
+
+.catalog {
+  max-width: var(--mobileContent);
+}
+
+.title {
+  max-width: var(--mobileContent);
+}
+
+.controllers {
+  max-width: var(--mobileContent);
+}
+
+.main-head {
+  max-width: var(--mobileContent);
+}
+
 }
 
 @media (max-width: 480px) {
@@ -874,42 +916,34 @@ a {
     height: 530px;
   }
 
-  .content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .trail-img {
     width: 320px;
     height: 247px;
   }
 
   .main-head {
-    max-width: var(--mobileContent);
     margin-left: auto;
     margin-right: auto;
   }
 
   .title {
-    max-width: var(--mobileContent);
     margin: 48px auto;
     font-size: 24px;
-    gap: 12px;     
+    gap: 12px;
   }
 
   .controllers {
     padding: 0;
-    max-width: var(--mobileContent);
     margin-left: auto;
     margin-right: auto;
   }
 
-  .title::after {    
-    content: url(/img/small-title-right-line.svg);    
+  .title::after {
+    content: url(/img/small-title-right-line.svg);
   }
 
-  .title::before {    
-    content: url(/img/small-title-left-line.svg);    
+  .title::before {
+    content: url(/img/small-title-left-line.svg);
   }
 
   /* Реклама */
@@ -917,5 +951,5 @@ a {
     margin-bottom: 72px;
     /* margin-top: 72px;     */
   }
-  
+
 }

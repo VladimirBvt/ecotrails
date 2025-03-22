@@ -5,10 +5,24 @@
 
 :root {
   /* Задаем ширину через переменную */
+
+    /* 4 макси-карточки на ПК */
+    --pcContent-width: 1218px;
+
+  /* 4 мини-карточки */
   --tabletContent-width: 976px;
-  --tabletMiniContent: calc(100% - 48px);
+
+  /* 3 мини-карточки */
+  /* --tabletMiniContent: calc(100% - 48px); */
+  --tabletMiniContent: 727px;
+
+  /* 2 мини-карточки */
+  --tabletMicroContent: 478px;
+
+  /* Мобилка */
   --mobileContent: calc(100% - 40px);
-  --pcContent-width: 1218px;
+
+
 
   /* Так записывается */
   /* max-width: var(--pcContent-width); */
@@ -840,7 +854,7 @@ a.header-icon.keychainify-checked {
 }
 
 /* Мини-планшет */
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .container-header {
     max-width: var(--tabletMiniContent);
     /* padding-left: 24px;
@@ -849,7 +863,36 @@ a.header-icon.keychainify-checked {
 
 }
 
-@media (max-width: 480px) {
+/* Микро-планшет */
+@media (max-width: 775px) {
+  .container-header {
+    max-width: var(--tabletMicroContent);
+  }
+
+  .container-navigation-icon:nth-child(2) {
+    padding: 0;
+  }
+
+  .center-navigation {
+    display: none;
+  }
+
+  .container-navigation-icon:last-child {
+    display: block;
+  }
+
+  .container-navigation-icon:nth-child(2) {
+    border: none;
+    margin: 0;
+  }
+
+  .icon-navigation {
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 525px) {
 
   .container-header {
     margin-left: auto;
@@ -900,32 +943,9 @@ a.header-icon.keychainify-checked {
     animation: none;
   }
 
-  /* .line-location {
-    display: none;
-  } */
-  .container-navigation-icon:nth-child(2) {
-    padding: 0;
-  }
-
-  .center-navigation {
-    display: none;
-  }
-
-  .container-navigation-icon:last-child {
-    display: block;
-  }
-
-  .container-navigation-icon:nth-child(2) {
-    border: none;
-    margin: 0;
-  }
-
-  .icon-navigation {
-    margin: 0;
-  }
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .searcharea {
     width: 270px;
   }
@@ -947,7 +967,7 @@ a.header-icon.keychainify-checked {
   .search-close {
     left: 295px;
   }
-}
+} */
 
 @font-face {
   font-family: "a_AvanteInt";
