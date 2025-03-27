@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 .opasity-footer {
   position: absolute;
   margin-left: auto;
@@ -17,30 +18,15 @@
   background: rgba(55, 62, 52);
   border-bottom: none;
 }
+
 .footer {
-  max-width: 100%;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
   height: 90px;
   z-index: 200;
   margin-top: 96px;
   background-color: #373e34;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
+
 .container-footer {
   width: 100%;
   display: -webkit-box;
@@ -49,7 +35,10 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 20px 0 20px 0;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--pcContent-width);
 }
 
 /* Стилизация logo */
@@ -58,8 +47,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 191px;
 }
+
 .container-logo-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,10 +60,12 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
 .logo-footer {
   width: 40px;
   height: 44px;
 }
+
 .footer-child1-text {
   padding-left: 10px;
   display: -webkit-box;
@@ -113,8 +104,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-left: 50px;
 }
+
 .author_rules {
   color: #f7fbfb;
   font-style: normal;
@@ -126,9 +117,7 @@
   padding-right: 3px;
   padding-bottom: 10px;
 }
-.footer-child3 {
-  padding-right: 191px;
-}
+
 /* Стилизация конпки обратной связи */
 
 .button-footer {
@@ -300,21 +289,53 @@
   background-color: white;
   color: #000000;
 } */
+
 /* Адаптив под экраны от 1530px */
 
-@media (max-width: 1530px) {
+@media (max-width: 1250px) {
   .footer {
     margin-top: 96px;
-    width: 100%;
   }
 
-  .footer-child1 {
-    padding: 0;
-    margin-left: 21px;
+  .container-footer {
+    max-width: var(--tabletContent-width);
   }
-  .footer-child3 {
-    padding: 0;
-    margin-right: 20px;
+}
+
+@media (max-width: 1024px) {
+
+  .container-footer {
+    max-width: var(--tabletMiniContent);
+  }
+
+  /* Уменьшение кнопки письма */
+  .button-text {
+    display: none;
+  }
+
+  .button-footer {
+    width: 50px;
+    height: 50px;
+  }
+
+  .callback-img {
+    padding-left: 3px;
+  }
+}
+
+@media (max-width: 775px) {
+
+  .container-footer {
+    max-width: var(--tabletMicroContent);
+  }
+}
+
+@media (max-width: 525px) {
+
+  .container-footer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--mobileContent);
   }
 }
 
@@ -324,26 +345,19 @@
   .footer-child2 {
     margin: 0;
   }
+
   .footer-child1-text {
     display: none;
   }
+
   .logo-footer {
     padding: 0;
   }
+
   .author_rules {
     padding-right: 0;
     font-style: normal;
     font-size: 14px;
-  }
-  .button-text {
-    display: none;
-  }
-  .button-footer {
-    width: 50px;
-    height: 50px;
-  }
-  .callback-img {
-    padding-left: 3px;
   }
 }
 

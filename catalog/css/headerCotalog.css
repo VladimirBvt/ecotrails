@@ -6,8 +6,8 @@
 :root {
   /* Задаем ширину через переменную */
 
-    /* 4 макси-карточки на ПК */
-    --pcContent-width: 1218px;
+  /* 4 макси-карточки на ПК */
+  --pcContent-width: 1218px;
 
   /* 4 мини-карточки */
   --tabletContent-width: 976px;
@@ -857,8 +857,6 @@ a.header-icon.keychainify-checked {
 @media (max-width: 1024px) {
   .container-header {
     max-width: var(--tabletMiniContent);
-    /* padding-left: 24px;
-    padding-right: 24px; */
   }
 
 }
