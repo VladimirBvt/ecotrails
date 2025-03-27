@@ -33,18 +33,20 @@ search.addEventListener("click", () => {
   });
 });
 
+// Мобильный хедер при ресайзе
 window.addEventListener("resize", () => {
-  if ($(window).width() <= 480) {
-    if (document.querySelector(".searcharea") !== null) {
-      $(".logo-header").css("display", "none");
-      $(".container-location").css("display", "none");
-      $(".icon-href-cotalog").css("display", "none");
+  const windowWidth = $(window).width();
+  const searchArea = document.querySelector(".searcharea");
+  const isSearchVisible = searchArea &&
+    getComputedStyle(searchArea).display !== "none" &&
+    searchArea.offsetParent !== null;
+
+  if (windowWidth <= 480) {
+    if (isSearchVisible) {
+      $(".logo-header, .container-location, .icon-href-cotalog").hide();
     }
-  }
-  if ($(window).width() > 480) {
-    $(".logo-header").css("display", "");
-    $(".container-location").css("display", "");
-    $(".icon-href-cotalog").css("display", "");
+  } else {
+    $(".logo-header, .container-location, .icon-href-cotalog").show();
   }
 });
 
