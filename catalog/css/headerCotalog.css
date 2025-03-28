@@ -832,8 +832,7 @@ a.header-icon.keychainify-checked {
   }
 
   .searcharea {
-    width: 210px;
-    right: 110px;
+    width: 170px;
   }
 
   .search-temp {
@@ -857,6 +856,10 @@ a.header-icon.keychainify-checked {
 @media (max-width: 1024px) {
   .container-header {
     max-width: var(--tabletMiniContent);
+  }
+
+  .searcharea {
+    width: 400px;
   }
 
 }

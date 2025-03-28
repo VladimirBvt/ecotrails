@@ -8,6 +8,12 @@ const voidSearch = document.querySelector("#VoidSearch");
 const elasticBox = document.querySelector("#elasticId");
 
 search.addEventListener("click", () => {
+  // Скрытие меню при закрытии поиска
+  if ($(window).width() <= 1024) {
+    $(".center-navigation").css("display", "none");
+  }
+
+  // Скрытие хедера при закрытии поиска
   if ($(window).width() <= 480) {
     $(".logo-header").css("display", "none");
     $(".container-location").css("display", "none");
@@ -20,6 +26,11 @@ search.addEventListener("click", () => {
 
   const TempSearch = document.querySelector("#search-close");
   TempSearch.addEventListener("click", () => {
+    // Показ меню при закрытии поиска
+    if ($(window).width() <= 1024) {
+      $(".center-navigation").css("display", "");
+    }
+    // Показ хедера при закрытии поиска
     if ($(window).width() <= 480) {
       $(".logo-header").css("display", "");
       $(".container-location").css("display", "");
