@@ -516,12 +516,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* justify-content: flex-end; */
 }
 
 .icon-header {
   width: 40px;
   height: 40px;
 }
+
+/* #search {
+  margin-right: auto;
+} */
 
 /* Блок с поиском */
 #cont-search {
@@ -767,6 +772,7 @@
 #search-cont {
   position: relative;
 }
+
 
 .container-navigation-icon {
   width: 40px;

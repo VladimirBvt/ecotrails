@@ -74,3 +74,4 @@ header.addEventListener("click", (event) => {
 
 // Инициализация
 initializeStyles();
+

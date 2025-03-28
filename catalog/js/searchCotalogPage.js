@@ -8,14 +8,15 @@ const voidSearch = document.querySelector("#VoidSearch");
 const elasticBox = document.querySelector("#elasticId");
 
 search.addEventListener("click", () => {
-  // Скрытие меню при закрытии поиска
+  // Скрытие меню при открытии поиска
   if ($(window).width() <= 1024) {
     $(".center-navigation").css("display", "none");
   }
 
-  // Скрытие хедера при закрытии поиска
-  if ($(window).width() <= 480) {
-    $(".logo-header").css("display", "none");
+  // Скрытие элементов хедера при открытии поиска
+  if ($(window).width() <= 775) {
+    // $(".logo-header").css("display", "none");
+    $(".logo-header").css("visibility", "hidden");
     $(".container-location").css("display", "none");
     $(".icon-href-cotalog").css("display", "none");
   }
@@ -31,8 +32,8 @@ search.addEventListener("click", () => {
       $(".center-navigation").css("display", "");
     }
     // Показ хедера при закрытии поиска
-    if ($(window).width() <= 480) {
-      $(".logo-header").css("display", "");
+    if ($(window).width() <= 775) {
+      $(".logo-header").css("visibility", "");
       $(".container-location").css("display", "");
       $(".icon-href-cotalog").css("display", "");
     }
