@@ -15,15 +15,12 @@ search.addEventListener("click", () => {
 
   // Скрытие элементов хедера при открытии поиска
   if ($(window).width() <= 775) {
-    // $(".logo-header").css("display", "none");
     $(".logo-header").css("visibility", "hidden");
-    $(".container-location").css("display", "none");
-    $(".icon-href-cotalog").css("display", "none");
+    $(".icon-navigation .container-navigation-icon:not(#search-cont)").css("display", "none");
   }
   document.querySelector("#search").hidden = true;
   contSearchElement.style.display = 'flex';
   document.querySelector(".otstup-icon-search").hidden = false;
-  // document.querySelector(".line-location").hidden = true;
 
   const TempSearch = document.querySelector("#search-close");
   TempSearch.addEventListener("click", () => {
@@ -34,8 +31,7 @@ search.addEventListener("click", () => {
     // Показ хедера при закрытии поиска
     if ($(window).width() <= 775) {
       $(".logo-header").css("visibility", "");
-      $(".container-location").css("display", "");
-      $(".icon-href-cotalog").css("display", "");
+      $(".icon-navigation .container-navigation-icon:not(#search-cont)").css("display", "");
     }
 
     contSearchElement.style.display = 'none';
@@ -45,6 +41,7 @@ search.addEventListener("click", () => {
   });
 });
 
+// Поведение хедера при ресайзе
 // Поведение хедера при ресайзе
 window.addEventListener("resize", () => {
   const windowWidth = $(window).width();
@@ -60,19 +57,32 @@ window.addEventListener("resize", () => {
     // Дополнительно скрываем другие элементы при открытом поиске
     if (isSearchVisible) {
       $(".logo-header, .container-location, .icon-href-cotalog").hide();
+      $(".icon-navigation .container-navigation-icon:not(#search-cont)").hide();
     } else {
       $(".logo-header, .container-location, .icon-href-cotalog").show();
+      $(".icon-navigation .container-navigation-icon").show();
     }
   } else if (windowWidth <= 775) {
     // Для 481-775px
-    $(".logo-header, .container-location, .icon-href-cotalog").show();
-    $(".center-navigation").hide(); // Всегда скрываем
+    if (isSearchVisible) {
+      $(".icon-navigation .container-navigation-icon:not(#search-cont)").hide();
+      $(".logo-header").css("visibility", "hidden");
+    } else {
+      $(".icon-navigation .container-navigation-icon").show();
+      $(".logo-header").css("visibility", "");
+    }
+    $(".center-navigation").hide();
+    $(".container-location, .icon-href-cotalog").show();
   } else if (windowWidth <= 1024) {
     // Для 776-1024px
+    $(".logo-header").css("visibility", "");
+    $(".icon-navigation .container-navigation-icon").show();
     $(".logo-header, .container-location, .icon-href-cotalog").show();
-    $(".center-navigation").toggle(!isSearchVisible); // Показываем только если поиск закрыт
+    $(".center-navigation").toggle(!isSearchVisible);
   } else {
     // Для >1024px
+    $(".logo-header").css("visibility", "");
+    $(".icon-navigation .container-navigation-icon").show();
     $(".logo-header, .container-location, .icon-href-cotalog, .center-navigation").show();
   }
 });
