@@ -870,8 +870,25 @@ a.header-icon.keychainify-checked {
 
 /* Микро-планшет */
 @media (max-width: 775px) {
-  .container-header, #cont-search {
+  .container-header {
+    margin-left: auto;
+    margin-right: auto;
     max-width: var(--tabletMicroContent);
+    position: relative;
+  }
+
+  #cont-search {  
+    width: 100%;
+    top: 25%;
+  }
+
+  #search-cont {
+    position: static;
+  }
+
+  .searcharea {
+    width: auto;
+    flex: 1;
   }
 
   .container-navigation-icon:nth-child(2) {
@@ -901,24 +918,10 @@ a.header-icon.keychainify-checked {
 
 }
 
-@media (max-width: 525px) {
+@media (max-width: 525px) {  
 
-  #search-cont {
-    position: static;
-  }
-
-  .container-header {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--mobileContent);
-    position: relative;
-  }
-
-  #cont-search {  
-    width: 100%;
-    top: 25%;
-
-    /* max-width: var(--mobileContent); */
+  .container-header {    
+    max-width: var(--mobileContent);    
   }
 
   .VoidSearch {
@@ -946,11 +949,6 @@ a.header-icon.keychainify-checked {
     margin-top: 0px;
   }
 
-  .searcharea {
-    width: auto;
-    flex: 1;
-  }
-
   .search-temp {
     left: 40px;
   }
@@ -966,29 +964,6 @@ a.header-icon.keychainify-checked {
 
 }
 
-/* @media (max-width: 400px) {
-  .searcharea {
-    width: 270px;
-  }
-
-  .search-close {
-    left: 315px;
-  }
-}
-
-@media (max-width: 360px) {
-  .searcharea {
-    left: 23px;
-  }
-
-  .search-temp {
-    left: 20px;
-  }
-
-  .search-close {
-    left: 295px;
-  }
-} */
 
 @font-face {
   font-family: "a_AvanteInt";
