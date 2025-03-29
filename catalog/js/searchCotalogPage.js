@@ -42,7 +42,6 @@ search.addEventListener("click", () => {
 });
 
 // Поведение хедера при ресайзе
-// Поведение хедера при ресайзе
 window.addEventListener("resize", () => {
   const windowWidth = $(window).width();
   const searchArea = document.querySelector(".searcharea");
@@ -56,11 +55,13 @@ window.addEventListener("resize", () => {
     
     // Дополнительно скрываем другие элементы при открытом поиске
     if (isSearchVisible) {
-      $(".logo-header, .container-location, .icon-href-cotalog").hide();
+      $(".container-location, .icon-href-cotalog").hide();
       $(".icon-navigation .container-navigation-icon:not(#search-cont)").hide();
+      $(".logo-header").css("visibility", "hidden");
     } else {
-      $(".logo-header, .container-location, .icon-href-cotalog").show();
+      $(".container-location, .icon-href-cotalog").show();
       $(".icon-navigation .container-navigation-icon").show();
+      $(".logo-header").css("visibility", "");
     }
   } else if (windowWidth <= 775) {
     // Для 481-775px
@@ -77,13 +78,13 @@ window.addEventListener("resize", () => {
     // Для 776-1024px
     $(".logo-header").css("visibility", "");
     $(".icon-navigation .container-navigation-icon").show();
-    $(".logo-header, .container-location, .icon-href-cotalog").show();
+    $(".container-location, .icon-href-cotalog").show();
     $(".center-navigation").toggle(!isSearchVisible);
   } else {
     // Для >1024px
     $(".logo-header").css("visibility", "");
     $(".icon-navigation .container-navigation-icon").show();
-    $(".logo-header, .container-location, .icon-href-cotalog, .center-navigation").show();
+    $(".container-location, .icon-href-cotalog, .center-navigation").show();
   }
 });
 
