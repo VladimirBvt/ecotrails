@@ -9,6 +9,7 @@ const elementsToHide = [document.querySelector('.main-head'), document.querySele
 
 // Состояние
 let isCompact = false;
+let isFirstInteraction = true;
 
 function updateLayout() {
   // 1. Скрываем/показываем элементы
@@ -16,19 +17,41 @@ function updateLayout() {
     if (el) el.style.display = isCompact ? 'none' : '';
   });
 
-  // 2. Убираем явное управление высотой (блок не схлопнется)
-  // upperCotalog.style.height = ''; // Не нужно!
-
-  // 3. Обновляем отступ каталога
-  catalog.style.marginTop = `${mainHeader.offsetHeight + upperCotalog.offsetHeight}px`;
+  // 2. Ждём применения изменений DOM перед расчётом высоты
+  requestAnimationFrame(() => {
+    const headerHeight = mainHeader.offsetHeight;
+    const upperCotalogHeight = upperCotalog.offsetHeight;
+    catalog.style.marginTop = `${headerHeight + upperCotalogHeight}px`;
+    
+    // Для дебага
+    console.log('Высоты:', {
+      header: headerHeight,
+      upperCotalog: upperCotalogHeight,
+      total: headerHeight + upperCotalogHeight
+    });
+  });
 }
 
 
+function handleScroll(e) {
+  if (isFirstInteraction && window.scrollY > 10) {
+    e.preventDefault();
+    isCompact = true;
+    updateLayout();
+    
+    // Фиксируем позицию после изменений
+    setTimeout(() => {
+      window.scrollTo({
+        top: mainHeader.offsetHeight + upperCotalog.offsetHeight,
+        behavior: 'auto'
+      });
+      isFirstInteraction = false;
+    }, 300); // Ждём завершения анимации
+    return;
+  }
 
-function handleScroll() {
-  const scrollY = window.scrollY;
-  const shouldBeCompact = scrollY > 50;
-
+  // Обычное поведение
+  const shouldBeCompact = window.scrollY > 10;
   if (shouldBeCompact !== isCompact) {
     isCompact = shouldBeCompact;
     updateLayout();
@@ -53,10 +76,12 @@ addEventListener("load", () => {
   upperCotalog.style.position = 'fixed';
   upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
   upperCotalog.style.width = '100%';
+  upperCotalog.style.transition = 'all 0.3s ease';
   
+  catalog.style.transition = 'margin-top 0.3s ease';
   updateLayout();
   
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('scroll', handleScroll, { passive: false });
   window.addEventListener('resize', updateLayout);
 
   // Скрытие хлебных крошек на главной каталога
