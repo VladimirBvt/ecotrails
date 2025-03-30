@@ -1,18 +1,16 @@
 const title = document.querySelector(".title");
 const mainHead = document.querySelector(".main-head");
-const backScroll = document.querySelector("#back-scroll");
+// const backScroll = document.querySelector("#back-scroll");
 const upperCotalog = document.querySelector(".upper_cotalog");
 const catalog = document.querySelector(".catalog");
 const mainHeader = document.querySelector(".main-header");
-const upperCotalogScroll = document.querySelector(".upper_cotalog_scroll");
+// const upperCotalogScroll = document.querySelector(".upper_cotalog_scroll");
 
 // Функция для расчета отступа каталога
 function calculateCatalogMargin() {
-  if (upperCotalog.classList.contains("upper_cotalog_scroll")) {
-    catalog.style.marginTop = upperCotalogScroll.offsetHeight + mainHeader.offsetHeight + 'px';
-  } else {
+
     catalog.style.marginTop = upperCotalog.offsetHeight + parseFloat(window.getComputedStyle(upperCotalog).top) + 'px';
-  }
+  
 }
 
 addEventListener("load", () => {
@@ -69,13 +67,13 @@ function handleScroll() {
   if (y > 85) {
     title.style.display = 'none';
     mainHead.style.display = 'none';
-    backScroll.hidden = false;
-    upperCotalog.classList.add("upper_cotalog_scroll");
+    // backScroll.hidden = false;
+    // upperCotalog.classList.add("upper_cotalog_scroll");
   } else {
     title.style.display = 'flex';
     mainHead.style.display = 'flex';
-    backScroll.hidden = true;
-    upperCotalog.classList.remove("upper_cotalog_scroll");
+    // backScroll.hidden = true;
+    // upperCotalog.classList.remove("upper_cotalog_scroll");
   }
 
   calculateCatalogMargin();

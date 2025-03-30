@@ -204,6 +204,7 @@ a {
 /* То, что одной ширины */
 .catalog {
   /* margin-top: 335px; */
+  position: relative;
   width: 100%;
   max-width: var(--pcContent-width);
   margin-left: auto;
@@ -296,13 +297,12 @@ a {
 }
 
 .upper_cotalog {
-  position: absolute;
   position: fixed;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 122px;
+  top: 90px;
   text-align: center;
   width: 100%;
   z-index: 200;
@@ -312,7 +312,7 @@ a {
   text-align: -webkit-center;
 }
 
-.upper_cotalog_scroll {
+/* .upper_cotalog_scroll {
   position: absolute;
   position: fixed;
   margin-left: auto;
@@ -320,19 +320,18 @@ a {
   left: 0;
   right: 0;
   top: 20px;
-  /* max-width: 1250px; */
   width: 100%;
   z-index: 200;
   background-color: #f3f7ed;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
+} */
 
-.back-scroll {
+/* .back-scroll {
   background-color: #f3f7ed;
   height: 80px;
   width: 100%;
-}
+} */
 
 .switch-btn {
   display: -webkit-box;
@@ -857,13 +856,13 @@ a {
     top: 100px;
   }
 
-  .upper_cotalog_scroll {
+  /* .upper_cotalog_scroll {
     top: 60px;
-  }
+  } */
 
-  .back-scroll {
+  /* .back-scroll {
     height: 40px;
-  }
+  } */
 
   /* Хлебные крошки */
 
