@@ -1,59 +1,48 @@
-// const title = document.querySelector(".title");
-// const mainHead = document.querySelector(".main-head");
-// const backScroll = document.querySelector("#back-scroll");
 const upperCotalog = document.querySelector(".upper_cotalog");
 const catalog = document.querySelector(".catalog");
 const mainHeader = document.querySelector(".main-header");
-// const upperCotalogScroll = document.querySelector(".upper_cotalog_scroll");
 const elementsToHide = [document.querySelector('.main-head'), document.querySelector('.title')]; 
 
-// Состояние
 let isCompact = false;
-let isFirstInteraction = true;
+let isInitialState = true; // Флаг для начального состояния до скролла
+
+// Функция для определения отступа в зависимости от ширины экрана
+function getFixedOffset() {
+  return window.innerWidth > 1250 ? 258 : 250;
+}
 
 function updateLayout() {
-  // 1. Скрываем/показываем элементы
   elementsToHide.forEach(el => {
     if (el) el.style.display = isCompact ? 'none' : '';
   });
 
-  // 2. Ждём применения изменений DOM перед расчётом высоты
   requestAnimationFrame(() => {
-    const headerHeight = mainHeader.offsetHeight;
-    const upperCotalogHeight = upperCotalog.offsetHeight;
-    catalog.style.marginTop = `${headerHeight + upperCotalogHeight}px`;
-    
-    // Для дебага
-    console.log('Высоты:', {
-      header: headerHeight,
-      upperCotalog: upperCotalogHeight,
-      total: headerHeight + upperCotalogHeight
-    });
+    if (isInitialState) {
+      const headerHeight = mainHeader.offsetHeight;
+      const upperCotalogHeight = upperCotalog.offsetHeight;
+      catalog.style.marginTop = `${headerHeight + upperCotalogHeight}px`;
+    } else {
+      catalog.style.marginTop = `${getFixedOffset()}px`; // Используем адаптивный отступ
+    }
   });
 }
 
 
-function handleScroll(e) {
-  if (isFirstInteraction && window.scrollY > 10) {
-    e.preventDefault();
+
+function handleScroll() {
+  const scrolled = window.scrollY > 10;
+  
+  // Первый скролл - переключаем в компактный режим
+  if (isInitialState && scrolled) {
+    isInitialState = false;
     isCompact = true;
     updateLayout();
-    
-    // Фиксируем позицию после изменений
-    setTimeout(() => {
-      window.scrollTo({
-        top: mainHeader.offsetHeight + upperCotalog.offsetHeight,
-        behavior: 'auto'
-      });
-      isFirstInteraction = false;
-    }, 300); // Ждём завершения анимации
-    return;
   }
-
-  // Обычное поведение
-  const shouldBeCompact = window.scrollY > 10;
-  if (shouldBeCompact !== isCompact) {
-    isCompact = shouldBeCompact;
+  
+  // Скролл вверх - возвращаем исходное состояние (если нужно)
+   else if (!isInitialState && !scrolled) {
+    isInitialState = true; 
+    isCompact = false;
     updateLayout();
   }
 }
@@ -69,6 +58,7 @@ addEventListener("load", () => {
   const colorSwitchText2 = document.querySelector(".switch-btn-text2");
   const breadcrumbs = document.querySelector('.breadcrumbs');
 
+  // Фиксируем позиции элементов
   mainHeader.style.position = 'fixed';
   mainHeader.style.top = '0';
   mainHeader.style.width = '100%';
@@ -76,13 +66,24 @@ addEventListener("load", () => {
   upperCotalog.style.position = 'fixed';
   upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
   upperCotalog.style.width = '100%';
-  upperCotalog.style.transition = 'all 0.3s ease';
   
+  // Добавляем плавность
+  upperCotalog.style.transition = 'all 0.3s ease';
   catalog.style.transition = 'margin-top 0.3s ease';
+  
+  // Первоначальный расчёт
   updateLayout();
   
-  window.addEventListener('scroll', handleScroll, { passive: false });
-  window.addEventListener('resize', updateLayout);
+  // Обработчики событий
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', () => {
+    if (!isInitialState) {
+      // Обновляем отступ при ресайзе (только в компактном режиме)
+      catalog.style.marginTop = `${getFixedOffset()}px`;
+    } else {
+      updateLayout();
+    }
+  });
 
   // Скрытие хлебных крошек на главной каталога
   const urlParams = new URLSearchParams(window.location.search);
