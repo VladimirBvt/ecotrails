@@ -1,17 +1,40 @@
-const title = document.querySelector(".title");
-const mainHead = document.querySelector(".main-head");
+// const title = document.querySelector(".title");
+// const mainHead = document.querySelector(".main-head");
 // const backScroll = document.querySelector("#back-scroll");
 const upperCotalog = document.querySelector(".upper_cotalog");
 const catalog = document.querySelector(".catalog");
 const mainHeader = document.querySelector(".main-header");
 // const upperCotalogScroll = document.querySelector(".upper_cotalog_scroll");
+const elementsToHide = [document.querySelector('.main-head'), document.querySelector('.title')]; 
 
-// Функция для расчета отступа каталога
-function calculateCatalogMargin() {
+// Состояние
+let isCompact = false;
 
-    catalog.style.marginTop = upperCotalog.offsetHeight + parseFloat(window.getComputedStyle(upperCotalog).top) + 'px';
-  
+function updateLayout() {
+  // 1. Скрываем/показываем элементы
+  elementsToHide.forEach(el => {
+    if (el) el.style.display = isCompact ? 'none' : '';
+  });
+
+  // 2. Убираем явное управление высотой (блок не схлопнется)
+  // upperCotalog.style.height = ''; // Не нужно!
+
+  // 3. Обновляем отступ каталога
+  catalog.style.marginTop = `${mainHeader.offsetHeight + upperCotalog.offsetHeight}px`;
 }
+
+
+
+function handleScroll() {
+  const scrollY = window.scrollY;
+  const shouldBeCompact = scrollY > 50;
+
+  if (shouldBeCompact !== isCompact) {
+    isCompact = shouldBeCompact;
+    updateLayout();
+  }
+}
+
 
 addEventListener("load", () => {
   const swicthBtn = document.querySelector(".switch-btn");
@@ -23,7 +46,18 @@ addEventListener("load", () => {
   const colorSwitchText2 = document.querySelector(".switch-btn-text2");
   const breadcrumbs = document.querySelector('.breadcrumbs');
 
-  calculateCatalogMargin();
+  mainHeader.style.position = 'fixed';
+  mainHeader.style.top = '0';
+  mainHeader.style.width = '100%';
+  
+  upperCotalog.style.position = 'fixed';
+  upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
+  upperCotalog.style.width = '100%';
+  
+  updateLayout();
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', updateLayout);
 
   // Скрытие хлебных крошек на главной каталога
   const urlParams = new URLSearchParams(window.location.search);
@@ -60,27 +94,6 @@ addEventListener("load", () => {
     CotColor[0].style.fill = "black";
   });
 });
-
-function handleScroll() {
-  const y = window.scrollY;
-
-  if (y > 85) {
-    title.style.display = 'none';
-    mainHead.style.display = 'none';
-    // backScroll.hidden = false;
-    // upperCotalog.classList.add("upper_cotalog_scroll");
-  } else {
-    title.style.display = 'flex';
-    mainHead.style.display = 'flex';
-    // backScroll.hidden = true;
-    // upperCotalog.classList.remove("upper_cotalog_scroll");
-  }
-
-  calculateCatalogMargin();
-}
-
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', calculateCatalogMargin);
 
 // Стилизация карточек при наведении мыши
 const catalogCard = document.querySelectorAll(".catalog-item");

@@ -209,6 +209,7 @@ a {
   max-width: var(--pcContent-width);
   margin-left: auto;
   margin-right: auto;
+  /* padding-top: 20px; */
 }
 
 /* Кнопки фильтра */
@@ -240,6 +241,7 @@ a {
   max-width: var(--pcContent-width);
   width: 100%;
   height: auto;
+  /* transition: opacity 0.3s ease, display 0.3s ease; */
 }
 
 /* H1 */
@@ -258,6 +260,7 @@ a {
   gap: 20px;
   /* margin-top: 0; */
   max-width: var(--pcContent-width);
+  /* transition: opacity 0.3s ease, display 0.3s ease; */
 }
 
 /*  */
