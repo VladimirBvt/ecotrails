@@ -800,10 +800,6 @@ a {
   max-width: var(--mobileContent);
 }
 
-}
-
-@media (max-width: 480px) {
-
   /* Мини-кнопки переключения "Список - карта" */
   .switch-btn-text {
     display: none;
