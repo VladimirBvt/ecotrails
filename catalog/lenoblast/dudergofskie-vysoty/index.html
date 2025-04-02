@@ -11,25 +11,25 @@
     <script>window.yaContextCb = window.yaContextCb || []</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-        <!-- travelpayouts -->
+    <!-- travelpayouts -->
     <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-        (function () {
-            var script = document.createElement("script");
-            script.async = 1;
-            script.src = 'https://emrldtp.cc/Mzk4NDYw.js?t=398460';
-            document.head.appendChild(script);
-        })();
-      </script>
+            (function () {
+                var script = document.createElement("script");
+                script.async = 1;
+                script.src = 'https://emrldtp.cc/Mzk4NDYw.js?t=398460';
+                document.head.appendChild(script);
+            })();
+    </script>
 
     <!-- Yandex.Metrika counter -->
 
     <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(92417974, "init", {
@@ -44,6 +44,18 @@
     </noscript>
 
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Varioqub experiments -->
+    <script type="text/javascript">
+        (function (e, x, pe, r, i, me, nt) {
+            e[i] = e[i] || function () { (e[i].a = e[i].a || []).push(arguments) },
+                me = x.createElement(pe), me.async = 1, me.src = r, nt = x.getElementsByTagName(pe)[0], me.addEventListener("error", function () { function cb(t) { t = t[t.length - 1], "function" == typeof t && t({ flags: {} }) }; Array.isArray(e[i].a) && e[i].a.forEach(cb); e[i] = function () { cb(arguments) } }), nt.parentNode.insertBefore(me, nt)
+        })
+            (window, document, "script", "https://abt.s3.yandex.net/expjs/latest/exp.js", "ymab");
+
+        ymab("metrika.92417974", "setConfig", { enableSetYmUid: true });
+        ymab("metrika.92417974", "init"/*, {clientFeatures}, {callback}*/);
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y50FJNKE0T"></script>
@@ -205,11 +217,13 @@
                 </div>
             </a>
             <div class="main-head-right">
-                <a class="QR-code" data-modal-btnQR="my_modall" href="#" onclick="ym(92417974,'reachGoal','QR_code'); return true;">
+                <a class="QR-code" data-modal-btnQR="my_modall" href="#"
+                    onclick="ym(92417974,'reachGoal','QR_code'); return true;">
                     <img src="/img/QR.svg" alt="иконка перехода">
                 </a>
                 <div class="ya-share2" data-curtain data-color-scheme="whiteblack" data-limit="0" data-size="l"
-                    data-more-button-type="short" data-services="vkontakte,whatsapp" onclick="ym(92417974,'reachGoal','share'); return true;"> </div>
+                    data-more-button-type="short" data-services="vkontakte,whatsapp"
+                    onclick="ym(92417974,'reachGoal','share'); return true;"> </div>
             </div>
         </div>
 
@@ -340,7 +354,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><button class="tablinks1" onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
+                                <li><button class="tablinks1"
+                                        onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
                                         id="map-cont">Карта</button>
 
                                     <div id="animation2-main" hidden>
@@ -603,7 +618,7 @@
                         около 40&nbsp;км. Нужно
                         ехать на&nbsp;юг по&nbsp;КАДу и&nbsp;трассе Е20, через Красное Село
                         до&nbsp;Дудергофского озера. Координаты начала экотропы: 59.702399, 30.119480.</p>
-                        <!-- <p class="p3">
+                    <!-- <p class="p3">
                             <a href="https://www.novitravel.ru/map?lng=30.13119&lat=59.69754&z=10&id=69571ede-8668-4432-8ccc-3f856e1cd693&poiTypeEn=attraction&utm_source=eco-trails"
                                 onclick="ym(92417974,'reachGoal','partner_link_novitravel'); return true;" class="link partner-link" target="_blank" rel="noopener"
                                 title="Экотропа Дудергофские высоты на карте">
@@ -630,9 +645,10 @@
             </div>
         </div>
 
-        <!-- Реклама -->
+        <!-- Реклама - А/Б тест -->
         <!-- Yandex.RTB R-A-11822438-8 -->
-        <div class="ads" id="yandex_rtb_R-A-11822438-8"></div>
+         
+        <!-- <div class="ads" id="yandex_rtb_R-A-11822438-8"></div>
         <script>
             window.yaContextCb.push(() => {
                 Ya.Context.AdvManager.render({
@@ -641,7 +657,22 @@
                     "type": "feed"
                 })
             })
+        </script> -->
+
+        <script type="text/javascript">
+            ymab("metrika.92417974", "adv"/*, {clientFeatures}*/, function (answer) {
+                const getId = answer.getBlockId || function (arg) { return arg };
+
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": getId("R-A-11822438-8"),
+                        "renderTo": "yandex_rtb_R-A-11822438-8",
+                        "type": "feed"
+                    })
+                })
+            });
         </script>
+
         <!-- Реклама -->
     </main>
     <footer class="footer">
