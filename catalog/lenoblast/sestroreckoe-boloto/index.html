@@ -45,18 +45,6 @@
 
     <!-- /Yandex.Metrika counter -->
 
-    <!-- Varioqub experiments -->
-    <script type="text/javascript">
-        (function (e, x, pe, r, i, me, nt) {
-            e[i] = e[i] || function () { (e[i].a = e[i].a || []).push(arguments) },
-                me = x.createElement(pe), me.async = 1, me.src = r, nt = x.getElementsByTagName(pe)[0], me.addEventListener("error", function () { function cb(t) { t = t[t.length - 1], "function" == typeof t && t({ flags: {} }) }; Array.isArray(e[i].a) && e[i].a.forEach(cb); e[i] = function () { cb(arguments) } }), nt.parentNode.insertBefore(me, nt)
-        })
-            (window, document, "script", "https://abt.s3.yandex.net/expjs/latest/exp.js", "ymab");
-
-        ymab("metrika.92417974", "setConfig", { enableSetYmUid: true });
-        ymab("metrika.92417974", "init"/*, {clientFeatures}, {callback}*/);
-    </script>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y50FJNKE0T"></script>
     <script>
@@ -646,10 +634,9 @@
             </div>
         </div>
 
-        <!-- Реклама - А/Б тест -->
-        <!-- Yandex.RTB R-A-11822438-8 -->
-         
-        <!-- <div class="ads" id="yandex_rtb_R-A-11822438-8"></div>
+        <!-- Реклама -->
+        <!-- Yandex.RTB R-A-11822438-8 -->         
+        <div class="ads" id="yandex_rtb_R-A-11822438-8"></div>
         <script>
             window.yaContextCb.push(() => {
                 Ya.Context.AdvManager.render({
@@ -658,20 +645,6 @@
                     "type": "feed"
                 })
             })
-        </script> -->
-
-        <script type="text/javascript">
-            ymab("metrika.92417974", "adv"/*, {clientFeatures}*/, function (answer) {
-                const getId = answer.getBlockId || function (arg) { return arg };
-
-                window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.render({
-                        "blockId": getId("R-A-11822438-8"),
-                        "renderTo": "yandex_rtb_R-A-11822438-8",
-                        "type": "feed"
-                    })
-                })
-            });
         </script>
 
         <!-- Реклама -->
