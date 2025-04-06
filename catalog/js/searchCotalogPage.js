@@ -1,3 +1,4 @@
+// Поиск
 //Стилизация
 
 const search = document.querySelector("#search");
@@ -93,7 +94,7 @@ $(function() {
   $(window).trigger("resize");
 });
 
-//Функционал
+//Функционал поиска
 
 // Позиционирование выпадающего из поиска блока относительно строки поиска
 function positionElasticBox() {
