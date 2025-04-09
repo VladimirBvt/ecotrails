@@ -93,7 +93,7 @@
         <link rel="canonical" href="https://eco-trails.ru/catalog/" />
     </div>
     <script src="js/jqerry.js?v=2.0"></script>
-    
+
     <!-- Open Graph -->
     <meta property="og:image" content="/img/calalog-pic.jpg">
     <title>Каталог экотроп | Все экологические тропы России на одном сайте</title>
@@ -1838,28 +1838,35 @@
                     if (callback) callback();
                 });
         }
-    
-        function loadScript(src) {
+
+        function loadScript(src, callback) {
             const script = document.createElement('script');
             script.src = src;
-            script.async = false; // важно: чтобы сохранялся порядок
+            script.onload = () => {
+                console.log(`Скрипт ${src} загружен!`);
+                if (callback) callback();
+            };
+            script.onerror = () => {
+                console.error(`Ошибка загрузки скрипта: ${src}`);
+            };
             document.body.appendChild(script);
         }
-    
+
         document.addEventListener("DOMContentLoaded", function () {
             loadHTML(".main-header", "/components/header/header.html", function () {
                 loadScript("/components/header/header.js");
-                loadScript("/catalog/js/searchCotalogPage.js");
                 loadScript("/js/global-search.js");
+                loadScript("/catalog/js/searchCotalogPage.js");
+
             });
-    
+
             loadHTML(".footer", "/components/footer/footer.html", function () {
                 loadScript("/components/footer/footer.js");
             });
         });
-    </script>    
+    </script>
 
-</body> 
+</body>
 
 <script src="js/regions.js?v=5.0"></script>
 
