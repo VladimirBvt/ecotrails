@@ -1,4 +1,5 @@
 const trailsData = [
+    { name: "Королевский бор", url: "/catalog/kaliningradskaya-oblast/korolevsky-bor/" },
     { name: "Книга Природы (Красноярские Столбы)", url: "/catalog/krasnoyarsky-krai/kniga-prirody/" },
     { name: "Экотропа Петяярви", url: "/catalog/lenoblast/petyayarvi/" },
     { name: "Танцующий лес", url: "/catalog/kaliningradskaya-oblast/tancuyushchij-les/" },
