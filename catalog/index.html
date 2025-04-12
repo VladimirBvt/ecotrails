@@ -1871,16 +1871,7 @@
                     // Вставка ul после header
                     headerElement.appendChild(ul);
 
-                    // После вставки ul — грузим search-скрипты
-                    // loadScript("/js/global-search.js", function () {
-                    //     loadScript("/catalog/js/searchCotalogPage.js");
-                    //     setTimeout(() => {
-                    //         loadScript("/catalog/js/searchCotalogPage.js");
-                    //     }, 0);
-                    // });
-
                     loadScript("/catalog/js/searchCotalogPage.js", function () {
-                        // loadScript("/js/global-search.js");
                         setTimeout(() => {
                             loadScript("/js/global-search.js"); 
                         }, 0);

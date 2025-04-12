@@ -55,7 +55,7 @@
     text-align: center;
     width: 100%;
     height: 90px;
-    z-index: 2050;
+    z-index: 300;
     background-color: #f3f6ed;
     /* background-color: #393b37; */
   }
@@ -74,7 +74,7 @@
     box-sizing: border-box;
     width: 100%;
     max-width: var(--pcContent-width);
-    margin: 0 auto;
+    margin: 0 auto;    
   }
   
   .logo-header {
@@ -661,8 +661,7 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    z-index: 1000;
+    flex-direction: column;    
     text-align: left;
     padding-top: 12px;
   }
