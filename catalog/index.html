@@ -1829,62 +1829,72 @@
     <!-- Скрипт загрузки хедера и футера -->
     <script>
         function loadHTML(selector, url, callback) {
-          fetch(url)
-            .then(response => response.text())
-            .then(data => {
-              const target = document.querySelector(selector);
-              target.innerHTML = data;
-              if (callback) callback(target); // передаём загруженный DOM-элемент
-            });
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const target = document.querySelector(selector);
+                    target.innerHTML = data;
+                    if (callback) callback(target); // передаём загруженный DOM-элемент
+                });
         }
-      
+
         function loadScript(src, callback) {
-          const script = document.createElement('script');
-          script.src = src;
-          script.onload = () => {
-            console.log(`Скрипт ${src} загружен!`);
-            if (callback) callback();
-          };
-          script.onerror = () => {
-            console.error(`Ошибка загрузки скрипта: ${src}`);
-          };
-          document.body.appendChild(script);
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                console.log(`Скрипт ${src} загружен!`);
+                if (callback) callback();
+            };
+            script.onerror = () => {
+                console.error(`Ошибка загрузки скрипта: ${src}`);
+            };
+            document.body.appendChild(script);
         }
-      
+
         document.addEventListener("DOMContentLoaded", function () {
-          loadHTML(".main-header", "/components/header/header.html", function (headerElement) {
-            // Сначала загружаем скрипт header.js
-            loadScript("/components/header/header.js", function () {
-              // После загрузки header.js — вставляем ul
-              const ul = document.createElement("ul");
-              ul.id = "elasticId";
-              ul.className = "elastic";
-      
-              const li = document.createElement("li");
-              li.id = "VoidSearch";
-              li.className = "VoidSearch";
-              li.hidden = true;
-              li.textContent = "По вашему запросу ничего не найдено";
-      
-              ul.appendChild(li);
-      
-              // Вставка ul после header
-              headerElement.appendChild(ul);
-      
-              // После вставки ul — грузим search-скрипты
-              loadScript("/js/global-search.js", function () {
-                loadScript("/catalog/js/searchCotalogPage.js");
-              });
+            loadHTML(".main-header", "/components/header/header.html", function (headerElement) {
+                // Сначала загружаем скрипт header.js
+                loadScript("/components/header/header.js", function () {
+                    // После загрузки header.js — вставляем ul
+                    const ul = document.createElement("ul");
+                    ul.id = "elasticId";
+                    ul.className = "elastic";
+
+                    const li = document.createElement("li");
+                    li.id = "VoidSearch";
+                    li.className = "VoidSearch";
+                    li.hidden = true;
+                    li.textContent = "По вашему запросу ничего не найдено";
+
+                    ul.appendChild(li);
+
+                    // Вставка ul после header
+                    headerElement.appendChild(ul);
+
+                    // После вставки ul — грузим search-скрипты
+                    // loadScript("/js/global-search.js", function () {
+                    //     loadScript("/catalog/js/searchCotalogPage.js");
+                    //     setTimeout(() => {
+                    //         loadScript("/catalog/js/searchCotalogPage.js");
+                    //     }, 0);
+                    // });
+
+                    loadScript("/catalog/js/searchCotalogPage.js", function () {
+                        // loadScript("/js/global-search.js");
+                        setTimeout(() => {
+                            loadScript("/js/global-search.js"); 
+                        }, 0);
+                    });
+                });
             });
-          });
-      
-          loadHTML(".footer", "/components/footer/footer.html", function () {
-            loadScript("/components/footer/footer.js");
-          });
+
+            loadHTML(".footer", "/components/footer/footer.html", function () {
+                loadScript("/components/footer/footer.js");
+            });
         });
-      </script>
-      
-      
+    </script>
+
+
 
 </body>
 

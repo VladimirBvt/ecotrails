@@ -42,8 +42,11 @@ const trailsData = [
     { name: "У озера Бездонное", url: "/catalog/moskva/ecotropa-u-ozera-bezdonnoe/" },
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
-    const elasticContainer = document.getElementById("elasticId");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const elasticContainer = document.getElementById("elasticId");
+//     trailsData.forEach
+const elasticContainer = document.getElementById("elasticId");
+if (elasticContainer) {
     trailsData.forEach(trail => {
         const searchItem = document.createElement("a");
         searchItem.classList.add("Searchlist");
@@ -53,4 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         elasticContainer.appendChild(searchItem);
     });
-});
+};
