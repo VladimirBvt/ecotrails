@@ -506,6 +506,16 @@ p.tt-p {
   display: none;
 }
 
+/* Текст о рекламе */
+.add-text {
+  opacity: 20%;
+  font-size: 20px !important;
+}
+
+/* add-text-block {
+
+} */
+
 /* Мобила */
 @media only screen and (max-width: 480px) {
   .row {
@@ -773,9 +783,9 @@ p.tt-p {
 }
 
 /* Последний абзац без отступа */
-.p:last-child {
+/* .p:last-child {
   padding-bottom: 0;
-}
+} */
 
 /* Если перед абзацем любой другой элемент, кроме абзаца и заголовка, то отступ сверху */
 *:not(.p, h2, .warning2)+.p {
@@ -1481,6 +1491,11 @@ ul.p2.limitations  {
   .link-icon {
     height: 20px;
   }
+
+    /* Текст о рекламе */
+    .add-text {
+      font-size: 15px !important;
+    }
 }
 
 @media (max-width: 1024px) {
