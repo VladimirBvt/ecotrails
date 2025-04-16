@@ -1871,11 +1871,13 @@
                     // Вставка ul после header
                     headerElement.appendChild(ul);
 
-                    loadScript("/catalog/js/searchCotalogPage.js", function () {
-                        setTimeout(() => {
-                            loadScript("/js/global-search.js"); 
-                        }, 0);
-                    });
+                    // loadScript("/catalog/js/searchCotalogPage.js", function () {
+                    //     setTimeout(() => {
+                    //         loadScript("/js/global-search.js"); 
+                    //     }, 0);
+                    // });
+
+                    loadScript("/components/search.js");
                 });
             });
 
