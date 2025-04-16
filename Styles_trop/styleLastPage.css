@@ -510,11 +510,8 @@ p.tt-p {
 .add-text {
   opacity: 20%;
   font-size: 20px !important;
+  padding-bottom: 24px !important;
 }
-
-/* add-text-block {
-
-} */
 
 /* Мобила */
 @media only screen and (max-width: 480px) {
@@ -777,7 +774,7 @@ p.tt-p {
   font-size: 24px;
   font-family: "Avante Book";
   line-height: 35px;
-  padding-bottom: 24px;
+  /* padding-bottom: 24px; */
   /* display: flex; */
   vertical-align: top;
 }
@@ -1495,6 +1492,7 @@ ul.p2.limitations  {
     /* Текст о рекламе */
     .add-text {
       font-size: 15px !important;
+      padding-bottom: 16px !important;
     }
 }
 
