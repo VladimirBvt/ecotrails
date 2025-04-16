@@ -328,6 +328,10 @@
     .container-footer {
       max-width: var(--tabletMicroContent);
     }
+
+    .footer-child1-text {
+      display: none;
+    }
   }
   
   @media (max-width: 525px) {
@@ -344,10 +348,6 @@
   @media (max-width: 480px) {
     .footer-child2 {
       margin: 0;
-    }
-  
-    .footer-child1-text {
-      display: none;
     }
   
     .logo-footer {
