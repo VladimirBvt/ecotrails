@@ -6,13 +6,13 @@ const header = document.querySelector("header");
 const animation1 = document.querySelector("#animation1");
 const animation2 = document.querySelector("#animation2");
 const animation3 = document.querySelector("#animation3");
-// const CotColor = document.querySelectorAll(".cotalog-color");
+const CotColor = document.querySelectorAll(".cotalog-color");
 
 // Инициализация стилей и анимаций
 function initializeStyles() {
   animation1.hidden = false;
   cotalog.style.color = "#F28123";
-  // CotColor.forEach(el => el.style.fill = "#F28123");
+  CotColor.forEach(el => el.style.fill = "#F28123");
 }
 
 // Функции для управления анимациями
@@ -52,7 +52,7 @@ header.addEventListener("click", (event) => {
     case "header-text-first":
       resetStyles();
       cotalog.style.color = "#F28123";
-      // CotColor.forEach(el => el.style.fill = "#F28123");
+      CotColor.forEach(el => el.style.fill = "#F28123");
       break;
 
     case "header-text-center":
