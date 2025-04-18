@@ -29,11 +29,8 @@ function loadScript(src, callback) {
 document.addEventListener("DOMContentLoaded", function() {
     // Загрузка хедера
     loadHTML(".main-header", "/components/header/header.html", function(headerElement) {
-        // Просто загружаем скрипт хедера без дополнительных действий
+        // Загружаем скрипт хедера
         loadScript("/components/header/header.js");
-        
-        // Если search.js должен грузиться после header.js:
-        loadScript("/components/search.js");
     });
 
     // Загрузка футера
