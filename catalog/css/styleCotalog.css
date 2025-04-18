@@ -293,8 +293,8 @@ a {
 
 .upper_cotalog {
   position: fixed;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding-top: 10px;
   left: 0;
   right: 0;
   top: 90px;

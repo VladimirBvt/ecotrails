@@ -8,7 +8,7 @@ let isInitialState = true; // Флаг для начального состоя�
 
 // Функция для определения отступа в зависимости от ширины экрана
 function getFixedOffset() {
-  return window.innerWidth > 1250 ? 258 : 250;
+  return window.innerWidth > 1250 ? 268 : 260;
 }
 
 function updateLayout() {
