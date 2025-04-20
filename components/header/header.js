@@ -97,6 +97,18 @@ function initializeStyles() {
     }
   }
 
+  // 3. Главная
+  if (window.location.pathname === '/' ||
+    window.location.pathname === '/index.html' ||
+    window.location.pathname === '/index') {
+    // Некликабельное лого   
+    const logoHeader = document.querySelector('.logo-header');
+    if (logoHeader) {
+      logoHeader.style.pointerEvents = "none";
+      logoHeader.style.cursor = "default";
+    }
+  }
+
   // Инициализация поиска
   if (elasticBox) {
     trailsData.forEach(trail => {
@@ -106,7 +118,7 @@ function initializeStyles() {
       searchItem.setAttribute("hidden", true);
       searchItem.textContent = trail.name;
       elasticBox.appendChild(searchItem);
-    
+
     });
   }
 }

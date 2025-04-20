@@ -137,10 +137,20 @@
     border: solid 0;
     border-radius: 10px;
     background-color: #f3f6ed;
-    -webkit-transition: 400px;
-    -o-transition: 400px;
-    transition: 400px;
+    transition: all 0.3s ease;;
     cursor: pointer;
+  }
+
+  .button-footer:hover {
+    background: #f28123;
+  }
+
+  .button-footer:hover .callback-img-color {
+    fill: white;
+  }
+
+  .button-footer:hover .button-text {
+    color: white;
   }
   
   .callback-img {
@@ -173,6 +183,8 @@
     text-align: center;
     text-decoration: underline;
   }
+
+
   
   /* Форма */
   /* .container-footer-form {
