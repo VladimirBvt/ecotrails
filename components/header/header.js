@@ -66,11 +66,11 @@ function initializeStyles() {
   // 1. Страница карты
   if (window.location.href.includes('mappage')) {
     // 1.1. Полупрозрачный фон
-    const header = document.querySelector('.main-header');
-    // const elasticBig = document.querySelector('.elasticBig');
-    if (header) {
-      header.style.backgroundColor = 'rgba(243, 246, 237, 0.55)';
-    }
+    // const header = document.querySelector('.main-header');
+    // if (header) {
+    //   header.style.backgroundColor = 'rgba(243, 246, 237, 0.55)';
+    // }
+    document.querySelector('.main-header')?.classList.add('transparent-bg');
 
     // 1.2. Активная иконка карты
     const mapIcon = document.querySelector('.icon-header[src="/img/map-black.svg"]');
@@ -154,6 +154,18 @@ function handleSearchInput() {
   let k = 0;
   const searchInput = document.querySelector(".searcharea");
 
+  // Убирание прозрачности хедера при поиске
+  if (searchInput) {
+    searchInput.addEventListener("click", () => {
+      document.querySelector('.main-header')?.classList.remove('transparent-bg');
+    });
+
+    // На случай, если фокус попадет в поле через Tab
+    searchInput.addEventListener("focus", () => {
+      document.querySelector('.main-header')?.classList.remove('transparent-bg');
+    });
+  }
+
   searchInput.oninput = function () {
     let val = this.value.trim().toLowerCase();
     let elasticItems = document.querySelectorAll(".elastic a");
@@ -202,14 +214,6 @@ function handleSearchInput() {
       });
     }
     positionElasticBox();
-
-    // Полупрозрачная выдача поиска на карте
-    if (window.location.href.includes('mappage')) {
-      const elasticBig = document.querySelector('.elasticBig');
-      if (elasticBig) {
-        elasticBig.style.background = 'rgba(243, 246, 237, 0.55)';
-      }
-    }
   };
 }
 
@@ -239,6 +243,12 @@ search.addEventListener("click", function () {
 
 // Закрытие поиска
 document.querySelector("#search-close").addEventListener("click", function () {
+
+  // Возвращение прозрачности хедеру на карте при закрытии поиска
+  if (window.location.href.includes('mappage')) {
+    document.querySelector('.main-header')?.classList.add('transparent-bg');
+  }
+
   if ($(window).width() <= 1024) {
     $(".center-navigation").css("display", "");
   }
