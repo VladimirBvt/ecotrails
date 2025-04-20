@@ -29,6 +29,7 @@ a {
   text-decoration: none;
 }
 
+/* Фильтр */
 .controllers {
   width: 100%;
   display: -webkit-box;
@@ -39,30 +40,24 @@ a {
   justify-content: space-between;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  gap: 10px;
-}
-
-.switch-btn {
   position: relative;
-  top: 114px;
-  left: 191px;
-  z-index: 999;
+  gap: 10px;
+  top: 110px;
+  margin: 0 auto;
+  max-width: var(--pcContent-width);
+  z-index: 200;
 }
 
+/* Фильтр регионов */
 .filters {
   font-family: "Avante Book";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  position: relative;
-  z-index: 999;
-  top: 114px;
-  right: 191px;
   width: 270px;
   height: auto;
   border-radius: 4px;
   background: #ffffff;
-  margin: 0;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -176,68 +171,8 @@ a {
 
 .container {
   margin: 0 auto;
-  max-width: 1600px;
-}
-
-.header__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.header__logo {
-  padding-top: 23px;
-  padding-bottom: 23px;
-}
-
-.header_list {
-  list-style-type: none;
-}
-
-.header_link {
-  text-decoration: none;
-  font-family: "a_AvanteInt";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 22px;
-  color: #1f271b;
-}
-
-.header_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.header_item {
-  margin-right: 68px;
-  padding-bottom: 34.5px;
-}
-
-.header_item:last-child {
-  margin-right: 0px;
-}
-
-.header__mapsearch {
-  padding-bottom: 25px;
-}
-
-.search {
-  margin-right: 22px;
+  /* max-width: 1600px; */
+  width: 100%;
 }
 
 #map {
@@ -256,82 +191,10 @@ a {
   right: 0;
 }
 
-.footer__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.footer__logo {
-  padding-top: 23px;
-  padding-bottom: 23px;
-}
-
-.copyright_title {
-  font-family: "a_AvanteInt";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: #f7fbfb;
-  padding-top: 24.5px;
-}
-
-.policy_link {
-  font-family: "a_AvanteInt";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-
-  -webkit-text-decoration-line: underline;
-
-  text-decoration-line: underline;
-  color: #f7fbfb;
-  padding-bottom: 24.5px;
-  padding-top: 10px;
-}
-
 img {
   border: 0;
   max-width: 100%;
   height: auto;
-}
-
-.contact_btn {
-  font-family: "a_AvanteInt";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 22px;
-  border-radius: 8px;
-  border: none;
-  margin-top: 20px;
-  padding: 14px;
-  background: white url(./img/Icons\ h-f.svg) no-repeat;
-  background-position: 17px;
-  padding-left: 58px;
-  padding-right: 15px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-.copyright {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 /* JS CSS */
@@ -390,7 +253,7 @@ img {
 
 /* СОкращение кнопки слоёв до мини-кнопки без текста */
 .ymaps-2-1-79-listbox__button-text {
-  display: none !important; 
+  display: none !important;
 }
 
 .ymaps-2-1-79-listbox__button-arrow {
@@ -515,7 +378,12 @@ img {
   display: block;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1250px) {
+
+  .controllers {
+    max-width: var(--tabletContent-width);
+  }
+
   .ymaps-2-1-79-balloon__content>ymaps {
     max-width: 229px !important;
     height: 380px !important;
@@ -558,17 +426,30 @@ img {
   }
 }
 
-@media (max-width: 1530px) {
-  .filters {
-    top: 100px;
-    right: 15px;
-  }
-
-  .switch-btn {
-    top: 100px;
-    left: 15px;
+/* Мини-планшет */
+@media (max-width: 1024px) {
+  .controllers {
+    max-width: var(--tabletMiniContent);
   }
 }
+
+/* Микро-планшет */
+@media (max-width: 775px) {
+  .controllers {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--tabletMicroContent);
+  }
+
+  .filters {
+    /* Уменьшение ширины при надобности */
+    width: auto;
+    flex-shrink: 1;
+    min-width: 230px;
+    max-width: 235px;
+  }
+}
+
 
 @media (max-height: 850px) {
   #map {
@@ -606,34 +487,21 @@ img {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 525px) {
 
-  /* Мини-кнопки переключения "Список - карта" */
-  .switch-btn-text {
-    display: none;
+  .controllers {
+    max-width: var(--mobileContent);
   }
 
+  /* Мини-кнопки переключения "Список - карта" */
+  .switch-btn-text,
   .switch-btn-text2 {
     display: none;
   }
 
-  .switch-list-icon {
-    width: auto;
-  }
-
-  .switch-map-icon {
-    width: auto;
-  }
-
+  .switch-list-icon,
+  .switch-map-icon,
   .switch-btn {
     width: auto;
-  }
-
-  .filters {
-    /* Уменьшение ширины при надобности */
-    width: auto;
-    flex-shrink: 1;
-    min-width: 230px;
-    max-width: 235px;
   }
 }
