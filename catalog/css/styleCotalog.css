@@ -305,7 +305,7 @@ a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-align: -webkit-center;
-  
+
 }
 
 .switch-btn {
@@ -756,23 +756,23 @@ a {
 
 @media (max-width: 525px) {
 
-/* То, что одной ширины */
+  /* То, что одной ширины */
 
-.catalog {
-  max-width: var(--mobileContent);
-}
+  .catalog {
+    max-width: var(--mobileContent);
+  }
 
-.title {
-  max-width: var(--mobileContent);
-}
+  .title {
+    max-width: var(--mobileContent);
+  }
 
-.controllers {
-  max-width: var(--mobileContent);
-}
+  .controllers {
+    max-width: var(--mobileContent);
+  }
 
-.main-head {
-  max-width: var(--mobileContent);
-}
+  .main-head {
+    max-width: var(--mobileContent);
+  }
 
   /* Мини-кнопки переключения "Список - карта" */
   .switch-btn-text {
@@ -803,7 +803,6 @@ a {
   }
 
   .size-card-elem-p {
-    /* width: 242px; */
     height: 48px;
   }
 
@@ -816,10 +815,7 @@ a {
   }
 
   .trail-spec {
-    /* padding-right: 0; */
     margin-top: 40px;
-    /* margin-left: 8px;
-    width: 254px; */
     height: 56px;
   }
 
@@ -830,14 +826,6 @@ a {
   .upper_cotalog {
     top: 100px;
   }
-
-  /* .upper_cotalog_scroll {
-    top: 60px;
-  } */
-
-  /* .back-scroll {
-    height: 40px;
-  } */
 
   /* Хлебные крошки */
 

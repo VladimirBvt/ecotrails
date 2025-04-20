@@ -171,7 +171,6 @@ a {
 
 .container {
   margin: 0 auto;
-  /* max-width: 1600px; */
   width: 100%;
 }
 
@@ -253,7 +252,8 @@ img {
 }
 
 /* Сoкращение кнопки слоёв до мини-кнопки без текста */
-.ymaps-2-1-79-listbox__button-text, .ymaps-2-1-79-listbox__button-arrow {
+.ymaps-2-1-79-listbox__button-text,
+.ymaps-2-1-79-listbox__button-arrow {
   display: none !important;
 }
 
@@ -264,7 +264,7 @@ img {
 
 /* Кнопки управления просмотром */
 .ymaps-2-1-79-controls-pane {
-  top: 5% !important;  
+  top: 5% !important;
 }
 
 
@@ -338,7 +338,6 @@ img {
   font-size: 16px;
   line-height: 19px;
   font-family: "a_AvanteInt";
-  /* overflow: hidden; */
 }
 
 .trail-location-white>p {
@@ -359,7 +358,6 @@ img {
 }
 
 .size-card-elem-p {
-  /* width: 215px; */
   height: 43px;
 }
 
@@ -409,7 +407,6 @@ img {
   }
 
   .size-card-elem-p {
-    /* width: 179px; */
     height: 43px;
   }
 
@@ -455,43 +452,6 @@ img {
     flex-shrink: 1;
     min-width: 230px;
     max-width: 235px;
-  }
-}
-
-
-@media (max-height: 850px) {
-  #map {
-    height: 90%;
-  }
-}
-
-@media (max-height: 780px) {
-  #map {
-    height: 89%;
-  }
-}
-
-@media (max-height: 730px) {
-  #map {
-    height: 88%;
-  }
-}
-
-@media (max-height: 670px) {
-  #map {
-    height: 87%;
-  }
-}
-
-@media (max-height: 615px) {
-  #map {
-    height: 86%;
-  }
-}
-
-@media (max-height: 570px) {
-  #map {
-    height: 85%;
   }
 }
 
