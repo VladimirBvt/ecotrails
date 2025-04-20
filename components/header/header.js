@@ -88,11 +88,13 @@ function initializeStyles() {
     cotalog.style.pointerEvents = "none";
     cotalog.style.cursor = "default";
     animation1.hidden = false; // Подчёркивание
-    // Иконка на мобиле
+    // Иконка на мобиле (цвет и некликабельность)
     CotColor.forEach(el => el.style.fill = "#F28123");
-    CotColor.style.pointerEvents = "none";
-    CotColor.style.cursor = "default";
-
+    const catalogIcon = document.querySelector('.container-navigation-icon:last-child');
+    if (catalogIcon) {
+      catalogIcon.style.pointerEvents = "none";
+      catalogIcon.style.cursor = "default";
+    }
   }
 
   // Инициализация поиска
