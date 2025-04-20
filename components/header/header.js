@@ -60,16 +60,18 @@ const trailsData = [
 ];
 
 // Инициализация стилей и анимаций
-function initializeStyles() { 
+function initializeStyles() {
 
   // Изменения хедера в зависимости от страниц  
   // 1. Страница карты
   if (window.location.href.includes('mappage')) {
     // 1.1. Полупрозрачный фон
     const header = document.querySelector('.main-header');
+    // const elasticBig = document.querySelector('.elasticBig');
     if (header) {
       header.style.backgroundColor = 'rgba(243, 246, 237, 0.55)';
     }
+
     // 1.2. Активная иконка карты
     const mapIcon = document.querySelector('.icon-header[src="/img/map-black.svg"]');
     if (mapIcon) {
@@ -80,7 +82,7 @@ function initializeStyles() {
   }
 
   // 2. Страница каталога
-  if (window.location.href.includes('catalog') && !window.location.href.includes('mappage')) {    
+  if (window.location.href.includes('catalog') && !window.location.href.includes('mappage')) {
     // 2.1. Выделение пункта меню    
     cotalog.style.color = "#F28123";
     cotalog.style.pointerEvents = "none";
@@ -102,6 +104,7 @@ function initializeStyles() {
       searchItem.setAttribute("hidden", true);
       searchItem.textContent = trail.name;
       elasticBox.appendChild(searchItem);
+    
     });
   }
 }
@@ -173,6 +176,7 @@ function handleSearchInput() {
           elem.style.background = "transparent";
         });
       }
+
       k = 0;
     } else {
       voidSearch.hidden = true;
@@ -184,6 +188,14 @@ function handleSearchInput() {
       });
     }
     positionElasticBox();
+
+    // Полупрозрачная выдача поиска на карте
+    if (window.location.href.includes('mappage')) {
+      const elasticBig = document.querySelector('.elasticBig');
+      if (elasticBig) {
+        elasticBig.style.background = 'rgba(243, 246, 237, 0.55)';
+      }
+    }
   };
 }
 
