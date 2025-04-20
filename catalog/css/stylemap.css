@@ -25,6 +25,10 @@
   /* box-sizing: border-box; */
 }
 
+a {
+  text-decoration: none;
+}
+
 .controllers {
   width: 100%;
   display: -webkit-box;

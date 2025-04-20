@@ -721,7 +721,7 @@
     height: 152px;
     overflow: scroll;
     overflow-x: hidden;
-    /* box-shadow: 0px 7px 12px rgba(31, 39, 27, 0.12), 0px 16px 18px rgba(31, 39, 27, 0.1), 0px 18px 18px rgba(31, 39, 27, 0.08); */
+    box-shadow: 0px 7px 12px rgba(31, 39, 27, 0.12), 0px 16px 18px rgba(31, 39, 27, 0.1), 0px 18px 18px rgba(31, 39, 27, 0.08);
   }
   
   .elasticBig::-webkit-scrollbar {

@@ -13,7 +13,6 @@ const search = document.querySelector("#search");
 const contSearchElement = document.querySelector('#cont-search');
 const voidSearch = document.querySelector("#VoidSearch");
 const elasticBox = document.querySelector("#elasticId");
-const headerTwo = document.querySelector("header");
 
 // Данные маршрутов
 const trailsData = [
@@ -61,10 +60,38 @@ const trailsData = [
 ];
 
 // Инициализация стилей и анимаций
-function initializeStyles() {
-  animation1.hidden = false;
-  cotalog.style.color = "#F28123";
-  CotColor.forEach(el => el.style.fill = "#F28123");
+function initializeStyles() { 
+
+  // Изменения хедера в зависимости от страниц  
+  // 1. Страница карты
+  if (window.location.href.includes('mappage')) {
+    // 1.1. Полупрозрачный фон
+    const header = document.querySelector('.main-header');
+    if (header) {
+      header.style.backgroundColor = 'rgba(243, 246, 237, 0.55)';
+    }
+    // 1.2. Активная иконка карты
+    const mapIcon = document.querySelector('.icon-header[src="/img/map-black.svg"]');
+    if (mapIcon) {
+      mapIcon.src = "/img/map-orange.svg"; // Меняем путь к изображению
+      document.querySelector('.header-icon').style.pointerEvents = "none"; // Отключаем клики
+      document.querySelector('.container-location').style.cursor = "default"; // Убираем курсор-лапку
+    }
+  }
+
+  // 2. Страница каталога
+  if (window.location.href.includes('catalog') && !window.location.href.includes('mappage')) {    
+    // 2.1. Выделение пункта меню    
+    cotalog.style.color = "#F28123";
+    cotalog.style.pointerEvents = "none";
+    cotalog.style.cursor = "default";
+    animation1.hidden = false; // Подчёркивание
+    // Иконка на мобиле
+    CotColor.forEach(el => el.style.fill = "#F28123");
+    CotColor.style.pointerEvents = "none";
+    CotColor.style.cursor = "default";
+
+  }
 
   // Инициализация поиска
   if (elasticBox) {
@@ -161,6 +188,8 @@ function handleSearchInput() {
 }
 
 // Обработчики событий для популярного раздела и FAQ
+cotalog.addEventListener("mouseover", () => showAnimation(animation1));
+cotalog.addEventListener("mouseout", () => hideAnimation(animation1));
 popular.addEventListener("mouseover", () => showAnimation(animation2));
 popular.addEventListener("mouseout", () => hideAnimation(animation2));
 faq.addEventListener("mouseover", () => showAnimation(animation3));
@@ -210,7 +239,7 @@ header.addEventListener("click", (event) => {
     popular.style.color = "#1F271B";
     faq.style.color = "#1F271B";
     cotalog.style.color = "#1F271B";
-    hideAnimation(animation1);
+    // hideAnimation(animation1);
     hideAnimation(animation2);
     hideAnimation(animation3);
   }
