@@ -47,6 +47,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: fit-content;
   }
   
   .container-logo-footer {
@@ -79,7 +80,7 @@
     align-items: center;
     text-align: start;
     color: #f7fbfb;
-    width: 93px;
+    width: min-content;
     font-family: "a_AvanteInt";
     font-style: normal;
     font-weight: 300;
