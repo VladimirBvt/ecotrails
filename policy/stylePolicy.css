@@ -124,7 +124,6 @@ html {
 body {
   background: #f3f7ed;
   font-size: 100%;
-  line-height: 1.2;
   font-family: "Avante Book", sans-serif;
   color: #1f271b;
 }
@@ -167,9 +166,6 @@ q:after {
 font-family: 'Avante Bold', sans-serif;
     } */
 
-body {
-  line-height: 29px;
-}
 
 .title {
   margin: 154px auto 64px;
