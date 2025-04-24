@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Avante Bold";
-  src: url(/Styles_trop/fonts/a_AvanteInt_Bold.ttf);
+  src: url(/fonts/a_AvanteInt_Bold.ttf);
 }
 
 @font-face {
   font-family: "Avante Bold Italic";
-  src: url(/Styles_trop/a_AvanteInt_BoldItalic.ttf);
+  src: url(/fonts/a_AvanteInt_BoldItalic.ttf);
 }
 
 @font-face {
   font-family: "Avante Book";
-  src: url(/Styles_trop/fonts/a_AvanteInt_Book.ttf);
+  src: url(/fonts/a_AvanteInt_Book.ttf);
 }
 
 @font-face {
   font-family: "Avante Book Italic";
-  src: url(/Styles_trop/fonts/a_AvanteInt_BoldItalic.ttf);
+  src: url(/fonts/a_AvanteInt_BookItalic.ttf);
 }
 
 html,
