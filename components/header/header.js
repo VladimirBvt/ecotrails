@@ -333,10 +333,12 @@ window.addEventListener("resize", function () {
   } else if (windowWidth <= 1024) {
     $(".logo-header").css("visibility", "");
     $(".icon-navigation .container-navigation-icon:not(:last-child)").show();
+    $(".container-navigation-icon:last-child").css("display", "none");
     $(".container-location").show();
     $(".center-navigation").toggle(!isSearchVisible);
   } else {
     $(".center-navigation").show();
+    $(".container-navigation-icon:last-child").css("display", "none");
   }
 
   positionElasticBox();

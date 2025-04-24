@@ -90,7 +90,7 @@
 
     <link rel="shotcut icon" href="/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css?v=2.0" rel="stylesheet">
-    <link rel="stylesheet" href="/Styles_trop/styleLastPage.css?v=6.0">
+    <link rel="stylesheet" href="/catalog/css/styleTrailPage.css">
 
     <link rel="stylesheet" href="/components/header/header.css">
     <link rel="stylesheet" href="/components/footer/footer.css">
@@ -254,7 +254,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><button class="tablinks1" onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
+                                <li><button class="tablinks1"
+                                        onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
                                         id="map-cont">Карта</button>
 
                                     <div id="animation2-main" hidden>
@@ -444,7 +445,8 @@
                         торфяного озера около 22&nbsp;метров, второе&nbsp;же дно&nbsp;&mdash; до&nbsp;45&nbsp;метров,
                         и&nbsp;это большая редкость для озер средней полосы.
                     </p>
-                    <p class="p3">О&nbsp;Святовском озере ходит множество легенд. Например, что ночью и&nbsp;по&nbsp;большим
+                    <p class="p3">О&nbsp;Святовском озере ходит множество легенд. Например, что ночью
+                        и&nbsp;по&nbsp;большим
                         церковным праздникам над озером появляется крест и&nbsp;слышен звон колоколов утонувшей при
                         землетрясении церкви. По&nbsp;слухам, люди не&nbsp;раз сталкивались здесь с&nbsp;мистикой
                         и&nbsp;чертовщиной.
@@ -502,7 +504,9 @@
             <div>
                 <h2 class="h2">Как добраться до&nbsp;экотропы PlesActive?</h2>
                 <p class="p">Экотропа находится в&nbsp;городе Тамбове в&nbsp;местечке под названием &laquo;Пригородный
-                    лес&raquo;. Начало тропы находится недалеко от <a href="https://travel.yandex.ru/--/EUAjrblB63SrC5?erid=5jtCeReNx12oajt64GfkHFD" class="link" rel="sponsored" target="_blank">парк-отеля "Плес"</a>.
+                    лес&raquo;. Начало тропы находится недалеко от <a
+                        href="https://travel.yandex.ru/--/EUAjrblB63SrC5?erid=5jtCeReNx12oajt64GfkHFD" class="link"
+                        rel="sponsored" target="_blank">парк-отеля "Плес"</a>.
                 </p>
                 <div class="">
                     <h3 class="h3">На&nbsp;автобусе</h3>
@@ -540,14 +544,22 @@
     </main>
     <footer class="footer"></footer>
 
+    <!-- Скрипт загрузки хедера и футера (они в компонентах) -->
+    <script src="/components/components-load.js"></script>
+
+    <!-- Скрипт мини-карты -->
     <script src="Tropmap.js?v=2.0"></script>
+
+    <!-- Регионы для хлебных крошек -->
     <script src="/catalog/js/regions.js"></script>
-    <script src="/Js_trop/scriptLastPage.js?v=2.0"></script>
-    <script src="/js/global-search.js?v=7.0"></script>
-    <script src="/Js_trop/searchCotalog.js?v=3.0"></script>
+
+    <!-- Скрипт страницы -->
+    <script src="/catalog/js/scriptTrailPage.js"></script>
+
+    <!-- Скрипт QR -->
     <script src="/Js_trop/scriptQR.js?v=2.0"></script>
-    <script src="/Js_trop/headerLastPage.js?v=2.0"></script>
-    <script src="/Js_trop/footer_scriptLastPage.js?v=2.0"></script>
+
+    <!-- Скрипт расшарки -->
     <script src="https://yastatic.net/share2/share.js?v=2.0" async></script>
 
 </body>
