@@ -309,16 +309,16 @@ ymaps.ready(function () {
   var startPoint = new ymaps.Placemark(
     [51.87932149, 39.65674897],
     {
-      hintContent: "Черепахинская экотропа",
+      hintContent: "Черепахинская тропа",
 
       // Тут контент карточки тропы
       balloonContent: `<a href="/catalog/voronezhskaya-oblast/cherepahinskaya/"><figure id="Cherepahinskaya" class="catalog-item">
-    <img src="/catalog/voronezhskaya-oblast/cherepahinskaya/" alt="Черепахинская экотропа"
+    <img src="/catalog/voronezhskaya-oblast/cherepahinskaya/img/for-slider.jpg" alt="Черепахинская экотропа"
         class="trail-img">
     <figcaption class="trail-info">
-        <a href="/catalog/voronezhskaya-oblast/cherepahinskaya/img/for-slider.jpg" class="trail-title-link">
+        <a href="/catalog/voronezhskaya-oblast/cherepahinskaya/" class="trail-title-link">
             <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
-                title="Черепахинская экотропа">Черепахинская экотропа</h2>
+                title="Черепахинская экотропа">Черепахинская тропа</h2>
         </a>
         <a href="/catalog/voronezhskaya-oblast/cherepahinskaya/" id="trail-location" class="trail-location-black" title="Воронежская область, г. Воронеж, Госзаповедник, Центральная усадьба">
             <p id="color-letters-cot" class="black-color size-card-elem-p">г.&nbsp;Воронеж, Госзаповедник, Центральная усадьба</p>
