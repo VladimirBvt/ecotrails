@@ -313,10 +313,10 @@ ymaps.ready(function () {
 
       // Тут контент карточки тропы
       balloonContent: `<a href="/catalog/voronezhskaya-oblast/cherepahinskaya/"><figure id="Cherepahinskaya" class="catalog-item">
-    <img src="/catalog/voronezhskaya-oblast/cherepahinskaya/img/for-slider.jpg" alt="Черепахинская экотропа"
+    <img src="/catalog/voronezhskaya-oblast/cherepahinskaya/" alt="Черепахинская экотропа"
         class="trail-img">
     <figcaption class="trail-info">
-        <a href="/catalog/voronezhskaya-oblast/cherepahinskaya/" class="trail-title-link">
+        <a href="/catalog/voronezhskaya-oblast/cherepahinskaya/img/for-slider.jpg" class="trail-title-link">
             <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
                 title="Черепахинская экотропа">Черепахинская экотропа</h2>
         </a>
