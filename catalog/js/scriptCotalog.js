@@ -202,6 +202,7 @@ function updateTitleH1Description(regionHref) {
     "kaliningradskaya-oblast": "Калининградской области",
     "krasnoyarsky-krai": "Красноярского края",
     "voronezhskaya-oblast": "Воронежской области",
+
   };
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;
