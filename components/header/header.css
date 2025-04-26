@@ -4,22 +4,20 @@
 }
 
 :root {
-  /* Задаем ширину через переменную */
-
-  /* 4 макси-карточки на ПК */
+  /* Ширина контента */
+  /* ПК */
   --pcContent-width: 1218px;
 
-  /* 4 мини-карточки */
+  /* Планшет горизонтальный (1250) */
   --tabletContent-width: 976px;
 
-  /* 3 мини-карточки */
-  /* --tabletMiniContent: calc(100% - 48px); */
+  /* Планшет вертикальный (1024) */
   --tabletMiniContent: 727px;
 
-  /* 2 мини-карточки */
+  /* Микро-планшет (775) */
   --tabletMicroContent: 478px;
 
-  /* Мобилка */
+  /* Мобилка (525) */
   --mobileContent: calc(100% - 40px);
 
   /* Так записывается */
@@ -783,6 +781,7 @@ a.header-icon.keychainify-checked {
   line-height: 0;
 }
 
+/* Планшет горизонтальный */
 @media (max-width: 1250px) {
   .container-header {
     max-width: var(--tabletContent-width);
@@ -843,7 +842,7 @@ a.header-icon.keychainify-checked {
   }
 }
 
-/* Мини-планшет */
+/* Планшет вертикальный */
 @media (max-width: 1024px) {
   .container-header {
     max-width: var(--tabletMiniContent);
@@ -905,6 +904,7 @@ a.header-icon.keychainify-checked {
 
 }
 
+/* Мобила */
 @media (max-width: 525px) {
 
   .container-header {
