@@ -541,9 +541,9 @@ p.tt-p {
   -o-transition: all 0.4s ease;
 }
 
-.image-slider__image img {
+/* .image-slider__image img {
   max-width: 100%;
-}
+} */
 
 .swiper-pagination-bullet {
   width: 8px;
@@ -663,12 +663,12 @@ p.tt-p {
   font-size: 32px;
   font-family: "Avante Book";
   font-weight: bold;
-  margin-top: 112px;
-  margin-bottom: 32px;
+  margin: 112px auto 32px;
   display: flex;
   justify-content: center;
   align-items: end;
   text-align: center;
+  width: 100%;
 }
 
 /* Блоки списка с h3 */
@@ -1160,9 +1160,6 @@ ul.p2.limitations  {
   }
 
   .h2 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
@@ -1198,12 +1195,10 @@ ul.p2.limitations  {
   }
 
   .p {
-    margin-left: 100px;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
     line-height: 145%;
-    margin-left: 10px;
     padding-bottom: 16px;
   }
 
@@ -1360,10 +1355,10 @@ ul.p2.limitations  {
     /* max-width: var(--mobileContent);  */
   }
 
-  /* #map, .swiper {
+  #map, .swiper, .ymaps-2-1-79-map {
     width: var(---tabletMicroContent) !important;
     height: calc(var(--tabletMicroContent) * 0.5625) !important;
-  } */
+  }
 
   /* #map, .swiper {
     width: var(--mobileContent) !important;
@@ -1374,6 +1369,20 @@ ul.p2.limitations  {
     max-width: var(--tabletMicroContent);
   }
 
+  /* Хлебные крошки */
+  .main-head {
+    margin-top: 96px;
+  }
+
+  .breadcrumb-icon {
+    content: url("/img/breadcrumbs/back-btn.svg");
+  }
+
+  .breadcrumb-separator,
+  .breadcrumb-item.catalog {
+    display: none;
+  }
+
 }
 
 /* Мобила */
@@ -1382,29 +1391,6 @@ ul.p2.limitations  {
   .main-other-page {
     max-width: var(--mobileContent);
   }
-
-  /* .row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .col-md-4 {    
-    margin-bottom: 30px;
-    flex-basis: 33%;
-  }
-
-  .icon-wrapper {
-    flex-direction: row;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon-wrapper p {
-    margin-top: 0;
-    margin-left: 10px;
-    text-align: left;
-  } */
 
   /* Отспуп снизу от статьи */
   .info__trail {
@@ -1423,17 +1409,6 @@ ul.p2.limitations  {
     margin-top: 72px;
   }
 
-  /* .svg-last {
-    margin-left: 0px;
-  }
-
-  .mobile-text {
-    margin: 0 !important;
-  }
-
-  .svg {
-    margin: 0;
-  } */
 
   /* Кнопка расшарки */
   .ya-share2__icon_more {
@@ -1453,22 +1428,10 @@ ul.p2.limitations  {
   }
 
   #map {
-    width: 320px;
+    /* width: 320px; */
+    width: var(--mobileContent);
     height: 499px;
   }
-
-  /* .Desctop-text {
-    display: none;
-  }
-
-  .mobile-text {
-    display: inline;
-    padding-bottom: 6px;    
-  }
-
-  .mobile-text.mobile-text-last {
-    padding: 6px 0 0 0;
-  } */
 
   .location {
     margin: 32px 0;
@@ -1490,7 +1453,7 @@ ul.p2.limitations  {
 
 
   .eco-trail {
-    margin: 32px 20px;
+    margin: 32px 0;
     font-size: 24px;
     gap: 12px;
   }
@@ -1504,7 +1467,7 @@ ul.p2.limitations  {
   }
 
   .h2 {
-    width: 320px;
+    /* width: 320px; */
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -1539,7 +1502,7 @@ ul.p2.limitations  {
   }
 
   .p {
-    width: 320px;
+    /* width: 320px; */
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -1558,7 +1521,7 @@ ul.p2.limitations  {
   }
 
   .attent2 {
-    width: 292px;
+    /* width: 292px; */
     left: 0px;
     padding-left: 0;
   }
@@ -1604,19 +1567,6 @@ ul.p2.limitations  {
     line-height: 24px;
   }
 
-  /* Хлебные крошки */
-  .main-head {
-    margin-top: 96px;
-  }
-
-  .breadcrumb-icon {
-    content: url("/img/breadcrumbs/back-btn.svg");
-  }
-
-  .breadcrumb-separator,
-  .breadcrumb-item.catalog {
-    display: none;
-  }
 
   /*  */
   .swiper-controlls {
