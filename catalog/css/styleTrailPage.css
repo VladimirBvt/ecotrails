@@ -1358,15 +1358,15 @@ ul.p2.limitations  {
     /* max-width: var(--mobileContent);  */
   }
 
-  #map, .swiper, .ymaps-2-1-79-map {
-    width: var(---tabletMicroContent) !important;
+  .swiper {
+    width: var(--tabletMicroContent) !important;
     height: calc(var(--tabletMicroContent) * 0.5625) !important;
   }
 
-  /* #map, .swiper {
-    width: var(--mobileContent) !important;
-    height: calc(var(--mobileContent) * 0.5625) !important;
-  } */
+  #map {
+    width: var(--tabletMicroContent) !important;
+    height: 500px !important;
+  }
 
   .image-size1 {
     max-width: var(--tabletMicroContent);
@@ -1393,6 +1393,21 @@ ul.p2.limitations  {
 
   .main-other-page {
     max-width: var(--mobileContent);
+  }
+
+  .swiper {
+    width: var(--mobileContent) !important;
+    height: calc(var(--mobileContent) * 0.5625) !important;
+    /* max-width: var(--mobileContent); */
+  }
+
+  .image-size1 {
+    width: var(--mobileContent);
+  }
+
+
+  #map {
+    width: var(--mobileContent) !important;
   }
 
   /* Отспуп снизу от статьи */
@@ -1430,21 +1445,15 @@ ul.p2.limitations  {
     top: -100px;
   }
 
-  #map {
-    /* width: 320px; */
-    width: var(--mobileContent);
-    height: 499px;
-  }
-
   .location {
     margin: 32px 0;
   }
 
-  .swiper-top {
+  /* .swiper-top {
     max-width: 330px !important;
     width: 100% !important;
     height: 180px;
-  }
+  } */
 
   .slider2 {
     height: 280px;
