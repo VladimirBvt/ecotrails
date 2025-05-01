@@ -201,6 +201,8 @@ function updateTitleH1Description(regionHref) {
     "tambovskaya-oblast": "Тамбовской области",
     "kaliningradskaya-oblast": "Калининградской области",
     "krasnoyarsky-krai": "Красноярского края",
+    "voronezhskaya-oblast": "Воронежской области",
+
   };
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;

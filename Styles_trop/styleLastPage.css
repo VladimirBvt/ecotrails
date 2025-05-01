@@ -194,7 +194,7 @@ a.link:hover {
 .partner-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px; 
+  gap: 6px;
 }
 
 a.partner-link:hover {
@@ -211,16 +211,17 @@ a.partner-link:hover {
 
 /* Стили тултипа */
 .tooltip-icon {
-  cursor: pointer;  
-  margin-left: 4px; /* Отступ иконки от текста */ 
-  height: auto; 
+  cursor: pointer;
+  margin-left: 4px;
+  /* Отступ иконки от текста */
+  height: auto;
 }
 
 /* Иконка тултипа */
 .tooltip-icon img {
   position: absolute;
   width: 18px;
-  height: 18px;  
+  height: 18px;
   right: -22px;
   top: -10px;
 }
@@ -236,12 +237,12 @@ a.partner-link:hover {
   z-index: 1000;
   max-width: 250px;
   min-width: 200px;
-  text-align: left;  
+  text-align: left;
   margin-top: 10px;
 }
 
 /* Текст в тултипе */
-p.tt-p {  
+p.tt-p {
   font-family: Avante Book;
   font-weight: 400;
   font-size: 16px;
@@ -253,27 +254,40 @@ p.tt-p {
 .tooltip::before {
   content: '';
   position: absolute;
-  top: -20px; /* Отступ сверху для стрелочки */
-  left: var(--arrow-offset, 50%); /* Используем CSS-переменную для позиции */
-  transform: translateX(-50%); /* Центрируем стрелочку */
-  border-width: 12px; /* Размер стрелочки */
+  top: -20px;
+  /* Отступ сверху для стрелочки */
+  left: var(--arrow-offset, 50%);
+  /* Используем CSS-переменную для позиции */
+  transform: translateX(-50%);
+  /* Центрируем стрелочку */
+  border-width: 12px;
+  /* Размер стрелочки */
   border-style: solid;
-  border-color: transparent transparent #F7FBFB transparent; /* Стрелочка указывает вверх */
-  z-index: 1; /* Стрелочка поверх тени */
+  border-color: transparent transparent #F7FBFB transparent;
+  /* Стрелочка указывает вверх */
+  z-index: 1;
+  /* Стрелочка поверх тени */
 }
 
 .tooltip::after {
   content: '';
   position: absolute;
-  top: -16px; /* Смещаем тень чуть выше, чтобы она не перекрывала стрелочку */
-  left: var(--arrow-offset, 50%); /* Используем CSS-переменную для позиции */
+  top: -16px;
+  /* Смещаем тень чуть выше, чтобы она не перекрывала стрелочку */
+  left: var(--arrow-offset, 50%);
+  /* Используем CSS-переменную для позиции */
   transform: translateX(-50%);
-  border-width: 8px; /* Размер стрелочки */
+  border-width: 8px;
+  /* Размер стрелочки */
   border-style: solid;
-  border-color: transparent transparent rgba(31, 39, 27, 0.35) transparent; /* Тень стрелочки */
-  filter: blur(2px); /* Размытие для тени */
-  z-index: 0; /* Тень под стрелочкой */
+  border-color: transparent transparent rgba(31, 39, 27, 0.35) transparent;
+  /* Тень стрелочки */
+  filter: blur(2px);
+  /* Размытие для тени */
+  z-index: 0;
+  /* Тень под стрелочкой */
 }
+
 /* Стили тултипа */
 
 
@@ -495,7 +509,8 @@ p.tt-p {
 } */
 
 /* Отступ рекламы (лента) */
-.ads, .ads_ab {
+.ads,
+.ads_ab {
   margin-bottom: 112px;
   margin-top: 112px;
 }
@@ -504,6 +519,13 @@ p.tt-p {
 .ads-ban {
   margin-top: 112px;
   display: none;
+}
+
+/* Текст о рекламе */
+.add-text {
+  opacity: 20%;
+  font-size: 20px !important;
+  padding-bottom: 24px !important;
 }
 
 /* Мобила */
@@ -539,7 +561,8 @@ p.tt-p {
   } */
 
   /* Отступ рекламы (лента) */
-  .ads, .ads_ab {
+  .ads,
+  .ads_ab {
     margin-bottom: 72px;
     margin-top: 72px;
   }
@@ -767,14 +790,14 @@ p.tt-p {
   font-size: 24px;
   font-family: "Avante Book";
   line-height: 35px;
-  padding-bottom: 24px;
+  /* padding-bottom: 24px; */
   /* display: flex; */
   vertical-align: top;
 }
 
-/* Последний абзац без отступа */
-.p:last-child {
-  padding-bottom: 0;
+/* Стили для всех .p, кроме последнего в их родительском div */
+.info__trail>div>.p:not(:last-child) {
+  padding-bottom: 24px;
 }
 
 /* Если перед абзацем любой другой элемент, кроме абзаца и заголовка, то отступ сверху */
@@ -789,7 +812,7 @@ p.tt-p {
   line-height: 35px;
   /* padding-bottom: 0;  */
   line-height: 145%;
-  vertical-align: top;  
+  vertical-align: top;
 }
 
 /* Текст под h3 в списке с черными точками */
@@ -808,7 +831,7 @@ p.tt-p {
 }
 
 /* Список с оранжвыми точками */
-ul.p2.limitations  {
+ul.p2.limitations {
   padding-left: 50px;
   position: relative;
 }
@@ -1403,8 +1426,13 @@ ul.p2.limitations  {
     font-size: 16px;
     line-height: 145%;
     margin-left: 10px;
-    padding-bottom: 16px;
+    /* padding-bottom: 16px; */
   }
+
+  /* Стили для всех .p, кроме последнего в их родительском div */
+.info__trail>div>.p:not(:last-child) {
+  padding-bottom: 16px;
+}
 
   *:not(.p, h2, .warning2)+.p {
     padding-top: 16px;
@@ -1476,10 +1504,16 @@ ul.p2.limitations  {
   .swiper-controlls {
     margin-top: 48px;
   }
-  
+
   /* Иконка внешней ссылки */
   .link-icon {
     height: 20px;
+  }
+
+  /* Текст о рекламе */
+  .add-text {
+    font-size: 15px !important;
+    padding-bottom: 16px !important;
   }
 }
 
@@ -1693,7 +1727,7 @@ ul.p2.limitations  {
   }
 
   /* Список с ораньжевыми точками */
-  ul.p2.limitations  {
+  ul.p2.limitations {
     padding-left: 0;
   }
 
@@ -1763,7 +1797,8 @@ ul.p2.limitations  {
   }
 
   /* Отступ рекламы (лента) */
-  .ads, .ads_ab {
+  .ads,
+  .ads_ab {
     margin-bottom: 72px;
     margin-top: 72px;
   }
