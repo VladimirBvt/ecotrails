@@ -72,3 +72,15 @@ customElements
     CookiePopupElement
   )
 ;
+
+const appendCookiePopupElement = () => {
+  const footer = document.querySelector('.footer');
+  const cookiePopupShadow = document.createElement('cookie-popup');
+  cookiePopupShadow.setAttribute('style-href', '/css/cookieStyle.css');
+
+  if (footer) {
+    footer.before(cookiePopupShadow)
+  }
+}
+
+document.addEventListener('DOMContentLoaded', appendCookiePopupElement)
