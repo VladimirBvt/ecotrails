@@ -1398,7 +1398,6 @@ ul.p2.limitations  {
   .swiper {
     width: var(--mobileContent) !important;
     height: calc(var(--mobileContent) * 0.5625) !important;
-    /* max-width: var(--mobileContent); */
   }
 
   .image-size1 {
@@ -1406,9 +1405,9 @@ ul.p2.limitations  {
   }
 
 
-  #map {
+  /* #map {
     width: var(--mobileContent) !important;
-  }
+  } */
 
   /* Отспуп снизу от статьи */
   .info__trail {
