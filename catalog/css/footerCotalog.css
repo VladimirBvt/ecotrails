@@ -25,7 +25,7 @@
   text-align: center;
   height: 90px;
   z-index: 200;
-  margin-top: 96px;
+  /*margin-top: 96px;*/
   background-color: #373e34;
   display: -webkit-box;
   display: -ms-flexbox;
