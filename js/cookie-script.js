@@ -45,14 +45,6 @@ class CookiePopupElement extends HTMLElement {
     const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
     const cookieButton = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie__button');
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const isCookieAccepted = localStorage.getItem('cookieAccepted');
-
-      if (isCookieAccepted) {
-        cookiePopup.style.display = 'none';
-      }
-    });
-
     cookieButton.addEventListener('click', () => {
       cookiePopup.style.display = 'none';
 
@@ -83,4 +75,14 @@ const appendCookiePopupElement = () => {
   }
 }
 
+const checkVisibilityCookiePopup = () => {
+  const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
+  const isCookieAccepted = localStorage.getItem('cookieAccepted');
+
+  if (isCookieAccepted) {
+    cookiePopup.style.display = 'none';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', appendCookiePopupElement)
+document.addEventListener('DOMContentLoaded', checkVisibilityCookiePopup)
