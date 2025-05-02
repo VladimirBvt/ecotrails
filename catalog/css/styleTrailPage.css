@@ -578,30 +578,18 @@ p.tt-p {
   transform-origin: center;
 }
 
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: 0;
+  bottom: 0;
+  width: auto;
+}
+
 .swiper-pagination-bullet-active {
   background: #1f271b;
 }
 
-.swiper-controlls {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 230px;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 60px;
-}
-
 .swiper-pagination {
   position: relative;
-  padding-top: 8px;
-  max-width: 140px;
 }
 
 .image-slide-bottom {
@@ -643,15 +631,15 @@ p.tt-p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 230px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   margin: 0 auto;
   margin-top: 32px;
+  gap: 10px;
 }
 
 .swiper-controlls-bottom .swiper-pagination-progressbar-fill {
@@ -670,7 +658,7 @@ p.tt-p {
 .swiper-right-btn {
   background-size: cover;
   height: 40px;
-  width: 30px;
+  width: 40px;
   cursor: pointer;
 }
 
