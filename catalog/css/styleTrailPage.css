@@ -675,7 +675,6 @@ p.tt-p {
 }
 
 /* Блоки списка с h3 */
-
 .h3::before {
   position: absolute;
   left: -50px;
@@ -1424,24 +1423,10 @@ ul.p2.limitations {
     height: 100vh;
   }
 
-  /* Свайпер с фото */
+  /* Фото */
   .swiper {
-    width: 100% !important;
-    height: calc((100vw - 40px) * 0.5625) !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Отдельные слайды фото */
-  .image-slider__image {
-    width: 100% !important;
-  }
-
-  /* Изображения внутри слайдов */
-  .image-size1 {
-    width: 100% !important;
-    height: auto;
-    object-fit: cover;
+    width: var(--mobileContent) !important;
+    height: calc(var(--mobileContent) * 0.5625) !important;
   }
 
   /* Отспуп снизу от статьи */
