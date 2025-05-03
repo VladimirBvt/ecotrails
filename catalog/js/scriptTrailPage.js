@@ -1,58 +1,25 @@
-// Динамисечкое изменение заголовка в Open Graph
-// Ждем, пока DOM полностью загрузится
-// window.addEventListener('DOMContentLoaded', (event) => {
-
-//   // Получаем значение из <title>
-//   const pageTitle = document.querySelector('title').textContent;
-
-//   // Находим тег <meta property="og:title">
-//   const metaOgTitle = document.querySelector('meta[property="og:title"]');
-
-//   // Если такой тег найден, обновляем его атрибут content значением из <title>
-//   if (metaOgTitle) {
-//     metaOgTitle.setAttribute('content', pageTitle);
-//   } else {
-//     console.error('Тег <meta property="og:title"> не найден');
-//   }
-// });
-
 // Автоматические хлебные крошки
-window.addEventListener('DOMContentLoaded', function () {
-  // Получаем текущий URL страницы
-  const currentURL = window.location.pathname;
+function updateBreadcrumb() {
+  const regionMatch = window.location.pathname.match(/\/catalog\/([^\/]+)/);
+  if (!regionMatch) return;
 
-  // Ищем регион в URL
-  const regionMatch = currentURL.match(/\/catalog\/([^\/]+)/); // Ищет /catalog/регион
-  if (regionMatch) {
-    const region = regionMatch[1]; // Извлекаем название региона из URL
+  const regionData = regionsData.find(r => r.value === regionMatch[1]);
+  if (!regionData) return;
 
-    // Ищем данные региона в массиве regionsData
-    const regionData = regionsData.find(r => r.value === region);
-    if (regionData) {
-      // Находим элемент <a> с классом breadcrumb-region
-      const breadcrumbLink = document.querySelector('.breadcrumb-region');
-      if (breadcrumbLink) {
-        // Подставляем полное название региона и ссылку для ПК
-        breadcrumbLink.textContent = regionData.name;
-        breadcrumbLink.href = `/catalog/?region=${region}`;
+  const breadcrumbLink = document.querySelector('.breadcrumb-region');
+  if (!breadcrumbLink) return;
 
-        // Проверяем ширину экрана для мобильных устройств
-        if (window.innerWidth <= 480 && region === 'lenoblast') {
-          breadcrumbLink.textContent = regionData.shortName; // Подставляем короткое название ТОЛЬКО для "lenoblast"
-        }
+  breadcrumbLink.textContent = window.innerWidth <= 500 ? regionData.shortName : regionData.name;
+  breadcrumbLink.href = `/catalog/?region=${regionMatch[1]}`;
+}
 
-        if (window.innerWidth <= 480 && region === 'moskva') {
-          breadcrumbLink.textContent = regionData.shortName; // Подставляем короткое название ТОЛЬКО для "moskva"
-        }
-      }
-
-    } else {
-      console.error('Регион не найден в данных regionsData.');
-    }
-  } else {
-    console.error('Регион не найден в URL.');
-  }
+// Инициализация при загрузке и ресайзе
+window.addEventListener('DOMContentLoaded', updateBreadcrumb);
+window.addEventListener('resize', () => {
+  clearTimeout(window.resizeTimeout);
+  window.resizeTimeout = setTimeout(updateBreadcrumb, 100);
 });
+
 
 const swiper = new Swiper(".image-slider", {
   // Optional parameters

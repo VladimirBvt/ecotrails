@@ -1388,16 +1388,15 @@ ul.p2.limitations {
 
   .breadcrumb-icon {
     content: url("/img/breadcrumbs/back-btn.svg");
-  }
-
-  /* .breadcrumb-icon:hover {
-    content: url("/img/breadcrumbs/back-btn-active.svg");
-  } */
-  
+  }  
 
   .breadcrumb-separator,
   .breadcrumb-item.catalog {
     display: none;
+  }
+
+  .breadcrumbs {
+    cursor: pointer;
   }
 
   .breadcrumbs:hover .breadcrumb-icon {
