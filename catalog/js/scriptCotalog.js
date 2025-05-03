@@ -6,6 +6,21 @@ const elementsToHide = [document.querySelector('.main-head'), document.querySele
 let isCompact = false;
 let isInitialState = true; // Флаг для начального состояния до скролла
 
+function updateBreadcrumbsVisibility(hasRegion) {
+  const breadcrumbs = document.querySelector('.breadcrumbs');
+  const mainHeadRight = document.querySelector('.main-head-right');
+  
+  if (!breadcrumbs || !mainHeadRight) return;
+
+  if (hasRegion) {
+    breadcrumbs.style.display = '';
+    mainHeadRight.style.marginLeft = '';
+  } else {
+    breadcrumbs.style.display = 'none';
+    mainHeadRight.style.marginLeft = 'auto';
+  }
+}
+
 // Функция для определения отступа в зависимости от ширины экрана
 function getFixedOffset() {
   return window.innerWidth > 1250 ? 280 : 272; // Высота хедера + верхнего каталога (больше 1250 и меньше)
@@ -23,8 +38,11 @@ function updateLayout() {
       const upperCotalogHeight = upperCotalog.offsetHeight;
       catalog.style.marginTop = `${headerHeight + upperCotalogHeight}px`;
     } else {
-      catalog.style.marginTop = `${getFixedOffset()}px`; // Используем адаптивный отступ
+      catalog.style.marginTop = `${getFixedOffset()}px`;
     }
+    
+    // Новая строка:
+    if (upperCotalog) upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
   });
 }
 
@@ -245,7 +263,7 @@ function updateTitleH1Description(regionHref) {
   canonicalElement.setAttribute('href', newCanonicalUrl);
 }
 
-regionSelect.addEventListener('change', function () {
+regionSelect.addEventListener('change', function() {
   const selectedRegion = this.value;
   filtredRegion = selectedRegion;
 
@@ -259,6 +277,10 @@ regionSelect.addEventListener('change', function () {
 
   filterCards(newRegion);
   updateTitleH1Description(newRegion);
+  
+  updateLayout();
+  updateBreadcrumbsVisibility(newRegion !== 'all');
+  
   window.scrollTo(0, 0);
 });
 
