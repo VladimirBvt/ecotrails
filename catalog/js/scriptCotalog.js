@@ -1,7 +1,7 @@
 const upperCotalog = document.querySelector(".upper_cotalog");
 const catalog = document.querySelector(".catalog");
 const mainHeader = document.querySelector(".main-header");
-const elementsToHide = [document.querySelector('.main-head'), document.querySelector('.title')]; 
+const elementsToHide = [document.querySelector('.main-head'), document.querySelector('.title')];
 
 let isCompact = false;
 let isInitialState = true; // Флаг для начального состояния до скролла
@@ -9,7 +9,7 @@ let isInitialState = true; // Флаг для начального состоя�
 function updateBreadcrumbsVisibility(hasRegion) {
   const breadcrumbs = document.querySelector('.breadcrumbs');
   const mainHeadRight = document.querySelector('.main-head-right');
-  
+
   if (!breadcrumbs || !mainHeadRight) return;
 
   if (hasRegion) {
@@ -40,7 +40,7 @@ function updateLayout() {
     } else {
       catalog.style.marginTop = `${getFixedOffset()}px`;
     }
-    
+
     // Новая строка:
     if (upperCotalog) upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
   });
@@ -50,94 +50,111 @@ function updateLayout() {
 
 function handleScroll() {
   const scrolled = window.scrollY > 10;
-  
+
   // Первый скролл - переключаем в компактный режим
   if (isInitialState && scrolled) {
     isInitialState = false;
     isCompact = true;
     updateLayout();
   }
-  
+
   // Скролл вверх - возвращаем исходное состояние (если нужно)
-   else if (!isInitialState && !scrolled) {
-    isInitialState = true; 
+  else if (!isInitialState && !scrolled) {
+    isInitialState = true;
     isCompact = false;
     updateLayout();
   }
 }
 
-
-addEventListener("load", () => {
-  const swicthBtn = document.querySelector(".switch-btn");
-  const switchList = document.querySelector(".switch-list-icon");
-  const switchMap = document.querySelector(".switch-map-icon");
-  const mapPath = document.querySelector(".map-path");
-  const listPath = document.querySelector(".list-path");
-  const colorSwitchText1 = document.querySelector(".switch-btn-text");
-  const colorSwitchText2 = document.querySelector(".switch-btn-text2");
-  const breadcrumbs = document.querySelector('.breadcrumbs');
-
-  // Фиксируем позиции элементов
-  mainHeader.style.position = 'fixed';
-  mainHeader.style.top = '0';
-  mainHeader.style.width = '100%';
-  
-  upperCotalog.style.position = 'fixed';
-  upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
-  upperCotalog.style.width = '100%';
-  
-  // Добавляем плавность
-  upperCotalog.style.transition = 'all 0.3s ease';
-  catalog.style.transition = 'margin-top 0.3s ease';
-  
-  // Первоначальный расчёт
-  updateLayout();
-  
-  // Обработчики событий
-  window.addEventListener('scroll', handleScroll);
-  window.addEventListener('resize', () => {
-    if (!isInitialState) {
-      // Обновляем отступ при ресайзе (только в компактном режиме)
-      catalog.style.marginTop = `${getFixedOffset()}px`;
-    } else {
-      updateLayout();
-    }
-  });
-
-  // Скрытие хлебных крошек на главной каталога
+// Объединённый обработчик загрузки страницы
+window.addEventListener('load', function () {
+  // 1. Настройка параметров региона из URL
   const urlParams = new URLSearchParams(window.location.search);
-  const hasRegion = urlParams.has('region');
+  const region = urlParams.get('region') || 'all';
 
-  if (!hasRegion && breadcrumbs) {
-    breadcrumbs.style.display = 'none';
-    document.querySelector('.main-head-right').style.marginLeft = 'auto';
+  // Установка значений фильтра
+  regionSelect.value = region;
+  filtredRegion = region;
+
+  // Применение фильтра
+  filterCards(region);
+  updateTitleH1Description(region);
+
+  // 2. Инициализация UI-элементов
+  const switchBtn = document.querySelector(".switch-btn");
+  const switchElements = {
+    list: document.querySelector(".switch-list-icon"),
+    map: document.querySelector(".switch-map-icon"),
+    mapPath: document.querySelector(".map-path"),
+    listPath: document.querySelector(".list-path"),
+    text1: document.querySelector(".switch-btn-text"),
+    text2: document.querySelector(".switch-btn-text2"),
+    breadcrumbs: document.querySelector('.breadcrumbs')
+  };
+
+  // 3. Настройка фиксированных элементов
+  mainHeader.style.cssText = 'position: fixed; top: 0; width: 100%; z-index: 1000';
+  upperCotalog.style.cssText = `
+    position: fixed;
+    top: ${mainHeader.offsetHeight}px;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 999
+  `;
+  catalog.style.transition = 'margin-top 0.3s ease';
+
+  // 4. Первоначальная настройка макета
+  updateLayout();
+
+  // 5. Управление хлебными крошками
+  if (switchElements.breadcrumbs) {
+    const shouldShowBreadcrumbs = urlParams.has('region');
+    switchElements.breadcrumbs.style.display = shouldShowBreadcrumbs ? '' : 'none';
+    document.querySelector('.main-head-right').style.marginLeft = shouldShowBreadcrumbs ? '' : 'auto';
   }
 
-  switchList.addEventListener("click", (e) => {
-    swicthBtn.classList.remove("switch-map");
-    swicthBtn.classList.add("switch-list");
-    mapPath.setAttribute("fill", "black");
-    listPath.setAttribute("stroke", "white");
-    colorSwitchText2.style.color = "black";
-    colorSwitchText1.style.color = "white";
-  });
+  // 6. Обработчики событий
+  const setupEventListeners = () => {
+    // Скролл страницы
+    window.addEventListener('scroll', handleScroll);
 
-  switchMap.addEventListener("click", (e) => {
-    swicthBtn.classList.remove("switch-list");
-    swicthBtn.classList.add("switch-map");
-    mapPath.setAttribute("fill", "white");
-    listPath.setAttribute("stroke", "black");
-    colorSwitchText1.style.color = "black";
-    colorSwitchText2.style.color = "white";
+    // Ресайз окна
+    window.addEventListener('resize', () => {
+      clearTimeout(window.resizeTimeout);
+      window.resizeTimeout = setTimeout(() => {
+        isInitialState ? updateLayout() : (catalog.style.marginTop = `${getFixedOffset()}px`);
+      }, 100);
+    });
 
-    const newUrl = filtredRegion === 'all'
-      ? `/catalog/mappage.html`
+    // Кнопки переключения
+    switchElements.list?.addEventListener("click", switchToListView);
+    switchElements.map?.addEventListener("click", switchToMapView);
+  };
+
+  // 7. Функции переключения видов
+  const switchToListView = () => {
+    switchBtn.classList.replace("switch-map", "switch-list");
+    switchElements.mapPath.setAttribute("fill", "black");
+    switchElements.listPath.setAttribute("stroke", "white");
+    switchElements.text2.style.color = "black";
+    switchElements.text1.style.color = "white";
+  };
+
+  const switchToMapView = () => {
+    switchBtn.classList.replace("switch-list", "switch-map");
+    switchElements.mapPath.setAttribute("fill", "white");
+    switchElements.listPath.setAttribute("stroke", "black");
+    switchElements.text1.style.color = "black";
+    switchElements.text2.style.color = "white";
+
+    const mapUrl = filtredRegion === 'all'
+      ? '/catalog/mappage.html'
       : `/catalog/mappage.html?region=${encodeURIComponent(filtredRegion)}`;
-    location.href = newUrl;
-    const CotColor = document.querySelectorAll(".cotalog-color");
-    CotColor[1].style.fill = "black";
-    CotColor[0].style.fill = "black";
-  });
+    location.href = mapUrl;
+  };
+
+  // Запуск инициализации
+  setupEventListeners();
 });
 
 // Стилизация карточек при наведении мыши
@@ -263,7 +280,7 @@ function updateTitleH1Description(regionHref) {
   canonicalElement.setAttribute('href', newCanonicalUrl);
 }
 
-regionSelect.addEventListener('change', function() {
+regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
   filtredRegion = selectedRegion;
 
@@ -277,10 +294,10 @@ regionSelect.addEventListener('change', function() {
 
   filterCards(newRegion);
   updateTitleH1Description(newRegion);
-  
+
   updateLayout();
   updateBreadcrumbsVisibility(newRegion !== 'all');
-  
+
   window.scrollTo(0, 0);
 });
 
@@ -302,14 +319,3 @@ function filterCards(selectedRegion) {
     console.error("В данном регионе экотроп не найдено.");
   }
 }
-
-window.addEventListener('load', function () {
-  const params = new URLSearchParams(window.location.search);
-  const selectedRegionHref = params.get('region') || 'all';
-
-  regionSelect.value = selectedRegionHref;
-  filtredRegion = selectedRegionHref;
-
-  filterCards(selectedRegionHref);
-  updateTitleH1Description(selectedRegionHref);
-});
