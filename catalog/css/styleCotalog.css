@@ -825,15 +825,33 @@ a {
 
   /* Хлебные крошки */
 
-  .breadcrumb-icon {
-    content: url("/img/breadcrumbs/back-btn.svg");
-  }
-
-  .breadcrumb-separator {
+  /* .breadcrumb-separator, .breadcrumb-item.home-link {
     display: none;
   }
 
-  /*  */
+  .breadcrumbs {
+    gap: 0;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-item::before {
+    content: url("/img/breadcrumbs/back-btn.svg");
+    margin-right: 12px;    
+  }
+
+  .breadcrumb-item:hover::before {
+    content: url("/img/breadcrumbs/back-btn-active.svg");   
+  }
+
+  .breadcrumb-item:hover {
+    color: #F28123;
+  } */
+
+/*  */
 
   .catalog-items {
     display: -ms-grid;
