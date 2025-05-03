@@ -191,7 +191,6 @@ for (let j = 0; j < catalogCard.length; j++) {
 // Фильтр
 const regionSelect = document.getElementById('region-select');
 const cards = document.querySelectorAll('.trail-link');
-
 const originalTitle = document.title;
 const h1Element = document.querySelector('h1');
 const originalH1 = h1Element.textContent;
