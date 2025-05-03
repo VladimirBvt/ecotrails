@@ -1390,10 +1390,25 @@ ul.p2.limitations {
     content: url("/img/breadcrumbs/back-btn.svg");
   }
 
+  /* .breadcrumb-icon:hover {
+    content: url("/img/breadcrumbs/back-btn-active.svg");
+  } */
+  
+
   .breadcrumb-separator,
   .breadcrumb-item.catalog {
     display: none;
   }
+
+  .breadcrumbs:hover .breadcrumb-icon {
+    /* color: #F28123; */
+    content: url("/img/breadcrumbs/back-btn-active.svg");
+  }
+
+  .breadcrumbs:hover .breadcrumb-item {
+    color: #F28123;
+  }
+
 
 }
 
