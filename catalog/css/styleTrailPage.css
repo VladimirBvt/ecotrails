@@ -1420,8 +1420,7 @@ ul.p2.limitations {
 
   /* Карта */
   #map {
-    max-width: 320px;
-    /* height: 480px; */
+    max-width: var(--mobileContent);
     height: 100vh;
   }
 

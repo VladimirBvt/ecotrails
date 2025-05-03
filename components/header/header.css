@@ -18,7 +18,7 @@
   --tabletMicroContent: 478px;
 
   /* Мобилка (525) */
-  --mobileContent: calc(100% - 40px);
+  --mobileContent: calc(100vw - 40px);
 
   /* Так записывается */
   /* max-width: var(--pcContent-width); */
