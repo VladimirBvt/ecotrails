@@ -64,12 +64,8 @@ function initializeStyles() {
 
   // Изменения хедера в зависимости от страниц  
   // 1. Страница карты
-  if (window.location.href.includes('mappage')) {
+  if (document.body.classList.contains('map-page')) {
     // 1.1. Полупрозрачный фон
-    // const header = document.querySelector('.main-header');
-    // if (header) {
-    //   header.style.backgroundColor = 'rgba(243, 246, 237, 0.55)';
-    // }
     document.querySelector('.main-header')?.classList.add('transparent-bg');
 
     // 1.2. Активная иконка карты
@@ -82,7 +78,7 @@ function initializeStyles() {
   }
 
   // 2. Страница каталога
-  if (window.location.href.includes('catalog') && !window.location.href.includes('mappage')) {
+    if (document.body.classList.contains('catalog-page')) {
     // 2.1. Выделение пункта меню    
     cotalog.style.color = "#F28123";
     cotalog.style.pointerEvents = "none";
@@ -98,9 +94,7 @@ function initializeStyles() {
   }
 
   // 3. Главная
-  if (window.location.pathname === '/' ||
-    window.location.pathname === '/index.html' ||
-    window.location.pathname === '/index') {
+  if (document.body.classList.contains('main-page')) {
     // Некликабельное лого   
     const logoHeader = document.querySelector('.logo-header');
     if (logoHeader) {
