@@ -1387,7 +1387,7 @@ ul.p2.limitations {
 
   .breadcrumb-icon {
     content: url("/img/breadcrumbs/back-btn.svg");
-  }  
+  }
 
   .breadcrumb-separator,
   .breadcrumb-item.catalog {
@@ -1427,6 +1427,18 @@ ul.p2.limitations {
   .swiper {
     width: var(--mobileContent) !important;
     height: calc(var(--mobileContent) * 0.5625) !important;
+  }
+
+  /* Отдельные слайды фото */
+  .image-slider__image {
+    width: 100% !important;
+  }
+
+  /* Изображения внутри слайдов */
+  .image-size1 {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
   }
 
   /* Отспуп снизу от статьи */

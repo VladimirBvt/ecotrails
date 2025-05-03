@@ -220,11 +220,9 @@ a {
   justify-content: space-between;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin-bottom: 24px;
   gap: 10px;
   max-width: var(--pcContent-width);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px auto 24px;
 }
 
 /* Хлебные крошки */
@@ -293,7 +291,6 @@ a {
 .upper_cotalog {
   position: fixed;
   margin: 0 auto;
-  padding-top: 10px;
   left: 0;
   right: 0;
   top: 90px;
