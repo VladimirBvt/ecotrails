@@ -84,5 +84,18 @@ const checkVisibilityCookiePopup = () => {
   }
 }
 
+const changeStyleCookiePopupToMapPage = () => {
+  const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
+  const targetPath = 'mappage';
+  const className = 'fixed';
+  const path = window.location.pathname;
+  const isMapPage = path.split('/').at(-1).includes(targetPath);
+
+  if (isMapPage) {
+    cookiePopup.classList.add(className);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', appendCookiePopupElement)
 document.addEventListener('DOMContentLoaded', checkVisibilityCookiePopup)
+document.addEventListener('DOMContentLoaded', changeStyleCookiePopupToMapPage)
