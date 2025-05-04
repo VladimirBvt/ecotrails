@@ -13,17 +13,17 @@ class CookiePopupElement extends HTMLElement {
     const content = document.createElement('div');
     content.setAttribute('class', 'cookie__content');
 
-    const textWrapper = document.createElement('div')
+    const textWrapper = document.createElement('div');
     textWrapper.setAttribute('class', 'cookie__text');
     const textSpan = document.createElement('span')
-    textSpan.textContent = 'Пользуясь нашим сайтом, вы соглашаетесь с тем, что '
-    const textLink = document.createElement('a')
+    textSpan.textContent = 'Пользуясь нашим сайтом, вы соглашаетесь с тем, что ';
+    const textLink = document.createElement('a');
     textLink.setAttribute('href', '/policy/');
     textLink.setAttribute('class', 'text-link');
     textLink.textContent = 'мы используем cookies';
 
     const button = document.createElement('button');
-    button.setAttribute('class', 'cookie__button')
+    button.setAttribute('class', 'cookie__button');
     button.textContent = 'OK';
 
     const linkElem = document.createElement("link");
@@ -89,7 +89,7 @@ const changeStyleCookiePopupToTargetPages = () => {
   const className = 'fixed';
   const paths = window.location.pathname.split('/');
   const isMapPage = paths.at(-1).includes('mappage');
-  const isNotFoundPage = paths.includes('404')
+  const isNotFoundPage = paths.includes('404');
 
   if (isMapPage ||  isNotFoundPage) {
     cookiePopup.classList.add(className);
