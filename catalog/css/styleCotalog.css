@@ -791,3 +791,9 @@ a {
   }
   
 }
+
+.top-layer {
+  position: relative;
+  z-index: 101;
+  background-color: #f3f7ed;
+}

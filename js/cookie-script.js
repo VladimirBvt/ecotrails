@@ -96,6 +96,16 @@ const changeStyleCookiePopupToTargetPages = () => {
   }
 }
 
+const addClassAds = () => {
+  const adElement = document.querySelector('.ads');
+  const className = 'top-layer'
+
+  if (adElement) {
+    adElement.classList.add(className);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', appendCookiePopupElement)
 document.addEventListener('DOMContentLoaded', checkVisibilityCookiePopup)
 document.addEventListener('DOMContentLoaded', changeStyleCookiePopupToTargetPages)
+document.addEventListener('DOMContentLoaded', addClassAds)
