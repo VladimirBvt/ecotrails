@@ -13,17 +13,17 @@ class CookiePopupElement extends HTMLElement {
     const content = document.createElement('div');
     content.setAttribute('class', 'cookie__content');
 
-    const textWrapper = document.createElement('div')
+    const textWrapper = document.createElement('div');
     textWrapper.setAttribute('class', 'cookie__text');
     const textSpan = document.createElement('span')
-    textSpan.textContent = 'Пользуясь нашим сайтом, вы соглашаетесь с тем, что '
-    const textLink = document.createElement('a')
+    textSpan.textContent = 'Пользуясь нашим сайтом, вы соглашаетесь с тем, что ';
+    const textLink = document.createElement('a');
     textLink.setAttribute('href', '/policy/');
     textLink.setAttribute('class', 'text-link');
     textLink.textContent = 'мы используем cookies';
 
     const button = document.createElement('button');
-    button.setAttribute('class', 'cookie__button')
+    button.setAttribute('class', 'cookie__button');
     button.textContent = 'OK';
 
     const linkElem = document.createElement("link");
