@@ -8,14 +8,14 @@
   /* ПК */
   --pcContent-width: 1218px;
 
-  /* Планшет горизонтальный (1250) */
-  --tabletContent-width: 976px;
+  /* Адаптивный контент на экране меньше 1266px */
+  --tabletContent-width: calc(100vw - 60px);
 
-  /* Планшет вертикальный (1024) */
-  --tabletMiniContent: 727px;
+  /* Кастыль #1 (обновление имеющейся ширины везде на адаптивную) */
+  --tabletMiniContent: calc(100vw - 60px);
 
-  /* Микро-планшет (775) */
-  --tabletMicroContent: 478px;
+  /* Кастыль #2 (обновление имеющейся ширины везде на адаптивную) */
+  --tabletMicroContent: calc(100vw - 60px);
 
   /* Мобилка (525) */
   --mobileContent: calc(100vw - 40px);
@@ -782,7 +782,7 @@ a.header-icon.keychainify-checked {
 }
 
 /* Планшет горизонтальный */
-@media (max-width: 1250px) {
+@media (max-width: 1266px) {
   .container-header {
     max-width: var(--tabletContent-width);
   }
