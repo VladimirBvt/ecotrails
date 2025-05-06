@@ -202,7 +202,7 @@ p {
 }
 
 .wrap {
-  max-width: 1220px;
+  max-width: 1218px;
   width: 100%;
   margin: 0 auto 112px;
 }
@@ -262,21 +262,27 @@ p {
   0% {
     background-image: url(/img/utp-desktop-1.png);
   }
+
   30% {
     background-image: url(/img/utp-desktop-1.png);
   }
+
   35% {
     background-image: url(/img/utp-desktop-2.png);
   }
+
   65% {
     background-image: url(/img/utp-desktop-2.png);
   }
-  70%{
+
+  70% {
     background-image: url(/img/utp-desktop-3.png);
   }
-  95%{
+
+  95% {
     background-image: url(/img/utp-desktop-3.png);
   }
+
   100% {
     background-image: url(/img/utp-desktop-1.png);
   }
@@ -683,7 +689,7 @@ p.tt-p {
 }
 
 .faq-item {
-  padding: 0 30px 24px;
+  padding: 0 0 24px;
 }
 
 summary::-webkit-details-marker {
@@ -725,7 +731,7 @@ summary:before {
 }
 
 summary:after {
-  right: 30px;
+  right: 0;
   top: 15px;
   background: url(/img/faq-toggle.png) no-repeat;
   width: 20px;
@@ -809,7 +815,7 @@ details[open] summary~* {
   font-family: Avante Book;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1266px) {
   .popular>.wrap {
     max-width: 1078px;
   }
@@ -834,9 +840,7 @@ details[open] summary~* {
   }
 
   .trail-spec {
-    /* padding-right: 12px; */
     margin-top: 16px;
-    /* width: 200px; */
     height: 56px;
   }
 
@@ -851,6 +855,10 @@ details[open] summary~* {
 
   }
 
+  .wrap {
+    max-width: var(--tabletContent-width);
+  }
+
   .popular-item {
     max-width: 229px;
     width: 229px !important;
@@ -860,6 +868,7 @@ details[open] summary~* {
 }
 
 @media (max-width: 1100px) {
+
   .popular>.wrap {
     max-width: 643px;
   }
@@ -880,9 +889,7 @@ details[open] summary~* {
   }
 
   .trail-spec {
-    /* padding-right: 12px; */
     margin-top: 16px;
-    /*  width: 228px; */
     height: 56px;
   }
 
@@ -907,10 +914,10 @@ details[open] summary~* {
 /*планшет*/
 
 @media (max-width: 1024px) {
-  .intro {
+  /* .intro {
     background: url(/img/planshet-screen-1.png) top right no-repeat transparent;
-    background-size: 1024px 100vh;
-  }
+    background-size: 100% 100vh;
+  } */
 
   .size-card-elem-h2 {
     width: 201px;
@@ -924,9 +931,7 @@ details[open] summary~* {
   }
 
   .trail-spec {
-    /* padding-right: 12px; */
     margin-top: 16px;
-    /* width: 200px; */
     height: 56px;
   }
 
@@ -955,9 +960,6 @@ details[open] summary~* {
     margin-right: 25px !important;
   }
 
-  /* .trail-spec {
-    margin-top: 16px;
-  } */
   .title {
     margin-bottom: 48px;
   }
@@ -966,23 +968,18 @@ details[open] summary~* {
     margin-bottom: -26px;
   }
 
-  .wrap {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
   .popular {
     background-position: right 150px;
   }
 
   .popular>.wrap {
-    max-width: 1024px;
+    /* max-width: 1024px; */
     padding: 0 !important;
   }
 
-  .popular-wrap {
+  /* .popular-wrap {
     max-width: 1024px;
-  }
+  } */
 
   .intro {
     padding-top: 200px;
@@ -1131,13 +1128,13 @@ details[open] summary~* {
 }
 
 @media (max-width: 1014px) {
-  .popular>.wrap {
+  /* .popular>.wrap {
     max-width: 643px;
-  }
+  } */
 
-  .popular-wrap {
+  /* .popular-wrap {
     max-width: 643px;
-  }
+  } */
 
   .size-card-elem-h2 {
     width: 240px;
@@ -1151,9 +1148,7 @@ details[open] summary~* {
   }
 
   .trail-spec {
-    /* padding-right: 12px; */
     margin-top: 16px;
-    /* width: 228px; */
     height: 56px;
   }
 
@@ -1177,10 +1172,10 @@ details[open] summary~* {
 
 /* телефон */
 
-@media (max-width: 480px) {
+@media (max-width: 665px) {
   .intro {
     background: url(/img/mobile-screen-1.png) top right no-repeat transparent;
-    background-size: 480px 100vh;
+    background-size: 100% 100vh;
   }
 
   .trail-location-black>p {
@@ -1188,11 +1183,21 @@ details[open] summary~* {
   }
 
   .partners>.wrap-part {
-    max-width: 320px;
+    max-width: var(--mobileContent);
   }
 
   .swiper-controlls-part {
     display: none;
+  }
+
+  .popular>.wrap {
+    max-width: 360px;
+    padding: 0 !important;
+    margin-bottom: 72px;
+  }
+
+  .popular-wrap {
+    max-width: 360px;
   }
 
   .popular-list {
@@ -1208,7 +1213,7 @@ details[open] summary~* {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    max-width: 320px;
+    max-width: var(--mobileContent);
   }
 
   .partner-item {
@@ -1221,7 +1226,7 @@ details[open] summary~* {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 300px;
+    max-width: var(--mobileContent);
   }
 
   .swiper-left-part {
@@ -1233,8 +1238,7 @@ details[open] summary~* {
   }
 
   .wrap {
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: var(--mobileContent);
   }
 
   .title::before {
@@ -1263,10 +1267,7 @@ details[open] summary~* {
   }
 
   .trail-spec {
-    /* padding-right: 0; */
     margin-top: 40px;
-    /* margin-left: 8px; */
-    /* width: 254px; */
     height: 56px;
   }
 
@@ -1295,7 +1296,7 @@ details[open] summary~* {
   }
 
   .intro-title {
-    max-width: 360px;
+    max-width: var(--mobileContent);
     margin-bottom: 0px;
     text-align: center;
     font-size: 32px;
@@ -1360,16 +1361,6 @@ details[open] summary~* {
 
   .popular-title::after {
     top: 28px;
-  }
-
-  .popular>.wrap {
-    max-width: 360px;
-    padding: 0 !important;
-    margin-bottom: 72px;
-  }
-
-  .popular-wrap {
-    max-width: 360px;
   }
 
   .popular-title {

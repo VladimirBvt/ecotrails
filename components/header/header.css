@@ -22,7 +22,8 @@
 
   /* Так записывается */
   /* max-width: var(--pcContent-width); */
-  /* max-width: var(--tabletMiniContent); */
+  /* max-width: var(--tabletContent-width); */
+  /* max-width: var(--mobileContent); */
 }
 
 .main-header {
