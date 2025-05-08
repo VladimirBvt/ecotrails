@@ -268,7 +268,7 @@
 .container-end-popup-footer {
   width: 100%;
   height: 30px;
-  margin-bottom: 24px;
+  margin-bottom: var(--smallPC-margin);
 }
 .end-popup-footer {
   display: inline-flex;
@@ -293,7 +293,7 @@
 
 @media (max-width: 1530px) {
   .footer {
-    margin-top: 96px;
+    margin-top: var(--largeTablet-margin);
     width: 100%;
   }
 

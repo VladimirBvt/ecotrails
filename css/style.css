@@ -204,7 +204,7 @@ p {
 .wrap {
   max-width: 1218px;
   width: 100%;
-  margin: 0 auto 112px;
+  margin: 0 auto;
 }
 
 .bold-paragraph {
@@ -219,13 +219,16 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto;
+  margin: var(--largePC-margin) auto var(--bigPC-margin);
   position: relative;
   text-transform: uppercase;
   text-align: center;
   font-size: 32px;
   line-height: 1.3;
-  margin-bottom: 64px;
+}
+
+.popular-title {
+  margin-bottom: 0 !important;
 }
 
 .title::before {
@@ -248,7 +251,6 @@ p {
   background-size: 100% 100vh;
   background-position: center;
   text-align: center;
-  margin-bottom: 112px;
   height: 100vh;
   padding: 300px 0 308px;
   -webkit-animation: slideBG 22s linear infinite 0s;
@@ -258,7 +260,7 @@ p {
 }
 
 /* Анимация utp-фоток */
-@keyframes slideBG {
+/* @keyframes slideBG {
   0% {
     background-image: url(/img/utp-desktop-1.png);
   }
@@ -286,7 +288,7 @@ p {
   100% {
     background-image: url(/img/utp-desktop-1.png);
   }
-}
+} */
 
 .intro-title {
   margin-bottom: 30px;
@@ -391,7 +393,7 @@ p.tt-p {
 }
 
 .trail-spec {
-  margin-top: 16px;
+  margin-top: var(--smallTablet-margin);
   width: 100%;
   height: 56px;
   display: -webkit-box;
@@ -408,20 +410,16 @@ p.tt-p {
   margin-bottom: 3px;
 }
 
-.popular-title {
-  margin-bottom: 0;
-}
-
 .popular>.wrap {
   max-width: 1076px;
 }
 
 .popular-list {
-  margin: 64px 20px 0;
+  margin: 0 20px;
 }
 
 .popular-wrap {
-  max-width: 1076pxpx;
+  max-width: 1076px;
 }
 
 .swiper-pagination-bullet {
@@ -453,7 +451,7 @@ p.tt-p {
   -ms-flex-align: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 32px;
+  margin-top: var(--bigModile-margin);
   gap: 30px;
 }
 
@@ -566,10 +564,6 @@ p.tt-p {
 
 /* Партнёры  */
 
-.partners {
-  margin-bottom: 112px;
-}
-
 .partner {
   margin: 0 20px;
   max-width: 1000px;
@@ -681,7 +675,7 @@ p.tt-p {
 
 /* faq  */
 .faq {
-  margin-bottom: 85px;
+  margin-bottom: var(--largePC-margin);
 }
 
 .faq-content {
@@ -813,15 +807,16 @@ details[open] summary~* {
 }
 
 .faq-item-text {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.45;
   padding: 0 0 0 30px;
-  margin-top: 24px;
+  margin-top: var(--smallPC-margin);
   font-family: Avante Book;
 }
 
 .faq-item-text.month {
   padding: 0;
+  margin: var(--smallPC-margin) auto var(--bigPC-margin);
 }
 
 @media (max-width: 1266px) {
@@ -869,11 +864,13 @@ details[open] summary~* {
   }
 
   .title {
-    margin-bottom: 48px;
+    margin-top: var(--largeTablet-margin);
+    margin-bottom: var(--bigTablet-margin);
   }
 
-  .popular-title {
-    margin-bottom: -26px;
+  .faq-item-text.month {
+    margin-top: var(--smallTablet-margin);
+    margin-bottom: var(--bigTablet-margin);
   }
 
   .popular {
@@ -882,7 +879,6 @@ details[open] summary~* {
 
   .intro {
     padding-top: 200px;
-    margin-bottom: 96px;
   }
 
   .intro-content {
@@ -957,7 +953,6 @@ details[open] summary~* {
   }
 
   .popular-list {
-    padding-top: 32px;
     left: 0px;
     top: 0.13px;
     margin-left: 20px;
@@ -987,10 +982,6 @@ details[open] summary~* {
     flex-grow: 0;
   }
 
-  .intro {
-    margin-bottom: 96px;
-  }
-
   .faq-title {
     width: 54px;
     height: 34px;
@@ -1010,14 +1001,18 @@ details[open] summary~* {
   }
 
   .faq {
-    margin-bottom: 108px;
+    margin-bottom: var(--largeTablet-margin);
   }
 
   .faq-item-text {
     font-style: normal;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 145%;
+  }
+
+  .faq-title-text {
+    font-size: 20px;
   }
 
   .swiper-controlls {
@@ -1050,6 +1045,13 @@ details[open] summary~* {
   .intro {
     background: url(/img/mobile-screen-1.png) top right no-repeat transparent;
     background-size: 100% 100vh;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 140px;
+  }
+
+  .faq-item-text.month {
+    margin-bottom: var(--bigModile-margin);
   }
 
   .trail-location-black>p {
@@ -1067,7 +1069,7 @@ details[open] summary~* {
   .popular>.wrap {
     max-width: 360px;
     padding: 0 !important;
-    margin-bottom: 72px;
+    margin-bottom: var(--largeModile-margin);
   }
 
   .popular-wrap {
@@ -1115,6 +1117,11 @@ details[open] summary~* {
     max-width: var(--mobileContent);
   }
 
+  .title {
+    margin-top: var(--largeModile-margin);
+    margin-bottom: var(--bigModile-margin);
+  }
+
   .title::before {
     position: absolute;
     left: -57px;
@@ -1130,9 +1137,9 @@ details[open] summary~* {
   }
 
   .size-card-elem-h2 {
-    width: 272px;
+    width: 2112px;
     height: 58px;
-    margin-bottom: 16px;
+    margin-bottom: var(--smallTablet-margin);
   }
 
   .size-card-elem-p {
@@ -1160,13 +1167,6 @@ details[open] summary~* {
     width: 320px !important;
     height: 520px;
     margin-right: 40px !important;
-  }
-
-  .intro {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-top: 140px;
-    margin-bottom: 72px;
   }
 
   .intro-title {
@@ -1239,16 +1239,15 @@ details[open] summary~* {
 
   .popular-title {
     max-width: 198px;
-    /* height: 31px; */
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
     text-align: center;
+    /* margin-bottom: 0; */
   }
 
   .popular-list {
-    margin-top: 32px;
     left: 0px;
     top: 0.13px;
   }
@@ -1270,16 +1269,16 @@ details[open] summary~* {
     margin-top: 0px;
   }
 
-  .partners {
-    margin-bottom: 72px;
-  }
-
   .partner-title {
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
     text-align: center;
+  }
+
+  .faq-item-text {
+    font-size: 18px;
   }
 
   .faq-title {
@@ -1293,7 +1292,7 @@ details[open] summary~* {
   .faq-title-text {
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1322,5 +1321,9 @@ details[open] summary~* {
   .trail-img {
     width: 100%;
 
+  }
+
+  .faq {
+    margin-bottom: var(--largeModile-margin);
   }
 }

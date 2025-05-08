@@ -628,7 +628,7 @@ a.header-icon.keychainify-checked {
     max-width: 230px;
   }
   .elastic {
-    right: 72px;
+    right: 112px;
   }
   .Searchlist {
     width: 260px;
@@ -636,7 +636,7 @@ a.header-icon.keychainify-checked {
   }
   .elasticBig {
     position: fixed;
-    right: 72px;
+    right: 112px;
     height: 152px;
     width: 260px;
   }
@@ -729,7 +729,7 @@ a.header-icon.keychainify-checked {
   }
   .icon-navigation {
     margin: 0;
-    margin-right: 19.64px;
+    margin-right: 19.var(--bigPC-margin);
   }
 }
 
