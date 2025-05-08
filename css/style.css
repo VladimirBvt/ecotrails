@@ -413,6 +413,7 @@ p.tt-p {
 
 .popular>.wrap {
   max-width: 1288px;
+  /* max-width: 1218px; */
 }
 
 .popular-list {
@@ -421,6 +422,7 @@ p.tt-p {
 
 .popular-wrap {
   max-width: 1288px;
+  /* max-width: 1218px; */
 }
 
 .swiper-pagination-bullet {
@@ -810,18 +812,22 @@ details[open] summary~* {
 .faq-item-text {
   font-size: 20px;
   line-height: 1.45;
-  padding: 0px 30px;
+  padding: 0 0 0 30px;
   margin-top: 24px;
   font-family: Avante Book;
 }
 
+.faq-item-text.month {
+  padding: 0;
+}
+
 @media (max-width: 1266px) {
   .popular>.wrap {
-    max-width: 1078px;
+    max-width: 1076px;
   }
 
   .popular-wrap {
-    max-width: 1078px;
+    max-width: 1076px;
   }
 
   .trail-location-black>p {
@@ -870,20 +876,22 @@ details[open] summary~* {
 @media (max-width: 1100px) {
 
   .popular>.wrap {
-    max-width: 643px;
+    /* max-width: 643px; */
+    max-width: 807px;
   }
 
   .popular-wrap {
-    max-width: 643px;
+    /* max-width: 643px; */
+    max-width: 807px;
   }
-
+/* 
   .size-card-elem-h2 {
     width: 240px;
     height: 54px;
     margin-bottom: 12px;
-  }
+  } */
 
-  .size-card-elem-p {
+  /* .size-card-elem-p {
     width: 215px;
     height: 50px;
   }
@@ -891,23 +899,23 @@ details[open] summary~* {
   .trail-spec {
     margin-top: 16px;
     height: 56px;
-  }
+  } */
 
   h2 {
     margin-bottom: 12px;
   }
 
-  .trail-img {
+  /* .trail-img {
     max-width: 282px;
     width: 282px;
     height: 211px;
-  }
+  } */
 
-  .popular-item {
+  /* .popular-item {
     max-width: 282px;
     width: 282px !important;
     height: 440px;
-  }
+  } */
 
 }
 
@@ -919,7 +927,7 @@ details[open] summary~* {
     background-size: 100% 100vh;
   } */
 
-  .size-card-elem-h2 {
+  /* .size-card-elem-h2 {
     width: 201px;
     height: 58px;
     margin-bottom: 12px;
@@ -933,7 +941,7 @@ details[open] summary~* {
   .trail-spec {
     margin-top: 16px;
     height: 56px;
-  }
+  } */
 
   h2 {
     margin-bottom: 12px;
@@ -947,18 +955,18 @@ details[open] summary~* {
     display: none;
   }
 
-  .trail-img {
+  /* .trail-img {
     max-width: 229px;
     width: 229px;
     height: 165px;
-  }
+  } */
 
-  .popular-item {
+  /* .popular-item {
     max-width: 229px;
     width: 229px !important;
     height: 380px;
     margin-right: 25px !important;
-  }
+  } */
 
   .title {
     margin-bottom: 48px;
@@ -972,10 +980,10 @@ details[open] summary~* {
     background-position: right 150px;
   }
 
-  .popular>.wrap {
-    /* max-width: 1024px; */
+  /* .popular>.wrap {
+    max-width: 1024px;
     padding: 0 !important;
-  }
+  } */
 
   /* .popular-wrap {
     max-width: 1024px;
@@ -1130,13 +1138,13 @@ details[open] summary~* {
 @media (max-width: 1014px) {
   /* .popular>.wrap {
     max-width: 643px;
-  } */
+  }
 
-  /* .popular-wrap {
+  .popular-wrap {
     max-width: 643px;
   } */
 
-  .size-card-elem-h2 {
+  /* .size-card-elem-h2 {
     width: 240px;
     height: 54px;
     margin-bottom: 12px;
@@ -1150,13 +1158,13 @@ details[open] summary~* {
   .trail-spec {
     margin-top: 16px;
     height: 56px;
-  }
+  } */
 
   h2 {
     margin-bottom: 12px;
   }
 
-  .trail-img {
+  /* .trail-img {
     max-width: 282px;
     width: 282px;
     height: 211px;
@@ -1167,12 +1175,34 @@ details[open] summary~* {
     width: 282px !important;
     height: 440px;
     margin-right: 40px !important;
-  }
+  } */
 }
 
+
+@media (max-width: 830px) {
+    .popular>.wrap {
+    max-width: 537px;
+  }
+
+  .popular-wrap {
+    max-width: 537px;
+  }
+
+}
+
+/* @media (max-width: 665px) {
+  .popular>.wrap {
+  max-width: 537px;
+}
+
+.popular-wrap {
+  max-width: 537px;
+}
+
+} */
 /* телефон */
 
-@media (max-width: 665px) {
+@media (max-width: 560px) {
   .intro {
     background: url(/img/mobile-screen-1.png) top right no-repeat transparent;
     background-size: 100% 100vh;
