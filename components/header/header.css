@@ -20,20 +20,20 @@
   /* Мобилка (525) */
   --mobileContent: calc(100vw - 40px);
 
-    /* Самые большие отступы */
-    --largePC-margin: 112px;
-    --largeTablet-margin: 96px;
-    --largeModile-margin: 72px;
-  
-    /* Большие отступы */
-    --bigPC-margin: 64px;  
-    --bigTablet-margin: 48px;
-    --bigModile-margin: 32px;
-  
-    /* Маленькие отступы */
-    --smallPC-margin: 24px;
-    --smallTablet-margin: 16px;
-    --smallModile-margin: 16px;
+  /* Самые большие отступы */
+  --largePC-margin: 112px;
+  --largeTablet-margin: 96px;
+  --largeModile-margin: 72px;
+
+  /* Большие отступы */
+  --bigPC-margin: 64px;
+  --bigTablet-margin: 48px;
+  --bigModile-margin: 32px;
+
+  /* Маленькие отступы */
+  --smallPC-margin: 24px;
+  --smallTablet-margin: 16px;
+  --smallModile-margin: 16px;
 
   /* Так записывается */
   /* max-width: var(--pcContent-width); */

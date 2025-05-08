@@ -247,17 +247,58 @@ p {
 
 /* Херо-блок*/
 .intro {
-  background: url(/img/utp-desktop-1.png) top right no-repeat transparent;
-  background-size: 100% 100vh;
-  background-position: center;
-  text-align: center;
+  /* Фон */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/img/utp-desktop-1.png) no-repeat center center / cover;
+
+  /* Размеры */
+  width: 100%;
   height: 100vh;
-  padding: 300px 0 308px;
-  -webkit-animation: slideBG 22s linear infinite 0s;
-  animation: slideBG 22s linear infinite 0s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
+  max-height: -webkit-fill-available;
+  /* Фикс для iOS */
+
+  /* Выравнивание контента */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Важно! */
+  margin: 0;
+  /* Сбрасываем стандартные отступы */
+  padding: 0;
+  /* Убираем внутренние отступы */
+  overflow: hidden;
+  /* Запрещаем прокрутку */
+
 }
+
+/* Для экранов с соотношением сторон отличным от фона */
+@media (orientation: portrait) {
+  .intro {
+    background-size: auto 100%;
+    background-position: top center;
+  }
+}
+
+.intro-content {
+  padding-top: 90px;
+  max-width: var(--pcContent-width);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
 
 /* Анимация utp-фоток */
 /* @keyframes slideBG {
@@ -291,16 +332,14 @@ p {
 } */
 
 .intro-title {
-  margin-bottom: 30px;
   font-size: 48px;
-  line-height: 1.35;
   color: #f7fbfb;
   text-transform: uppercase;
 }
 
 .intro-img {
   display: block;
-  margin: 0 auto 44px;
+  margin: 40px auto;
 }
 
 .intro-btn {
@@ -829,6 +868,10 @@ details[open] summary~* {
     max-width: var(--tabletContent-width);
   }
 
+  .intro-content {
+    max-width: var(--tabletContent-width);
+  }
+
 }
 
 @media (max-width: 1100px) {
@@ -877,27 +920,7 @@ details[open] summary~* {
     background-position: right 150px;
   }
 
-  .intro {
-    padding-top: 200px;
-  }
-
-  .intro-content {
-    padding-top: 36px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-image: none;
-  }
-
   .intro-title {
-    max-width: 554px;
     width: 100%;
     margin-bottom: 0;
     font-style: normal;
@@ -920,11 +943,6 @@ details[open] summary~* {
     position: absolute;
     width: 28px;
     height: 28px;
-  }
-
-  .intro-img {
-    margin-top: 51px;
-    margin-bottom: 51px;
   }
 
   .intro-btn {
@@ -1042,12 +1060,9 @@ details[open] summary~* {
 /* телефон */
 
 @media (max-width: 560px) {
-  .intro {
-    background: url(/img/mobile-screen-1.png) top right no-repeat transparent;
-    background-size: 100% 100vh;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-top: 140px;
+
+  .intro-content {
+    max-width: var(--mobileContent);
   }
 
   .faq-item-text.month {
@@ -1170,12 +1185,7 @@ details[open] summary~* {
   }
 
   .intro-title {
-    max-width: var(--mobileContent);
-    margin-bottom: 0px;
-    text-align: center;
     font-size: 32px;
-    font-size: 32px;
-    line-height: 52px;
     font-weight: 700;
   }
 
@@ -1192,27 +1202,7 @@ details[open] summary~* {
     height: 24px;
   }
 
-  .intro-img {
-    margin-bottom: 80px;
-    margin-top: 80px;
-  }
-
-  .intro-content {
-    padding-top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-image: none;
-  }
-
-  .intro-btn {
+  /* .intro-btn {
     width: 190px;
     height: 50px;
     font-size: 16px;
@@ -1227,7 +1217,7 @@ details[open] summary~* {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-  }
+  } */
 
   .popular-title::before {
     top: 28px;
