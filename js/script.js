@@ -1,151 +1,162 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Слайдер популярных
-    let swiperPopular = new Swiper(".popular-list", {
+  // Слайдер популярных
+  let swiperPopular = new Swiper(".popular-list", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 40,
+    loop: true,
+    centeredSlidesBounds: true,
+    grabCursor: 'true',
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-right-btn",
+      prevEl: ".swiper-left-btn",
+    },
+    breakpoints: {
+      1266: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+
+      1100: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+
+      //       1025: {
+      //     slidesPerView: 3,
+      //     slidesPerGroup: 3,
+      // },
+
+      830: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+
+
+      // 1024: {
+      //     slidesPerView: 4,
+      //     slidesPerGroup: 4,
+      // },
+      // 1014: {
+      //     slidesPerView: 4,
+      //     slidesPerGroup: 4,
+      // },
+      // 1013: {
+      //     slidesPerView: 2,
+      //     slidesPerGroup: 2,
+      // },
+      // 490: {
+      //     slidesPerView: 2,
+      //     slidesPerGroup: 2,
+      // },
+      560: {
         slidesPerView: 1,
-        spaceBetween: 40,
         slidesPerGroup: 1,
-        loop: true,
-        centeredSlidesBounds: true,
-        grabCursor: 'true',
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-right-btn",
-            prevEl: ".swiper-left-btn",
-        },
-        breakpoints: {
-            1350: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-            },
-            1100: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-            },
-            1025: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
-            1024: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-            },
-            1014: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-            },
-            1013: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
-            490: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
-            480: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-            }
-        },
-    });
+      }
+    },
+  });
 
-    // Тултип
-    const tooltipIcon = document.getElementById('tooltipIcon');
-    const tooltip = document.getElementById('tooltip');
+  // Тултип
+  const tooltipIcon = document.getElementById('tooltipIcon');
+  const tooltip = document.getElementById('tooltip');
 
-    // Показать тултип при наведении на иконку
-    tooltipIcon.addEventListener('mouseenter', function () {
-        tooltip.style.display = 'block';
-        positionTooltip();
-    });
+  // Показать тултип при наведении на иконку
+  tooltipIcon.addEventListener('mouseenter', function () {
+    tooltip.style.display = 'block';
+    positionTooltip();
+  });
 
-    // Скрыть тултип при уходе курсора с иконки
-    tooltipIcon.addEventListener('mouseleave', function () {
-        tooltip.style.display = 'none';
-    });
+  // Скрыть тултип при уходе курсора с иконки
+  tooltipIcon.addEventListener('mouseleave', function () {
+    tooltip.style.display = 'none';
+  });
 
-    // Показать/скрыть тултип при клике на иконку
-    tooltipIcon.addEventListener('click', function (event) {
-        event.stopPropagation(); // Предотвращаем всплытие события
+  // Показать/скрыть тултип при клике на иконку
+  tooltipIcon.addEventListener('click', function (event) {
+    event.stopPropagation(); // Предотвращаем всплытие события
 
-        if (tooltip.style.display === 'block') {
-            // Если тултип уже отображается, скрываем его
-            tooltip.style.display = 'none';
-        } else {
-            // Если тултип скрыт, показываем его и позиционируем
-            tooltip.style.display = 'block';
-            positionTooltip();
-        }
-    });
-
-    // Закрыть тултип при клике вне его области
-    document.addEventListener('click', function () {
-        tooltip.style.display = 'none';
-    });
-
-    // Закрыть тултип при прокрутке страницы
-    window.addEventListener('scroll', function () {
-        tooltip.style.display = 'none';
-    });
-
-    // Функция для позиционирования тултипа и стрелочки
-    function positionTooltip() {
-        const iconRect = tooltipIcon.getBoundingClientRect();
-        const tooltipWidth = tooltip.offsetWidth;
-        const tooltipHeight = tooltip.offsetHeight;
-        const iconImgRect = document.querySelector('.tooltip-icon img');
-
-        // Позиция тултипа
-        let top = iconRect.bottom + window.scrollY;
-        let left = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2) - (tooltipWidth / 2);
-
-        // Проверка, чтобы тултип не выходил за границы экрана
-        if (left < 0) left = 10; // Отступ от левого края
-        if (left + tooltipWidth > window.innerWidth) left = window.innerWidth - tooltipWidth - 10; // Отступ от правого края
-
-        // Позиция стрелочки
-        const iconCenterX = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2); // Центр иконки
-        const tooltipLeft = left; // Левый край тултипа
-        const arrowOffset = iconCenterX - tooltipLeft; // Смещение стрелочки относительно центра иконки
-
-        tooltip.style.setProperty('--arrow-offset', `${arrowOffset}px`); // Передаем смещение в CSS
-        tooltip.style.top = `${top}px`;
-        tooltip.style.left = `${left}px`;
+    if (tooltip.style.display === 'block') {
+      // Если тултип уже отображается, скрываем его
+      tooltip.style.display = 'none';
+    } else {
+      // Если тултип скрыт, показываем его и позиционируем
+      tooltip.style.display = 'block';
+      positionTooltip();
     }
+  });
 
-    // Слайдер партнёров
-//     let swiperPartner = new Swiper('.partner', {
-        //         slidesPerView: 2,
-        //         spaceBetween: 40,
-        //         slidesPerGroup: 2,
-        //         loop: true,
-        //         centeredSlidesBounds: true,
-        //         grabCursor: 'true',
-        //         navigation: {
-        //             nextEl: ".swiper-right-part",
-        //             prevEl: ".swiper-left-part",
-        //         },
-        //         pagination: {
-        //             el: ".swiper-pagination-part",
-        //             clickable: true,
-        //         },
-        //         breakpoints: {
-        //             360: {
+  // Закрыть тултип при клике вне его области
+  document.addEventListener('click', function () {
+    tooltip.style.display = 'none';
+  });
 
-        //                 slidesPerView: 3,
-        //                 slidesPerGroup: 3,
+  // Закрыть тултип при прокрутке страницы
+  window.addEventListener('scroll', function () {
+    tooltip.style.display = 'none';
+  });
 
-        //             },
-        //             1024: {
-        //                 slidesPerView: 4,
-        //                 slidesPerGroup: 4,
-        //             },
-        //         },
-        //     })
+  // Функция для позиционирования тултипа и стрелочки
+  function positionTooltip() {
+    const iconRect = tooltipIcon.getBoundingClientRect();
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+    const iconImgRect = document.querySelector('.tooltip-icon img');
+
+    // Позиция тултипа
+    let top = iconRect.bottom + window.scrollY;
+    let left = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2) - (tooltipWidth / 2);
+
+    // Проверка, чтобы тултип не выходил за границы экрана
+    if (left < 0) left = 10; // Отступ от левого края
+    if (left + tooltipWidth > window.innerWidth) left = window.innerWidth - tooltipWidth - 10; // Отступ от правого края
+
+    // Позиция стрелочки
+    const iconCenterX = iconRect.left + window.scrollX + (iconImgRect.offsetWidth / 2); // Центр иконки
+    const tooltipLeft = left; // Левый край тултипа
+    const arrowOffset = iconCenterX - tooltipLeft; // Смещение стрелочки относительно центра иконки
+
+    tooltip.style.setProperty('--arrow-offset', `${arrowOffset}px`); // Передаем смещение в CSS
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+  }
+
+  // Слайдер партнёров
+  //     let swiperPartner = new Swiper('.partner', {
+  //         slidesPerView: 2,
+  //         spaceBetween: 40,
+  //         slidesPerGroup: 2,
+  //         loop: true,
+  //         centeredSlidesBounds: true,
+  //         grabCursor: 'true',
+  //         navigation: {
+  //             nextEl: ".swiper-right-part",
+  //             prevEl: ".swiper-left-part",
+  //         },
+  //         pagination: {
+  //             el: ".swiper-pagination-part",
+  //             clickable: true,
+  //         },
+  //         breakpoints: {
+  //             360: {
+
+  //                 slidesPerView: 3,
+  //                 slidesPerGroup: 3,
+
+  //             },
+  //             1024: {
+  //                 slidesPerView: 4,
+  //                 slidesPerGroup: 4,
+  //             },
+  //         },
+  //     })
 });
+
+
 
 // Анимация карточек
 const catalogCard = document.querySelectorAll(".popular-item");
@@ -212,4 +223,5 @@ for (let j = 0; j < catalogCard.length; j++) {
         '<img src="img/difficulty-hard.svg" alt="Сложность тропы">';
   };
 }
+
 
