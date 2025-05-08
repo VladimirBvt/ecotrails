@@ -380,17 +380,18 @@ p.tt-p {
 /* Популярные  */
 
 .size-card-elem-h2 {
-  width: 240px;
+  width: 201px;
   height: 58px;
+  margin-bottom: 12px;
 }
 
 .size-card-elem-p {
-  width: 215px;
+  width: 179px;
   height: 43px;
 }
 
 .trail-spec {
-  margin-top: 24px;
+  margin-top: 16px;
   width: 100%;
   height: 56px;
   display: -webkit-box;
@@ -412,7 +413,7 @@ p.tt-p {
 }
 
 .popular>.wrap {
-  max-width: 1288px;
+  max-width: 1076px;
 }
 
 .popular-list {
@@ -420,7 +421,7 @@ p.tt-p {
 }
 
 .popular-wrap {
-  max-width: 1288px;
+  max-width: 1076pxpx;
 }
 
 .swiper-pagination-bullet {
@@ -477,7 +478,7 @@ p.tt-p {
 }
 
 .popular-item {
-  max-width: 282px;
+  max-width: 229px;
   background: #f7fbfb;
   -webkit-box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.12),
     0px 16px 20px rgba(0, 0, 0, 0.1), 0px 18px 20px rgba(0, 0, 0, 0.08);
@@ -491,6 +492,8 @@ p.tt-p {
   -o-transition: all 0.4s ease;
   z-index: 10;
   cursor: pointer;
+  width: 229px !important;
+  height: 380px;
 }
 
 .popular-item-orange {
@@ -504,10 +507,13 @@ p.tt-p {
 .trail-img {
   -o-object-fit: cover;
   object-fit: cover;
-  width: auto;
+  /* width: auto; */
   -webkit-filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.35));
   border-radius: 8px;
+  max-width: 229px;
+  width: 229px;
+  height: 165px;
 
 }
 
@@ -536,7 +542,7 @@ p.tt-p {
   background: url(/img/location-black.svg) no-repeat;
   background-position: 0% 0%;
   padding-left: 25px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 19px;
   height: 50px;
   font-family: Avante Book;
@@ -819,53 +825,13 @@ details[open] summary~* {
 }
 
 @media (max-width: 1266px) {
-  .popular>.wrap {
-    max-width: 1076px;
-  }
-
-  .popular-wrap {
-    max-width: 1076px;
-  }
-
-  .trail-location-black>p {
-    font-size: 14px;
-  }
-
-  .size-card-elem-h2 {
-    width: 201px;
-    height: 58px;
-    margin-bottom: 12px;
-  }
-
-  .size-card-elem-p {
-    width: 179px;
-    height: 43px;
-  }
-
-  .trail-spec {
-    margin-top: 16px;
-    height: 56px;
-  }
 
   h2 {
     margin-bottom: 12px;
   }
 
-  .trail-img {
-    max-width: 229px;
-    width: 229px;
-    height: 165px;
-
-  }
-
   .wrap {
     max-width: var(--tabletContent-width);
-  }
-
-  .popular-item {
-    max-width: 229px;
-    width: 229px !important;
-    height: 380px;
   }
 
 }
@@ -1068,7 +1034,7 @@ details[open] summary~* {
 
 
 @media (max-width: 830px) {
-    .popular>.wrap {
+  .popular>.wrap {
     max-width: 537px;
   }
 
