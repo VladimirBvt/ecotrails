@@ -413,7 +413,6 @@ p.tt-p {
 
 .popular>.wrap {
   max-width: 1288px;
-  /* max-width: 1218px; */
 }
 
 .popular-list {
@@ -422,7 +421,6 @@ p.tt-p {
 
 .popular-wrap {
   max-width: 1288px;
-  /* max-width: 1218px; */
 }
 
 .swiper-pagination-bullet {
@@ -784,7 +782,6 @@ details[open] summary~* {
   font-size: 24px;
   font-family: "Avante Book";
   line-height: 35px;
-  /* padding-bottom: 0;  */
   line-height: 145%;
   vertical-align: top;
 }
@@ -876,72 +873,22 @@ details[open] summary~* {
 @media (max-width: 1100px) {
 
   .popular>.wrap {
-    /* max-width: 643px; */
     max-width: 807px;
   }
 
   .popular-wrap {
-    /* max-width: 643px; */
     max-width: 807px;
   }
-/* 
-  .size-card-elem-h2 {
-    width: 240px;
-    height: 54px;
-    margin-bottom: 12px;
-  } */
-
-  /* .size-card-elem-p {
-    width: 215px;
-    height: 50px;
-  }
-
-  .trail-spec {
-    margin-top: 16px;
-    height: 56px;
-  } */
 
   h2 {
     margin-bottom: 12px;
   }
-
-  /* .trail-img {
-    max-width: 282px;
-    width: 282px;
-    height: 211px;
-  } */
-
-  /* .popular-item {
-    max-width: 282px;
-    width: 282px !important;
-    height: 440px;
-  } */
 
 }
 
 /*планшет*/
 
 @media (max-width: 1024px) {
-  /* .intro {
-    background: url(/img/planshet-screen-1.png) top right no-repeat transparent;
-    background-size: 100% 100vh;
-  } */
-
-  /* .size-card-elem-h2 {
-    width: 201px;
-    height: 58px;
-    margin-bottom: 12px;
-  }
-
-  .size-card-elem-p {
-    width: 179px;
-    height: 43px;
-  }
-
-  .trail-spec {
-    margin-top: 16px;
-    height: 56px;
-  } */
 
   h2 {
     margin-bottom: 12px;
@@ -955,19 +902,6 @@ details[open] summary~* {
     display: none;
   }
 
-  /* .trail-img {
-    max-width: 229px;
-    width: 229px;
-    height: 165px;
-  } */
-
-  /* .popular-item {
-    max-width: 229px;
-    width: 229px !important;
-    height: 380px;
-    margin-right: 25px !important;
-  } */
-
   .title {
     margin-bottom: 48px;
   }
@@ -979,15 +913,6 @@ details[open] summary~* {
   .popular {
     background-position: right 150px;
   }
-
-  /* .popular>.wrap {
-    max-width: 1024px;
-    padding: 0 !important;
-  } */
-
-  /* .popular-wrap {
-    max-width: 1024px;
-  } */
 
   .intro {
     padding-top: 200px;
@@ -1081,7 +1006,6 @@ details[open] summary~* {
   .partner-title {
     width: 231px;
     height: 34px;
-
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -1136,46 +1060,10 @@ details[open] summary~* {
 }
 
 @media (max-width: 1014px) {
-  /* .popular>.wrap {
-    max-width: 643px;
-  }
-
-  .popular-wrap {
-    max-width: 643px;
-  } */
-
-  /* .size-card-elem-h2 {
-    width: 240px;
-    height: 54px;
-    margin-bottom: 12px;
-  }
-
-  .size-card-elem-p {
-    width: 215px;
-    height: 50px;
-  }
-
-  .trail-spec {
-    margin-top: 16px;
-    height: 56px;
-  } */
-
   h2 {
     margin-bottom: 12px;
   }
 
-  /* .trail-img {
-    max-width: 282px;
-    width: 282px;
-    height: 211px;
-  }
-
-  .popular-item {
-    max-width: 282px;
-    width: 282px !important;
-    height: 440px;
-    margin-right: 40px !important;
-  } */
 }
 
 
@@ -1190,16 +1078,6 @@ details[open] summary~* {
 
 }
 
-/* @media (max-width: 665px) {
-  .popular>.wrap {
-  max-width: 537px;
-}
-
-.popular-wrap {
-  max-width: 537px;
-}
-
-} */
 /* телефон */
 
 @media (max-width: 560px) {
