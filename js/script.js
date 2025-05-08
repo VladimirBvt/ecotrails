@@ -17,46 +17,19 @@ document.addEventListener('DOMContentLoaded', function () {
       prevEl: ".swiper-left-btn",
     },
     breakpoints: {
-      1266: {
+      1100: {
         slidesPerView: 4,
         slidesPerGroup: 4,
       },
 
-      1100: {
+      830: {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
-
-      //       1025: {
-      //     slidesPerView: 3,
-      //     slidesPerGroup: 3,
-      // },
-
-      830: {
+      
+      560: {
         slidesPerView: 2,
         slidesPerGroup: 2,
-      },
-
-
-      // 1024: {
-      //     slidesPerView: 4,
-      //     slidesPerGroup: 4,
-      // },
-      // 1014: {
-      //     slidesPerView: 4,
-      //     slidesPerGroup: 4,
-      // },
-      // 1013: {
-      //     slidesPerView: 2,
-      //     slidesPerGroup: 2,
-      // },
-      // 490: {
-      //     slidesPerView: 2,
-      //     slidesPerGroup: 2,
-      // },
-      560: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
       }
     },
   });
