@@ -417,7 +417,7 @@ p.tt-p {
   display: flex;
   font-family: "Avante Bold";
   width: fit-content;
-  margin: var(--bigPC-margin) auto var(--bigModile-margin);
+  margin: var(--bigPC-margin) auto var(--bigMobile-margin);
   text-transform: uppercase;
   text-align: center;
   font-size: 32px;
@@ -637,7 +637,7 @@ p.tt-p {
   -ms-flex-align: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: var(--bigModile-margin);
+  margin-top: var(--bigMobile-margin);
   gap: 10px;
 }
 
@@ -665,7 +665,7 @@ p.tt-p {
   font-size: 32px;
   font-family: "Avante Book";
   font-weight: bold;
-  margin: var(--largePC-margin) auto var(--bigModile-margin);
+  margin: var(--largePC-margin) auto var(--bigMobile-margin);
   display: flex;
   justify-content: center;
   align-items: end;
@@ -836,7 +836,7 @@ ul.p2.limitations {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  margin: 0 auto var(--bigModile-margin);
+  margin: 0 auto var(--bigMobile-margin);
 }
 
 .warning2:last-child {
@@ -1460,18 +1460,18 @@ ul.p2.limitations {
 
   /* Отспуп снизу от статьи */
   .info__trail {
-    padding-bottom: var(--largeModile-margin);
+    padding-bottom: var(--largeMobile-margin);
   }
 
   /* Отступ рекламы (лента) */
   .ads,
   .ads_ab {
-    margin-bottom: var(--largeModile-margin);
+    margin-bottom: var(--largeMobile-margin);
   }
 
   /* Отступ рекламы (баннер в статье) */
   .ads-ban {
-    margin-top: var(--largeModile-margin);
+    margin-top: var(--largeMobile-margin);
   }
 
 
@@ -1493,7 +1493,7 @@ ul.p2.limitations {
   }
 
   .location {
-    margin: var(--bigModile-margin) 0;
+    margin: var(--bigMobile-margin) 0;
   }
 
   .slider2 {
@@ -1506,7 +1506,7 @@ ul.p2.limitations {
 
 
   .eco-trail {
-    margin: var(--bigModile-margin) 0;
+    margin: var(--bigMobile-margin) 0;
     font-size: 24px;
     gap: 12px;
   }
@@ -1525,7 +1525,7 @@ ul.p2.limitations {
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
-    margin-top: var(--largeModile-margin);
+    margin-top: var(--largeMobile-margin);
 
   }
 

@@ -494,7 +494,7 @@ p.tt-p {
   -ms-flex-align: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: var(--bigModile-margin);
+  margin-top: var(--bigMobile-margin);
   gap: 30px;
 }
 
@@ -875,19 +875,7 @@ details[open] summary~* {
     margin-bottom: 12px;
   }
 
-  .popular {
-    max-width: var(--tabletContent-width);
-  }
-
-  .partners {
-  max-width: var(--tabletContent-width);
-}
-
-  .faq {
-    max-width: var(--tabletContent-width);
-  }
-
-  .intro .wrap {
+  .popular, .partners, .faq, .intro .wrap {
     max-width: var(--tabletContent-width);
   }
 
@@ -1076,16 +1064,8 @@ details[open] summary~* {
 
 @media (max-width: 560px) {
 
-  .intro .wrap {
+  .popular, .partners, .faq, .intro .wrap {
     max-width: var(--mobileContent);
-  }
-
-  .popular {
-    max-width: var(--mobileContent);
-  }
-
-  .faq-item-text.month {
-    margin-bottom: var(--bigModile-margin);
   }
 
   .swiper-controlls-part {
@@ -1097,7 +1077,7 @@ details[open] summary~* {
     max-width: 269px;
 
     padding: 0 !important;
-    margin-bottom: var(--largeModile-margin);
+    margin-bottom: var(--largeMobile-margin);
   }
 
   .popular-wrap {
@@ -1108,10 +1088,6 @@ details[open] summary~* {
   .popular-list {
     max-height: 600px;
     height: 100%;
-  }
-
-  .partners {
-    max-width: var(--mobileContent);
   }
 
   .partners-content {
@@ -1145,8 +1121,8 @@ details[open] summary~* {
   }
 
   .title {
-    margin-top: var(--largeModile-margin);
-    margin-bottom: var(--bigModile-margin);
+    margin-top: var(--largeMobile-margin);
+    margin-bottom: var(--bigMobile-margin);
   }
 
   .title::before {
@@ -1267,7 +1243,7 @@ details[open] summary~* {
   }
 
   .faq {
-    margin-bottom: var(--largeModile-margin);
+    margin-bottom: var(--largeMobile-margin);
     max-width: var(--mobileContent);
   }
 

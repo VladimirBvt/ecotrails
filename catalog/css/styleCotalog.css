@@ -745,7 +745,7 @@ a {
   .catalog-items {
     /* Адаптивные колонки */
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: var(--largeModile-margin);
+    margin-bottom: var(--largeMobile-margin);
   }
 }
 
@@ -909,7 +909,7 @@ a {
 
   /* Реклама */
   .ads {
-    margin-bottom: var(--largeModile-margin);
+    margin-bottom: var(--largeMobile-margin);
   }
 
 }
