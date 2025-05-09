@@ -42,10 +42,10 @@ class CookiePopupElement extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
-    const cookieButton = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie__button');
+    const cookiePopup = document.querySelector('cookie-popup')?.shadowRoot?.querySelector('.cookie');
+    const cookieButton = document.querySelector('cookie-popup')?.shadowRoot?.querySelector('.cookie__button');
 
-    cookieButton.addEventListener('click', () => {
+    cookieButton?.addEventListener('click', () => {
       cookiePopup.style.display = 'none';
 
       localStorage.setItem('cookieAccepted', 'true');
@@ -76,7 +76,7 @@ const appendCookiePopupElement = () => {
 }
 
 const checkVisibilityCookiePopup = () => {
-  const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
+  const cookiePopup = document.querySelector('cookie-popup')?.shadowRoot?.querySelector('.cookie');
   const isCookieAccepted = localStorage.getItem('cookieAccepted');
 
   if (isCookieAccepted) {
@@ -85,7 +85,7 @@ const checkVisibilityCookiePopup = () => {
 }
 
 const changeStyleCookiePopupToTargetPages = () => {
-  const cookiePopup = document.querySelector('cookie-popup').shadowRoot.querySelector('.cookie');
+  const cookiePopup = document.querySelector('cookie-popup')?.shadowRoot?.querySelector('.cookie');
   const className = 'fixed';
   const paths = window.location.pathname.split('/');
   const isMapPage = paths.at(-1).includes('mappage');
@@ -96,16 +96,38 @@ const changeStyleCookiePopupToTargetPages = () => {
   }
 }
 
-const addClassAds = () => {
+const hiddenCookiePopupIntersectionAds = () => {
+  const cookiePopup = document.querySelector('cookie-popup')?.shadowRoot?.querySelector('.cookie');
   const adElement = document.querySelector('.ads');
-  const className = 'top-layer'
 
-  if (adElement) {
-    adElement.classList.add(className);
+  const checkIntersection = () => {
+    const cookieRect = cookiePopup.getBoundingClientRect();
+    const adRect = adElement.getBoundingClientRect();
+
+    // Проверяем пересечение элементов
+    const isIntersecting = !(
+      cookieRect.top > adRect.bottom || // cookie ниже рекламы
+      cookieRect.bottom < adRect.top || // cookie выше рекламы
+      cookieRect.right < adRect.left || // cookie левее рекламы
+      cookieRect.left > adRect.right    // cookie правее рекламы
+    );
+
+    if (isIntersecting) {
+      cookiePopup.classList.add('hidden');
+    } else {
+      cookiePopup.classList.remove('hidden');
+    }
   }
+
+  // Вызываем проверку при скролле
+  window.addEventListener('scroll', checkIntersection);
+  // Также проверяем при изменении размера окна
+  window.addEventListener('resize', checkIntersection);
+  // Проверяем сразу после загрузки
+  checkIntersection();
 }
 
 document.addEventListener('DOMContentLoaded', appendCookiePopupElement)
 document.addEventListener('DOMContentLoaded', checkVisibilityCookiePopup)
 document.addEventListener('DOMContentLoaded', changeStyleCookiePopupToTargetPages)
-document.addEventListener('DOMContentLoaded', addClassAds)
+document.addEventListener('DOMContentLoaded', hiddenCookiePopupIntersectionAds)
