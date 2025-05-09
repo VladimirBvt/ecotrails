@@ -337,13 +337,7 @@ p.tt-p {
   content: url("/img/breadcrumbs/home-icon-active.svg");
 }
 
-/* Правая часть (QR и расшарка) */
-
-/* QR? */
-.navigation {
-  display: flex;
-  justify-content: flex-start;
-}
+/* Правая часть (расшарка) */
 
 .main-head-right {
   text-align: right;
@@ -400,6 +394,11 @@ p.tt-p {
 .ya-share2__container_size_l .ya-share2__item_copy .ya-share2__icon_copy,
 .ya-share2__container_size_l .ya-share2__item_more .ya-share2__icon_more {
   background-size: 24px 24px !important;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* Карта */
