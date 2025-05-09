@@ -816,6 +816,7 @@ details[open] summary~* {
   position: relative;
   text-indent: 0;
   padding-bottom: 24px;
+  width: 90%;
 }
 
 .attent1::before {
@@ -862,6 +863,9 @@ details[open] summary~* {
   padding: 0 0 0 30px;
   margin-top: var(--smallPC-margin);
   font-family: Avante Book;
+  width: 100%;
+  max-width: var(--mobileContent);
+  box-sizing: border-box;
 }
 
 .faq-item-text.month {
@@ -1175,7 +1179,6 @@ details[open] summary~* {
   .intro {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top: 140px;
     margin-bottom: 72px;
   }
 
