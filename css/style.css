@@ -1088,10 +1088,6 @@ details[open] summary~* {
     margin-bottom: var(--bigModile-margin);
   }
 
-  .trail-location-black>p {
-    font-size: 16px;
-  }
-
   .swiper-controlls-part {
     display: none;
   }
@@ -1112,6 +1108,10 @@ details[open] summary~* {
   .popular-list {
     max-height: 600px;
     height: 100%;
+  }
+
+  .partners {
+    max-width: var(--mobileContent);
   }
 
   .partners-content {
@@ -1163,7 +1163,7 @@ details[open] summary~* {
     top: -3px;
   }
 
-  .size-card-elem-h2 {
+  /* .size-card-elem-h2 {
     width: 272px;
     height: 58px;
     margin-bottom: var(--smallTablet-margin);
@@ -1194,7 +1194,7 @@ details[open] summary~* {
     width: 320px !important;
     height: 520px;
     margin-right: 40px !important;
-  }
+  } */
 
   .intro {
     -webkit-box-sizing: border-box;
