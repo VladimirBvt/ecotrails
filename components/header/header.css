@@ -57,6 +57,11 @@
   transition: background-color 0.3s ease;
 }
 
+.main-header.black {
+  /* background-color: #1F271B; */
+  background-color: rgb(31,39,27, 0.55);
+}
+
 /* Стиль для прозрачного фона */
 .main-header.transparent-bg {
   background-color: rgba(243, 246, 237, 0.65);
@@ -117,6 +122,10 @@
   text-align: start;
 }
 
+.black .logo-text {
+  color: #F7FBFB;
+}
+
 .container-navigation-text {
   padding-left: 68px;
   height: 20px;
@@ -159,6 +168,10 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
+}
+
+.black .header-text-first, .black .header-text-center, .black .header-text-last {
+  color: #F7FBFB;
 }
 
 .center-navigation {
@@ -588,6 +601,8 @@
   display: flex;
 }
 
+
+
 .searcharea {
   font-family: "a_AvanteInt";
   font-style: normal;
@@ -706,6 +721,10 @@
   padding-left: 48px;
 }
 
+.black .Searchlist {
+  color: #f3f6ed;
+}
+
 .elasticBig {
   position: fixed;
   top: 90px;
@@ -724,6 +743,10 @@
   overflow: scroll;
   overflow-x: hidden;
   box-shadow: 0px 7px 12px rgba(31, 39, 27, 0.12), 0px 16px 18px rgba(31, 39, 27, 0.1), 0px 18px 18px rgba(31, 39, 27, 0.08);
+}
+
+.black .elasticBig {
+  background: rgb(31,39,27);
 }
 
 .elasticBig::-webkit-scrollbar {
@@ -758,6 +781,10 @@
   background: transparent;
   text-align: center;
   margin-top: 45px;
+}
+
+.black .VoidSearch {
+  color: #f3f6ed
 }
 
 /* .line-location {
