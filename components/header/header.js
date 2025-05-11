@@ -244,9 +244,7 @@ document.querySelector("#search-close").addEventListener("click", function () {
   // Возвращение прозрачности хедеру на карте при закрытии поиска
   if (document.body.matches('.map-page, .main-page')) {
     document.querySelector('.main-header')?.classList.add('transparent-bg');
-  }
-
-  
+  }  
 
   if ($(window).width() <= 1024) {
     $(".center-navigation").css("display", "");
