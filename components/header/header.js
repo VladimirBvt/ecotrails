@@ -68,7 +68,7 @@ function initializeStyles() {
   // 1. Страница карты
   if (document.body.classList.contains('map-page')) {
     // 1.1. Полупрозрачный фон
-    document.querySelector('.main-header')?.classList.add('transparent-bg');
+    header?.classList.add('transparent-bg');
 
     // 1.2. Активная иконка карты
     const mapIcon = document.querySelector('.icon-header[src="/img/map-black.svg"]');
@@ -97,6 +97,13 @@ function initializeStyles() {
 
   // 3. Главная
   if (document.body.classList.contains('main-page')) {
+
+    // Тёмный хедер
+    header?.classList.add('black');
+    // И полупрозрачный фон
+    header?.classList.add('transparent-bg');
+
+
     // Некликабельное лого   
     const logoHeader = document.querySelector('.logo-header');
     if (logoHeader) {
@@ -104,8 +111,6 @@ function initializeStyles() {
       logoHeader.style.cursor = "default";
     }
 
-    // Фон становится полупрозрачным
-    document.querySelector('.main-header')?.classList.add('transparent-bg');
 
   }
 
@@ -125,6 +130,8 @@ function initializeStyles() {
 
 window.addEventListener('scroll', function () {
   const currentScrollPosition = window.scrollY;
+  const introBottom = document.querySelector('.intro').offsetHeight;
+
   if (document.body.classList.contains('black')) {
 
     // Скролл вниз (превышение порога)
@@ -139,11 +146,20 @@ window.addEventListener('scroll', function () {
     lastScrollPosition = currentScrollPosition;
   }
 
-  if (window.scrollY <= SCROLL_THRESHOLD) {
+  // Возвращение нетёмного хедера внизу
+  if (currentScrollPosition > introBottom) {
+    header.classList.remove('black');
+  } else {
+    header.classList.add('black');
+  }
+
+  // Управление прозрачностью хедера
+  if (currentScrollPosition <= SCROLL_THRESHOLD) {
     header.classList.add('transparent-bg');
   } else {
     header.classList.remove('transparent-bg');
   }
+
 
 });
 
@@ -183,12 +199,12 @@ function handleSearchInput() {
   // Убирание прозрачности хедера при поиске
   if (searchInput) {
     searchInput.addEventListener("click", () => {
-      document.querySelector('.main-header')?.classList.remove('transparent-bg');
+      header?.classList.remove('transparent-bg');
     });
 
     // На случай, если фокус попадет в поле через Tab
     searchInput.addEventListener("focus", () => {
-      document.querySelector('.main-header')?.classList.remove('transparent-bg');
+      header?.classList.remove('transparent-bg');
     });
   }
 
@@ -270,9 +286,12 @@ search.addEventListener("click", function () {
 // Закрытие поиска
 document.querySelector("#search-close").addEventListener("click", function () {
 
-  // Возвращение прозрачности хедеру на карте при закрытии поиска
+  // Возвращение прозрачности хедеру на карте и на главной при закрытии поиска
   if (document.body.matches('.map-page, .main-page')) {
-    document.querySelector('.main-header')?.classList.add('transparent-bg');
+    if (window.scrollY === 0) {
+      header?.classList.add('transparent-bg');
+    }
+
   }
 
   if ($(window).width() <= 1024) {
