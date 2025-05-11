@@ -13,6 +13,8 @@ const search = document.querySelector("#search");
 const contSearchElement = document.querySelector('#cont-search');
 const voidSearch = document.querySelector("#VoidSearch");
 const elasticBox = document.querySelector("#elasticId");
+let lastScrollPosition = 0;
+const SCROLL_THRESHOLD = 50; // Порог в пикселях для срабатывания
 
 // Данные маршрутов
 const trailsData = [
@@ -78,7 +80,7 @@ function initializeStyles() {
   }
 
   // 2. Страница каталога
-    if (document.body.classList.contains('catalog-page')) {
+  if (document.body.classList.contains('catalog-page')) {
     // 2.1. Выделение пункта меню    
     cotalog.style.color = "#F28123";
     cotalog.style.pointerEvents = "none";
@@ -104,6 +106,7 @@ function initializeStyles() {
 
     // Фон становится полупрозрачным
     document.querySelector('.main-header')?.classList.add('transparent-bg');
+
   }
 
   // Инициализация поиска
@@ -119,6 +122,32 @@ function initializeStyles() {
     });
   }
 }
+
+window.addEventListener('scroll', function () {
+  const currentScrollPosition = window.scrollY;
+  if (document.body.classList.contains('black')) {
+
+    // Скролл вниз (превышение порога)
+    if (currentScrollPosition > SCROLL_THRESHOLD) {
+      header.classList.remove('transparent-bg');
+    }
+    // Скролл вверх (возврат к началу)
+    else if (currentScrollPosition <= SCROLL_THRESHOLD) {
+      header.classList.add('transparent-bg');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  }
+
+  if (window.scrollY <= SCROLL_THRESHOLD) {
+    header.classList.add('transparent-bg');
+  } else {
+    header.classList.remove('transparent-bg');
+  }
+
+});
+
+
 
 // Функции для управления анимациями
 function showAnimation(animation) {
@@ -244,7 +273,7 @@ document.querySelector("#search-close").addEventListener("click", function () {
   // Возвращение прозрачности хедеру на карте при закрытии поиска
   if (document.body.matches('.map-page, .main-page')) {
     document.querySelector('.main-header')?.classList.add('transparent-bg');
-  }  
+  }
 
   if ($(window).width() <= 1024) {
     $(".center-navigation").css("display", "");
@@ -346,3 +375,4 @@ $(function () {
   initializeStyles();
   $(window).trigger("resize");
 });
+
