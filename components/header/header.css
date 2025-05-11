@@ -59,13 +59,17 @@
 
 /* Стиль для прозрачного фона - тёмный хедер */
 .main-header.black {
+  background-color: #1F271B;  
+}
+
+.main-header.black.transparent-bg {
   /* background-color: #1F271B; */
   background-color: rgb(31, 39, 27, 0.55);
 }
 
 /* Стиль для прозрачного фона - светлый хедер */
 .main-header.transparent-bg {
-  background-color: rgba(243, 246, 237, 0.55);
+  background-color: rgba(243, 246, 237, 0.65);
 }
 
 .container-header {

@@ -101,6 +101,9 @@ function initializeStyles() {
       logoHeader.style.pointerEvents = "none";
       logoHeader.style.cursor = "default";
     }
+
+    // Фон становится полупрозрачным
+    document.querySelector('.main-header')?.classList.add('transparent-bg');
   }
 
   // Инициализация поиска
@@ -239,9 +242,11 @@ search.addEventListener("click", function () {
 document.querySelector("#search-close").addEventListener("click", function () {
 
   // Возвращение прозрачности хедеру на карте при закрытии поиска
-  if (window.location.href.includes('mappage')) {
+  if (document.body.matches('.map-page, .main-page')) {
     document.querySelector('.main-header')?.classList.add('transparent-bg');
   }
+
+  
 
   if ($(window).width() <= 1024) {
     $(".center-navigation").css("display", "");
