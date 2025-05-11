@@ -146,14 +146,14 @@ window.addEventListener('scroll', function () {
     lastScrollPosition = currentScrollPosition;
   }
 
-  // Возвращение нетёмного хедера внизу
+  // Возвращение нетёмного хедера ниже херо-блока
   if (currentScrollPosition > introBottom) {
     header.classList.remove('black');
   } else {
     header.classList.add('black');
   }
 
-  // Управление прозрачностью хедера
+  // Управление прозрачностью хедера на херо-блоке
   if (currentScrollPosition <= SCROLL_THRESHOLD) {
     header.classList.add('transparent-bg');
   } else {
