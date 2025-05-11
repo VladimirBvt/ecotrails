@@ -57,14 +57,15 @@
   transition: background-color 0.3s ease;
 }
 
+/* Стиль для прозрачного фона - тёмный хедер */
 .main-header.black {
   /* background-color: #1F271B; */
-  background-color: rgb(31,39,27, 0.55);
+  background-color: rgb(31, 39, 27, 0.55);
 }
 
-/* Стиль для прозрачного фона */
+/* Стиль для прозрачного фона - светлый хедер */
 .main-header.transparent-bg {
-  background-color: rgba(243, 246, 237, 0.65);
+  background-color: rgba(243, 246, 237, 0.55);
 }
 
 .container-header {
@@ -107,6 +108,10 @@
 .logo-picture {
   width: 40px;
   height: 44px;
+}
+
+.black .logo-picture {
+  content: url("/img/Logo-utp.svg");
 }
 
 .logo-text {
@@ -579,6 +584,43 @@
   align-items: center;
 }
 
+/* Иконки на тёмном хедере */
+
+/* Поиск */
+.black #search {
+  content: url("/img/search-white.svg");
+}
+
+/* Линия поиска */
+.black .icon-searcharea-cont {
+  border-bottom: 1px solid #f3f7ed;
+}
+
+/* Иконка поска и крестик на строке */
+.black .color-search-temp {
+  stroke: #f3f7ed;
+}
+
+/* Поле поиска */
+.black .searcharea {
+  /* Каретка (мигающая палка) */
+  caret-color: #f3f7ed;
+  /* Цвет вводимого текста */
+  color: #f3f7ed;
+}
+
+/* Карта */
+.black .container-location .icon-header {
+  content: url("/img/map-white.svg");
+}
+
+/* Каталог */
+.black .cotalog-color {
+  fill: #f3f7ed;
+}
+
+
+
 /* Изменение цвета (иконок) по наведению мыши */
 /* Карта */
 .container-location .icon-header:hover {
@@ -597,11 +639,9 @@
 }
 
 .icon-searcharea-cont {
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid #1F271B;
   display: flex;
 }
-
-
 
 .searcharea {
   font-family: "a_AvanteInt";
@@ -617,7 +657,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* border-bottom: 1px solid rgb(0, 0, 0); */
-  color: rgb(0, 0, 0);
+  color: #1F271B;
   background: transparent;
   padding-bottom: 5px;
   padding-left: 8px;
