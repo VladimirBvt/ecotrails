@@ -297,7 +297,7 @@ p.tt-p {
   align-items: center;
   margin-left: auto;
   margin: auto;
-  margin-top: 122px;
+  margin-top: 90px;
   width: 100%;
   height: auto;
 }
@@ -1299,12 +1299,6 @@ ul.p2.limitations {
     display: none;
   }
 
-  /* Хлебные крошки */
-
-  .main-head {
-    margin-top: 102px;
-  }
-
   /* H1 в правилах */
   .eco-trail.rules {
     margin-bottom: var(--bigTablet-margin);
@@ -1405,11 +1399,6 @@ ul.p2.limitations {
 
   .image-size1 {
     max-width: var(--tabletMicroContent);
-  }
-
-  /* Хлебные крошки */
-  .main-head {
-    margin-top: var(--largeTablet-margin);
   }
 
   .breadcrumb-separator,
