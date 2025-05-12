@@ -13,6 +13,7 @@ const search = document.querySelector("#search");
 const contSearchElement = document.querySelector('#cont-search');
 const voidSearch = document.querySelector("#VoidSearch");
 const elasticBox = document.querySelector("#elasticId");
+const introBlock = document.querySelector('.intro');
 let lastScrollPosition = 0;
 const SCROLL_THRESHOLD = 50; // Порог в пикселях для срабатывания
 
@@ -98,19 +99,45 @@ function initializeStyles() {
   // 3. Главная
   if (document.body.classList.contains('main-page')) {
 
-    // Тёмный хедер
-    header?.classList.add('black');
-    // И полупрозрачный фон
-    header?.classList.add('transparent-bg');
+    // Проверяем позицию при загрузке
+    const initialScroll = window.scrollY;
+    const introBottom = introBlock?.offsetHeight || 0;
 
+    // Определяем состояние хедера
+    const isBelowHero = initialScroll > introBottom;
+    const isAboveThreshold = initialScroll <= SCROLL_THRESHOLD;
 
-    // Некликабельное лого   
+    // Устанавливаем начальные классы (тёмный, тёмный прозрачный или светлый)
+    if (!isBelowHero) {
+      header?.classList.add('black');
+      if (isAboveThreshold) {
+        header?.classList.add('transparent-bg');
+      }
+    }
+
+    // Настройка лого
     const logoHeader = document.querySelector('.logo-header');
     if (logoHeader) {
       logoHeader.style.pointerEvents = "none";
       logoHeader.style.cursor = "default";
     }
 
+    // Настройка цвета хедера при скролле
+    window.addEventListener('scroll', function () {
+      const currentScroll = window.scrollY;
+      const isNowBelowHero = currentScroll > introBottom;
+      const isNowAboveThreshold = currentScroll <= SCROLL_THRESHOLD;
+
+      // Управление тёмным фоном
+      header?.classList.toggle('black', !isNowBelowHero);
+
+      // Управление прозрачностью
+      if (!isNowBelowHero) {
+        header?.classList.toggle('transparent-bg', isNowAboveThreshold);
+      } else {
+        header?.classList.remove('transparent-bg');
+      }
+    });
 
   }
 
@@ -127,43 +154,6 @@ function initializeStyles() {
     });
   }
 }
-
-window.addEventListener('scroll', function () {
-  const currentScrollPosition = window.scrollY;
-  const introBottom = document.querySelector('.intro').offsetHeight;
-
-  if (document.body.classList.contains('black')) {
-
-    // Скролл вниз (превышение порога)
-    if (currentScrollPosition > SCROLL_THRESHOLD) {
-      header.classList.remove('transparent-bg');
-    }
-    // Скролл вверх (возврат к началу)
-    else if (currentScrollPosition <= SCROLL_THRESHOLD) {
-      header.classList.add('transparent-bg');
-    }
-
-    lastScrollPosition = currentScrollPosition;
-  }
-
-  // Возвращение нетёмного хедера ниже херо-блока
-  if (currentScrollPosition > introBottom) {
-    header.classList.remove('black');
-  } else {
-    header.classList.add('black');
-  }
-
-  // Управление прозрачностью хедера на херо-блоке
-  if (currentScrollPosition <= SCROLL_THRESHOLD) {
-    header.classList.add('transparent-bg');
-  } else {
-    header.classList.remove('transparent-bg');
-  }
-
-
-});
-
-
 
 // Функции для управления анимациями
 function showAnimation(animation) {
