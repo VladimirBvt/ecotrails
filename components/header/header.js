@@ -311,40 +311,6 @@ document.querySelector("#search-close").addEventListener("click", function () {
   document.querySelectorAll(".elastic a").forEach(elem => elem.classList.add("hide"));
 });
 
-// Обработчик кликов в header
-header.addEventListener("click", (event) => {
-  const targetClass = event.target.className;
-  const targetTag = event.target.tagName;
-
-  function resetStyles() {
-    popular.style.color = "#1F271B";
-    faq.style.color = "#1F271B";
-    cotalog.style.color = "#1F271B";
-    // hideAnimation(animation1);
-    hideAnimation(animation2);
-    hideAnimation(animation3);
-  }
-
-  switch (targetClass) {
-    case "header-text-first":
-      resetStyles();
-      cotalog.style.color = "#F28123";
-      CotColor.forEach(el => el.style.fill = "#F28123");
-      break;
-    case "header-text-center":
-      resetStyles();
-      popular.style.color = "#F28123";
-      break;
-    case "header-text-last":
-      resetStyles();
-      faq.style.color = "#F28123";
-      break;
-  }
-
-  if (targetTag === "logo-picture") {
-    resetStyles();
-  }
-});
 
 // Обработчик ресайза
 window.addEventListener("resize", function () {
