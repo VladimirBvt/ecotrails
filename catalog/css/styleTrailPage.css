@@ -1523,7 +1523,7 @@ ul.p2.limitations {
 
 
   .eco-trail {
-    margin: var(--bigMobile-margin) 0;
+    margin: var(--bigMobile-margin) auto;
     font-size: 24px;
     gap: 12px;
   }

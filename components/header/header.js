@@ -19,6 +19,10 @@ const SCROLL_THRESHOLD = 50; // Порог в пикселях для сраба
 
 // Данные маршрутов
 const trailsData = [
+  { name: "Черепахинская экотропа", url: "/catalog/voronezhskaya-oblast/cherepahinskaya/" },
+  { name: "Королевский бор", url: "/catalog/kaliningradskaya-oblast/korolevsky-bor/" },
+  { name: "Книга Природы (Красноярские Столбы)", url: "/catalog/krasnoyarsky-krai/kniga-prirody/" },
+  { name: "Экотропа Петяярви", url: "/catalog/lenoblast/petyayarvi/" },
   { name: "Танцующий лес", url: "/catalog/kaliningradskaya-oblast/tancuyushchij-les/" },
   { name: "Высота Эфа", url: "/catalog/kaliningradskaya-oblast/vysota-efa/" },
   { name: "Долина Нарзанов", url: "/catalog/kabardino-balkariya/dolina-narzanov/" },
