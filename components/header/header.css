@@ -12,10 +12,10 @@
   --tabletContent-width: calc(100vw - 60px);
 
   /* Кастыль #1 (обновление имеющейся ширины везде на адаптивную) */
-  --tabletMiniContent: calc(100vw - 60px);
+  --tabletMiniContent: var(--tabletContent-width);
 
   /* Кастыль #2 (обновление имеющейся ширины везде на адаптивную) */
-  --tabletMicroContent: calc(100vw - 60px);
+  --tabletMicroContent: var(--tabletContent-width);
 
   /* Мобилка (525) */
   --mobileContent: calc(100vw - 40px);
@@ -654,7 +654,7 @@
   font-size: 18px;
   /* line-height: 26px; */
   position: static;
-  width: 256px;
+  width: calc(var(--pcContent-width) * 0.6);
   right: 280px;
   border: none;
   outline: none;
@@ -909,7 +909,7 @@ a.header-icon.keychainify-checked {
   }
 
   .searcharea {
-    width: 170px;
+    width: calc(var(--tabletContent-width) * 0.6);
   }
 
   .search-temp {
@@ -933,10 +933,6 @@ a.header-icon.keychainify-checked {
 @media (max-width: 1024px) {
   .container-header {
     max-width: var(--tabletMiniContent);
-  }
-
-  .searcharea {
-    width: 400px;
   }
 
 }

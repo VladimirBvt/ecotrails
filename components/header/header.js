@@ -263,7 +263,7 @@ faq.addEventListener("mouseout", () => hideAnimation(animation3));
 
 // Обработчик поиска
 search.addEventListener("click", function () {
-  if ($(window).width() <= 1024) {
+  if ($(window).width() > 775) {
     $(".center-navigation").css("display", "none");
   }
   if ($(window).width() <= 775) {
@@ -288,7 +288,7 @@ document.querySelector("#search-close").addEventListener("click", function () {
 
   }
 
-  if ($(window).width() <= 1024) {
+  if ($(window).width() > 775) {
     $(".center-navigation").css("display", "");
   }
   if ($(window).width() <= 775) {
@@ -335,7 +335,7 @@ window.addEventListener("resize", function () {
     }
     $(".center-navigation").hide();
     $(".container-location, .icon-href-cotalog").show();
-  } else if (windowWidth <= 1024) {
+  } else if (windowWidth > 775) {
     $(".logo-header").css("visibility", "");
     $(".icon-navigation .container-navigation-icon:not(:last-child)").show();
     $(".container-navigation-icon:last-child").css("display", "none");
