@@ -1,68 +1,161 @@
-const title = document.querySelector(".title");
-const backScroll = document.querySelector("#back-scroll");
 const upperCotalog = document.querySelector(".upper_cotalog");
+const catalog = document.querySelector(".catalog");
+const mainHeader = document.querySelector(".main-header");
+const elementsToHide = [document.querySelector('.main-head'), document.querySelector('.title')];
 
-addEventListener("load", () => {
-  const swicthBtn = document.querySelector(".switch-btn");
-  const switchList = document.querySelector(".switch-list-icon");
-  const switchMap = document.querySelector(".switch-map-icon");
-  const mapPath = document.querySelector(".map-path");
-  const listPath = document.querySelector(".list-path");
-  const colorSwitchText1 = document.querySelector(".switch-btn-text");
-  const colorSwitchText2 = document.querySelector(".switch-btn-text2");
+let isCompact = false;
+let isInitialState = true; // Флаг для начального состояния до скролла
 
-  switchList.addEventListener("click", (e) => {
-    swicthBtn.classList.remove("switch-map");
-    swicthBtn.classList.add("switch-list");
-    mapPath.setAttribute("fill", "black");
-    listPath.setAttribute("stroke", "white");
-    colorSwitchText2.style.color = "black";
-    colorSwitchText1.style.color = "white";
-  });
+function updateBreadcrumbsVisibility(hasRegion) {
+  const breadcrumbs = document.querySelector('.breadcrumbs');
+  const mainHeadRight = document.querySelector('.main-head-right');
 
-  // При клике на переключатль карты
-  switchMap.addEventListener("click", (e) => {
-    swicthBtn.classList.remove("switch-list");
-    swicthBtn.classList.add("switch-map");
-    mapPath.setAttribute("fill", "white");
-    listPath.setAttribute("stroke", "black");
-    colorSwitchText1.style.color = "black";
-    colorSwitchText2.style.color = "white";
+  if (!breadcrumbs || !mainHeadRight) return;
 
-
-    // Переход на страницу карты с текущим фильтром региона
-    const newUrl = filtredRegion === 'all'
-      ? `/catalog/mappage.html`  // Без параметра "region=all"
-      : `/catalog/mappage.html?region=${encodeURIComponent(filtredRegion)}`;
-    location.href = newUrl;
-    const CotColor = document.querySelectorAll(".cotalog-color");
-    CotColor[1].style.fill = "black";
-    CotColor[0].style.fill = "black";
-  });
-});
-
-// Настройка фиксированной части (Заголовок и Фильтр)
-function handleScroll() {
-  const y = window.scrollY;
-
-  if (y > 85) {
-    title.style.display = 'none';
-    backScroll.hidden = false;
-    upperCotalog.classList.add("upper_cotalog_scroll");
+  if (hasRegion) {
+    breadcrumbs.style.display = '';
+    mainHeadRight.style.marginLeft = '';
   } else {
-    title.style.display = 'flex';
-    backScroll.hidden = true;
-    upperCotalog.classList.remove("upper_cotalog_scroll");
+    breadcrumbs.style.display = 'none';
+    mainHeadRight.style.marginLeft = 'auto';
   }
 }
 
-// Проверяем положение прокрутки при загрузке страницы
-handleScroll();
+// Функция для определения отступа в зависимости от ширины экрана
+function getFixedOffset() {
+  return window.innerWidth > 1250 ? 280 : 272; // Высота хедера + верхнего каталога (больше 1250 и меньше)
+}
 
-// Добавляем обработчик события на прокрутку
-window.addEventListener('scroll', handleScroll);
+
+function updateLayout() {
+  elementsToHide.forEach(el => {
+    if (el) el.style.display = isCompact ? 'none' : '';
+  });
+
+  requestAnimationFrame(() => {
+    if (isInitialState) {
+      const headerHeight = mainHeader.offsetHeight;
+      const upperCotalogHeight = upperCotalog.offsetHeight;
+      catalog.style.marginTop = `${headerHeight + upperCotalogHeight}px`;
+    } else {
+      catalog.style.marginTop = `${getFixedOffset()}px`;
+    }
+
+    // Новая строка:
+    if (upperCotalog) upperCotalog.style.top = `${mainHeader.offsetHeight}px`;
+  });
+}
 
 
+
+function handleScroll() {
+  const scrolled = window.scrollY > 10;
+
+  // Первый скролл - переключаем в компактный режим
+  if (isInitialState && scrolled) {
+    isInitialState = false;
+    isCompact = true;
+    updateLayout();
+  }
+
+  // Скролл вверх - возвращаем исходное состояние (если нужно)
+  else if (!isInitialState && !scrolled) {
+    isInitialState = true;
+    isCompact = false;
+    updateLayout();
+  }
+}
+
+// Объединённый обработчик загрузки страницы
+window.addEventListener('load', function () {
+  // 1. Настройка параметров региона из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const region = urlParams.get('region') || 'all';
+
+  // Установка значений фильтра
+  regionSelect.value = region;
+  filtredRegion = region;
+
+  // Применение фильтра
+  filterCards(region);
+  updateTitleH1Description(region);
+
+  // 2. Инициализация UI-элементов
+  const switchBtn = document.querySelector(".switch-btn");
+  const switchElements = {
+    list: document.querySelector(".switch-list-icon"),
+    map: document.querySelector(".switch-map-icon"),
+    mapPath: document.querySelector(".map-path"),
+    listPath: document.querySelector(".list-path"),
+    text1: document.querySelector(".switch-btn-text"),
+    text2: document.querySelector(".switch-btn-text2"),
+    breadcrumbs: document.querySelector('.breadcrumbs')
+  };
+
+  // 3. Настройка фиксированных элементов
+  mainHeader.style.cssText = 'position: fixed; top: 0; width: 100%; z-index: 1000';
+  upperCotalog.style.cssText = `
+    position: fixed;
+    top: ${mainHeader.offsetHeight}px;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 999
+  `;
+  catalog.style.transition = 'margin-top 0.3s ease';
+
+  // 4. Первоначальная настройка макета
+  updateLayout();
+
+  // 5. Управление хлебными крошками
+  if (switchElements.breadcrumbs) {
+    const shouldShowBreadcrumbs = urlParams.has('region');
+    switchElements.breadcrumbs.style.display = shouldShowBreadcrumbs ? '' : 'none';
+    document.querySelector('.main-head-right').style.marginLeft = shouldShowBreadcrumbs ? '' : 'auto';
+  }
+
+  // 6. Обработчики событий
+  const setupEventListeners = () => {
+    // Скролл страницы
+    window.addEventListener('scroll', handleScroll);
+
+    // Ресайз окна
+    window.addEventListener('resize', () => {
+      clearTimeout(window.resizeTimeout);
+      window.resizeTimeout = setTimeout(() => {
+        isInitialState ? updateLayout() : (catalog.style.marginTop = `${getFixedOffset()}px`);
+      }, 100);
+    });
+
+    // Кнопки переключения
+    switchElements.list?.addEventListener("click", switchToListView);
+    switchElements.map?.addEventListener("click", switchToMapView);
+  };
+
+  // 7. Функции переключения видов
+  const switchToListView = () => {
+    switchBtn.classList.replace("switch-map", "switch-list");
+    switchElements.mapPath.setAttribute("fill", "black");
+    switchElements.listPath.setAttribute("stroke", "white");
+    switchElements.text2.style.color = "black";
+    switchElements.text1.style.color = "white";
+  };
+
+  const switchToMapView = () => {
+    switchBtn.classList.replace("switch-list", "switch-map");
+    switchElements.mapPath.setAttribute("fill", "white");
+    switchElements.listPath.setAttribute("stroke", "black");
+    switchElements.text1.style.color = "black";
+    switchElements.text2.style.color = "white";
+
+    const mapUrl = filtredRegion === 'all'
+      ? '/catalog/mappage.html'
+      : `/catalog/mappage.html?region=${encodeURIComponent(filtredRegion)}`;
+    location.href = mapUrl;
+  };
+
+  // Запуск инициализации
+  setupEventListeners();
+});
 
 // Стилизация карточек при наведении мыши
 const catalogCard = document.querySelectorAll(".catalog-item");
@@ -153,20 +246,16 @@ function updateYandexAd() {
 
 
 // Фильтр
-// Подключение regionsData (массив регионов)
 const regionSelect = document.getElementById('region-select');
 const cards = document.querySelectorAll('.trail-link');
-
-// Сохраняем оригинальные значения title, h1 и description при загрузке страницы
 const originalTitle = document.title;
 const h1Element = document.querySelector('h1');
 const originalH1 = h1Element.textContent;
 const descriptionElement = document.querySelector('meta[name="description"]');
 const originalDescription = descriptionElement.getAttribute('content');
 
-// Заполняем выпадающий список уникальными регионами из regionsData в алфавитном порядке
 regionsData
-  .sort((a, b) => a.name.localeCompare(b.name))  // Сортируем по алфавиту
+  .sort((a, b) => a.name.localeCompare(b.name))
   .forEach(region => {
     const option = document.createElement('option');
     option.value = region.value;
@@ -174,21 +263,18 @@ regionsData
     regionSelect.appendChild(option);
   });
 
-// Функция обновления title, h1 и description
 function updateTitleH1Description(regionHref) {
   const titleElement = document.querySelector('title');
-  const canonicalElement = document.querySelector('link[rel="canonical"]'); // Находим тег canonical
+  const canonicalElement = document.querySelector('link[rel="canonical"]');
 
-  // Если выбран "all", возвращаем значения по умолчанию
   if (regionHref === 'all') {
     titleElement.textContent = originalTitle;
     h1Element.textContent = originalH1;
     descriptionElement.setAttribute('content', originalDescription);
-    canonicalElement.setAttribute('href', "https://eco-trails.ru/catalog/"); // Ссылка по умолчанию
+    canonicalElement.setAttribute('href', "https://eco-trails.ru/catalog/");
     return;
   }
 
-  // Определяем название региона в родительном падеже
   const regionNameRodPodMap = {
     "lenoblast": "Санкт-Петербурга и Ленинградской области",
     "krasnodarsky-krai": "Краснодарского края",
@@ -207,7 +293,6 @@ function updateTitleH1Description(regionHref) {
 
   const regionNameRodPod = regionNameRodPodMap[regionHref] || regionHref;
 
-  // Обновляем title, h1 и description
   const titleText = `Экотропы ${regionNameRodPod}`;
   const descriptionText = `Экологические тропы ${regionNameRodPod} — что посмотреть, фото, где находятся на карте и как добраться — узнайте на сайте Экотропы России.`;
   const h1Text = `Экотропы ${regionNameRodPod}`;
@@ -216,78 +301,53 @@ function updateTitleH1Description(regionHref) {
   h1Element.textContent = h1Text;
   descriptionElement.setAttribute('content', descriptionText);
 
-  // Обновляем canonical ссылку с учетом выбранного региона
   const newCanonicalUrl = `https://eco-trails.ru/catalog/?region=${encodeURIComponent(regionHref)}`;
   canonicalElement.setAttribute('href', newCanonicalUrl);
 }
 
-// Обработчик изменения значения выпадающего списка
 regionSelect.addEventListener('change', function () {
   const selectedRegion = this.value;
-  filtredRegion = selectedRegion; // Сохраняем фильтр в глобальную переменную
+  filtredRegion = selectedRegion;
 
   let newRegion = selectedRegion;
 
-  // console.log(`${newRegion}`);  
-
-  // Обновляем URL без перезагрузки страницы с новым значением region
   const newUrl = newRegion === 'all'
-    ? window.location.pathname  // Без параметра "region=all"
+    ? window.location.pathname
     : `${window.location.pathname}?region=${encodeURIComponent(newRegion)}`;
 
   history.pushState(null, '', newUrl);
 
-  // Фильтруем карточки по выбранному региону
   filterCards(newRegion);
-
-  // Обновляем title, h1, description и canonical на основе GET-параметра
   updateTitleH1Description(newRegion);
 
   // Обновляем рекламу
   updateYandexAd();
 
-  // Прокручиваем страницу в начало
+  // Обновляем рекламу
+  updateYandexAd();
+
+  updateLayout();
+  updateBreadcrumbsVisibility(newRegion !== 'all');
+
   window.scrollTo(0, 0);
 
 });
 
-// Функция фильтрации карточек
 function filterCards(selectedRegion) {
   let cardsFound = false;
 
   cards.forEach(card => {
-    const hrefValue = card.getAttribute('href').split('/')[0]; // Получаем первую часть href до "/"
+    const hrefValue = card.getAttribute('href').split('/')[0];
 
-    // Сравниваем hrefValue с selectedRegion
     if (selectedRegion === 'all' || hrefValue === selectedRegion) {
-      card.style.display = ''; // Показываем карточки выбранного региона
+      card.style.display = '';
       cardsFound = true;
     } else {
-      card.style.display = 'none'; // Скрываем карточки другого региона
+      card.style.display = 'none';
     }
   });
 
-  // Если не нашлось карточек, можно показывать сообщение
   if (!cardsFound) {
     console.error("В данном регионе экотроп не найдено.");
   }
 }
-
-// Применяем фильтрацию при загрузке страницы
-window.addEventListener('load', function () {
-  const params = new URLSearchParams(window.location.search);
-  const selectedRegionHref = params.get('region') || 'all';  // По умолчанию 'all'
-
-  // Устанавливаем выбранное значение в выпадающем списке
-  regionSelect.value = selectedRegionHref;
-  filtredRegion = selectedRegionHref; // сохранение значения в глобальную переменную
-
-  // Применяем фильтрацию
-  filterCards(selectedRegionHref);
-
-  // Обновляем title, h1 и description на основе GET-параметра
-  updateTitleH1Description(selectedRegionHref);
-});
-
-
-

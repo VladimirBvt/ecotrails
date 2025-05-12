@@ -94,10 +94,10 @@
 
     <link rel="shotcut icon" href="/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.css?v=2.0" rel="stylesheet">
-    <link rel="stylesheet" href="/Styles_trop/styleLastPage.css?v=8.0">
+    <link rel="stylesheet" href="/catalog/css/styleTrailPage.css">
 
-    <link rel="stylesheet" href="/Styles_trop/footerLastPage.css?v=2.0">
-    <link rel="stylesheet" href="/Styles_trop/headerLastPage.css?v=2.0">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
     <link rel="canonical" href="https://eco-trails.ru/catalog/kabardino-balkariya/k-ledniku-bezengi/" />
     <script src="/Js_trop/jqerry.js?v=2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9.0.5/swiper-bundle.min.js?v=2.0"></script>
@@ -109,77 +109,9 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <section class="container-header">
-            <div class="logo-header">
-                <a class="href-logo" href="/"><img class="logo-picture" src="/img/Logo-other.svg" alt="Logo">
-                    <strong class="logo-text">Экотропы России</strong></a>
-            </div>
-            <nav class="center-navigation">
-                <ul class="menu-navigation">
-                    <li class="container-navigation-text"><a class="header-text-first" id="cotalog-cont"
-                            href="/catalog/">Каталог</a>
-                        <div id="animation1" hidden>
-                            <div class="cotalog-animation"><img src="/img/icon-romb.svg" id="romb1-2" class="romb1-2">
-                                <div class="line1" id="line1"></div><img src="/img/icon-romb.svg" id="romb1-1"
-                                    class="romb1-1">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="container-navigation-text"><a class="header-text-center" id="popular-cont"
-                            href="/index.html#popular-place">ТОП экотроп</a>
-                        <div id="animation2" hidden>
-                            <div class="popular-animation"><img src="/img/icon-romb.svg" id="romb2-2" class="romb2-2">
-                                <div class="line2" id="line2"></div><img src="/img/icon-romb.svg" id="romb2-1"
-                                    class="romb2-1">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="container-navigation-text"><a class="header-text-last" id="FAQ-cont"
-                            href="/index.html#faq">FAQ</a>
-                        <div id="animation3" hidden>
-                            <div class="FAQ-animation"><img src="/img/icon-romb.svg" id="FAQ" class="romb3-2">
-                                <div class="line3" id="line3"></div><img src="/img/icon-romb.svg" id="FAQ"
-                                    class="romb3-1">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="icon-navigation">
-                <ul id="icon-navigation" class="menu-navigation">
-                    <li class="container-navigation-icon"><img class="icon-header" id="search"
-                            src="/img/search-black.svg" alt="search">
-                        <div class="otstup-icon-search" hidden></div>
-                    </li>
-                    <li class="container-navigation-icon">
-                        <div class="container-location"><a class="header-icon" href="/catalog/mappage.html"><img
-                                    class="icon-header" src="/img/map-black.svg" alt="location"></a>
-                            <!-- <div class="line-location"></div> -->
-                        </div>
-                    </li>
-                    <li class="container-navigation-icon"><a class="icon-href-cotalog" href="/catalog/"><svg
-                                class="icon-header-cotalog" width="41" style="margin-top:1px;" height="40"
-                                viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="icon-cotalog-color"
-                                    d="M31.75 4.25H11.5C10.9033 4.25 10.331 4.48705 9.90901 4.90901C9.48705 5.33097 9.25 5.90326 9.25 6.5V11H7V13.25H9.25V18.875H7V21.125H9.25V26.75H7V29H9.25V33.5C9.25 34.0967 9.48705 34.669 9.90901 35.091C10.331 35.5129 10.9033 35.75 11.5 35.75H31.75C32.3467 35.75 32.919 35.5129 33.341 35.091C33.7629 34.669 34 34.0967 34 33.5V6.5C34 5.90326 33.7629 5.33097 33.341 4.90901C32.919 4.48705 32.3467 4.25 31.75 4.25ZM31.75 33.5H11.5V29H13.75V26.75H11.5V21.125H13.75V18.875H11.5V13.25H13.75V11H11.5V6.5H31.75V33.5Z"
-                                    fill="black" />
-                                <path class="icon-cotalog-color"
-                                    d="M18.25 11H27.25V13.25H18.25V11ZM18.25 18.875H27.25V21.125H18.25V18.875ZM18.25 26.75H27.25V29H18.25V26.75Z"
-                                    fill="black" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-    </header>
+    <header class="main-header"></header>
 
-    <!-- Поиск -->
 
-    <ul id="elasticId" class="elastic">
-        <p id="VoidSearch" class="VoidSearch" hidden>По вашему запросу ничего не найдено</p>
-    </ul>
 
 
 
@@ -188,43 +120,20 @@
     <main class="main-other-page">
 
         <div class="main-head">
-            <a href="javascript:history.back()">
-                <div class="back">
-                    <svg width="19" height="32" viewBox="0 0 19 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 30L3 16L17 2" stroke="#1F271B" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                    <p>Назад</p>
-                </div>
-            </a>
-            <div class="main-head-right">
-                <a class="QR-code" data-modal-btnQR="my_modall" href="#"
-                    onclick="ym(92417974,'reachGoal','QR_code'); return true;">
-                    <img src="/img/QR.svg" alt="иконка перехода">
+            <div class="breadcrumbs">
+                <a href="/" alt="Главная" class="breadcrumb-item">
+                    <img src="/img/breadcrumbs/home-icon.svg" alt="Главная" class="breadcrumb-icon">
                 </a>
-                <div class="ya-share2" data-curtain data-color-scheme="whiteblack" data-limit="0" data-size="l"
-                    data-more-button-type="short" data-services="vkontakte,whatsapp"
-                    onclick="ym(92417974,'reachGoal','share'); return true;"> </div>
+                <span class="breadcrumb-separator">◆</span>
+                <a href="/catalog" class="breadcrumb-item catalog">Каталог экотроп</a>
+                <span class="breadcrumb-separator">◆</span>
+                <a href="" class="breadcrumb-item breadcrumb-region"></a>
             </div>
-        </div>
-        
-        <div data-modal-windowQR="my_modall" class="modalQR">
-            <div class="modal_contentQR">
-                <!--<div class = "modal_innerQR"></div>-->
-                <form name="formModalQR" action="#" id="">
-                    <div class="close_modal_window">
-                        <img class="imgQR" src="/img/GroupQR.svg" alt="#">
-                    </div>
-                    <div class="modalQR_inner"></div>
-                    <div class="text_oknoQR">
-                        <p>Отсканируй QR-код, чтобы открыть экотропу на&nbsp;телефоне.</p>
-                    </div>
-                    <div class="blockQRcod">
-                        <img id="QR-picture" src="img/QR.svg" alt="QR" data-is360="0" class="QR-picture">
-                    </div>
-                    <div class="ModalQRfooter">
-                        <p class="text_oknoQR-bottom">Или поделись ей&nbsp;с&nbsp;друзьями!</p>
-                    </div>
-                </form>
+
+            <div class="main-head-right">
+                <script src="https://yastatic.net/share2/share.js"></script>
+                <div class="ya-share2" data-curtain data-limit="0" data-more-button-type="short"
+                    data-services="vkontakte,odnoklassniki,telegram,whatsapp"></div>
             </div>
         </div>
 
@@ -260,7 +169,7 @@
                             </svg>
 
                             <p class="Desctop-text">Длина <strong>5,8 км</strong></p>
-                            <strong class="mobile-text">5,8 км</strong>
+                            <strong class="mobile-text mobile-text-last">5,8 км</strong>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -275,7 +184,7 @@
                             </svg>
 
                             <p class="Desctop-text" style="width:150px;">Сложность <strong>сложная</strong></p>
-                            <strong class="mobile-text">Сложная</strong>
+                            <strong class="mobile-text mobile-text-last">Сложная</strong>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -308,11 +217,9 @@
 
             <div class="box2">
                 <div class="navigation">
-                    <!-- <div class="qr">
-            <img src="/img/QR.svg" alt="QR код">
-        </div> -->
-
-                    <div class="box">
+                    
+            
+        <div class="box">
 
                         <div class="tab">
                             <ul class="bttn">
@@ -326,7 +233,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><button class="tablinks1" onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
+                                <li><button class="tablinks1"
+                                        onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
                                         id="map-cont">Карта</button>
 
                                     <div id="animation2-main" hidden>
@@ -341,8 +249,7 @@
                                 </li>
                             </ul>
 
-                            <!-- <button class="tablinks" onclick="openTab(event, 'tab1')" checked>Фото</button>
-            <button class="tablinks1" onclick="openTab(event, 'tab2')">Карта</button> -->
+                            
                         </div>
 
                         <!-- Swiper -->
@@ -623,40 +530,22 @@
         </script>
         <!-- Реклама -->
     </main>
-    <footer class="footer">
-        <div class="container-footer">
-            <div class="footer-child1">
-                <a class="container-logo-footer" href="/"><img class="logo-footer" src="/img/Logo-utp.svg" alt="logo" />
-                    <strong class="footer-child1-text">Экотропы России</strong></a>
-            </div>
-            <div class="footer-child2">
-                <p class="author_rules">&copy Экотропы России, 2023-2025</p>
-                <a class="konfident" href="/policy/">Политика конфиденциальности</a>
-            </div>
-            <div class="footer-child3">
-                <a href="mailto:info@eco-trails.ru" class="keychainify-checked">
-                    <button type="button" class="button-footer">
-                        <svg class="callback-img" width="36" height="36" viewBox="0 0 36 36" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path class='callback-img-color'
-                                d="M23.9796 17.9557L32.1813 10.6153V25.2122L23.9796 17.9557ZM13.4111 19.1987L16.2913 21.7742C16.7433 22.1697 17.3326 22.4088 17.9767 22.4088H17.9993H18.0167C18.662 22.4088 19.2514 22.1684 19.7087 21.77L19.7047 21.7728L22.5849 19.1974L31.3399 26.9429H4.66011L13.4111 19.1987ZM4.64811 8.87501H31.3559L18.5274 20.3525C18.3831 20.47 18.2046 20.5339 18.0207 20.5338H18.002H17.9847C17.8001 20.5341 17.621 20.4697 17.4766 20.3511L17.478 20.3525L4.64811 8.87501ZM3.82008 10.6139L12.0204 17.9543L3.82008 25.2067V10.6139ZM32.6213 7.26107C32.3013 7.09624 31.9252 7.00009 31.5266 7.00009H4.47877C4.0923 7.00019 3.71114 7.09282 3.36539 7.27068L3.38006 7.26382C2.96614 7.47412 2.61756 7.79948 2.37369 8.20312C2.12982 8.60677 2.00038 9.07262 2 9.54806V26.2671C2.00071 26.9437 2.26195 27.5924 2.7264 28.0709C3.19086 28.5493 3.8206 28.8185 4.47744 28.8192H31.5226C32.1794 28.8185 32.8091 28.5493 33.2736 28.0709C33.7381 27.5924 33.9993 26.9437 34 26.2671V9.54806C34 8.54947 33.4413 7.68413 32.6279 7.26794L32.6133 7.26107H32.6213Z"
-                                fill="#1F271B" />
-                        </svg>
-                        <p class="button-text">Напишите нам</p>
-                    </button>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer"></footer>
 
+    <!-- Скрипт загрузки хедера и футера (они в компонентах) -->
+    <script src="/components/components-load.js"></script>
+
+    <!-- Скрипт мини-карты -->
     <script src="Tropmap.js?v=2.0"></script>
-    <script src="/Js_trop/scriptLastPage.js?v=3.0"></script>
-    <script src="/js/global-search.js?v=12.0"></script>
-    <script src="/Js_trop/searchCotalog.js?v=3.0"></script>
-    <script src="/Js_trop/scriptQR.js?v=2.0"></script>
-    <script src="/Js_trop/headerLastPage.js?v=2.0"></script>
-    <script src="/js/cookie-script.js?v=3.0"></script>
-    <script src="/Js_trop/footer_scriptLastPage.js?v=2.0"></script>
+
+    <!-- Регионы для хлебных крошек -->
+    <script src="/catalog/js/regions.js"></script>
+
+    <!-- Скрипт страницы -->
+    <script src="/catalog/js/scriptTrailPage.js"></script>
+
+
+    <!-- Скрипт расшарки -->
     <script src="https://yastatic.net/share2/share.js?v=2.0" async></script>
 
 
