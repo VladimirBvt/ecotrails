@@ -265,7 +265,6 @@ a {
 }
 
 .size-card-elem-h2 {
-  width: 240px;
   height: 58px;
 }
 
@@ -636,9 +635,9 @@ a {
   /*  */
 
   .size-card-elem-h2 {
-    width: 201px;
     height: 58px;
     margin-bottom: 12px;
+    width: 100%;
   }
 
   .size-card-elem-p {
@@ -690,8 +689,11 @@ a {
 
 @media (max-width: 1024px) {
 
-  /* То, что одной ширины */  
-    .catalog, .title, .controllers, .main-head {
+  /* То, что одной ширины */
+  .catalog,
+  .title,
+  .controllers,
+  .main-head {
     max-width: var(--tabletMiniContent);
   }
 
@@ -703,17 +705,20 @@ a {
     margin-bottom: var(--largeTablet-margin);
   }
 
-    /* Реклама */
-    .ads {
-      margin-bottom: var(--largeTablet-margin);
-    }
+  /* Реклама */
+  .ads {
+    margin-bottom: var(--largeTablet-margin);
+  }
 }
 
 @media (max-width: 775px) {
 
   /* То, что одной ширины */
 
-    .catalog, .title, .controllers, .main-head {
+  .catalog,
+  .title,
+  .controllers,
+  .main-head {
     max-width: var(--tabletMicroContent);
   }
 
@@ -728,7 +733,10 @@ a {
 
   /* То, что одной ширины */
 
-  .catalog, .title, .controllers, .main-head {
+  .catalog,
+  .title,
+  .controllers,
+  .main-head {
     max-width: var(--mobileContent);
   }
 
@@ -755,7 +763,6 @@ a {
 
   /*  */
   .size-card-elem-h2 {
-    width: 2112px;
     height: 58px;
     margin-bottom: var(--smallTablet-margin);
   }
@@ -813,25 +820,25 @@ a {
     color: #F28123;
   } */
 
-/*  */
+  /*  */
 
   .catalog-items {
     display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-width: 100%;
-  padding: 0;
-  row-gap: 20px; 
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0;
+    row-gap: 20px;
   }
 
   .catalog-item {
