@@ -506,9 +506,9 @@ p.tt-p {
 }
 
 /* Отспуп снизу статьи */
-/* .info__trail {
+.info__trail {
   padding-bottom: var(--largePC-margin);
-} */
+}
 
 /* Отступ рекламы (лента) */
 .ads,
@@ -520,6 +520,13 @@ p.tt-p {
 .ads-ban {
   margin-top: var(--largePC-margin);
   display: none;
+}
+
+/* Текст о рекламе */
+.add-text {
+  opacity: 20%;
+  font-size: 20px !important;
+  padding-bottom: 24px !important;
 }
 
 .tabcontent {
@@ -1353,6 +1360,11 @@ ul.p2.limitations {
     margin: 0;
   }
 
+  /* Отступ снизу от статьи */
+  .info__trail {
+    padding-bottom: var(--largeTablet-margin);
+  }
+
   /* Отступ рекламы (лента) */
   .ads,
   .ads_ab {
@@ -1362,6 +1374,12 @@ ul.p2.limitations {
   /* Отступ рекламы (баннер в статье) */
   .ads-ban {
     margin-top: var(--largeTablet-margin);
+  }
+
+  /* Текст о рекламе */
+  .add-text {
+    font-size: 18px !important;
+    padding-bottom: 16px !important;
   }
 
 }

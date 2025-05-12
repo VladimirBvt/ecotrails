@@ -690,21 +690,8 @@ a {
 
 @media (max-width: 1024px) {
 
-  /* То, что одной ширины */
-
-  .catalog {
-    max-width: var(--tabletMiniContent);
-  }
-
-  .title {
-    max-width: var(--tabletMiniContent);
-  }
-
-  .controllers {
-    max-width: var(--tabletMiniContent);
-  }
-
-  .main-head {
+  /* То, что одной ширины */  
+    .catalog, .title, .controllers, .main-head {
     max-width: var(--tabletMiniContent);
   }
 
@@ -726,19 +713,7 @@ a {
 
   /* То, что одной ширины */
 
-  .catalog {
-    max-width: var(--tabletMicroContent);
-  }
-
-  .title {
-    max-width: var(--tabletMicroContent);
-  }
-
-  .controllers {
-    max-width: var(--tabletMicroContent);
-  }
-
-  .main-head {
+    .catalog, .title, .controllers, .main-head {
     max-width: var(--tabletMicroContent);
   }
 
@@ -753,19 +728,7 @@ a {
 
   /* То, что одной ширины */
 
-  .catalog {
-    max-width: var(--mobileContent);
-  }
-
-  .title {
-    max-width: var(--mobileContent);
-  }
-
-  .controllers {
-    max-width: var(--mobileContent);
-  }
-
-  .main-head {
+  .catalog, .title, .controllers, .main-head {
     max-width: var(--mobileContent);
   }
 
