@@ -29,3 +29,7 @@ ErrorDocument 404 /404/index.html
 # Если переменная MAP_NOINDEX установлена, запретить индексацию
 Header set X-Robots-Tag "noindex, nofollow" env=MAP_NOINDEX
 
+<FilesMatch "\.(?:v\d+)?\.?(css|js)(\?.*)?$">
+  Header set Cache-Control "no-cache, must-revalidate"
+  Header set Pragma "no-cache"
+</FilesMatch>
