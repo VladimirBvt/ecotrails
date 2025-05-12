@@ -115,7 +115,7 @@
 }
 
 .black .logo-picture {
-  content: url("/img/Logo-utp.svg");
+  content: url("/img/Logo-utp.svg?v=1.0");
 }
 
 .logo-text {
@@ -592,7 +592,7 @@
 
 /* Поиск */
 .black #search {
-  content: url("/img/search-white.svg");
+  content: url("/img/search-white.svg?v=1.0");
 }
 
 /* Линия поиска */
@@ -615,7 +615,7 @@
 
 /* Карта */
 .black .container-location .icon-header {
-  content: url("/img/map-white.svg");
+  content: url("/img/map-white.svg?v=1.0");
 }
 
 /* Каталог */
@@ -628,13 +628,13 @@
 /* Изменение цвета (иконок) по наведению мыши */
 /* Карта */
 .container-location .icon-header:hover {
-  content: url('/img/map-orange.svg');
+  content: url('/img/map-orange.svg?v=1.0');
   /* Замените на путь к вашей оранжевой иконке */
 }
 
 /* Поиск */
 #search:hover {
-  content: url('/img/search-orange.svg');
+  content: url('/img/search-orange.svg?v=1.0');
   /* Замените на путь к вашей оранжевой иконке */
 }
 
@@ -1037,5 +1037,5 @@ a.header-icon.keychainify-checked {
 
 @font-face {
   font-family: "a_AvanteInt";
-  src: url(./fonts/a_AvanteInt_Book.ttf);
+  src: url(/fonts/a_AvanteInt_Book.ttf);
 }

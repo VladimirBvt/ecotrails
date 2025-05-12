@@ -372,5 +372,5 @@
   
   @font-face {
     font-family: "a_AvanteInt";
-    src: url(./fonts/a_AvanteInt_Book.ttf);
+    src: url(/fonts/a_AvanteInt_Book.ttf);
   }
