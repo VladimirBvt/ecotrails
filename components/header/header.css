@@ -353,8 +353,8 @@
   }
 
   100% {
-    -webkit-transform: translateX(53px);
-    transform: translateX(53px);
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
   }
 }
 
@@ -365,8 +365,8 @@
   }
 
   100% {
-    -webkit-transform: translateX(53px);
-    transform: translateX(53px);
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
   }
 }
 
@@ -388,7 +388,7 @@
   }
 
   100% {
-    width: 120px;
+    width: 190px;
   }
 }
 
@@ -398,7 +398,7 @@
   }
 
   100% {
-    width: 120px;
+    width: 190px;
   }
 }
 
@@ -419,8 +419,8 @@
   }
 
   100% {
-    -webkit-transform: translateX(-53px);
-    transform: translateX(-53px);
+    -webkit-transform: translateX(-90px);
+    transform: translateX(-90px);
   }
 }
 
@@ -431,8 +431,8 @@
   }
 
   100% {
-    -webkit-transform: translateX(-53px);
-    transform: translateX(-53px);
+    -webkit-transform: translateX(-90px);
+    transform: translateX(-90px);
   }
 }
 
