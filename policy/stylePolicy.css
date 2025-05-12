@@ -168,7 +168,7 @@ font-family: 'Avante Bold', sans-serif;
 
 
 .title {
-  margin: calc(var(--bigPC-margin) + 90px) auto 0;
+  margin: calc(var(--bigPC-margin) + 90px) auto var(--bigPC-margin);
   text-transform: uppercase;
   text-align: center;
   display: flex;
@@ -303,6 +303,7 @@ p {
   .title {
     font-size: 28px;
     margin-top: calc(var(--bigTablet-margin) + 90px);
+    margin-bottom: var(--bigTablet-margin);
   }
 
   .paragraph__last {
@@ -339,6 +340,7 @@ p {
 
   .title {
     margin-top: calc(var(--bigMobile-margin) + 90px);
+    margin-bottom: var(--bigMobile-margin);
     font-size: 24px;
     gap: 12px;
   }
