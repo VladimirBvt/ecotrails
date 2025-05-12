@@ -869,6 +869,7 @@ details[open] summary~* {
 }
 
 .faq-item-text.month {
+  font-size: 18px;
   padding: 0;
   margin: var(--smallPC-margin) auto var(--bigPC-margin);
 }
@@ -994,7 +995,6 @@ details[open] summary~* {
   }
 
   .partner-title {
-    width: 231px;
     height: 34px;
     font-style: normal;
     font-weight: 700;
@@ -1012,7 +1012,6 @@ details[open] summary~* {
   }
 
   .faq-title {
-    width: 54px;
     height: 34px;
     font-style: normal;
     font-weight: 700;
