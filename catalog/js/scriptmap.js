@@ -1668,7 +1668,7 @@ ymaps.ready(function () {
      <a href="../catalog/tambovskaya-oblast/ples-active/" id="trail-location" class="trail-location-black"
          title="Тамбовская область, г. Тамбов, Пригородный лес">
          <p id="color-letters-cot" class="black-color size-card-elem-p">
-         Тамбовская область, г.&nbsp;Тамбов, Пригородный лес</p>
+         г.&nbsp;Тамбов, Пригородный лес</p>
      </a>
      <div class="trail-spec">
          <a href="../catalog/tambovskaya-oblast/ples-active/" class="trail-distance">
