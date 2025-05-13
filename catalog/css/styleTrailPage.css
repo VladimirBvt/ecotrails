@@ -300,6 +300,13 @@ p.tt-p {
   margin-top: 90px;
   width: 100%;
   height: auto;
+
+  /* Закреплённые хлебные крошки */
+  /* position: sticky;
+  top: 90px;
+  background-color: #F3F6ED;
+  z-index: 1000;
+  padding-bottom: 10px; */
 }
 
 .breadcrumbs {
@@ -1394,7 +1401,7 @@ ul.p2.limitations {
 
   #map {
     width: var(--tabletMicroContent) !important;
-    height: 500px !important;
+    height: 500px;
   }
 
   .image-size1 {
@@ -1443,7 +1450,7 @@ ul.p2.limitations {
   /* Карта */
   #map {
     max-width: var(--mobileContent);
-    height: 100vh;
+    height: 70vh;
   }
 
   /* Фото */

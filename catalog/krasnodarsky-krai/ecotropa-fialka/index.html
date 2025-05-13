@@ -11,25 +11,25 @@
     <script>window.yaContextCb = window.yaContextCb || []</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-        <!-- travelpayouts -->
+    <!-- travelpayouts -->
     <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-        (function () {
-            var script = document.createElement("script");
-            script.async = 1;
-            script.src = 'https://emrldtp.cc/Mzk4NDYw.js?t=398460';
-            document.head.appendChild(script);
-        })();
-      </script>
+            (function () {
+                var script = document.createElement("script");
+                script.async = 1;
+                script.src = 'https://emrldtp.cc/Mzk4NDYw.js?t=398460';
+                document.head.appendChild(script);
+            })();
+    </script>
 
     <!-- Yandex.Metrika counter -->
 
     <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(92417974, "init", {
@@ -119,15 +119,15 @@
 
     <main class="main-other-page">
 
-<div class="main-head">
+        <div class="main-head">
             <div class="breadcrumbs">
                 <a href="/" alt="Главная" class="breadcrumb-item">
                     <img src="/img/breadcrumbs/home-icon.svg" alt="Главная" class="breadcrumb-icon">
                 </a>
                 <span class="breadcrumb-separator">◆</span>
-                <a href="/catalog" class="breadcrumb-item catalog">Каталог экотроп</a>
+                <a href="/catalog" class="breadcrumb-item catalog" onclick="ym(92417974,'reachGoal','bread-catalog'); return true;">Каталог экотроп</a>
                 <span class="breadcrumb-separator">◆</span>
-                <a href="" class="breadcrumb-item breadcrumb-region"></a>
+                <a href="" class="breadcrumb-item breadcrumb-region" onclick="ym(92417974,'reachGoal','bread-region'); return true;"></a>
             </div>
 
             <div class="main-head-right">
@@ -220,9 +220,9 @@
 
             <div class="box2">
                 <div class="navigation">
-                    
-            
-        <div class="box">
+
+
+                    <div class="box">
 
                         <div class="tab">
                             <ul class="bttn">
@@ -236,7 +236,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><button class="tablinks1" onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
+                                <li><button class="tablinks1"
+                                        onclick="openTab(event, 'tab2'); ym(92417974,'reachGoal','trail_map'); return true;"
                                         id="map-cont">Карта</button>
 
                                     <div id="animation2-main" hidden>
@@ -251,7 +252,7 @@
                                 </li>
                             </ul>
 
-                            
+
                         </div>
 
                         <!-- Фото -->
@@ -596,7 +597,7 @@
     <script src="/catalog/js/regions.js?v=6.0"></script>
 
     <!-- Скрипт страницы -->
-    <script src="/catalog/js/scriptTrailPage.js"></script>
+<script src="/catalog/js/scriptTrailPage.js?v=1.0"></script>
 
     <!-- Скрипт кук -->
     <script src="/js/cookie-script.js?v=3.0"></script>
