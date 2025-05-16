@@ -149,16 +149,14 @@ function initializeStyles() {
 
     // Настройка цвета хедера при скролле
     window.addEventListener('scroll', function () {
-      const currentScroll = window.scrollY;
-      const isNowBelowHero = currentScroll > introBottom;
-      const isNowAboveThreshold = currentScroll <= SCROLL_THRESHOLD;
-
-      // Управление тёмным фоном
-      header?.classList.toggle('black', !isNowBelowHero);
-
-      // Управление прозрачностью
-      if (!isNowBelowHero) {
-        header?.classList.toggle('transparent-bg', isNowAboveThreshold);
+      const headerRect = header.getBoundingClientRect();
+      const introRect = introBlock.getBoundingClientRect();
+      // Хедер светлый, когда нижняя граница хедера ниже нижней границы hero-блока
+      const isHeaderBelowHero = headerRect.bottom >= introRect.bottom;
+      header?.classList.toggle('black', !isHeaderBelowHero);
+      // Управление прозрачностью (оставляю как было)
+      if (!isHeaderBelowHero) {
+        header?.classList.toggle('transparent-bg', window.scrollY <= SCROLL_THRESHOLD);
       } else {
         header?.classList.remove('transparent-bg');
       }
