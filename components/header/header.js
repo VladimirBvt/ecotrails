@@ -129,13 +129,13 @@ function initializeStyles() {
     // Подсветка меню при скролле блока popular
     const popularBlock = document.querySelector('.popular');
     const menuPopular = document.querySelector('#popular-cont');
-    function checkPopularInView() {
+    function checkAnchorAtTop() {
       if (!popularBlock || !menuPopular || !animation2 || !header) return;
       const rect = popularBlock.getBoundingClientRect();
-      const headerHeight = header.offsetHeight || 0;
-      const isHeaderBlack = header.classList.contains('black');
-      const isPopularEnded = rect.bottom <= headerHeight;
-      if (!isHeaderBlack && !isPopularEnded) {
+      const headerRect = header.getBoundingClientRect();
+      const offset =115; // px
+      // Анимация появляется, когда верх блока <= 100px от верха окна и нижняя граница блока ниже нижней границы хедера
+      if (rect.top <= offset && rect.bottom > headerRect.bottom) {
         menuPopular.style.color = '#F28123';
         animation2.hidden = false;
       } else {
@@ -143,9 +143,9 @@ function initializeStyles() {
         animation2.hidden = true;
       }
     }
-    window.addEventListener('scroll', checkPopularInView);
+    window.addEventListener('scroll', checkAnchorAtTop);
     // Проверяем при загрузке
-    checkPopularInView();
+    checkAnchorAtTop();
 
     // Настройка цвета хедера при скролле
     window.addEventListener('scroll', function () {
