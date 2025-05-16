@@ -164,6 +164,25 @@ function initializeStyles() {
       }
     });
 
+    // --- Анимация для блока FAQ ---
+    const faqBlock = document.querySelector('.faq');
+    const menuFaq = document.querySelector('#FAQ-cont');
+    function checkFaqAtTop() {
+      if (!faqBlock || !menuFaq || !animation3 || !header) return;
+      const rect = faqBlock.getBoundingClientRect();
+      const headerRect = header.getBoundingClientRect();
+      const offset = 115; // px, аналогично popular
+      if (rect.top <= offset && rect.bottom > headerRect.bottom) {
+        menuFaq.style.color = '#F28123';
+        animation3.hidden = false;
+      } else {
+        menuFaq.style.color = '';
+        animation3.hidden = true;
+      }
+    }
+    window.addEventListener('scroll', checkFaqAtTop);
+    checkFaqAtTop();
+
   }
 
   // Инициализация поиска
