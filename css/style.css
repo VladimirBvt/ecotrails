@@ -817,17 +817,20 @@ details[open] summary~* {
 
 /* Пункты списка с ораньжевыми точками */
 .attent1 {
-  left: 50px;
-  position: relative;
+  /* left: 50px; */
+  /* position: relative; */
   text-indent: 0;
   padding-bottom: 24px;
-  width: 90%;
+  /* width: 90%; */
+  position: relative;
+  padding-left: 40px; /* добавлен отступ для иконки */
 }
 
 .attent1::before {
   position: absolute;
   content: url(/img/icon-romb-small.svg);
-  left: -50px;
+  left: 0; /* иконка теперь внутри padding */
+  top: 0.2em;
 }
 
 .attent1:last-child {
