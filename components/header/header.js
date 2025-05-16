@@ -126,6 +126,27 @@ function initializeStyles() {
       logoHeader.style.cursor = "default";
     }
 
+    // Подсветка меню при скролле блока popular
+    const popularBlock = document.querySelector('.popular');
+    const menuPopular = document.querySelector('#popular-cont');
+    function checkPopularInView() {
+      if (!popularBlock || !menuPopular || !animation2 || !header) return;
+      const rect = popularBlock.getBoundingClientRect();
+      const headerHeight = header.offsetHeight || 0;
+      const isHeaderBlack = header.classList.contains('black');
+      const isPopularEnded = rect.bottom <= headerHeight;
+      if (!isHeaderBlack && !isPopularEnded) {
+        menuPopular.style.color = '#F28123';
+        animation2.hidden = false;
+      } else {
+        menuPopular.style.color = '';
+        animation2.hidden = true;
+      }
+    }
+    window.addEventListener('scroll', checkPopularInView);
+    // Проверяем при загрузке
+    checkPopularInView();
+
     // Настройка цвета хедера при скролле
     window.addEventListener('scroll', function () {
       const currentScroll = window.scrollY;
