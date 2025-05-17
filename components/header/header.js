@@ -66,6 +66,10 @@ const trailsData = [
   { name: "У озера Бездонное", url: "/catalog/moskva/ecotropa-u-ozera-bezdonnoe/" },
 ];
 
+// Флаги для отслеживания состояния анимаций
+let isPopularActive = false;
+let isFaqActive = false;
+
 // Инициализация стилей и анимаций
 function initializeStyles() {
 
@@ -295,7 +299,7 @@ function isPopularActiveByScroll() {
   const popularBlock = document.querySelector('.popular');
   if (!popularBlock) return false;
   const rect = popularBlock.getBoundingClientRect();
-  const offset = 90;
+  const offset = 115; // px
   return rect.top <= offset && rect.bottom > offset;
 }
 
@@ -303,20 +307,79 @@ function isFaqActiveByScroll() {
   const faqBlock = document.querySelector('.faq');
   if (!faqBlock) return false;
   const rect = faqBlock.getBoundingClientRect();
-  const offset = 90;
+  const offset = 115; // px
   return rect.top <= offset && rect.bottom > offset;
 }
 
 // Обработчики событий для популярного раздела и FAQ
 cotalog.addEventListener("mouseover", () => showAnimation(animation1));
 cotalog.addEventListener("mouseout", () => hideAnimation(animation1));
-popular.addEventListener("mouseover", () => showAnimation(animation2));
-popular.addEventListener("mouseout", () => {
-  if (!isPopularActiveByScroll()) hideAnimation(animation2);
+
+popular.addEventListener("mouseover", () => {
+  if (!isPopularActive) {
+    showAnimation(animation2);
+    popular.style.color = '#F28123';
+  }
 });
-faq.addEventListener("mouseover", () => showAnimation(animation3));
+
+popular.addEventListener("mouseout", () => {
+  if (!isPopularActive) {
+    hideAnimation(animation2);
+    popular.style.color = '';
+  }
+});
+
+faq.addEventListener("mouseover", () => {
+  if (!isFaqActive) {
+    showAnimation(animation3);
+    faq.style.color = '#F28123';
+  }
+});
+
 faq.addEventListener("mouseout", () => {
-  if (!isFaqActiveByScroll()) hideAnimation(animation3);
+  if (!isFaqActive) {
+    hideAnimation(animation3);
+    faq.style.color = '';
+  }
+});
+
+// Функция для обновления состояния анимаций при скролле
+function updateAnimationsOnScroll() {
+  const wasPopularActive = isPopularActive;
+  const wasFaqActive = isFaqActive;
+  
+  isPopularActive = isPopularActiveByScroll();
+  isFaqActive = isFaqActiveByScroll();
+
+  // Обновляем состояние Popular
+  if (isPopularActive !== wasPopularActive) {
+    if (isPopularActive) {
+      showAnimation(animation2);
+      popular.style.color = '#F28123';
+    } else {
+      hideAnimation(animation2);
+      popular.style.color = '';
+    }
+  }
+
+  // Обновляем состояние FAQ
+  if (isFaqActive !== wasFaqActive) {
+    if (isFaqActive) {
+      showAnimation(animation3);
+      faq.style.color = '#F28123';
+    } else {
+      hideAnimation(animation3);
+      faq.style.color = '';
+    }
+  }
+}
+
+// Добавляем обработчик скролла
+window.addEventListener('scroll', updateAnimationsOnScroll);
+
+// Проверяем начальное состояние при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+  updateAnimationsOnScroll();
 });
 
 // Обработчик поиска
