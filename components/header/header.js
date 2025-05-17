@@ -323,7 +323,7 @@ popular.addEventListener("mouseover", () => {
 });
 
 popular.addEventListener("mouseout", () => {
-  if (!isPopularActive) {
+  if (!isPopularActive && !window.location.hash.includes('popular-place')) {
     hideAnimation(animation2);
     popular.style.color = '';
   }
@@ -337,7 +337,7 @@ faq.addEventListener("mouseover", () => {
 });
 
 faq.addEventListener("mouseout", () => {
-  if (!isFaqActive) {
+  if (!isFaqActive && !window.location.hash.includes('faq')) {
     hideAnimation(animation3);
     faq.style.color = '';
   }
@@ -380,6 +380,12 @@ window.addEventListener('scroll', updateAnimationsOnScroll);
 // Проверяем начальное состояние при загрузке
 document.addEventListener('DOMContentLoaded', () => {
   updateAnimationsOnScroll();
+  handleAnchorLinks();
+});
+
+// Обработчик изменения хэша в URL
+window.addEventListener('hashchange', () => {
+  handleAnchorLinks();
 });
 
 // Обработчик поиска
@@ -486,4 +492,18 @@ $(function () {
     }
   }, 100);
 });
+
+// Функция для обработки якорных ссылок
+function handleAnchorLinks() {
+  const hash = window.location.hash;
+  if (hash === '#popular-place') {
+    isPopularActive = true;
+    showAnimation(animation2);
+    popular.style.color = '#F28123';
+  } else if (hash === '#faq') {
+    isFaqActive = true;
+    showAnimation(animation3);
+    faq.style.color = '#F28123';
+  }
+}
 
