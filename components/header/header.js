@@ -486,7 +486,7 @@ $(function () {
       if (typeof checkAnchorAtTop === 'function') checkAnchorAtTop();
       if (typeof checkPopularByPrevBlock === 'function') checkPopularByPrevBlock();
     }
-    if (location.hash === '#faq-place') {
+    if (location.hash === '#faq') {
       if (typeof checkFaqAtTop === 'function') checkFaqAtTop();
       if (typeof checkFaqByPrevBlock === 'function') checkFaqByPrevBlock();
     }
