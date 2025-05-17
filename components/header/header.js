@@ -291,13 +291,33 @@ function handleSearchInput() {
   };
 }
 
+function isPopularActiveByScroll() {
+  const popularBlock = document.querySelector('.popular');
+  if (!popularBlock) return false;
+  const rect = popularBlock.getBoundingClientRect();
+  const offset = 90;
+  return rect.top <= offset && rect.bottom > offset;
+}
+
+function isFaqActiveByScroll() {
+  const faqBlock = document.querySelector('.faq');
+  if (!faqBlock) return false;
+  const rect = faqBlock.getBoundingClientRect();
+  const offset = 90;
+  return rect.top <= offset && rect.bottom > offset;
+}
+
 // Обработчики событий для популярного раздела и FAQ
 cotalog.addEventListener("mouseover", () => showAnimation(animation1));
 cotalog.addEventListener("mouseout", () => hideAnimation(animation1));
 popular.addEventListener("mouseover", () => showAnimation(animation2));
-popular.addEventListener("mouseout", () => hideAnimation(animation2));
+popular.addEventListener("mouseout", () => {
+  if (!isPopularActiveByScroll()) hideAnimation(animation2);
+});
 faq.addEventListener("mouseover", () => showAnimation(animation3));
-faq.addEventListener("mouseout", () => hideAnimation(animation3));
+faq.addEventListener("mouseout", () => {
+  if (!isFaqActiveByScroll()) hideAnimation(animation3);
+});
 
 // Обработчик поиска
 search.addEventListener("click", function () {
