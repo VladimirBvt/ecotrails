@@ -28,4 +28,3 @@ ErrorDocument 404 /404/index.html
 
 # Если переменная MAP_NOINDEX установлена, запретить индексацию
 Header set X-Robots-Tag "noindex, nofollow" env=MAP_NOINDEX
-

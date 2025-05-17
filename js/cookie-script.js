@@ -89,7 +89,7 @@ const changeStyleCookiePopupToTargetPages = () => {
   const className = 'fixed';
   const paths = window.location.pathname.split('/');
   const isMapPage = paths.at(-1).includes('mappage');
-  const isNotFoundPage = document.querySelector('head').querySelector('title').text.includes('не найдена')
+  const isNotFoundPage = document.querySelector('head')?.querySelector('title')?.text.includes('не найдена');
 
   if (isMapPage ||  isNotFoundPage) {
     cookiePopup.classList.add(className);
