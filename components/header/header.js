@@ -391,5 +391,16 @@ window.addEventListener("resize", function () {
 $(function () {
   initializeStyles();
   $(window).trigger("resize");
+  // --- Активация анимации по якорю при загрузке главной ---
+  setTimeout(function() {
+    if (location.hash === '#popular-place') {
+      if (typeof checkAnchorAtTop === 'function') checkAnchorAtTop();
+      if (typeof checkPopularByPrevBlock === 'function') checkPopularByPrevBlock();
+    }
+    if (location.hash === '#faq-place') {
+      if (typeof checkFaqAtTop === 'function') checkFaqAtTop();
+      if (typeof checkFaqByPrevBlock === 'function') checkFaqByPrevBlock();
+    }
+  }, 100);
 });
 
