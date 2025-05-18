@@ -66,10 +66,6 @@ const trailsData = [
   { name: "У озера Бездонное", url: "/catalog/moskva/ecotropa-u-ozera-bezdonnoe/" },
 ];
 
-// Флаги для отслеживания состояния анимаций
-let isPopularActive = false;
-let isFaqActive = false;
-
 // Инициализация стилей и анимаций
 function initializeStyles() {
 
@@ -316,28 +312,28 @@ cotalog.addEventListener("mouseover", () => showAnimation(animation1));
 cotalog.addEventListener("mouseout", () => hideAnimation(animation1));
 
 popular.addEventListener("mouseover", () => {
-  if (!isPopularActive) {
+  if (!popular.classList.contains('active')) {
     showAnimation(animation2);
     popular.style.color = '#F28123';
   }
 });
 
 popular.addEventListener("mouseout", () => {
-  if (!isPopularActive && !window.location.hash.includes('popular-place')) {
+  if (!popular.classList.contains('active')) {
     hideAnimation(animation2);
     popular.style.color = '';
   }
 });
 
 faq.addEventListener("mouseover", () => {
-  if (!isFaqActive) {
+  if (!faq.classList.contains('active')) {
     showAnimation(animation3);
     faq.style.color = '#F28123';
   }
 });
 
 faq.addEventListener("mouseout", () => {
-  if (!isFaqActive && !window.location.hash.includes('faq')) {
+  if (!faq.classList.contains('active')) {
     hideAnimation(animation3);
     faq.style.color = '';
   }
@@ -345,32 +341,29 @@ faq.addEventListener("mouseout", () => {
 
 // Функция для обновления состояния анимаций при скролле
 function updateAnimationsOnScroll() {
-  const wasPopularActive = isPopularActive;
-  const wasFaqActive = isFaqActive;
-  
-  isPopularActive = isPopularActiveByScroll();
-  isFaqActive = isFaqActiveByScroll();
+  const popularActive = isPopularActiveByScroll();
+  const faqActive = isFaqActiveByScroll();
 
   // Обновляем состояние Popular
-  if (isPopularActive !== wasPopularActive) {
-    if (isPopularActive) {
-      showAnimation(animation2);
-      popular.style.color = '#F28123';
-    } else {
-      hideAnimation(animation2);
-      popular.style.color = '';
-    }
+  if (popularActive) {
+    showAnimation(animation2);
+    popular.classList.add('active');
+    popular.style.color = '#F28123';
+  } else {
+    hideAnimation(animation2);
+    popular.classList.remove('active');
+    popular.style.color = '';
   }
 
   // Обновляем состояние FAQ
-  if (isFaqActive !== wasFaqActive) {
-    if (isFaqActive) {
-      showAnimation(animation3);
-      faq.style.color = '#F28123';
-    } else {
-      hideAnimation(animation3);
-      faq.style.color = '';
-    }
+  if (faqActive) {
+    showAnimation(animation3);
+    faq.classList.add('active');
+    faq.style.color = '#F28123';
+  } else {
+    hideAnimation(animation3);
+    faq.classList.remove('active');
+    faq.style.color = '';
   }
 }
 
@@ -497,13 +490,22 @@ $(function () {
 function handleAnchorLinks() {
   const hash = window.location.hash;
   if (hash === '#popular-place') {
-    isPopularActive = true;
     showAnimation(animation2);
+    popular.classList.add('active');
     popular.style.color = '#F28123';
-  } else if (hash === '#faq') {
-    isFaqActive = true;
+  } else {
+    popular.classList.remove('active');
+    hideAnimation(animation2);
+    popular.style.color = '';
+  }
+  if (hash === '#faq') {
     showAnimation(animation3);
+    faq.classList.add('active');
     faq.style.color = '#F28123';
+  } else {
+    faq.classList.remove('active');
+    hideAnimation(animation3);
+    faq.style.color = '';
   }
 }
 
