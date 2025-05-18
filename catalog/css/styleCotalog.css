@@ -793,6 +793,12 @@ a {
   }
 
   /* Хлебные крошки */
+  /* Кнопка расшарки */
+  .ya-share2__icon_more {
+    background-size: 32px 32px !important;
+    height: 32px !important;
+    width: 32px !important;
+  }
 
   /* .breadcrumb-separator, .breadcrumb-item.home-link {
     display: none;
