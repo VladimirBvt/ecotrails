@@ -314,7 +314,6 @@ cotalog.addEventListener("mouseout", () => hideAnimation(animation1));
 popular.addEventListener("mouseover", () => {
   if (!popular.classList.contains('active')) {
     showAnimation(animation2);
-    popular.style.color = '#F28123';
   }
 });
 
@@ -328,7 +327,6 @@ popular.addEventListener("mouseout", () => {
 faq.addEventListener("mouseover", () => {
   if (!faq.classList.contains('active')) {
     showAnimation(animation3);
-    faq.style.color = '#F28123';
   }
 });
 
