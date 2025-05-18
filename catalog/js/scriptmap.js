@@ -226,7 +226,41 @@ ymaps.ready(function () {
       hintContent: "Экотропа Высота Мюллера",
 
       // Тут контент карточки тропы
-      balloonContent: ``,
+      balloonContent: `<a href="/catalog/kaliningradskaya-oblast/vysota-myullera/"><figure id="VysotaMyullera" class="catalog-item">
+    <img src="/catalog/kaliningradskaya-oblast/vysota-myullera/img/for-slider.jpg" alt="Экотропа Высота Мюллера" class="trail-img">
+    <figcaption class="trail-info">
+        <a href="/catalog/kaliningradskaya-oblast/vysota-myullera/" class="trail-title-link">
+            <h2 id="color-letters-cot" class="black-color size-card-elem-h2"
+                title="Высота Мюллера">Высота Мюллера
+            </h2>
+        </a>
+        <a href="/catalog/kaliningradskaya-oblast/vysota-myullera/" id="trail-location" class="trail-location-black"
+            title="Калининградская область, Куршская коса">
+            <p id="color-letters-cot" class="black-color size-card-elem-p">
+                Калининградская область, Куршская коса</p>
+        </a>
+        <div class="trail-spec">
+            <a href="/catalog/kaliningradskaya-oblast/vysota-myullera/" class="trail-distance">
+                <div class="img-card-color">
+                    <img src="/img/dist-orange.svg" alt="Длина тропы">
+                </div>
+                <p id="color-letters-cot" class="black-color">1,5 км</p>
+            </a>
+            <a href="/catalog/kaliningradskaya-oblast/vysota-myullera/" class="trail-difficulty">
+                <div id="medium" class="img-card-color">
+                    <img src="/img/difficulty-medium.svg" alt="Сложность тропы">
+                </div>
+                <p id="color-letters-cot" class="black-color">Средняя</p>
+            </a>
+            <a href="/catalog/kaliningradskaya-oblast/vysota-myullera/" class="trail-duration">
+                <div class="img-card-color">
+                    <img src="/img/duration-orange.svg" alt="Длительность тропы">
+                </div>
+                <p id="color-letters-cot" class="black-color">~1 ч</p>
+            </a>
+        </div>
+    </figcaption>
+</figure></a>`,
     },
     {
       iconLayout: "default#image",
