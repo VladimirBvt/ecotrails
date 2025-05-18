@@ -809,11 +809,11 @@ a {
 
   .breadcrumb-item::before {
     content: url("/img/breadcrumbs/back-btn.svg");
-    margin-right: 12px;    
+    margin-right: 12px;
   }
 
   .breadcrumb-item:hover::before {
-    content: url("/img/breadcrumbs/back-btn-active.svg");   
+    content: url("/img/breadcrumbs/back-btn-active.svg");
   }
 
   .breadcrumb-item:hover {
