@@ -19,6 +19,7 @@ const SCROLL_THRESHOLD = 50; // Порог в пикселях для сраба
 
 // Данные маршрутов
 const trailsData = [
+  { name: "Высота Мюллера", url: "/catalog/kaliningradskaya-oblast/vysota-myullera/" },
   { name: "Черепахинская экотропа", url: "/catalog/voronezhskaya-oblast/cherepahinskaya/" },
   { name: "Королевский бор", url: "/catalog/kaliningradskaya-oblast/korolevsky-bor/" },
   { name: "Книга Природы (Красноярские Столбы)", url: "/catalog/krasnoyarsky-krai/kniga-prirody/" },

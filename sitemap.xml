@@ -23,7 +23,7 @@
 	<url>
 		<loc>https://www.eco-trails.ru/catalog</loc>
 		<priority>0.75</priority>
-		<lastmod>2025-05-13</lastmod>
+		<lastmod>2025-05-18</lastmod>
 	</url>
 	<url>
 		<loc>https://eco-trails.ru/catalog/?region=voronezhskaya-oblast</loc>
@@ -88,7 +88,12 @@
 	<url>
 		<loc>https://www.eco-trails.ru/catalog/mappage.html</loc>
 		<priority>0.50</priority>
-		<lastmod>2025-05-13</lastmod>
+		<lastmod>2025-05-18</lastmod>
+	</url>
+	<url>
+		<loc>https://eco-trails.ru/catalog/kaliningradskaya-oblast/vysota-myullera</loc>
+		<priority>0.25</priority>
+		<lastmod>2025-05-18</lastmod>
 	</url>
 	<url>
 		<loc>https://eco-trails.ru/catalog/voronezhskaya-oblast/cherepahinskaya</loc>

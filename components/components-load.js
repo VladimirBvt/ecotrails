@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Загрузка хедера
     loadHTML(".main-header", "/components/header/header.html", function(headerElement) {
         // Загружаем скрипт хедера
-        loadScript("/components/header/header.js");
+        loadScript("/components/header/header.js?v=1.0");
     });
 
     // Загрузка футера
